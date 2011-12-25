@@ -48,4 +48,36 @@ $.fn.slides = function(options) {
   new Slides(this, options).run();
 };
 
+var Testimonials = function(element) {
+  this.element = element;
+  $.get('testimonials.json', this.render.bind(this));
+}
+$.extend(Testimonials.prototype, {
+  render: function(records) {
+    var _this = this; // fuck you, jquery
+    $.each(records, function() {
+      var element = $(
+        '<li>' +
+        '  <img src="' + this.image + '">' +
+        '  <div>' +
+        '    <blockquote>' +
+        '      <span class="balloon"></span>' +
+        '      ' + this.quote + '' +
+        '    </blockquote>' +
+        '    <cite>' +
+        '      <a href="' + this.url + '">' + this.name + '</a>,' +
+        '      <a href="http://twitter.com/#!/' + this.twitter + '">@' + this.twitter + '</a>' +
+        '    </cite>' +
+        '  </div>' +
+        '</li>'
+      );
+      _this.element.append(element);
+    });
+  }
+});
+
+$.fn.testimonials = function() {
+  new Testimonials(this);
+};
+
 

@@ -23,7 +23,14 @@ blockquote {
   font-size: 14px;
 }
 a {
+  color: #274798;
+}
+cite a {
   color: inherit;
+  text-decoration: none;
+}
+cite a:hover {
+  text-decoration: underline;
 }
 ul {
   margin: 0;
@@ -268,6 +275,16 @@ section > div {
   font-size: 20px;
   color: white;
   text-shadow: 2px 2px 0px #666;
+  cursor: hand;
+}
+.packages button:hover {
+  background: #3f9c33; /* Old browsers */
+  background: -moz-linear-gradient(top, #1CBE0A 0%, #158F07 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1CBE0A), color-stop(100%,#158F07)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #1CBE0A 0%,#158F07 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #1CBE0A 0%,#158F07 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #1CBE0A 0%,#158F07 100%); /* IE10+ */
+  background: linear-gradient(top, #1CBE0A 0%,#158F07 100%); /* W3C */
 }
 .price-tag {
   position: absolute;
@@ -298,7 +315,7 @@ section:hover .sidenote {
 }
 .sidenote.left {
   top: 210px;
-  left: -260px;
+  left: -240px;
   width: 200px;
   padding-top: 50px;
   -webkit-transform: rotate(-10deg);
@@ -313,7 +330,7 @@ section:hover .sidenote {
 }
 .sidenote.right {
   top: 210px;
-  right: -260px;
+  right: -240px;
   width: 200px;
   -webkit-transform: rotate(15deg);
 }
@@ -398,6 +415,9 @@ section:hover .sidenote {
   margin-top: 20px;
   font-size: 12px;
   color: #666;
+}
+.footnotes a {
+  color: inherit;
 }
 
 #thanks-guys {
@@ -522,10 +542,12 @@ section:hover .sidenote {
   -moz-box-shadow: inset 0px 0px 20px 3px #fff;
   box-shadow: inset 0px 0px 20px 3px #fff;
 }
-#testimonials p {
-  margin: 5px 5px 0 5px;
+#testimonials cite {
+  display: block;
+  margin: 0 5px 0 5px;
   color: #999;
   font-size: 13px;
+  font-style: normal;
 }
 #testimonials blockquote .balloon {
   position: absolute;
@@ -574,8 +596,12 @@ section:hover .sidenote {
   background: url(images/balloon-border-right.png) no-repeat;
 }
 
+#future-plans {
+  padding-bottom: 20px;
+}
 #future-plans li {
   padding-right: 140px;
+  font-size: 14px;
 }
 
 #future-plans #pullrequests {
@@ -591,6 +617,12 @@ section:hover .sidenote {
   background: url(images/features/private.png) no-repeat right;
 }
 
+#stickers {
+  padding-bottom: 20px;
+}
+#ringtones {
+  padding-bottom: 20px;
+}
 
 
 .clearfix:after {

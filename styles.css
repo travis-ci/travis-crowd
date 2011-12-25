@@ -347,6 +347,103 @@ section:hover .sidenote {
   border-top: 0;
 }
 
+#rails-core ul {
+  position: relative;
+  height: 327px;
+  margin: 0 -40px;
+  padding-left: 35px;
+  background: url(images/rails-core/background.png) top center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: inset 3px 3px 20px 0px #333;
+  -moz-box-shadow: inset 0px 0px 20px 3px #333;
+  box-shadow: inset 0px 0px 20px 3px #333;
+}
+#rails-core li {
+  position: relative;
+  float: left;
+  width: 217px;
+  height: 293 px;
+  padding: 15px 2px 0 2px;
+  cursor: hand;
+}
+#rails-core ul:hover li {
+  opacity: 0.5;
+}
+#rails-core ul li:hover {
+  opacity: 1;
+}
+#rails-core li > div {
+  -moz-animation: head_small_movement 5s infinite;
+  -webkit-animation: head_small_movement 5s infinite;
+  -ms-animation: head_small_movement 5s infinite;
+  -o-animation: head_small_movement 5s infinite;
+  animation: head_small_movement 5s infinite;
+}
+#rails-core li a {
+  position: relative;
+  display: block;
+  height: 217px;
+  width: 217px;
+}
+#rails-core li.active > div {
+   -moz-animation:      head_big_movement 0.7s infinite;
+   -webkit-animation:   head_big_movement 0.7s infinite;
+   -ms-animation:       head_big_movement 0.7s infinite;
+   -o-animation:        head_big_movement 0.7s infinite;
+   animation:           head_big_movement 0.7s infinite;
+}
+#rails-core li.active a {
+   -moz-animation:      mouth 0.7s infinite;
+   -webkit-animation:   mouth 0.7s infinite;
+   -ns-animation:       mouth 0.7s infinite;
+   -o-animation:        mouth 0.7s infinite;
+   animation:           mouth 0.7s infinite;
+}
+#rails-core #jon {
+  background: url(images/rails-core/jon_background.png) no-repeat 5px 15px;
+}
+#rails-core #jon .wrap .head {
+  background: url(images/rails-core/jon_head.png) no-repeat center;
+}
+#rails-core #jon a {
+  background: url(images/rails-core/jon_mouth.png) no-repeat center;
+}
+#rails-core #jose {
+  background: url(images/rails-core/jose_background.png) no-repeat 5px 15px;
+}
+#rails-core #jose .wrap .head {
+  background: url(images/rails-core/jose_head.png) no-repeat center;
+}
+#rails-core #jose a {
+  background: url(images/rails-core/jose_mouth.png) no-repeat center;
+}
+#rails-core #aaron {
+  background: url(images/rails-core/aaron_background.png) no-repeat 5px 15px;
+}
+#rails-core #aaron .wrap .head {
+  background: url(images/rails-core/aaron_head.png) no-repeat center;
+}
+#rails-core #aaron a {
+  background: url(images/rails-core/aaron_mouth.png) no-repeat center;
+}
+#rails-core #yehuda {
+  background: url(images/rails-core/yehuda_background.png) no-repeat 5px 15px;
+}
+#rails-core #yehuda .wrap .head {
+  background: url(images/rails-core/yehuda_head.png) no-repeat center;
+}
+#rails-core #yehuda a {
+  background: url(images/rails-core/yehuda_mouth.png) no-repeat center;
+}
+#rails-core li:hover div {
+   background: -moz-radial-gradient(      rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -webkit-radial-gradient(   rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -ms-radial-gradient(       rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -o-radial-gradient(        rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: radial-gradient(           rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+}
 #thanks-companies {
   padding-bottom: 20px;
 }
@@ -624,6 +721,93 @@ section:hover .sidenote {
   padding-bottom: 20px;
 }
 
+@-moz-keyframes mouth {
+	0%    { bottom:   2px; 	}
+	50% 	{ bottom: -15px; 	}
+	100% 	{ bottom:   2px; 	}
+}
+@-webkit-keyframes mouth {
+  0%    { bottom:  2px;   }
+  50%   { bottom: -15px;  }
+  100%  { bottom:  2px;   }
+}
+@-ms-keyframes mouth {
+  0%    { bottom:  2px;   }
+  50%   { bottom: -15px;  }
+  100%  { bottom:  2px;   }
+}
+@-o-keyframes mouth {
+  0%    { bottom:  2px;   }
+  50%   { bottom: -15px;  }
+  100%  { bottom:  2px;   }
+}
+@keyframes mouth {
+  0%    { bottom:  2px;   }
+  50%   { bottom: -15px;  }
+  100%  { bottom:  2px;   }
+}
+
+@-moz-keyframes head_big_movement {
+	0% 	  { -moz-transform: rotate(	0deg	); }
+	20% 	{ -moz-transform: rotate(	2deg	); }
+	50% 	{ -moz-transform: rotate( -8deg	); }
+	100% 	{ -moz-transform: rotate(	0deg	); }
+}
+@-webkit-keyframes head_big_movement {
+  0%    { -webkit-transform: rotate(  0deg  ); }
+  20%   { -webkit-transform: rotate(  2deg  ); }
+  50%   { -webkit-transform: rotate( -8deg  ); }
+  100%  { -webkit-transform: rotate(  0deg  ); }
+}
+@-ms-keyframes head_big_movement {
+  0%    { -ms-transform: rotate(  0deg  ); }
+  20%   { -ms-transform: rotate(  2deg  ); }
+  50%   { -ms-transform: rotate( -8deg  ); }
+  100%  { -ms-transform: rotate(  0deg  ); }
+}
+@-o-keyframes head_big_movement {
+  0%    { -o-transform: rotate(  0deg  ); }
+  20%   { -o-transform: rotate(  2deg  ); }
+  50%   { -o-transform: rotate( -8deg  ); }
+  100%  { -o-transform: rotate(  0deg  ); }
+}
+@keyframes head_big_movement {
+  0%    { transform: rotate(  0deg  ); }
+  20%   { transform: rotate(  2deg  ); }
+  50%   { transform: rotate( -8deg  ); }
+  100%  { transform: rotate(  0deg  ); }
+}
+
+@-moz-keyframes head_small_movement {
+	0% 	  { -moz-transform: rotate(	0deg	); }
+	20% 	{ -moz-transform: rotate(	2deg	); }
+	50% 	{ -moz-transform: rotate( -2deg	); }
+	100% 	{ -moz-transform: rotate(	0deg	); }
+}
+@-webkit-keyframes head_small_movement {
+  0%    { -webkit-transform: rotate(  0deg  ); }
+  20%   { -webkit-transform: rotate(  2deg  ); }
+  50%   { -webkit-transform: rotate( -2deg  ); }
+  100%  { -webkit-transform: rotate(  0deg  ); }
+}
+@-ms-keyframes head_small_movement {
+  0%    { -ms-transform: rotate(  0deg  ); }
+  20%   { -ms-transform: rotate(  2deg  ); }
+  50%   { -ms-transform: rotate( -2deg  ); }
+  100%  { -ms-transform: rotate(  0deg  ); }
+}
+@-o-keyframes head_small_movement {
+  0%    { -o-transform: rotate(  0deg  ); }
+  20%   { -o-transform: rotate(  2deg  ); }
+  50%   { -o-transform: rotate( -2deg  ); }
+  100%  { -o-transform: rotate(  0deg  ); }
+}
+@keyframes head_small_movement {
+  0%    { transform: rotate(  0deg  ); }
+  20%   { transform: rotate(  2deg  ); }
+  50%   { transform: rotate( -2deg  ); }
+  100%  { transform: rotate(  0deg  ); }
+}
 
 .clearfix:after {
 	content: ".";
@@ -642,3 +826,7 @@ html[xmlns] .clearfix {
 * html .clearfix {
 	height: 1%;
 }
+
+
+
+

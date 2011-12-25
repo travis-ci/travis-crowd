@@ -10,6 +10,18 @@
     $(document).ready(function() {
       $('.slides').slides({ speed: 4000, fade: 800 });
       $('#testimonials ul').testimonials();
+
+      var heads = $('#rails-core li');
+      heads.click(function(){
+        heads.removeClass('active');
+        /* if(yehuda === undefined) {
+          yehuda = createSample(audioHost, 'yehuda');
+        }
+        yehuda.play(); */
+        $(this).addClass('active');
+        /* $(this).children('.bubble').text('Ring, ring!'); */
+        return false;
+      });
     })
   </script>
 </head>
@@ -118,8 +130,14 @@
       </div>
     </section>
 
-    <!-- <section id="rails-core"> -->
-    <!-- </section> -->
+    <section id="rails-core">
+      <ul>
+        <li id="jon"><div class="wrap"><div class="head"><a class="mouth" href="#"></a></div></div></li>
+        <li id="jose"><div class="wrap"><div class="head"><a class="mouth" href="#"></a></div></div></li>
+        <li id="aaron"><div class="wrap"><div class="head"><a class="mouth" href="#"></a></div></div></li>
+        <li id="yehuda"><div class="wrap"><div class="head"><a class="mouth" href="#"></a></div></div></li>
+      </ul>
+    </section>
 
 
     <section id="thanks-companies">

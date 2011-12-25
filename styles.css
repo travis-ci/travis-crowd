@@ -1,4 +1,4 @@
-/* @import url(http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope); */
+@import url(http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope);
 
 html, body {
   position: relative;
@@ -21,6 +21,9 @@ p, li, blockquote {
 }
 blockquote {
   font-size: 14px;
+}
+a {
+  color: inherit;
 }
 ul {
   margin: 0;
@@ -118,6 +121,38 @@ section > div {
   top: 10px;
   margin: 0;
   padding: 0;
+}
+#blob .slides li {
+  position: absolute;
+  display: none;
+}
+#blob .slides .current {
+  display: block;
+}
+#blob .slides-pagination {
+  position: relative;
+  top: 235px;
+  left: 111px;
+}
+#blob .slides-pagination li {
+  display: block;
+  float: left;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ccc;
+  -webkit-box-shadow: inset 1px 1px 2px 0px #666;
+  -moz-box-shadow: inset 1px 1px 2px 0px #666;
+  box-shadow: inset 1px 1px 2px 0px #666;
+}
+#blob .slides-pagination li:last-child {
+  margin-right: 0;
+}
+#blob .slides-pagination li.current {
+  background-color: #20bf02;
 }
 #blob p {
   margin-left: 350px;
@@ -248,11 +283,53 @@ section > div {
   color: white;
   text-shadow: 2px 2px 1px #666;
 }
+.sidenote {
+  position: absolute;
+  display: none;
+  font-size: 16px;
+}
+section:hover .sidenote {
+  display: block;
+}
+.sidenote span {
+  position: absolute;
+  display: block;
+  background: url("images/handwritten-arrow.png") no-repeat;
+}
+.sidenote.left {
+  top: 210px;
+  left: -260px;
+  width: 200px;
+  padding-top: 50px;
+  -webkit-transform: rotate(-10deg);
+  text-align: right;
+}
+.sidenote.left span {
+  top: 0px;
+  right: 30px;
+  width: 54px;
+  height: 42px;
+  -webkit-transform: rotate(-60deg);
+}
+.sidenote.right {
+  top: 210px;
+  right: -260px;
+  width: 200px;
+  -webkit-transform: rotate(15deg);
+}
+.sidenote.right span {
+  top: 80px;
+  left: 50px;
+  width: 54px;
+  height: 42px;
+  -webkit-transform: rotate(100deg);
+}
 
 #please-donate {
   padding-bottom: 40px;
   border-top: 0;
 }
+
 #thanks-companies {
   padding-bottom: 20px;
 }
@@ -444,7 +521,6 @@ section > div {
   -webkit-box-shadow: inset 0px 0px 20px 3px #fff;
   -moz-box-shadow: inset 0px 0px 20px 3px #fff;
   box-shadow: inset 0px 0px 20px 3px #fff;
-  -webkit-box-shadow: 0px 0px 5px #ddd;
 }
 #testimonials p {
   margin: 5px 5px 0 5px;

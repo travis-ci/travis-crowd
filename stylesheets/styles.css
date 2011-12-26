@@ -344,13 +344,15 @@ section:hover .sidenote {
   -webkit-transform: rotate(100deg);
 }
 
-#please-donate {
+#please-donate > div {
   padding-bottom: 40px;
   border-top: 0;
 }
 
 #rails-core {
   padding: 10px 0 0px 0;
+}
+#rails-core > div {
   border: 0;
 }
 #rails-core ul {
@@ -454,7 +456,7 @@ section:hover .sidenote {
   left: -270px;
 }
 
-#thanks-companies {
+#thanks-companies > div {
   padding-bottom: 20px;
   border: 0;
 }
@@ -804,8 +806,8 @@ footer div {
   width: 880px;
   height: 240px;
   margin: 0 auto;
-  padding: 30px 0 0 0;
-  background: url(/images/footer-travis.png) no-repeat left 30px;
+  padding: 35px 0 0 0;
+  background: url(/images/footer-travis.png) no-repeat 460px 35px;
 }
 footer h2 {
   margin-top: 0;
@@ -813,7 +815,7 @@ footer h2 {
   font-weight: bold;
 }
 footer div > ul {
-  margin-left: 500px;
+  margin-left: 0px;
 }
 footer div > ul > li {
   display: inline-block;
@@ -823,7 +825,7 @@ footer div > ul > li {
 footer li {
   line-height: 160%;
   font-size: 15px;
-  color: #888;
+  color: #999;
 }
 footer a {
   color: #89a;

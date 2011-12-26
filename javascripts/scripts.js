@@ -61,7 +61,6 @@ $.extend(Testimonials.prototype, {
         '  <img src="' + this.image + '">' +
         '  <div>' +
         '    <blockquote>' +
-        '      <span class="balloon"></span>' +
         '      ' + this.quote + '' +
         '    </blockquote>' +
         '    <cite>' +

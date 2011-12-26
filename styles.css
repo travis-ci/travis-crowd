@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope);
+@import url(http://fonts.googleapis.com/css?family=Ruthie);
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+@import url(http://fonts.googleapis.com/css?family=Miss+Saint+Delafield);
+@import url(http://fonts.googleapis.com/css?family=Monsieur+La+Doulaise);
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
 
 html, body {
   position: relative;
@@ -67,7 +72,7 @@ section > div {
   width: 200px;
   height: 63px;
   margin: 0px;
-  background: url(images/logo.png) no-repeat;
+  background: url(images/travis-ci.png) no-repeat;
   overflow: hidden;
   text-indent: -9999px;
 }
@@ -182,7 +187,7 @@ section > div {
   position: relative;
   padding: 5px 40px;
   border-width: 15px 0 15px 0;
-  -webkit-border-image: url(images/background-sub-2.png) 15 0 15 0 stretch;
+  -webkit-border-image: url(images/background-sub.png) 15 0 15 0 stretch;
   background-color: #e4e7ed;
 }
 #sub blockquote {
@@ -366,7 +371,18 @@ section:hover .sidenote {
   width: 217px;
   height: 293 px;
   padding: 15px 2px 0 2px;
+  background: url(images/rails-core/badge_background.png) no-repeat 5px 15px;
+  text-align: center;
   cursor: hand;
+}
+#rails-core cite {
+  display: block;
+  margin-top: 32px;
+  font-family: "Tangerine";
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 1px 1px 1px #ddd;
 }
 #rails-core ul:hover li {
   opacity: 0.5;
@@ -380,6 +396,13 @@ section:hover .sidenote {
   -ms-animation: head_small_movement 5s infinite;
   -o-animation: head_small_movement 5s infinite;
   animation: head_small_movement 5s infinite;
+}
+#rails-core li:hover div {
+   background: -moz-radial-gradient(      rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -webkit-radial-gradient(   rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -ms-radial-gradient(       rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: -o-radial-gradient(        rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+   background: radial-gradient(           rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
 }
 #rails-core li a {
   position: relative;
@@ -401,49 +424,35 @@ section:hover .sidenote {
    -o-animation:        mouth 0.7s infinite;
    animation:           mouth 0.7s infinite;
 }
-#rails-core #jon {
-  background: url(images/rails-core/jon_background.png) no-repeat 5px 15px;
-}
-#rails-core #jon .wrap .head {
+#rails-core #jon .head {
   background: url(images/rails-core/jon_head.png) no-repeat center;
 }
 #rails-core #jon a {
   background: url(images/rails-core/jon_mouth.png) no-repeat center;
 }
-#rails-core #jose {
-  background: url(images/rails-core/jose_background.png) no-repeat 5px 15px;
-}
-#rails-core #jose .wrap .head {
+#rails-core #jose .head {
   background: url(images/rails-core/jose_head.png) no-repeat center;
 }
 #rails-core #jose a {
   background: url(images/rails-core/jose_mouth.png) no-repeat center;
 }
-#rails-core #aaron {
-  background: url(images/rails-core/aaron_background.png) no-repeat 5px 15px;
-}
-#rails-core #aaron .wrap .head {
+#rails-core #aaron .head {
   background: url(images/rails-core/aaron_head.png) no-repeat center;
 }
 #rails-core #aaron a {
   background: url(images/rails-core/aaron_mouth.png) no-repeat center;
 }
-#rails-core #yehuda {
-  background: url(images/rails-core/yehuda_background.png) no-repeat 5px 15px;
-}
-#rails-core #yehuda .wrap .head {
+#rails-core #yehuda .head {
   background: url(images/rails-core/yehuda_head.png) no-repeat center;
 }
 #rails-core #yehuda a {
   background: url(images/rails-core/yehuda_mouth.png) no-repeat center;
 }
-#rails-core li:hover div {
-   background: -moz-radial-gradient(      rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
-   background: -webkit-radial-gradient(   rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
-   background: -ms-radial-gradient(       rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
-   background: -o-radial-gradient(        rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
-   background: radial-gradient(           rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+#rails-core .sidenote {
+  top: 180px;
+  left: -270px;
 }
+
 #thanks-companies {
   padding-bottom: 20px;
 }
@@ -530,6 +539,7 @@ section:hover .sidenote {
 }
 #thanks-guys li li {
   float: left;
+  color: #666;
 }
 #thanks-guys .boxed li {
   padding: 8px;
@@ -551,6 +561,7 @@ section:hover .sidenote {
 }
 #thanks-guys li h4 {
   margin: 0;
+  color: #333;
 }
 #thanks-guys li p {
   margin: 0;
@@ -590,25 +601,29 @@ section:hover .sidenote {
   font-size: 14px;
 }
 
-#thanks-guys .small li {
-  margin: 0 10px 10px 0;
+#thanks-guys .small {
+  margin-top: 10px;
 }
-#thanks-guys .small img {
-  width: 45px;
-  height: 45px;
-  margin-right: 0;
+#thanks-guys .small a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #666;
+  text-decoration: none;
 }
-#thanks-guys .small h4 {
-  font-size: 12px;
+#thanks-guys .small a:hover {
+  text-decoration: underline;
 }
 
-#thanks-guys .tiny li {
-  margin: 0 6px 6px 0;
+#thanks-guys .tiny {
+  margin-top: 6px;
 }
-#thanks-guys .tiny img {
-  width: 30px;
-  height: 30px;
-  margin-right: 0;
+#thanks-guys .tiny a {
+  font-size: 13px;
+  color: #999;
+  text-decoration: none;
+}
+#thanks-guys .tiny a:hover {
+  text-decoration: underline;
 }
 
 #testimonials {
@@ -639,19 +654,39 @@ section:hover .sidenote {
   -moz-box-shadow: inset 0px 0px 20px 3px #fff;
   box-shadow: inset 0px 0px 20px 3px #fff;
 }
+#testimonials blockquote:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  border: solid #ddd;
+}
+#testimonials li:nth-child(odd) blockquote:after {
+  left: 0;
+  margin-left: -7px;
+  border-width: 0 0 1px 1px;
+  background-color: #f9fafc;
+}
+#testimonials li:nth-child(even) blockquote:after {
+  right: 0;
+  margin-right: -7px;
+  border-width: 1px 1px 0 0;
+  background: #f5f9f5;
+}
 #testimonials cite {
   display: block;
   margin: 0 5px 0 5px;
   color: #999;
   font-size: 13px;
   font-style: normal;
-}
-#testimonials blockquote .balloon {
-  position: absolute;
-  display: block;
-  width: 9px;
-  height: 14px;
-  margin-top: 1px;
 }
 #testimonials li:nth-child(odd) {
   float: left;
@@ -669,10 +704,6 @@ section:hover .sidenote {
 #testimonials li:nth-child(odd) blockquote {
   background-color: #f2f4f9;
 }
-#testimonials li:nth-child(odd) .balloon {
-  left: -9px;
-  background: url(images/balloon-border-left.png) no-repeat;
-}
 #testimonials li:nth-child(even) {
   float: right;
   clear: right;
@@ -687,10 +718,6 @@ section:hover .sidenote {
 }
 #testimonials li:nth-child(even) blockquote {
   background-color: #edf5ee;
-}
-#testimonials li:nth-child(even) .balloon {
-  right: -9px;
-  background: url(images/balloon-border-right.png) no-repeat;
 }
 
 #future-plans {

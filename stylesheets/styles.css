@@ -13,11 +13,8 @@ html, body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
-body {
-  padding-bottom: 80px;
-}
 h2 {
-  margin: 30px 0 20px 0;
+  margin: 40px 0 20px 0;
   font-size: 36px;
   font-weight: normal;
 }
@@ -54,11 +51,11 @@ section {
   position: relative;
   width: 880px;
   margin: 0 auto;
-  border-top: 1px solid #ddd;
 }
 section > div {
   margin: 0 -40px;
   padding: 0 40px;
+  border-top: 1px solid #ddd;
 }
 .handwritten {
   font-family: "Annie Use Your Telescope";
@@ -352,6 +349,10 @@ section:hover .sidenote {
   border-top: 0;
 }
 
+#rails-core {
+  padding: 10px 0 0px 0;
+  border: 0;
+}
 #rails-core ul {
   position: relative;
   height: 327px;
@@ -455,6 +456,7 @@ section:hover .sidenote {
 
 #thanks-companies {
   padding-bottom: 20px;
+  border: 0;
 }
 #thanks-companies li {
   margin-bottom: 20px;
@@ -495,7 +497,47 @@ section:hover .sidenote {
   margin-right: 0;
 }
 
-#company-packages {
+#company-packages.collapsed div {
+  padding: 20px 30px;
+}
+#company-packages.collapsed ul,
+#company-packages.collapsed p {
+  display: none;
+}
+#company-packages.collapsed h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+}
+#company-packages .toggle {
+  display: none;
+}
+#company-packages.collapsed .toggle {
+  display: block;
+  position: absolute;
+  height: 33px;
+  top: 13px;
+  right: 0px;
+  padding: 0 35px 0 15px;
+  background: url(/images/icon-expand.png) no-repeat right 3px;
+  font-size: 14px;
+  color: #aaa;
+  text-shadow: 2px 2px white;
+  text-decoration: none;
+  line-height: 35px;
+}
+#company-packages .toggle:before {
+  content: "Hide"
+}
+#company-packages.collapsed .toggle:before {
+  content: "Show"
+}
+#company-packages.collapsed:hover .toggle:before {
+  content: "See what we have prepared for you"
+}
+
+#company-packages div {
   border-top: 0;
 }
 #company-packages > div {
@@ -526,7 +568,7 @@ section:hover .sidenote {
   color: inherit;
 }
 
-#thanks-guys {
+#thanks-guys div {
   border-top: 0;
   padding-bottom: 40px;
 }
@@ -627,7 +669,10 @@ section:hover .sidenote {
 }
 
 #testimonials {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+}
+#testimonials ul {
+  margin-top: 20px;
 }
 #testimonials li {
   margin-bottom: 20px;
@@ -721,7 +766,7 @@ section:hover .sidenote {
 }
 
 #future-plans {
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 #future-plans li {
   padding-right: 140px;
@@ -746,6 +791,42 @@ section:hover .sidenote {
 }
 #ringtones {
   padding-bottom: 20px;
+}
+#faq h3 {
+  font-size: 16px;
+}
+
+footer {
+  margin-top: 40px;
+  background-color: #f2f4f9;
+}
+footer div {
+  width: 880px;
+  height: 240px;
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+  background: url(/images/footer-travis.png) no-repeat left 30px;
+}
+footer h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+footer div > ul {
+  margin-left: 500px;
+}
+footer div > ul > li {
+  display: inline-block;
+  float: left;
+  margin-right: 40px;
+}
+footer li {
+  line-height: 160%;
+  font-size: 15px;
+  color: #888;
+}
+footer a {
+  color: #89a;
 }
 
 @-moz-keyframes mouth {
@@ -853,7 +934,3 @@ html[xmlns] .clearfix {
 * html .clearfix {
 	height: 1%;
 }
-
-
-
-

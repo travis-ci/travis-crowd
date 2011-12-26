@@ -50,7 +50,7 @@ $.fn.slides = function(options) {
 
 var Testimonials = function(element) {
   this.element = element;
-  $.get('testimonials.json', this.render.bind(this));
+  $.get('/testimonials.json', this.render.bind(this));
 }
 $.extend(Testimonials.prototype, {
   render: function(records) {

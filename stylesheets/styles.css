@@ -72,7 +72,7 @@ section > div {
   width: 200px;
   height: 63px;
   margin: 0px;
-  background: url(images/travis-ci.png) no-repeat;
+  background: url(/images/travis-ci.png) no-repeat;
   overflow: hidden;
   text-indent: -9999px;
 }
@@ -125,7 +125,7 @@ section > div {
 #blob {
   position: relative;
   padding: 20px 0 30px 0;
-  background: url(images/background-blob.png) repeat-x;
+  background: url(/images/background-blob.png) repeat-x;
   color: white;
 }
 #blob .slides {
@@ -187,7 +187,7 @@ section > div {
   position: relative;
   padding: 5px 40px;
   border-width: 15px 0 15px 0;
-  -webkit-border-image: url(images/background-sub.png) 15 0 15 0 stretch;
+  -webkit-border-image: url(/images/background-sub.png) 15 0 15 0 stretch;
   background-color: #e4e7ed;
 }
 #sub blockquote {
@@ -316,7 +316,7 @@ section:hover .sidenote {
 .sidenote span {
   position: absolute;
   display: block;
-  background: url("images/handwritten-arrow.png") no-repeat;
+  background: url("/images/handwritten-arrow.png") no-repeat;
 }
 .sidenote.left {
   top: 210px;
@@ -357,7 +357,7 @@ section:hover .sidenote {
   height: 327px;
   margin: 0 -40px;
   padding-left: 35px;
-  background: url(images/rails-core/background.png) top center;
+  background: url(/images/rails-core/background.png) top center;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
@@ -371,7 +371,7 @@ section:hover .sidenote {
   width: 217px;
   height: 293 px;
   padding: 15px 2px 0 2px;
-  background: url(images/rails-core/badge_background.png) no-repeat 5px 15px;
+  background: url(/images/rails-core/badge_background.png) no-repeat 5px 15px;
   text-align: center;
   cursor: hand;
 }
@@ -425,28 +425,28 @@ section:hover .sidenote {
    animation:           mouth 0.7s infinite;
 }
 #rails-core #jon .head {
-  background: url(images/rails-core/jon_head.png) no-repeat center;
+  background: url(/images/rails-core/jon_head.png) no-repeat center;
 }
 #rails-core #jon a {
-  background: url(images/rails-core/jon_mouth.png) no-repeat center;
+  background: url(/images/rails-core/jon_mouth.png) no-repeat center;
 }
 #rails-core #jose .head {
-  background: url(images/rails-core/jose_head.png) no-repeat center;
+  background: url(/images/rails-core/jose_head.png) no-repeat center;
 }
 #rails-core #jose a {
-  background: url(images/rails-core/jose_mouth.png) no-repeat center;
+  background: url(/images/rails-core/jose_mouth.png) no-repeat center;
 }
 #rails-core #aaron .head {
-  background: url(images/rails-core/aaron_head.png) no-repeat center;
+  background: url(/images/rails-core/aaron_head.png) no-repeat center;
 }
 #rails-core #aaron a {
-  background: url(images/rails-core/aaron_mouth.png) no-repeat center;
+  background: url(/images/rails-core/aaron_mouth.png) no-repeat center;
 }
 #rails-core #yehuda .head {
-  background: url(images/rails-core/yehuda_head.png) no-repeat center;
+  background: url(/images/rails-core/yehuda_head.png) no-repeat center;
 }
 #rails-core #yehuda a {
-  background: url(images/rails-core/yehuda_mouth.png) no-repeat center;
+  background: url(/images/rails-core/yehuda_mouth.png) no-repeat center;
 }
 #rails-core .sidenote {
   top: 180px;
@@ -729,16 +729,16 @@ section:hover .sidenote {
 }
 
 #future-plans #pullrequests {
-  background: url(images/features/pullrequests.png) no-repeat right;
+  background: url(/images/features/pullrequests.png) no-repeat right;
 }
 #future-plans #languages {
-  background: url(images/features/languages.png) no-repeat right;
+  background: url(/images/features/languages.png) no-repeat right;
 }
 #future-plans #artifacts {
-  background: url(images/features/artifacts.png) no-repeat right;
+  background: url(/images/features/artifacts.png) no-repeat right;
 }
 #future-plans #private {
-  background: url(images/features/private.png) no-repeat right;
+  background: url(/images/features/private.png) no-repeat right;
 }
 
 #stickers {

@@ -17,6 +17,7 @@ html, body {
 }
 p, li, blockquote {
   line-height: 140%;
+  margin: 15px 0 0 0;
 }
 blockquote {
   font-size: 14px;
@@ -32,7 +33,7 @@ cite a:hover {
   text-decoration: underline;
 }
 ul {
-  margin: 0;
+  margin: 15px 0 0 0;
   padding: 0;
   list-style-type: none;
 }
@@ -52,7 +53,7 @@ section {
 section h2 {
   position: relative;
 	display: inline-block;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   font-size: 36px;
   font-weight: normal;
 }
@@ -67,6 +68,7 @@ section h2 {
   -moz-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
   box-shadow:  inset 0 0 1px rgba(0, 0, 0, 0.1);
 }
+/* curly paper shaddows */
 .paper:before,
 .paper:after {
 	content: ' ';
@@ -94,6 +96,7 @@ section h2 {
 	-o-transform: skew(5deg) rotate(5deg);
 	transform: skew(5deg) rotate(5deg);
 }
+/* sticky tape */
 .paper h2+*:before {
   content: '';
   position: absolute;
@@ -121,7 +124,8 @@ section h2 {
   -o-transform: rotate(2deg) skew(0,0) translate(0%,-5px);
   transform: rotate(2deg) skew(0,0) translate(0%,-5px);
 }
-.paper h2:before {
+/* ribbon */
+/* .paper h2:before {
   content: ' ';
   position: absolute;
   display: block;
@@ -141,7 +145,7 @@ section h2 {
 	border-width: 5px 10px;
 	border-style: solid;
 	border-color: #e1dd97 #e1dd97 transparent transparent;
-}
+}*/
 
 .handwritten {
   font-family: "Annie Use Your Telescope";
@@ -453,7 +457,8 @@ section:hover .sidenote {
   position: relative;
   float: left;
   width: 217px;
-  height: 293 px;
+  height: 293px;
+  margin: 0;
   padding: 15px 2px 0 2px;
   background: url(/images/rails-core/badge_background.png) no-repeat 5px 15px;
   text-align: center;
@@ -885,6 +890,9 @@ footer h2 {
   font-size: 18px;
   font-weight: bold;
 }
+footer ul {
+  margin: 0;
+}
 footer div > ul {
   margin-left: 0px;
 }
@@ -897,6 +905,7 @@ footer li {
   line-height: 160%;
   font-size: 15px;
   color: #999;
+  margin: 0;
 }
 footer a {
   color: #89a;

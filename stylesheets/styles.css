@@ -239,9 +239,12 @@ section h2 {
 section:hover .sidenote {
   display: block;
 }
-.sidenote span {
+.sidenote:after {
+  content: '';
   position: absolute;
   display: block;
+  height: 50px;
+  width: 50px;
   background: url("/images/handwritten-arrow.png") no-repeat;
 }
 .sidenote.left {
@@ -250,7 +253,7 @@ section:hover .sidenote {
   -webkit-transform: rotate(-10deg);
   text-align: right;
 }
-.sidenote.left span {
+.sidenote.left:after {
   top: 0px;
   right: 0px;
   width: 54px;
@@ -261,7 +264,7 @@ section:hover .sidenote {
   right: -165px;
   -webkit-transform: rotate(15deg);
 }
-.sidenote.right span {
+.sidenote.right:after {
   top: 80px;
   left: 10px;
   width: 54px;

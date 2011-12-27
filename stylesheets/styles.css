@@ -12,7 +12,7 @@ html, body {
   width: 100%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  background-color: #fdfdfd;
+  background-color: #fafafa;
   z-index: -2;
 }
 p, li, blockquote {
@@ -80,9 +80,9 @@ section h2 {
 	-ms-transform: skew(-5deg) rotate(-5deg);
 	-o-transform: skew(-5deg) rotate(-5deg);
 	transform: skew(-5deg) rotate(-5deg);
-	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 	z-index: -1;
 }
 .paper:after {
@@ -101,8 +101,8 @@ section h2 {
   left: 400px;
   width: 130px;
   height: 35px;
-  background-color: #eee;
-  opacity: 0.2;
+  background-color: #eed;
+  opacity: 0.4;
   border: dashed rgba(0, 0, 0, 0.1);
   border-width: 0 1px;
   -webkit-box-shadow: 0px 0px 1px 0px #cccccc;
@@ -125,9 +125,11 @@ section h2 {
   content: ' ';
   position: absolute;
   display: block;
+  margin-top: -5px;
+  padding: 5px 0;
   left: -60px;
   width: 40px;
-  background-color: #fe7f21;
+  background-color: #fffa93;
 }
 .paper h2:after {
 	content: ' ';
@@ -135,10 +137,10 @@ section h2 {
 	width: 0;
 	height: 0;
 	left: -60px;
-  bottom: -10px;
+  bottom: -15px;
 	border-width: 5px 10px;
 	border-style: solid;
-	border-color: #d57935 #d57935 transparent transparent;
+	border-color: #e1dd97 #e1dd97 transparent transparent;
 }
 
 .handwritten {
@@ -267,7 +269,8 @@ section:hover .sidenote {
 
 
 #top {
-  margin: 20px 0;
+  padding: 20px 0;
+  background-color: #fff;
 }
 #top h1 {
   width: 200px;
@@ -289,7 +292,7 @@ section:hover .sidenote {
 #github {
   position: absolute;
   z-index: 100;
-  top: -20px;
+  top: 0px;
   right: 0px;
   width: 130px;
   height: 140px;
@@ -443,8 +446,8 @@ section:hover .sidenote {
   -moz-border-radius: 8px;
   border-radius: 8px;
   -webkit-box-shadow: inset 3px 3px 20px 0px #333;
-  -moz-box-shadow: inset 0px 0px 20px 3px #333;
-  box-shadow: inset 0px 0px 20px 3px #333;
+  -moz-box-shadow: inset 3px 3px 20px 0px #333;
+  box-shadow: inset 3px 3px 20px 0px #333;
 }
 #rails-core li {
   position: relative;
@@ -584,6 +587,9 @@ section:hover .sidenote {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
+  -webkit-box-shadow: inset 2px 2px 6px 0px #ddd;
+  -moz-box-shadow: inset 2px 2px 6px 0px #ddd;
+  box-shadow: inset 2px 2px 6px 0px #ddd;
 }
 #company-packages .toggle {
   display: block;

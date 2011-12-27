@@ -232,6 +232,8 @@ section h2 {
 .sidenote {
   position: absolute;
   display: none;
+  top: 210px;
+  width: 140px;
   font-size: 16px;
 }
 section:hover .sidenote {
@@ -243,29 +245,25 @@ section:hover .sidenote {
   background: url("/images/handwritten-arrow.png") no-repeat;
 }
 .sidenote.left {
-  top: 210px;
-  left: -240px;
-  width: 200px;
+  left: -165px;
   padding-top: 50px;
   -webkit-transform: rotate(-10deg);
   text-align: right;
 }
 .sidenote.left span {
   top: 0px;
-  right: 30px;
+  right: 0px;
   width: 54px;
   height: 42px;
   -webkit-transform: rotate(-60deg);
 }
 .sidenote.right {
-  top: 210px;
-  right: -240px;
-  width: 200px;
+  right: -165px;
   -webkit-transform: rotate(15deg);
 }
 .sidenote.right span {
   top: 80px;
-  left: 50px;
+  left: 10px;
   width: 54px;
   height: 42px;
   -webkit-transform: rotate(100deg);
@@ -447,6 +445,7 @@ section:hover .sidenote {
 }
 
 #rails-core {
+  position: relative;
   padding: 10px 0 0px 0;
 }
 #rails-core ul {
@@ -547,8 +546,8 @@ section:hover .sidenote {
   background: url(/images/rails-core/yehuda_mouth.png) no-repeat center;
 }
 #rails-core .sidenote {
-  top: 180px;
-  left: -270px;
+  top: 160px;
+  left: -205px;
 }
 
 #thanks-companies {
@@ -637,6 +636,9 @@ section:hover .sidenote {
   margin-top: 20px;
   font-size: 12px;
   color: #666;
+}
+#company-packages .footnotes li {
+  margin: 0;
 }
 #company-packages .footnotes a {
   color: inherit;

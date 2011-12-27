@@ -42,7 +42,7 @@ sup {
 }
 header > div {
   position: relative;
-  width: 880px;
+  width: 960px;
   margin: auto;
 }
 
@@ -332,7 +332,8 @@ section:hover .sidenote {
 
 #blob {
   position: relative;
-  padding: 20px 0 30px 0;
+  height: 250px;
+  padding: 10px 0 30px 0;
   background: url(/images/background-blob.png) repeat-x;
   color: white;
 }
@@ -345,24 +346,26 @@ section:hover .sidenote {
 #blob .slides li {
   position: absolute;
   display: none;
+  margin: 0;
 }
 #blob .slides .current {
   display: block;
 }
 #blob .slides-pagination {
   position: relative;
-  top: 235px;
-  left: 111px;
+  top: 238px;
+  left: 118px;
 }
 #blob .slides-pagination li {
   display: block;
   float: left;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
+  margin: 0;
   margin-right: 8px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   background-color: #ccc;
   -webkit-box-shadow: inset 1px 1px 2px 0px #666;
   -moz-box-shadow: inset 1px 1px 2px 0px #666;
@@ -375,11 +378,13 @@ section:hover .sidenote {
   background-color: #20bf02;
 }
 #blob p {
+  font-size: 16px;
   margin-left: 350px;
+  margin-top: 18px;
 }
 #blob h3 {
   margin: 0 0 0 350px;
-  font-size: 40px;
+  font-size: 58px;
   font-weight: bold;
 }
 #blob em {
@@ -389,29 +394,33 @@ section:hover .sidenote {
 #blob .conclusion {
   color: #20bf02;
   margin-bottom: 0;
+  font-size: 22px;
 }
 
 #sub {
   position: relative;
-  padding: 5px 40px;
+  padding: 5px 0;
   border-width: 15px 0 15px 0;
   -webkit-border-image: url(/images/background-sub.png) 15 0 15 0 stretch;
   background-color: #e4e7ed;
 }
 #sub blockquote {
-  width: 680px;
+  width: 730px;
   margin: 0;
   padding: 10px;
+  background-color: white;
   border: 1px solid #ddd;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  background-color: white;
-  font-style: italic;
+  -webkit-box-shadow: inset 2px 2px 6px 0px #ddd;
+  -moz-box-shadow: inset 2px 2px 6px 0px #ddd;
+  box-shadow: inset 1px 1px 4px 0px #ddd;
+  color: #666;
 }
 #sub blockquote img {
   float: left;
-  width: 70px;
+  width: 75px;
   margin-right: 10px;
   border: 1px solid #ddd;
   -webkit-border-radius: 5px;
@@ -425,8 +434,8 @@ section:hover .sidenote {
 }
 #sociallinks {
   position: absolute;
-  left: 720px;
-  top: 0px;
+  top: 0;
+  right: 0;
   width: 190px;
 }
 #sociallinks h4 {

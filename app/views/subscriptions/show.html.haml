@@ -1,0 +1,35 @@
+%p= link_to '&larr; Your profile'.html_safe, profile_path
+
+#subscription
+  %h2= subscription.plan.camelize
+  %p.meta= subscription.created_at.to_formatted_s(:long)
+
+  %dl
+    %dt Name
+    %dd= current_user.name
+    %dt Email
+    %dd= current_user.email
+    %dt Twitter
+    %dd= current_user.twitter_handle
+    %dt Github
+    %dd= current_user.github_handle
+    %dt Homepage
+    %dd= current_user.homepage
+
+  %h1 Billing Address
+  %dl
+    %dt Street
+    %dd= billing_address.street
+    %dt Zip/City
+    %dd= "#{billing_address.zip} #{billing_address.city}"
+    %dt State/Country
+    %dd= "#{billing_address.state} #{billing_address.country}"
+
+  %h1 Shipping Address
+  %dl
+    %dt Street
+    %dd= shipping_address.street
+    %dt Zip/City
+    %dd= "#{shipping_address.zip} #{shipping_address.city}"
+    %dt State/Country
+    %dd= "#{shipping_address.state} #{shipping_address.country}"

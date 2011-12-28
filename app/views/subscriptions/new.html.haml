@@ -1,0 +1,69 @@
+= link_to 'Sign out', destroy_session_path if signed_in?
+
+%h1= subscription.plan.camelize
+
+= simple_form_for subscription do |f|
+  = f.hidden_field :plan
+  = f.hidden_field :stripe_card_token
+
+  - if signed_in?
+    = f.simple_fields_for :user do |f|
+      = '' # weird, when i remove this and none of the fields below are rendered then the hidden input is html escaped
+
+      - unless current_user.name
+        = f.input :name
+
+      - unless current_user.email
+        = f.input :email
+
+      - unless current_user.twitter_handle
+        = f.input :twitter_handle
+
+      - unless current_user.github_handle
+        = f.input :github_handle
+
+      - unless current_user.homepage
+        = f.input :homepage
+
+    #billing_address.address
+      %h2 Billing Address
+      = f.simple_fields_for :billing_address do |f|
+        = f.input :name
+        = f.input :street
+        = f.input :zip
+        = f.input :city
+        = f.input :state
+        = f.input :country
+      = label_tag :toggle_shipping_address do
+        = check_box_tag 'toggle_shipping_address', 1, true
+        = 'Use as shipping address'
+
+    #shipping_address.address
+      %h2 Shipping Address
+      = f.simple_fields_for :shipping_address do |f|
+        = f.input :name
+        = f.input :street
+        = f.input :zip
+        = f.input :city
+        = f.input :state
+        = f.input :country
+
+    %h2 Credit Card
+    - if subscription.stripe_card_token.present?
+      %p Has been provided.
+    - else
+      = f.input :number, :as => :anonymous, :required => true
+      = f.input :security_code, :as => :anonymous, :required => true
+      = f.input :expires_at, :as => :expiry_selects
+
+    #stripe_error
+      %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+
+    .actions
+      = f.submit 'Confirm'
+      = link_to 'Deny', '/'
+
+  - else
+    = link_to 'Sign in with Twitter', user_omniauth_authorize_path(:twitter)
+    = link_to 'Sign in with Github', user_omniauth_authorize_path(:github)
+

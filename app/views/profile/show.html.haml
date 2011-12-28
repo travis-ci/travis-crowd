@@ -1,0 +1,26 @@
+%h2 Your profile
+
+#profile
+  %dl
+    %dt Name
+    %dd= current_user.name
+    %dt Email
+    %dd= current_user.email
+    %dt Twitter
+    %dd= current_user.twitter_handle
+    %dt Github
+    %dd= current_user.github_handle
+    %dt Homepage
+    %dd= current_user.homepage
+
+- unless subscriptions.empty?
+  #subscriptions
+    %h2 Your subscriptions
+    %table
+      = render subscriptions
+
+- unless payments.empty?
+  #payments
+    %h2 Your payments
+    %table
+      = render payments

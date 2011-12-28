@@ -1,0 +1,82 @@
+{
+  :provider => "twitter",
+	:uid => "9459332",
+	:info => {
+  	:nickname => "svenfuchs",
+  	:name => "Sven Fuchs",
+  	:location => "Berlin",
+  	:image => "http://a0.twimg.com/profile_images/301443535/sven.twitter_normal.jpg",
+  	:description => "",
+  	:urls => {
+    	:Website => "http://svenfuchs.com",
+    	:Twitter => "http://twitter.com/svenfuchs"
+  	}
+	},
+	:credentials => {
+	  :token => "9459332-4wSrusxutWD2cpkhNJ1vi89CWZFVvZ2zG7kqN6cTzL",
+  	:secret => "hzqCIsifsCbGxHrxq5YgxUERiHuK0mLNNWzMcyVXyKY"
+	},
+	:extra => {
+  	:raw_info => {
+    	:listed_count => 161,
+    	:lang => "en",
+    	:protected => false,
+    	:url => "http://svenfuchs.com",
+    	:verified => false,
+    	:time_zone => "Berlin",
+    	:profile_sidebar_border_color => "C0DEED",
+    	:name => "Sven Fuchs",
+    	:id_str => "9459332",
+    	:default_profile => true,
+    	:contributors_enabled => false,
+    	:profile_use_background_image => true,
+    	:utc_offset => 3600,
+    	:description => "",
+    	:default_profile_image => false,
+    	:created_at => "Mon Oct 15 17:37:10 +0000 2007",
+    	:friends_count => 662,
+    	:profile_text_color => "333333",
+    	:statuses_count => 4839,
+    	:following => false,
+    	:profile_background_image_url => "http://a0.twimg.com/images/themes/theme1/bg.png",
+    	:status => {
+    	:in_reply_to_user_id_str => "14506011",
+    	:place => nil,
+    	:id_str => "151824978264850434",
+    	:in_reply_to_status_id => 151822638287831040,
+    	:contributors => nil,
+    	:geo => nil,
+    	:truncated => false,
+    	:created_at => "Wed Dec 28 00:41:10 +0000 2011",
+    	:favorited => false,
+    	:in_reply_to_user_id => 14506011,
+    	:retweet_count => 0,
+    	:in_reply_to_screen_name => "ryanbigg",
+    	:source => "<a href=\"http://www.echofon.com/\" rel=\"nofollow\">Echofon</a>",
+    	:in_reply_to_status_id_str => "151822638287831040",
+    	:coordinates => nil,
+    	:id => 151824978264850434,
+    	:possibly_sensitive => false,
+    	:retweeted => false,
+    	:text => "@ryanbigg @steveklabnik here's how travis-ci did it on backbone https://t.co/ggNiWvUX"
+  	},
+  	:is_translator => false,
+  	:profile_link_color => "0084B4",
+  	:profile_background_image_url_https => "https://si0.twimg.com/images/themes/theme1/bg.png",
+  	:favourites_count => 4,
+  	:screen_name => "svenfuchs",
+  	:follow_request_sent => false,
+  	:geo_enabled => false,
+  	:profile_background_color => "C0DEED",
+  	:notifications => false,
+  	:profile_background_tile => false,
+  	:followers_count => 1793,
+  	:profile_image_url => "http://a0.twimg.com/profile_images/301443535/sven.twitter_normal.jpg",
+  	:location => "Berlin",
+  	:id => 9459332,
+  	:show_all_inline_media => true,
+  	:profile_sidebar_fill_color => "DDEEF6",
+  	:profile_image_url_https => "https://si0.twimg.com/profile_images/301443535/sven.twitter_normal.jpg"
+  	}
+	}
+}

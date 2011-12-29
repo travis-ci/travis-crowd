@@ -3,6 +3,12 @@ module Paths
     case name
     when 'the home page'
       root_path
+    when 'my profile page'
+      profile_path
+    when 'the subscription page for the "Medium" package'
+      new_subscription_path(:plan => :medium)
+    else
+      raise "Could not find path to: #{name}"
     end
   end
 end

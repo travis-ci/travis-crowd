@@ -1,2 +1,4 @@
+= link_to 'Sign out', destroy_session_path if signed_in?
+
 #medium
-  = link_to "Donate", new_subscription_path(:plan => 'medium')
+  = link_to 'Donate', new_subscription_path(:plan => 'medium')

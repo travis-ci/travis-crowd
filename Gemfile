@@ -27,4 +27,5 @@ group :test do
   gem 'cucumber'
   gem 'spork'
   gem 'launchy'
+  gem 'mocha'
 end

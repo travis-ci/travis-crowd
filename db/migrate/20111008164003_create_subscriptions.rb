@@ -3,6 +3,7 @@ class CreateSubscriptions < ActiveRecord::Migration
     create_table :subscriptions do |t|
       t.belongs_to :user
       t.string :plan
+      t.string :stripe_customer_token
       t.timestamps
     end
   end

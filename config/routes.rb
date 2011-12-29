@@ -3,7 +3,7 @@ Saas::Application.routes.draw do
 
   resources :subscriptions
 
-  match '/profile', :to => 'profile#show'
+  match '/profile', to: 'profile#show', as: :profile
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }
 
   as :user do

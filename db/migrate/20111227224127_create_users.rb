@@ -1,6 +1,11 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.database_authenticatable
+      t.recoverable
+      t.rememberable
+      t.trackable
+
       t.string :name
       t.string :email
       t.integer :twitter_uid
@@ -9,7 +14,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :github_handle
       t.string :homepage
       t.string :description
-      t.string :stripe_customer_token
       t.timestamps
     end
   end

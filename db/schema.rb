@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20111228175101) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "subscription_id"
+    t.string   "kind"
     t.string   "name"
     t.string   "street"
     t.string   "zip"
@@ -36,20 +37,29 @@ ActiveRecord::Schema.define(:version => 20111228175101) do
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"
     t.string   "plan"
+    t.string   "stripe_customer_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
     t.string   "email"
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "name"
     t.integer  "twitter_uid"
     t.string   "twitter_handle"
     t.integer  "github_uid"
     t.string   "github_handle"
     t.string   "homepage"
     t.string   "description"
-    t.string   "stripe_customer_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

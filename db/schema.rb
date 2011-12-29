@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20111228175101) do
 
   create_table "subscriptions", :force => true do |t|
     t.integer  "user_id"
-    t.string   "plan"
-    t.string   "stripe_customer_token"
+    t.string   "plan_id"
+    t.string   "stripe_customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,7 +1,7 @@
 %p= link_to '&larr; Your profile'.html_safe, profile_path
 
 #subscription
-  %h2= subscription.plan.camelize
+  %h2= subscription.plan.name
   %p.meta= subscription.created_at.to_formatted_s(:long)
 
   %dl

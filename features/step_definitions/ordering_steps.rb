@@ -5,8 +5,7 @@ When /^I click on "Donate" for the "([^"]*)" subscription$/ do |package|
 end
 
 When /^the credit card service will create a customer for:$/ do |attrs|
-  attrs = Hashr.new(attrs.rows_hash)
-  attrs = { description: attrs.description, plan: attrs.plan, card: '' }
+  attrs = attrs.rows_hash.symbolize_keys
   customer = Hashr.new(id: 1)
   Stripe::Customer.expects(:create).with(attrs).returns(customer)
 end

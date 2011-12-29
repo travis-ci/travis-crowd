@@ -31,7 +31,7 @@ class SubscriptionsController < ApplicationController
     end
 
     def normalize_params
-      params[:subscription] ||= { plan: params[:plan] || 'tiny' }
+      params[:subscription] ||= { plan_id: params[:plan] || 'tiny' }
       params[:subscription][:billing_address_attributes] ||= { name: user.name }
       params[:subscription][:billing_address_attributes][:kind] = :billing
       params[:subscription][:shipping_address_attributes] ||= { name: user.name }

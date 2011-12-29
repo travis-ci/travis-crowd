@@ -1,7 +1,7 @@
-%h1= subscription.plan.camelize
+%h1= subscription.plan.name
 
 = simple_form_for subscription do |f|
-  = f.hidden_field :plan
+  = f.hidden_field :plan_id
   = f.hidden_field :stripe_card_token
 
   - unless signed_in?

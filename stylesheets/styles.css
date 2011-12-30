@@ -189,7 +189,7 @@ section h2 {
 .packages button {
   width: 148px;
   height: 40px;
-  margin: 0 5px;
+  margin: 10px 0 0 5px;
   border: 0;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;

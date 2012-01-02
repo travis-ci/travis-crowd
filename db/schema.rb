@@ -11,10 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228175101) do
+ActiveRecord::Schema.define(:version => 20111228000327) do
 
   create_table "addresses", :force => true do |t|
-    t.integer  "subscription_id"
+    t.integer  "addressable_id"
+    t.string   "addressable_type"
     t.string   "kind"
     t.string   "name"
     t.string   "street"
@@ -26,17 +27,10 @@ ActiveRecord::Schema.define(:version => 20111228175101) do
     t.datetime "updated_at"
   end
 
-  create_table "payments", :force => true do |t|
+  create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "subscription_id"
-    t.integer  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "subscriptions", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "plan_id"
+    t.string   "package"
+    t.boolean  "subscription",       :default => false, :null => false
     t.string   "stripe_customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"

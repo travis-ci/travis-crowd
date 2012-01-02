@@ -1,7 +1,7 @@
 class CreateAddresses < ActiveRecord::Migration
   def change
     create_table :addresses do |t|
-      t.belongs_to :subscription
+      t.belongs_to :addressable, :polymorphic => true
       t.string :kind
       t.string :name
       t.string :street

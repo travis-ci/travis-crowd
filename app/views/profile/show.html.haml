@@ -15,14 +15,14 @@
     %dt Homepage
     %dd= current_user.homepage
 
-- unless subscriptions.empty?
+- unless current_user.subscriptions.empty?
   #subscriptions
     %h2 Your subscriptions
     %table
-      = render subscriptions
+      = render current_user.subscriptions
 
-- unless payments.empty?
-  #payments
-    %h2 Your payments
+- unless current_user.packages.empty?
+  #packages
+    %h2 Your packages
     %table
-      = render payments
+      = render current_user.packages

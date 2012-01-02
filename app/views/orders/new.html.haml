@@ -1,7 +1,8 @@
-%h1= subscription.plan.name
+%h1= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
 
-= simple_form_for subscription do |f|
-  = f.hidden_field :plan_id
+= simple_form_for order do |f|
+  = f.hidden_field :package
+  = f.hidden_field :subscription
   = f.hidden_field :stripe_card_token
 
   - unless signed_in?
@@ -42,7 +43,7 @@
 
   %h2 Credit Card
   %fieldset
-    - if subscription.stripe_card_token.present?
+    - if order.stripe_card_token.present?
       %p Has been provided.
     - else
       = f.input :number, :as => :anonymous, :required => true

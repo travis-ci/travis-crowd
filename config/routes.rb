@@ -1,7 +1,7 @@
 Saas::Application.routes.draw do
   root to: 'home#index'
 
-  resources :subscriptions
+  resources :orders
 
   match '/profile', to: 'profile#show', as: :profile
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }

@@ -15,10 +15,10 @@ Feature: Ordering a package
       | Country        | Germany        |
       | Number         | 123456         |
       | Security code  | 123            |
+     And the credit card service returns a credit card token
      And the credit card service will create a customer for:
       | email | sven@email.com |
-      | card  |                |
-      # card is empty because cucumber won't go through js
+      | card  | 12345678       |
      And the credit card service will create the following charge:
       | customer    | 1      |
       | amount      | 7000   |
@@ -43,10 +43,10 @@ Feature: Ordering a package
       | Country        | Germany       |
       | Number         | 123456        |
       | Security code  | 123           |
+     And the credit card service returns a credit card token
      And the credit card service will create a customer for:
       | email | sven@email.com |
-      | card  |                |
-      # card is empty because cucumber won't go through js
+      | card  | 12345678       |
      And the credit card service will create the following charge:
       | customer    | 1      |
       | amount      | 7000   |
@@ -75,11 +75,11 @@ Feature: Ordering a package
       | Country        | Germany        |
       | Number         | 123456         |
       | Security code  | 123            |
+     And the credit card service returns a credit card token
      And the credit card service will create a customer for:
       | email | sven@email.com |
       | plan  | medium         |
-      | card  |                |
-      # card is empty because cucumber won't go through js
+      | card  | 12345678       |
      And I press "Confirm"
     Then I should see "Thank you"
      And I should see "Medium"

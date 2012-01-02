@@ -18,4 +18,8 @@ class Package
   def price
     PACKAGES[id]
   end
+
+  def price_as_dollars
+    price / 100
+  end
 end

@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   has_one :billing_address,  as: 'addressable', class_name: 'Address', conditions: { kind: 'billing' }
   has_one :shipping_address, as: 'addressable', class_name: 'Address', conditions: { kind: 'shipping' }
 
-  validates_presence_of :package # :stripe_customer_id ... hrm, hard to test in cucumber
+  validates_presence_of :package, :stripe_customer_id
 
   accepts_nested_attributes_for :user, :billing_address, :shipping_address
 
@@ -18,7 +18,7 @@ class Order < ActiveRecord::Base
   end
 
   def save_with_payment!
-    if valid?
+    unless read_attribute(:package).blank?
       customer = create_customer!
       charge! unless subscription?
     end

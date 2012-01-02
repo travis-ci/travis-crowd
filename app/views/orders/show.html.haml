@@ -1,8 +1,8 @@
 %p= link_to '&larr; Your profile'.html_safe, profile_path
 
 #order
-  %h2= order.package.name
-  %p.meta= order.created_at.to_formatted_s(:long)
+  %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
+  %p.meta= order.created_at.to_formatted_s(:short)
 
   %dl
     %dt Name

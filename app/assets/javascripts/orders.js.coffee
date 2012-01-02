@@ -1,14 +1,14 @@
 $ ->
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
-  subscription.setupForm()
+  order.setupForm()
 
-subscription =
+order =
   setupForm: ->
-    $('#toggle_shipping_address').change(subscription.toggleShippingAddress)
-    $('#new_subscription').submit ->
+    $('#toggle_shipping_address').change(order.toggleShippingAddress)
+    $('#new_order').submit ->
       $('input[type=submit]').attr('disabled', true)
       if $('#card_number').length
-        subscription.processCard()
+        order.processCard()
         false
       else
         true
@@ -23,11 +23,11 @@ subscription =
       cvc: $('#card_code').val()
       expMonth: $('#card_month').val()
       expYear: $('#card_year').val()
-    Stripe.createToken(card, subscription.handleStripeResponse)
+    Stripe.createToken(card, order.handleStripeResponse)
 
   handleStripeResponse: (status, response) ->
     if status == 200
-      $('#subscription_stripe_card_token').val(response.id)
+      $('#order_stripe_card_token').val(response.id)
       $('#new_subscription')[0].submit()
     else
       $('#stripe_error').text(response.error.message)

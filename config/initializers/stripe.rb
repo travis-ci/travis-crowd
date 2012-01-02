@@ -1,2 +1,4 @@
-Stripe.api_key = "tGaNWsIG3Qy6zvXB8wv4rEcizJpSXjF4"
-STRIPE_PUBLIC_KEY = "pk_KcSyS2qPWdT5SdrwkQg0vNSyhZgqP"
+settings = Hashr.new(YAML.load(File.read('config/settings.yml')))
+
+Stripe.api_key = settings.stripe.secret_key
+STRIPE_PUBLIC_KEY = settings.stripe.public_key

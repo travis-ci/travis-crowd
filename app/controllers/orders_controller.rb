@@ -3,12 +3,15 @@ class OrdersController < ApplicationController
   before_filter :normalize_params,   :only => [:new, :create]
 
   def create
-    user.save
-    order.save_with_payment!
-    sign_in user
-    redirect_to order, notice: "Thank you for your support!"
-  rescue ActiveRecord::RecordInvalid
-    render :new
+    if user.valid? && order.valid?
+      user.save_with_customer!(order.subscription? ? order.package.id.to_s : nil)
+      order.save_with_payment!
+      sign_in user
+      redirect_to order, notice: "Thank you for your support!"
+    else
+      p user.errors, order.errors
+      render :new
+    end
   end
 
   protected

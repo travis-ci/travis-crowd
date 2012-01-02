@@ -14,6 +14,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :github_handle
       t.string :homepage
       t.string :description
+
+      t.string :stripe_customer_id
+
       t.timestamps
     end
   end

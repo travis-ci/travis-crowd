@@ -7,7 +7,7 @@ order =
     $('#toggle_shipping_address').change(order.toggleShippingAddress)
     $('#new_order').submit ->
       $('input[type=submit]').attr('disabled', true)
-      if $('#card_number').length
+      if $('#order_card_number').length
         order.processCard()
         false
       else
@@ -19,16 +19,17 @@ order =
 
   processCard: ->
     card =
-      number: $('#card_number').val()
-      cvc: $('#card_code').val()
+      number: $('#order_card_number').val()
+      cvc: $('#order_card_cvc').val()
       expMonth: $('#card_month').val()
       expYear: $('#card_year').val()
     Stripe.createToken(card, order.handleStripeResponse)
 
   handleStripeResponse: (status, response) ->
+    console.log(status, response)
     if status == 200
-      $('#order_stripe_card_token').val(response.id)
-      $('#new_subscription')[0].submit()
+      $('#user_stripe_card_token').val(response.id)
+      $('#new_order')[0].submit()
     else
       $('#stripe_error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)

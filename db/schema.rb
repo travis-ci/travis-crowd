@@ -30,8 +30,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.string   "package"
-    t.boolean  "subscription",       :default => false, :null => false
-    t.string   "stripe_customer_id"
+    t.boolean  "subscription", :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.string   "github_handle"
     t.string   "homepage"
     t.string   "description"
+    t.string   "stripe_customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

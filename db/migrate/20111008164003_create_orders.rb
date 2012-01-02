@@ -4,7 +4,6 @@ class CreateOrders < ActiveRecord::Migration
       t.belongs_to :user
       t.string :package
       t.boolean :subscription, null: false, default: false
-      t.string :stripe_customer_id
       t.timestamps
     end
   end

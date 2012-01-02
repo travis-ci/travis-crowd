@@ -3,10 +3,10 @@
 = simple_form_for order do |f|
   = f.hidden_field :package
   = f.hidden_field :subscription
-  = f.hidden_field :stripe_card_token
 
   - unless signed_in?
     = simple_fields_for :user do |f|
+      = f.hidden_field :stripe_card_token
       %fieldset
         = f.input :name
         = f.input :email
@@ -43,15 +43,14 @@
 
   %h2 Credit Card
   %fieldset
-    - if order.stripe_card_token.present?
+    - if user.stripe_card_token.present?
       %p Has been provided.
     - else
-      = f.input :number, :as => :anonymous, :required => true
-      = f.input :security_code, :as => :anonymous, :required => true
-      = f.input :expires_at, :as => :expiry_selects
-
-  #stripe_error
-    %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+      = f.input :card_number, :as => :anonymous, :required => true, :label => 'Number'
+      = f.input :card_cvc, :as => :anonymous, :required => true, :label => 'Security code'
+      = f.input :card_expires_at, :as => :expiry_selects, :label => 'Expires at'
+    #stripe_error
+      %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 
   .actions
     = f.submit 'Confirm'

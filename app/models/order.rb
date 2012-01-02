@@ -3,11 +3,11 @@ class Order < ActiveRecord::Base
   has_one :billing_address,  as: 'addressable', class_name: 'Address', conditions: { kind: 'billing' }
   has_one :shipping_address, as: 'addressable', class_name: 'Address', conditions: { kind: 'shipping' }
 
-  validates_presence_of :package, :stripe_customer_id
+  validates_presence_of :package
 
   accepts_nested_attributes_for :user, :billing_address, :shipping_address
 
-  attr_accessor :stripe_card_token, :card_number
+  attr_accessor :card_number
 
   before_validation do
     self.shipping_address = nil if shipping_address && shipping_address.empty?
@@ -18,32 +18,17 @@ class Order < ActiveRecord::Base
   end
 
   def save_with_payment!
-    unless read_attribute(:package).blank?
-      customer = create_customer!
-      charge! unless subscription?
-    end
+    create_stripe_charge unless subscription?
     save!
   end
 
-  def create_customer!
-    attrs = { email: user.email, card: stripe_card_token }
-    attrs.merge!(plan: package.id.to_s) if subscription?
+  protected
 
-    Stripe::Customer.create(attrs).tap do |customer|
-      self.stripe_customer_id = customer.id
+    def create_stripe_charge
+      Stripe::Charge.create(description: "#{user.email} (#{package.id.to_s})", amount: package.price, currency: 'usd', customer: user.stripe_customer_id)
+    rescue Stripe::InvalidRequestError => e
+      logger.error "Stripe error while creating a stripe charge: #{e.message}"
+      errors.add :base, "There was a problem with your credit card: #{e.message}."
+      false
     end
-  rescue Stripe::InvalidRequestError => e
-    logger.error "Stripe error while creating stripe customer: #{e.message}"
-    errors.add :base, "There was a problem with your credit card: #{e.message}."
-    false
-  end
-
-  def charge!
-    attrs = { description: package.id.to_s, amount: package.price, currency: 'usd', customer: stripe_customer_id }
-    Stripe::Charge.create(attrs)
-  rescue Stripe::InvalidRequestError => e
-    logger.error "Stripe error while creating a stripe charge: #{e.message}"
-    errors.add :base, "There was a problem with your credit card: #{e.message}."
-    false
-  end
 end

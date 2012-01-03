@@ -1,86 +1,83 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
-*/
+@import "home";
 
 html, body {
-  font-family: Verdana, Helvetica, Arial;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #fafafa;
+  z-index: -2;
+}
+p, li, blockquote {
+  line-height: 140%;
+  margin: 15px 0 0 0;
+}
+ul {
+  margin: 15px 0 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+blockquote {
   font-size: 14px;
 }
-
-a img {
-  border: none;
-}
-
 a {
-  color: #0000FF;
-  text-decoration: none;
+  color: #274798;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
-
-#flash_notice, #flash_error, #flash_alert {
+#flash {
   padding: 5px 8px;
   margin: 10px 0;
-}
 
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
-}
-
-#flash_error, #flash_alert {
-  background-color: #FCC;
-  border: solid 1px #C66;
-}
-
-form label {
-  display: block;
-  margin-bottom: 2px;
-}
-
-form .input, form .actions {
-  margin: 12px 0;
-}
-form .error {
-  color: red;
-}
-
-#order {
-  width: 400px;
-  h1 {
-    font-size: 24px;
+  &.notice {
+    background-color: #CFC;
+    border: solid 1px #6C6;
   }
-}
-
-#stripe_error {
-  color: #D00;
+  &.error, &.alert {
+    background-color: #FCC;
+    border: solid 1px #C66;
+  }
 }
 
 form {
+  label {
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .input, .actions {
+    margin: 12px 0;
+  }
+  .error {
+    color: red;
+  }
+
   #shipping_address {
     display: none;
   }
+
+  #stripe_error {
+    color: #D00;
+  }
 }
 
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+html[xmlns] .clearfix {
+	display: block;
+}
+* html .clearfix {
+	height: 1%;
+}
 

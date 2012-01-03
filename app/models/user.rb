@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
 
     def create_stripe_customer(plan)
       customer = Stripe::Customer.create(email: email, card: stripe_card_token, plan: plan)
+      self.stripe_plan = plan
       self.stripe_customer_id = customer.id
     rescue Stripe::InvalidRequestError => e
       logger.error "Stripe error while creating stripe customer: #{e.message}"

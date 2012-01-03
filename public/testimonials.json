@@ -1,0 +1,101 @@
+[
+  {
+    "name": "Evan Phoenix",
+    "twitter": "evanphx",
+    "url": "http://blog.fallingsnow.net",
+    "image": "/images/testimonials/evan.png",
+    "quote": "With friends like Travis CI, we can't loose!"
+  },
+  {
+    "name": "José Valim",
+    "twitter": "josevalim",
+    "url": "http://www.plataformatec.com.br",
+    "image": "/images/testimonials/jose.jpeg",
+    "quote": "Travis is like Github for CIs. So easy to setup that everyone does it."
+  },
+  {
+    "name": "Ryan Bates",
+    "twitter": "rbates",
+    "url": "http://www.railscasts.com",
+    "image": "/images/testimonials/ryan.jpeg",
+    "quote": "@travisci I love what you're doing, keep up the great work!"
+  },
+  {
+    "name": "Nick Quaranto",
+    "twitter": "qrush",
+    "url": "http://quaran.to",
+    "image": "/images/testimonials/qrush.jpeg",
+    "quote": "I must say, I was skeptical, but @travisci is awesome."
+  },
+  {
+    "name": "Aslak Hellesoy",
+    "twitter": "aslak_hellesoy",
+    "url": "http://aslakhellesoy.com",
+    "image": "/images/testimonials/aslak.jpeg",
+    "quote": "I have used many CI systems, but Travis is the most awesome one so far!!"
+  },
+  {
+    "name": "Brian Ford",
+    "twitter": "brixen",
+    "url": "http://brightredglow.com",
+    "image": "/images/testimonials/brian.png",
+    "quote": "Travis-CI is simply killin it! What a terrific resource this will be for Ruby and other communities."
+  },
+  {
+    "name": "Sean Cribbs",
+    "twitter": "seancribbs",
+    "url": "http://seancribbs.com",
+    "image": "/images/testimonials/seancribbs.jpeg",
+    "quote": "If you haven't tried yet, do put your project on @travisci. Awesome app with many nice people behind it."
+  },
+  {
+    "name": "Roberto Decurnex",
+    "twitter": "robertodecurnex",
+    "url": "http://robertodecurnex.github.com",
+    "image": "/images/testimonials/robertodecurnex.jpeg",
+    "quote": "After Github I think this is the second best free service I have ever seen!"
+  },
+  {
+    "name": "Jeff Casimir",
+    "twitter": "j3",
+    "url": "http://jumpstartlab.com",
+    "image": "/images/testimonials/jeff.jpeg",
+    "quote": "I'm sure there was life before @travisci, but I choose to ignore it."
+  },
+  {
+    "name": "Durran Jordan",
+    "twitter": "modetojoy",
+    "url": "http://mongoid.org",
+    "image": "/images/testimonials/durran.png",
+    "quote": "@travisci thank you for the incredible service!"
+  },
+  {
+    "name": "Assaf Arkin",
+    "twitter": "assaf",
+    "url": "http://labnotes.org",
+    "image": "/images/testimonials/assaf.jpg",
+    "quote": "Travis CI is a no brainer. It’s free. It works. It’s trivial to setup."
+  },
+  {
+    "name": "Fabio Kuhn",
+    "twitter": "mordaroso",
+    "url": "http://fabiokuhn.com",
+    "image": "/images/testimonials/fabiokuhn.jpg",
+    "quote": "Big ♥ to @travisci for that awesome and free CI service."
+  },
+  {
+    "name": "Ben Hoskings",
+    "twitter": "ben_h",
+    "url": "http://benhoskin.gs",
+    "image": "/images/testimonials/ben_h.jpeg",
+    "quote": "Oh man, @travisci is a friggin' marvel. So good."
+  },
+  {
+    "name": "Alex Sharp",
+    "twitter": "ajsharp",
+    "url": "http://alexjsharp.com",
+    "image": "/images/testimonials/ajsharp.jpeg",
+    "quote": "travisci is just, mad awesome."
+  }
+]
+

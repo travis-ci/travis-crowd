@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.string   "github_handle"
     t.string   "homepage"
     t.string   "description"
+    t.string   "stripe_plan"
     t.string   "stripe_customer_id"
     t.datetime "created_at"
     t.datetime "updated_at"

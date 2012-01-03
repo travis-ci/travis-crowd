@@ -1,5 +1,5 @@
 Saas::Application.routes.draw do
-  root to: 'home#index'
+  root to: 'home#show'
 
   resources :orders
 

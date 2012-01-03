@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
+  <meta charset="UTF-8">
   <title>Travis CI needs your help</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "https://js.stripe.com/v1/", "application" %>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'https://js.stripe.com/v1', 'application' %>
   <%= csrf_meta_tags %>
-  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+  <%= tag :meta, :name => 'stripe-key', :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
+  <header id="top">
+    <div>
+      <h1>Travis CI</h1>
+      <h2>Continuous Integration for the Open Source Community</h2>
+    </div>
+    <div id="github">
+      <a href="https://github.com/travis-ci/travis-crowdfunding" title="Fork me on GitHub">Fork me on GitHub</a>
+    </div>
+  </header>
+
   <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <%= content_tag :div, msg, :id => "flash", :class => name %>
   <% end %>
   <%= yield %>
+
+  <%= render partial: 'layouts/footer' %>
 </body>
 </html>
+

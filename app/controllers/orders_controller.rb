@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_user!, :only => :show
   before_filter :normalize_params,   :only => [:new, :create]
+  before_filter :guard_duplicate_subscription, :only => :new
+
+  def new
+  end
 
   def create
     if user.valid? && order.valid?
@@ -35,6 +39,10 @@ class OrdersController < ApplicationController
       !!params[:subscription]
     end
 
+    def subscribed?
+      signed_in? && current_user.subscriptions.any?
+    end
+
     def normalize_params
       params[:order] ||= { package: params[:package] || 'tiny', subscription: subscription? }
       [:billing, :shipping].each { |kind| normalize_address_params(kind) }
@@ -43,5 +51,12 @@ class OrdersController < ApplicationController
     def normalize_address_params(kind)
       params[:order][:"#{kind}_address_attributes"] ||= { name: user.name }
       params[:order][:"#{kind}_address_attributes"][:kind] = kind
+    end
+
+    def guard_duplicate_subscription
+      if subscription? && subscribed?
+        flash[:error] = "You already have a subscription with this account. To upgrade your subscription please send an email to contact@travis-ci.org"
+        redirect '/'
+      end
     end
 end

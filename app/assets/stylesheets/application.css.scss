@@ -1,4 +1,6 @@
 @import "home";
+@import "form";
+@import "compass/utilities/general/clearfix";
 
 html, body {
   position: relative;
@@ -26,6 +28,64 @@ a {
   color: #274798;
 }
 
+header > div {
+  position: relative;
+  width: 960px;
+  margin: auto;
+}
+
+#top {
+  padding: 20px 0;
+  background-color: #fff;
+
+  h1 {
+    width: 200px;
+    height: 64px;
+    margin: 0px;
+    background: url(/images/travis-ci.png) no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+  }
+  h2 {
+    position: absolute;
+    margin: 0;
+    top: 27px;
+    right: 0;
+    color: #999;
+    font-weight: normal;
+    font-size: 17px;
+  }
+  #github {
+    position: absolute;
+    z-index: 100;
+    top: 0px;
+    right: 0px;
+    width: 130px;
+    height: 140px;
+    overflow: hidden;
+
+    a {
+      display: block;
+      width: 250px;
+      height: 19px;
+      margin: 40px 0 0 -45px;
+      padding: 3px 0;
+      border-top: 2px solid #EF9F4C;
+      border-bottom: 2px solid #EF9F4C;
+      background: #EF7600;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 19px;
+      letter-spacing: -1px;
+      text-shadow: 0 0 10px #522600;
+      @include transform(rotate(45deg));
+      @include box-shadow(rgba(0, 0, 0, 0.5) 1px 1px 10px, rgba(0, 0, 0, 0.07) 0 0 3px 1px inset);
+    }
+  }
+}
 
 #flash {
   padding: 5px 8px;
@@ -41,25 +101,41 @@ a {
   }
 }
 
-form {
-  label {
-    display: block;
-    margin-bottom: 2px;
-  }
+footer {
+  margin-top: 40px;
+  background-color: #f2f4f9;
 
-  .input, .actions {
-    margin: 12px 0;
+  div {
+    width: 880px;
+    height: 130px;
+    margin: 0 auto;
+    padding: 35px 0 0 0;
+    background: url(/images/footer-travis.png) no-repeat 460px 35px;
   }
-  .error {
-    color: red;
+  h2 {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
   }
-
-  #shipping_address {
-    display: none;
+  ul {
+    margin: 0;
   }
-
-  #stripe_error {
-    color: #D00;
+  div > ul {
+    margin-left: 0px;
+  }
+  div > ul > li {
+    display: inline-block;
+    float: left;
+    margin-right: 40px;
+  }
+  li {
+    line-height: 160%;
+    font-size: 15px;
+    color: #999;
+    margin: 0;
+  }
+  a {
+    color: #89a;
   }
 }
 

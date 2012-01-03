@@ -2,9 +2,11 @@ $ ->
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
   order.setupForm()
 
+  elements = $('.hint').closest('.input').find('input')
+  elements.tipsy(title: (-> $(this).parent().find('.hint').html()), gravity: 'w', offset: 5, delayIn: 200);
+
 order =
   setupForm: ->
-    $('#toggle_shipping_address').change(order.toggleShippingAddress)
     $('#new_order').submit ->
       $('input[type=submit]').attr('disabled', true)
       if $('#order_card_number').length
@@ -12,10 +14,6 @@ order =
         false
       else
         true
-
-  toggleShippingAddress: ->
-    element = $('#shipping_address')
-    if element.is(':visible') then element.hide() else element.show()
 
   processCard: ->
     card =

@@ -186,21 +186,21 @@
       <h3>Silver</h3>
       <p>Exposure on Travis CI pages and conference talks.</p>
       <p>3 hour remote pairing or support with Josh, Sven or one of our volunteers.<sup>2</sup></p>
-      <button>Donate</button>
+      <%= link_to 'Donate', new_order_path(:package => 'silver') %>
     </li>
     <li class="gold">
       <div class="price-tag">3000 EUR</div>
       <h3>Gold</h3>
       <p>Prominent exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh or Sven at your office<sup>3</sup> for a day for support or pairing sessions.<sup>2</sup></p>
-      <button>Donate</button>
+      <%= link_to 'Donate', new_order_path(:package => 'gold') %>
     </li>
     <li class="platin">
       <div class="price-tag">6000 EUR</div>
       <h3>platinum</h3>
       <p>Premium exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh and/or Sven at your office<sup>3</sup> for a day or two for support or pairing sessions.<sup>2</sup></p>
-      <button>Donate</button>
+      <%= link_to 'Donate', new_order_path(:package => 'platin') %>
     </li>
   </ul>
   <ul class="footnotes">

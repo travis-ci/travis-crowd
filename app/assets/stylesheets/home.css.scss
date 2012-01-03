@@ -6,12 +6,6 @@
 @import url(http://fonts.googleapis.com/css?family=Monsieur+La+Doulaise);
 @import url(http://fonts.googleapis.com/css?family=Tangerine);
 
-header > div {
-  position: relative;
-  width: 960px;
-  margin: auto;
-}
-
 section {
   width: 880px;
   margin: 20px auto 0 auto;
@@ -160,10 +154,10 @@ section {
     text-shadow: 2px 2px 0px #666;
     cursor: hand;
     @include border-radius(6px);
-    @include linear-gradient(#348629 100%, #3f9c33 0%);
+    @include background-image(linear-gradient(#3f9c33 0%, #348629 100%));
 
     &:hover {
-      @include linear-gradient(#158F07 100%, #1CBE0A 0%);
+      @include background-image(linear-gradient(#1CBE0A 0%, #158F07 100%));
     }
   }
   .price-tag {
@@ -226,59 +220,6 @@ section:hover .sidenote {
   display: block;
 }
 
-
-#top {
-  padding: 20px 0;
-  background-color: #fff;
-
-  h1 {
-    width: 200px;
-    height: 64px;
-    margin: 0px;
-    background: url(/images/travis-ci.png) no-repeat;
-    overflow: hidden;
-    text-indent: -9999px;
-  }
-  h2 {
-    position: absolute;
-    margin: 0;
-    top: 27px;
-    left: 350px;
-    color: #999;
-    font-weight: normal;
-    font-size: 17px;
-  }
-  #github {
-    position: absolute;
-    z-index: 100;
-    top: 0px;
-    right: 0px;
-    width: 130px;
-    height: 140px;
-    overflow: hidden;
-
-    a {
-      display: block;
-      width: 250px;
-      height: 19px;
-      margin: 40px 0 0 -45px;
-      padding: 3px 0;
-      border-top: 2px solid #EF9F4C;
-      border-bottom: 2px solid #EF9F4C;
-      background: #EF7600;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      line-height: 19px;
-      letter-spacing: -1px;
-      text-shadow: 0 0 10px #522600;
-      @include transform(rotate(45deg));
-      @include box-shadow(rgba(0, 0, 0, 0.5) 1px 1px 10px, rgba(0, 0, 0, 0.07) 0 0 3px 1px inset);
-    }
-  }
-}
 
 #blob {
   position: relative;
@@ -837,43 +778,6 @@ section:hover .sidenote {
   font-size: 16px;
 }
 
-footer {
-  margin-top: 40px;
-  background-color: #f2f4f9;
-
-  div {
-    width: 880px;
-    height: 240px;
-    margin: 0 auto;
-    padding: 35px 0 0 0;
-    background: url(/images/footer-travis.png) no-repeat 460px 35px;
-  }
-  h2 {
-    margin-top: 0;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  ul {
-    margin: 0;
-  }
-  div > ul {
-    margin-left: 0px;
-  }
-  div > ul > li {
-    display: inline-block;
-    float: left;
-    margin-right: 40px;
-  }
-  li {
-    line-height: 160%;
-    font-size: 15px;
-    color: #999;
-    margin: 0;
-  }
-  a {
-    color: #89a;
-  }
-}
 
 @-moz-keyframes mouth {
 	0%    { bottom:   2px; 	}

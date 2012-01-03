@@ -1,9 +1,13 @@
 Saas::Application.routes.draw do
   root to: 'home#show'
 
-  resources :orders
+  match 'packages/:package', as: :new_order, to: 'orders#new'
 
-  match '/profile', to: 'profile#show', as: :profile
+  resources :orders, except: :new
+
+  match '/profile', to: 'profiles#show', as: :profile
+  match '/donators.json', to: 'profiles#index', as: :donators
+
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }
 
   as :user do

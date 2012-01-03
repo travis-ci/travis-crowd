@@ -1,9 +1,9 @@
 %tr
   %td= link_to order.package.name, order
-  %td= order.created_at.to_formatted_s(:short)
-  %td= number_to_currency order.package.price_as_dollars
+  %td= l order.created_at, format: :short
+  %td= number_to_currency order.total_in_dollars
   - if order.subscription?
-    %td= link_to 'Cancel', order, :method => :delete, :alert => 'Are you sure you want to cancel this order?'
+    %td= link_to 'Cancel', order, method: :delete, alert: 'Are you sure you want to cancel this order?'
   - else
     %td= link_to 'Invoice', order
 

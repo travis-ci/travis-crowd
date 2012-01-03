@@ -17,6 +17,10 @@ class Order < ActiveRecord::Base
     @package ||= Package.new(read_attribute(:package))
   end
 
+  def total_in_dollars
+    package.price_in_dollars
+  end
+
   def save_with_payment!
     create_stripe_charge unless subscription?
     save!

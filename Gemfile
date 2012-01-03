@@ -13,6 +13,7 @@ gem 'omniauth-twitter'
 gem 'simple_form'
 gem 'haml'
 gem 'hashr'
+gem 'gravatar-ultimate'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'

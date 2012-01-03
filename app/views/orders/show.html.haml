@@ -1,46 +1,27 @@
-%p= link_to '&larr; Your profile'.html_safe, profile_path
+%section.paper
+  %p.navigation= link_to 'Your profile &rarr;'.html_safe, profile_path
 
-#order
-  %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
-  %p.meta= order.created_at.to_formatted_s(:short)
+  #order
+    %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
 
-  %dl
-    %dt Name
-    %dd= current_user.name
-    %dt Email
-    %dd= current_user.email
-    %dt Twitter
-    %dd= current_user.twitter_handle
-    %dt Github
-    %dd= current_user.github_handle
-    %dt Homepage
-    %dd= current_user.homepage
-
-  %h1 Billing Address
-  %dl
-    %dt Street
-    %dd= billing_address.street
-    %dt Zip
-    %dd= billing_address.zip
-    %dt City
-    %dd= billing_address.city
-    - if billing_address.state.present?
-      %dt State
-      %dd= billing_address.state
-    %dt Country
-    %dd= billing_address.country
-
-  - if shipping_address
-    %h1 Shipping Address
     %dl
+      %dt Price
+      %dd= number_to_currency order.total_in_dollars
+      %dt Ordered
+      %dd= l order.created_at, format: :short
+
+    %h3 Address
+    %dl
+      %dt Name
+      %dd= billing_address.name
       %dt Street
-      %dd= shipping_address.street
+      %dd= billing_address.street
       %dt Zip
-      %dd= shipping_address.zip
+      %dd= billing_address.zip
       %dt City
-      %dd= shipping_address.city
-      - if shipping_address.state.present?
+      %dd= billing_address.city
+      - if billing_address.state.present?
         %dt State
-        %dd= shipping_address.state
+        %dd= billing_address.state
       %dt Country
-      %dd= shipping_address.country
+      %dd= billing_address.country

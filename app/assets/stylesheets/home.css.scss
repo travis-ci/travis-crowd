@@ -220,6 +220,27 @@ section:hover .sidenote {
   display: block;
 }
 
+.footnotes {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+
+  li {
+    position: relative;
+    margin: 0;
+    padding-left: 10px;
+    line-height: 160%;
+
+    sup {
+      position: absolute;
+      left: 0;
+      top: -0.33em;
+    }
+    a {
+      color: inherit;
+    }
+  }
+}
 
 #blob {
   position: relative;
@@ -505,22 +526,9 @@ section:hover .sidenote {
     background-color: white;
     a {
       width: 209px;
-    .price-tag {
-      top: 17px;
-      right: -22px;
-    }
-  }
-  }
-  .footnotes {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #666;
-
-    li {
-      margin: 0;
-
-      a {
-        color: inherit;
+      .price-tag {
+        top: 17px;
+        right: -22px;
       }
     }
   }
@@ -565,13 +573,6 @@ section:hover .sidenote {
       float: left;
       color: #666;
     }
-    &.boxed li {
-      padding: 8px;
-      margin: 0 15px 15px 0;
-      border: 1px solid #ddd;
-      @include border-radius(8px);
-      @include box-shadow(#ddd 0px 0px 5px);
-    }
     img {
       float: left;
       margin-right: 10px;
@@ -588,6 +589,13 @@ section:hover .sidenote {
       font-size: 14px;
     }
 
+    &.huge li, &.big li, &.medium li, {
+      padding: 8px;
+      margin: 0 15px 15px 0;
+      border: 1px solid #ddd;
+      @include border-radius(8px);
+      @include box-shadow(#ddd 0px 0px 5px);
+    }
     &.huge {
       li {
        width: 415px;
@@ -658,6 +666,9 @@ section:hover .sidenote {
         }
       }
     }
+  }
+  .sidenote {
+    top: 80px;
   }
 }
 

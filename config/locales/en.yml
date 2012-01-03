@@ -2,7 +2,14 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      short: "%Y-%m-%d %H:%M"
+  number:
+    currency:
+      format:
+        format: "%u %n"
+        unit: USD
 
 devise:
   sessions:

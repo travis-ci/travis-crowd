@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-  before_filter :authenticate_user!, :only => :show
-  before_filter :normalize_params,   :only => [:new, :create]
-  before_filter :guard_duplicate_subscription, :only => :new
+  before_filter :authenticate_user!, only: :show
+  before_filter :normalize_params,   only: [:new, :create]
+  before_filter :guard_duplicate_subscription, only: :new
 
   def new
   end

@@ -31,13 +31,14 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.integer  "user_id"
     t.string   "package"
     t.boolean  "subscription", :default => false, :null => false
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "",   :null => false
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.string   "github_handle"
     t.string   "homepage"
     t.string   "description"
+    t.boolean  "display",                             :default => true
     t.string   "stripe_plan"
     t.string   "stripe_customer_id"
     t.datetime "created_at"

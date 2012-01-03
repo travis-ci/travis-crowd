@@ -1,4 +1,6 @@
 %section.paper
+  %p.navigation
+    = link_to 'Sign out', destroy_session_path if signed_in?
 
   = simple_form_for order do |f|
     = f.hidden_field :package
@@ -17,9 +19,12 @@
             = f.input :email
             = f.input :password
           %fieldset
-            = f.input :twitter_handle, label: 'Twitter', hint: 'We display your Twitter handle.', required: false
-            = f.input :github_handle,  label: 'Github',  hint: 'We display your Github handle.',  required: false
-            = f.input :homepage, hint: 'We display your homepage.',  required: false
+            = f.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false
+            = f.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
+            = f.input :homepage, required: false
+          %fieldset.wide
+            = f.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(params[:package])
+            = f.input :display, :as => 'boolean', :label => display_for(params[:package]), input_html: { checked: true }
 
     #billing_address.address
       %h3 Address
@@ -44,6 +49,11 @@
           = f.input :card_expires_at, as: :expiry_selects, label: 'Expires'
         #stripe_error
           %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
+
+    #comment
+      %h3 Leave us a note
+      %fieldset.wide
+        = f.input :comment, :as => 'text', required: false
 
     .actions
       = f.submit 'Confirm'

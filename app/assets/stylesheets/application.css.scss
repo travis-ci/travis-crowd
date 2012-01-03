@@ -1,5 +1,6 @@
 @import "home";
 @import "form";
+@import "compass";
 @import "compass/utilities/general/clearfix";
 
 html, body {
@@ -27,7 +28,13 @@ blockquote {
 a {
   color: #274798;
 }
-
+p sup {
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+	line-height: 0;
+	font-size: 75%;
+}
 header > div {
   position: relative;
   width: 960px;
@@ -137,6 +144,63 @@ footer {
   a {
     color: #89a;
   }
+}
+
+.navigation {
+  float: right;
+}
+
+#profile {
+  h2 {
+    display: block;
+    line-height: 50px;
+
+    img {
+      float: left;
+      margin-right: 18px;
+      @include border-radius(8px);
+      @include box-shadow(0px 0px 2px #ddd);
+    }
+  }
+  & > div {
+    @include clearfix();
+  }
+  #contact, #packages, #subscriptions {
+    width: 50%;
+  }
+  #contact {
+    float: left;
+    line-height: 160%;
+  }
+  #packages, #subscriptions {
+    float: right;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+
+    tr:nth-child(odd) {
+      background-color: #f6f6f6;
+    }
+    td {
+      padding: 8px 16px;
+    }
+  }
+}
+dl {
+  @include clearfix();
+  line-height: 24px;
+}
+dt {
+  float: left;
+  clear: left;
+  width: 60px;
+  font-size: 15px;
+  color: #999;
+}
+dd {
+  float: left;
 }
 
 .clearfix:after {

@@ -68,3 +68,74 @@ $.extend(Testimonials.prototype,
 $.fn.testimonials = ->
   new Testimonials(this)
 
+Donator = (package, data) ->
+  this.package = package
+  this.data = data
+  this
+$.extend(Donator.prototype,
+  render: ->
+    tag = $('<li></li>')
+    if this.isBoxed()
+      tag.append($('<img src="' + this.data.gravatar_url + '">'))
+      tag.append(this.heading())
+      tag.append($('<p>' + this.truncate(this.data.description) + '</p>')) if this.isDescription()
+      tag.append(this.links().join(', '))
+    else
+      tag.append(this.heading())
+    tag
+  ,
+  heading: ->
+    '<h4>' + this.links().shift() + '</h4>'
+  ,
+  links: ->
+    return this._links if this._links
+    this._links = []
+    this._links.push('<a href="' + this.data.homepage + '">' + this.data.name + '</a>') if this.data.homepage
+    this._links.push('<a href="http://twitter.com/' + this.data.twitter_handle + '">@' + this.data.twitter_handle + '</a>') if this.data.twitter_handle
+    this._links.push('<a href="http://github.com/' + this.data.github_handle + '">' + this.data.github_handle + '</a>') if this.data.github_handle
+    this._links.push(this.data.name) if this._links.length == 0
+    this._links
+  ,
+  isBoxed: ->
+    ['medium', 'big', 'huge'].indexOf(this.package) != -1
+  ,
+  isDescription: ->
+    ['big', 'huge'].indexOf(this.package) != -1
+  ,
+  lengths:
+    big: 25,
+    huge: 125
+  ,
+  truncate: (string) ->
+    length = this.lengths[this.package]
+    if string.length > length
+      string.slice(0, length) + '&hellip;'
+    else
+      string
+)
+
+Donators = (package, donators) ->
+  this.package = package
+  this.donators = donators
+  this
+$.extend(Donators.prototype,
+  render: ->
+    _this = this
+    list = $('<ul></ul>')
+    $.each(this.donators, (ix, donator) ->
+      list.append(new Donator(_this.package, donator).render())
+    );
+    return list;
+)
+
+$.fn.donators = ->
+  _this = this
+  $.get('/donators.json', ((data) ->
+    $.each(data, (package, donators) ->
+      element = $('<li class="' + package + '"></li>')
+      element.append(new Donators(package, donators).render())
+      _this.prepend(element)
+    )
+  ), 'json');
+
+

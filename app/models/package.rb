@@ -19,7 +19,11 @@ class Package
     PACKAGES[id]
   end
 
-  def price_as_dollars
+  def price_in_dollars
     price / 100
+  end
+
+  def sort_order
+    PACKAGES.keys.index(id)
   end
 end

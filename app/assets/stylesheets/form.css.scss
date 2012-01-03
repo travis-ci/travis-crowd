@@ -28,6 +28,9 @@ form {
     &:nth-child(odd) {
       margin-right: 0;
     }
+    &.wide {
+      margin: 0;
+    }
 
     label {
       display: block;
@@ -42,18 +45,41 @@ form {
       text-shadow: 2px 2px 0px #fff;
       color: #666;
     }
-    input {
+    input, textarea {
       float: left;
-      width: 300px;
       margin-top: 4px;
       padding: 8px;
       border: 1px solid #ddd;
       font-size: 16px;
       @include border-radius(8px);
     }
+    input {
+      width: 300px;
+    }
+    textarea {
+      height: 40px;
+      width: 300px;
+    }
+    &.wide textarea {
+      width: 740px;
+    }
     select {
       font-size: 18px;
       margin-top: 10px;
+    }
+    .boolean {
+      input {
+        margin: 8px 8px 0 86px;
+        width: auto;
+      }
+      label {
+        clear: none;
+        width: 750px;
+        margin-top: 8px;
+        line-height: 16px;
+        text-align: left;
+        font-size: 12px;
+      }
     }
     .country select {
       width: 318px;
@@ -61,6 +87,17 @@ form {
     .hint {
       display: none;
     }
+    p {
+      clear: both;
+      width: 740px;
+      margin-left: 85px;
+      padding-top: 8px;
+      font-size: 13px;
+      color: #666;
+    }
+  }
+  #comment fieldset {
+    margin-top: 24px;
   }
 
   .inputs {

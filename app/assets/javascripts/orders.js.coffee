@@ -2,7 +2,7 @@ $ ->
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
   order.setupForm()
 
-  elements = $('.hint').closest('.input').find('input')
+  elements = $('.hint').closest('.input').find('input, textarea')
   elements.tipsy(title: (-> $(this).parent().find('.hint').html()), gravity: 'w', offset: 5, delayIn: 200);
 
 order =

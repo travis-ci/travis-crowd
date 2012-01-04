@@ -177,7 +177,6 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (!= 1.3.0, ~> 1.1)
-    sqlite3 (1.3.5)
     stripe (1.5.25)
       rest-client (~> 1.4)
     term-ansicolor (1.0.7)
@@ -220,6 +219,5 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   simple_form
   spork
-  sqlite3
   stripe
   uglifier (>= 1.0.3)

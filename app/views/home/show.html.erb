@@ -77,7 +77,9 @@
 
 <section id="please-donate" class="paper">
   <div id="results" class="handwritten">
-    To date <%= results[:users] %> people + <%= results[:companies] %> companies have donated <%= number_to_currency results[:total] %> in total. This puts a huge :D on our face. We love you guys.
+    To date <%= results[:users] %> people + <%= results[:companies] %> companies
+    have donated <em><%= number_to_currency results[:total], precision: 0 %></em> in total.
+    This puts a huge :D on our face. We love you guys.
   </div>
   <h2 class="ribbon">Please donate!</h2>
   <p>Donating to a fun project should be even more fun than just fun. So we made it fun :)</p>

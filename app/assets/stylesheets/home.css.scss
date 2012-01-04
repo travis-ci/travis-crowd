@@ -357,12 +357,17 @@ section:hover .sidenote {
   float: right;
   margin-top: -30px;
   margin-right: -90px;
-  width: 220px;
-  padding: 33px 14px 10px 15px;
+  width: 225px;
+  padding: 33px 10px 10px 15px;
   background: url(/images/index-card.png) top center;
   font-size: 18px;
   @include rotate(10deg);
   @include box-shadow(#ddd 3px 3px 6px);
+
+  em {
+    background-color: #FFF780;
+    font-style: normal;
+  }
 
   // &:before, &:after {
   //   content: ' ';
@@ -523,7 +528,6 @@ section:hover .sidenote {
     margin-top: 32px;
     font-family: "Tangerine";
     font-size: 32px;
-    font-weight: bold;
     color: #333;
     text-shadow: 1px 1px 1px #ddd;
   }

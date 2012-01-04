@@ -79,4 +79,77 @@ $.fn.testimonials = function() {
   new Testimonials(this);
 };
 
+var Donator = function(package, data) {
+  this.package = package;
+  this.data = data;
+}
+$.extend(Donator.prototype, {
+  render: function() {
+    var tag = $('<li></li>');
+    if(this.isBoxed()) {
+      tag.append($('<img src="' + this.data.gravatar_url + '">'));
+      tag.append(this.heading());
+      if(this.isDescription()) {
+        tag.append($('<p>' + this.truncate(this.data.description) + '</p>'));
+      }
+      tag.append(this.links().join(', '))
+    } else {
+      tag.append(this.heading());
+    }
+    return tag;
+  },
+  heading: function() {
+    return '<h4>' + this.links().shift() + '</h4>';
+  },
+  links: function() {
+    if(this._links) return this._links;
+    this._links = [];
+    if(this.data.homepage) this._links.push('<a href="' + this.data.homepage + '">' + this.data.name + '</a>');
+    if(this.data.twitter_handle) this._links.push('<a href="http://twitter.com/' + this.data.twitter_handle + '">@' + this.data.twitter_handle + '</a>');
+    if(this.data.github_handle) this._links.push('<a href="http://github.com/' + this.data.github_handle + '">' + this.data.github_handle + '</a>');
+    return this._links;
+  },
+  isBoxed: function() {
+    return ['medium', 'big', 'huge'].indexOf(this.package) != -1;
+  },
+  isDescription: function() {
+    return ['big', 'huge'].indexOf(this.package) != -1;
+  },
+  lengths: {
+    big: 25,
+    huge: 125
+  },
+  truncate: function(string) {
+    var length = this.lengths[this.package];
+    if(string.length > length) {
+      return string.slice(0, length) + '&hellip;'
+    } else {
+      return string;
+    }
+  }
+});
 
+var Donators = function(package, donators) {
+  this.package = package;
+  this.donators = donators;
+}
+$.extend(Donators.prototype, {
+  render: function() {
+    var _this = this;
+    var list = $('<ul></ul>');
+    $.each(this.donators, function(ix, donator) {
+      list.append(new Donator(_this.package, donator).render());
+    });
+    return list;
+  },
+});
+$.fn.donators = function() {
+  var _this = this;
+  $.get('/donators.json', function(data) {
+    $.each(data, function(package, donators) {
+      var element = $('<li class="' + package + '"></li>');
+      element.append(new Donators(package, donators).render());
+      _this.prepend(element);
+    });
+  }, 'json');
+};

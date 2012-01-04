@@ -1,0 +1,17 @@
+{
+  "tiny":[
+    {"description":"Software Engineer and Entrepreneur, Hacker at @ConnectEvrythng, Organizer of @rubyshift, Software Engineer and Entrepreneur","github_handle":"svenfuchs","homepage":"http://svenfuchs.com","name":"Sven Fuchs","twitter_handle":"svenfuchs","gravatar_url":"http://www.gravatar.com/avatar/402602a60e500e85f2f5dc1ff3648ecb?size=120"}
+  ],
+  "small":[
+    {"description":"Software Engineer and Entrepreneur, Hacker at @ConnectEvrythng, Organizer of @rubyshift, Software Engineer and Entrepreneur","github_handle":"svenfuchs","homepage":"http://svenfuchs.com","name":"Sven Fuchs","twitter_handle":"svenfuchs","gravatar_url":"http://www.gravatar.com/avatar/402602a60e500e85f2f5dc1ff3648ecb?size=120"}
+  ],
+  "medium":[
+    {"description":"Software Engineer and Entrepreneur, Hacker at @ConnectEvrythng, Organizer of @rubyshift, Software Engineer and Entrepreneur","github_handle":"svenfuchs","homepage":"http://svenfuchs.com","name":"Sven Fuchs","twitter_handle":"svenfuchs","gravatar_url":"http://www.gravatar.com/avatar/402602a60e500e85f2f5dc1ff3648ecb?size=120"}
+  ],
+  "big":[
+    {"description":"Software Engineer and Entrepreneur, Hacker at @ConnectEvrythng, Organizer of @rubyshift, Software Engineer and Entrepreneur","github_handle":"svenfuchs","homepage":"http://svenfuchs.com","name":"Sven Fuchs","twitter_handle":"svenfuchs","gravatar_url":"http://www.gravatar.com/avatar/402602a60e500e85f2f5dc1ff3648ecb?size=120"}
+  ],
+  "huge":[
+    {"description":"Software Engineer and Entrepreneur, Hacker at @ConnectEvrythng, Organizer of @rubyshift, Software Engineer and Entrepreneur","github_handle":"svenfuchs","homepage":"http://svenfuchs.com","name":"Sven Fuchs","twitter_handle":"svenfuchs","gravatar_url":"http://www.gravatar.com/avatar/402602a60e500e85f2f5dc1ff3648ecb?size=120"}
+  ]
+}

@@ -29,6 +29,8 @@
         section.hasClass('collapsed') ? section.removeClass('collapsed') : section.addClass('collapsed');
         return false;
       });
+
+      $('#donators').donators();
     })
   </script>
 </head>
@@ -229,7 +231,8 @@
   <section id="thanks-guys" class="paper">
     <h2>Thank you, guys!</h2>
     <p>You will be listed here by default if you donate. Please mention if you do not want to be listed.</p>
-    <ul class="clearfix">
+    <ul class="clearfix" id="donators">
+      <!--
       <li class="huge boxed">
         <ul>
           <li>
@@ -296,7 +299,7 @@
         <a href="http://twitter.com/#!/ifesdjeen">@ifesdjeen</a>,
         <a href="http://twitter.com/#!/_beai">@_beai</a>,
         <a href="http://twitter.com/#!/CesarioGW">@CesarioGW</a>
-      </li>
+      </li>-->
     </ul>
     <div class="sidenote right handwritten">
       ZOMMMG!!1!<br>

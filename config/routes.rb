@@ -1,7 +1,8 @@
 Saas::Application.routes.draw do
   root to: 'home#show'
 
-  match 'packages/:package', as: :new_order, to: 'orders#new'
+  match 'packages/:package', as: :new_package, to: 'orders#new'
+  match 'subscriptions/:package', as: :new_subscription, to: 'orders#new', subscription: true
 
   resources :orders, except: :new
 

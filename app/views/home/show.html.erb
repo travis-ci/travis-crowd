@@ -3,16 +3,18 @@
     $('.slides').slides({ speed: 4000, fade: 800 });
     $('#testimonials ul').testimonials();
     $('#donators').donators();
+    $('.switch').switch(function(value) {
+      console.log(value)
+      $('#packages, #subscriptions').hide();
+      $('#' + value).show();
+    });
 
     var heads = $('#rails-core li');
     heads.click(function() {
       heads.removeClass('active');
-      /* if(yehuda === undefined) {
-        yehuda = createSample(audioHost, 'yehuda');
-      }
-      yehuda.play(); */
       $(this).addClass('active');
-      /* $(this).children('.bubble').text('Ring, ring!'); */
+      voices[$(this).attr('id')].play();
+      setTimeout(function() { heads.removeClass('active') }, 1200);
       return false;
     });
 
@@ -57,19 +59,19 @@
       <h4 class="handwritten">Please spread the word!</h4>
       <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical">Tweet</a>
       <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-      <!-- <g:plusone size="tall" href="http://railslove.myshopify.com"></g:plusone> -->
-      <!-- <script type="text/javascript"> -->
-      <!--   window.___gcfg = { lang: 'en-GB' }; -->
-      <!--   (function() { -->
-      <!--     var po = document.createElement('script'); -->
-      <!--     po.type = 'text/javascript'; -->
-      <!--     po.async = true; -->
-      <!--     po.src = 'https://apis.google.com/js/plusone.js'; -->
-      <!--     var s = document.getElementsByTagName('script')[0]; -->
-      <!--     s.parentNode.insertBefore(po, s); -->
-      <!--   })(); -->
-      <!-- </script> -->
-      <div class="fb-like" data-href="http://railslove.myshopify.com" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="arial"></div>
+      <g:plusone size="tall" href="http://railslove.myshopify.com"></g:plusone>
+      <script type="text/javascript">
+        window.___gcfg = { lang: 'en-GB' };
+        (function() {
+          var po = document.createElement('script');
+          po.type = 'text/javascript';
+          po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+      <div class="fb-like" data-href="http://support.travis-ci.org" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false" data-font="arial"></div>
     </div>
 </header>
 
@@ -77,54 +79,104 @@
   <h2 class="ribbon">Please donate!</h2>
   <p>Donating to a fun project should be even more fun than just fun. So we made it fun :)</p>
   <p>We've got some <a href="#stickers">awesome stickers</a> hot off the press as well as a bunch of <a href="#ringtones">ringtones and sounds</a> from  Yehuda, Aaron, Jose and Jon. And how about a virtual cup of tea with Josh and Sven on Skype or even a one hour remote pairing session with one of our fantastic volunteers!<sup>1</sup></p>
-  <ul class="packages clearfix">
-    <li class="tiny">
-      <div class="price-tag">10 EUR</div>
-      <h3>Tiny</h3>
-      <p>A cool Travis CI sticker and access to the ringtones and sounds.</p>
-      <%= link_to 'Donate', new_order_path(package: 'tiny') %>
-    </li>
-    <li class="small">
-      <div class="price-tag">35 EUR</div>
-      <h3>Small</h3>
-      <p>3 stickers, access to ringtones &amp; sounds.</p>
-      <p>Plus: a personal thank you from the Travis CI team</p>
-      <%= link_to 'Donate', new_order_path(package: 'small') %>
-    </li>
-    <li class="medium">
-      <div class="price-tag">70 EUR</div>
-      <h3>Medium</h3>
-      <p>All the stuff from the previous plan with all the Travis CI stickers.</p>
-      <p>Plus: you get on the waiting list for Travis CI pro beta access.</p>
-      <%= link_to 'Donate', new_order_path(package: 'medium') %>
-    </li>
-    <li class="big">
-      <div class="price-tag">200 EUR</div>
-      <h3>Big</h3>
-      <p>All the stuff from the previous plan.</p>
-      <p>Plus: 50 EUR credit for your future Travis CI pro account.</p>
-      <p>And a skype cup of tea with Josh &amp; Sven.</p>
-      <%= link_to 'Donate', new_order_path(package: 'big') %>
-    </li>
-    <li class="huge">
-      <div class="price-tag">500 EUR</div>
-      <h3>Huge</h3>
-      <p>All the stuff from the previous plan plus:</p>
-      <p>200 EUR credit for your future Travis CI pro account.</p>
-      <p>And 1 hour remote pairing or support with one of our volunteers.</p>
-      <%= link_to 'Donate', new_order_path(package: 'huge') %>
-    </li>
-  </ul>
+  <div class="switch">
+    <label for="type_package" class="on" value="packages">One off</label>
+    <label for="type_subscription" value="subscriptions">Subscription</label>
+  </div>
+  <div id="packages">
+    <h3>Packages</h3>
+    <ul class="packages clearfix">
+      <li class="tiny">
+        <div class="price-tag">10 EUR</div>
+        <h4>Tiny</h4>
+        <p>A cool Travis CI sticker and access to the ringtones and sounds.</p>
+        <%= link_to 'Donate', new_package_path(package: 'tiny') %>
+      </li>
+      <li class="small">
+        <div class="price-tag">35 EUR</div>
+        <h4>Small</h4>
+        <p>3 stickers, access to ringtones &amp; sounds.</p>
+        <p>Plus: a personal thank you from the Travis CI team</p>
+        <%= link_to 'Donate', new_package_path(package: 'small') %>
+      </li>
+      <li class="medium">
+        <div class="price-tag">70 EUR</div>
+        <h4>Medium</h4>
+        <p>All the stuff from the previous plan with all the Travis CI stickers.</p>
+        <p>Plus: you get on the waiting list for Travis CI pro beta access.</p>
+        <%= link_to 'Donate', new_package_path(package: 'medium') %>
+      </li>
+      <li class="big">
+        <div class="price-tag">200 EUR</div>
+        <h4>Big</h4>
+        <p>All the stuff from the previous plan.</p>
+        <p>Plus: 50 EUR credit for your future Travis CI pro account.</p>
+        <p>And a skype cup of tea with Josh &amp; Sven.</p>
+        <%= link_to 'Donate', new_package_path(package: 'big') %>
+      </li>
+      <li class="huge">
+        <div class="price-tag">500 EUR</div>
+        <h4>Huge</h4>
+        <p>All the stuff from the previous plan plus:</p>
+        <p>200 EUR credit for your future Travis CI pro account.</p>
+        <p>And 1 hour remote pairing or support with one of our volunteers<sup>1</sup>.</p>
+        <%= link_to 'Donate', new_package_path(package: 'huge') %>
+      </li>
+    </ul>
+  </div>
+  <div id="subscriptions">
+    <h3>Subscriptions</h3>
+    <ul class="packages clearfix">
+      <li class="tiny">
+        <div class="price-tag">10 EUR</div>
+        <h4>Tiny</h4>
+        <p>A cool Travis CI sticker and access to the ringtones and sounds.</p>
+        <%= link_to 'Donate', new_subscription_path(package: 'tiny') %>
+      </li>
+      <li class="small">
+        <div class="price-tag">15 EUR</div>
+        <h4>Small</h4>
+        <p>3 stickers, access to ringtones &amp; sounds.</p>
+        <p>Plus: a personal thank you from the Travis CI team</p>
+        <%= link_to 'Donate', new_subscription_path(package: 'small') %>
+      </li>
+      <li class="medium">
+        <div class="price-tag">20 EUR</div>
+        <h4>Medium</h4>
+        <p>All the stuff from the previous plan with all the Travis CI stickers.</p>
+        <p>Plus: you get on the waiting list for Travis CI pro beta access.</p>
+        <%= link_to 'Donate', new_subscription_path(package: 'medium') %>
+      </li>
+      <li class="big">
+        <div class="price-tag">35 EUR</div>
+        <h4>Big</h4>
+        <p>All the stuff from the previous plan.</p>
+        <p>Plus: 50 EUR credit for your future Travis CI pro account.</p>
+        <p>And a skype cup of tea with Josh &amp; Sven.</p>
+        <%= link_to 'Donate', new_subscription_path(package: 'big') %>
+      </li>
+      <li class="huge">
+        <div class="price-tag">50 EUR</div>
+        <h4>Huge</h4>
+        <p>All the stuff from the previous plan plus:</p>
+        <p>200 EUR credit for your future Travis CI pro account.</p>
+        <p>And 1 hour remote pairing or support with one of our volunteers<sup>1</sup>.</p>
+        <%= link_to 'Donate', new_subscription_path(package: 'huge') %>
+      </li>
+    </ul>
+  </div>
   <ul class="footnotes">
     <li>
       <sup>1</sup>
-      <a href="">Josh Kalderimis</a>,
-      <a href="">Sven Fuchs</a>,
-      <a href="">Erik Michaels-Ober</a>,
-      <a href="">Santaigo Pastorino</a>,
-      <a href="">Xavier Nora</a>,
-      <a href="">Jon Leighton</a>,
-      <a href="">José Valim</a>.
+      <a href="https://github.com/joshk">Josh Kalderimis</a>,
+      <a href="https://github.com/svenfuchs">Sven Fuchs</a>,
+      <a href="https://github.com/sferik">Erik Michaels-Ober</a>,
+      <a href="https://github.com/spastorino">Santiago Pastorino</a>,
+      <a href="https://github.com/fxn">Xavier Nora</a>,
+      <a href="https://github.com/jonleighton">Jon Leighton</a>,
+      <a href="https://github.com/josevalim">José Valim</a>.
+      <a href="https://github.com/tenderlove">Aaron Patterson</a>,
+      <a href="https://github.com/wycats">Yehuda Katz</a>.
       Spots are limited. Wanna support us and get on this list? Drop us a <a href="#contact">note</a>.
     </li>
   </ul>
@@ -196,24 +248,24 @@
   <ul class="packages clearfix">
     <li class="silver">
       <div class="price-tag">1000 EUR</div>
-      <h3>Silver</h3>
+      <h4>Silver</h4>
       <p>Exposure on Travis CI pages and conference talks.</p>
       <p>3 hour remote pairing or support with Josh, Sven or one of our volunteers.<sup>2</sup></p>
-      <%= link_to 'Donate', new_order_path(package: 'silver') %>
+      <%= link_to 'Donate', new_package_path(package: 'silver') %>
     </li>
     <li class="gold">
       <div class="price-tag">3000 EUR</div>
-      <h3>Gold</h3>
+      <h4>Gold</h4>
       <p>Prominent exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh or Sven at your office<sup>3</sup> for a day for support or pairing sessions.<sup>2</sup></p>
-      <%= link_to 'Donate', new_order_path(package: 'gold') %>
+      <%= link_to 'Donate', new_package_path(package: 'gold') %>
     </li>
     <li class="platin">
       <div class="price-tag">6000 EUR</div>
-      <h3>platinum</h3>
+      <h4>platinum</h4>
       <p>Premium exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh and/or Sven at your office<sup>3</sup> for a day or two for support or pairing sessions.<sup>2</sup></p>
-      <%= link_to 'Donate', new_order_path(package: 'platin') %>
+      <%= link_to 'Donate', new_package_path(package: 'platin') %>
     </li>
   </ul>
   <ul class="footnotes">
@@ -225,7 +277,7 @@
 
 <section id="thanks-guys" class="paper">
   <h2>Thank you, guys!</h2>
-  <p>You will be listed here by default if you donate. Please mention if you do not want to be listed.</p>
+  <p>TODO Josh, we need some text here :)</p>
   <ul id="donators" class="clearfix"></ul>
   <div class="sidenote right handwritten">
     ZOMMMG!!1!<br>

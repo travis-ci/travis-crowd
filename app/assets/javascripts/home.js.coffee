@@ -138,4 +138,23 @@ $.fn.donators = ->
     )
   ), 'json');
 
+Switch = (element, callback) ->
+  this.element = element
+  this.labels = $('label', element)
+  this.labels.click(this.switch.bind(this))
+  this.callback = callback
+
+$.extend(Switch.prototype,
+  switch: ->
+    this.labels.each(->
+      element = $(this)
+      if element.hasClass('on') then element.removeClass('on') else element.addClass('on')
+    )
+    console.log(this.element.find('label.on'))
+    this.callback(this.element.find('label.on').attr('value')) if this.callback
+)
+
+$.fn.switch = (callback) ->
+  new Switch(this, callback)
+
 

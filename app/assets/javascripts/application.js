@@ -8,3 +8,57 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
+
+var audioHost = '/sounds/';
+var voices = {};
+
+soundManager.url = '/sounds/swf/';
+soundManager.waitForWindowLoad = false;
+soundManager.useHTML5Audio = true;
+soundManager.preferFlash = false;
+soundManager.debugMode = false;
+soundManager.debugFlash = false;
+soundManager.flashVersion = 8;
+
+function createSample(url, item_id) {
+  var mpegURL = url + item_id + '.mp3';
+  var return_value = soundManager.createSound({
+    id: item_id,
+    url: mpegURL,
+    autoLoad: true,
+    autoPlay: false,
+    onload: function() {
+      //console.log('The sound '+this.sID+' loaded!');
+    },
+    onfinish: function() {
+      //console.log('finished ' + item_id);
+      $('.' + item_id + ' .head.active .bubble').text('â–¶ Try me!');
+      $('.' + item_id + ' .head.active').removeClass('active');
+    },
+    volume: 50
+  });
+  //console.log(return_value);
+  if(!return_value) {
+    //console.log('resorting to pure HTML5 audio using OGG');
+    var audioElement = document.createElement('audio');
+    document.body.appendChild(audioElement);
+    $(audioElement).attr("preload", "auto");
+    var canPlayOgg = audioElement.canPlayType("audio/ogg");
+    if(canPlayOgg.match(/maybe|probably/i)) {
+      audioElement.src = url + item_id + '.ogg';
+      audioElement.addEventListener('ended', function(){
+        $('.' + item_id + ' .head.active .bubble').text('â–¶ Try me!');
+        $('.' + item_id + ' .head.active').removeClass('active');
+        }, false
+      );
+      return_value = audioElement;
+    }
+  }
+  return return_value;
+}
+
+soundManager.onready(function() {
+  $.each(['jon', 'jose', 'aaron', 'yehuda'], function(ix, voice) {
+    voices[voice] = createSample(audioHost, voice);
+  })
+});

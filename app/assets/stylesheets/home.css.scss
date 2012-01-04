@@ -126,7 +126,7 @@ section {
       margin-right: 0;
     }
 
-    h3 {
+    h4 {
       margin: 0;
       padding: 15px 0;
       border-bottom: 1px solid #ddd;
@@ -352,6 +352,48 @@ section:hover .sidenote {
     }
   }
 }
+
+#packages, #subscriptions {
+  h3 {
+    margin: 24px 0 0 0;
+    color: #444;
+  }
+  .packages {
+    margin-top: 0;
+  }
+}
+#subscriptions {
+  display: none;
+  li {
+    background-color: #fcfced;
+  }
+}
+
+.switch {
+  position: absolute;
+  margin-top: 26px;
+  right: 44px;
+
+  label {
+    height: 16px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #aaa;
+    cursor: hand;
+    text-shadow: 2px 2px 0px #fff;
+
+    &:last-child {
+      margin-left: 5px;
+      padding-left: 52px;
+      background: url(/images/switch.png) left top no-repeat;
+    }
+    &.on {
+      background-position: left -16px;
+      color: #444;
+    }
+  }
+}
+
 #rails-core {
   position: relative;
   padding: 10px 0 0px 0;

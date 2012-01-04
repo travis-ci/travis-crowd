@@ -71,10 +71,11 @@ form {
       input {
         margin: 8px 8px 0 86px;
         width: auto;
+        clear: left;
       }
       label {
         clear: none;
-        width: 750px;
+        width: auto;
         margin-top: 8px;
         line-height: 16px;
         text-align: left;

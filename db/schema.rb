@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
     t.string   "package"
+    t.integer  "total"
     t.boolean  "subscription", :default => false, :null => false
     t.text     "comment"
     t.datetime "created_at"
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.string   "homepage"
     t.string   "description"
     t.boolean  "display",                             :default => true
+    t.boolean  "company",                             :default => true
     t.string   "stripe_plan"
     t.string   "stripe_customer_id"
     t.datetime "created_at"

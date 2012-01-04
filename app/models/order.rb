@@ -7,18 +7,24 @@ class Order < ActiveRecord::Base
 
   accepts_nested_attributes_for :user, :billing_address, :shipping_address
 
-  attr_accessor :card_number
-
   before_validation do
-    self.shipping_address = nil if shipping_address && shipping_address.empty?
+    self.total = package.price
   end
+
+  class << self
+    def total
+      sum(:total).to_f / 100
+    end
+  end
+
+  attr_accessor :card_number
 
   def package
     @package ||= Package.new(read_attribute(:package))
   end
 
   def total_in_dollars
-    package.price_in_dollars
+    total.to_f / 100
   end
 
   def save_with_payment!

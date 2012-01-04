@@ -14,7 +14,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :github_handle
       t.string  :homepage
       t.string  :description
+
       t.boolean :display, :default => true
+      t.boolean :company, :default => true
 
       t.string  :stripe_plan
       t.string  :stripe_customer_id

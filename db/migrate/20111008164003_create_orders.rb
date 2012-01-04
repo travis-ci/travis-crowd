@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.belongs_to :user
 
       t.string  :package
+      t.integer :total
       t.boolean :subscription, null: false, default: false
       t.text    :comment
 

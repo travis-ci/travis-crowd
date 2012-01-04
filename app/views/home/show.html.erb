@@ -77,7 +77,7 @@
 
 <section id="please-donate" class="paper">
   <div id="results" class="handwritten">
-    To date 12 people + 5 companies have donated USD 5275 in total. This puts a huge :) on our face. We love you guys.
+    To date <%= results[:users] %> people + <%= results[:companies] %> companies have donated <%= number_to_currency results[:total] %> in total. This puts a huge :D on our face. We love you guys.
   </div>
   <h2 class="ribbon">Please donate!</h2>
   <p>Donating to a fun project should be even more fun than just fun. So we made it fun :)</p>
@@ -90,27 +90,27 @@
     <h3>Packages</h3>
     <ul class="packages clearfix">
       <li class="tiny">
-        <div class="price-tag">10 EUR</div>
+        <div class="price-tag">USD <%= Package.price(:tiny) %></div>
         <h4>Tiny</h4>
         <p>A cool Travis CI sticker and access to the ringtones and sounds.</p>
         <%= link_to 'Donate', new_package_path(package: 'tiny') %>
       </li>
       <li class="small">
-        <div class="price-tag">35 EUR</div>
+        <div class="price-tag">USD <%= Package.price(:small) %></div>
         <h4>Small</h4>
         <p>3 stickers, access to ringtones &amp; sounds.</p>
         <p>Plus: a personal thank you from the Travis CI team</p>
         <%= link_to 'Donate', new_package_path(package: 'small') %>
       </li>
       <li class="medium">
-        <div class="price-tag">70 EUR</div>
+        <div class="price-tag">USD <%= Package.price(:medium) %></div>
         <h4>Medium</h4>
         <p>All the stuff from the previous plan with all the Travis CI stickers.</p>
         <p>Plus: you get on the waiting list for Travis CI pro beta access.</p>
         <%= link_to 'Donate', new_package_path(package: 'medium') %>
       </li>
       <li class="big">
-        <div class="price-tag">200 EUR</div>
+        <div class="price-tag">USD <%= Package.price(:big) %></div>
         <h4>Big</h4>
         <p>All the stuff from the previous plan.</p>
         <p>Plus: 50 EUR credit for your future Travis CI pro account.</p>
@@ -118,7 +118,7 @@
         <%= link_to 'Donate', new_package_path(package: 'big') %>
       </li>
       <li class="huge">
-        <div class="price-tag">500 EUR</div>
+        <div class="price-tag">USD <%= Package.price(:huge) %></div>
         <h4>Huge</h4>
         <p>All the stuff from the previous plan plus:</p>
         <p>200 EUR credit for your future Travis CI pro account.</p>
@@ -215,7 +215,7 @@
 <section id="thanks-companies" class="paper">
   <h2>Thank you, companies!</h2>
   <ul class="clearfix">
-    <li class="platin clearfix">
+    <li class="platinum clearfix">
       <img src="images/logos/soundcloud.png">
       <p>SoundCloud is an audio platform that enables anyone to upload, record, promote and share their originally-created sounds across the internet, in a simple, accessible and feature-rich way.</p>
       <p>SoundCloud's open platform also supports a wide range of applications built on the SoundCloud API, enabling everything from mobile voice recording, online mastering, digital distribution to Facebook artist profiles and iPad music making.</p>
@@ -250,25 +250,25 @@
   <p>All of them include heaps of Tweet love, linked banners on prominent Travis CI pages, mentions at conference talks, and a post on our blog, as part of a summary (silver) or dedicated to your company (gold/platinum).</p>
   <ul class="packages clearfix">
     <li class="silver">
-      <div class="price-tag">1000 EUR</div>
+      <div class="price-tag">USD <%= Package.price(:silver) %></div>
       <h4>Silver</h4>
       <p>Exposure on Travis CI pages and conference talks.</p>
       <p>3 hour remote pairing or support with Josh, Sven or one of our volunteers.<sup>2</sup></p>
       <%= link_to 'Donate', new_package_path(package: 'silver') %>
     </li>
     <li class="gold">
-      <div class="price-tag">3000 EUR</div>
+      <div class="price-tag">USD <%= Package.price(:gold) %></div>
       <h4>Gold</h4>
       <p>Prominent exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh or Sven at your office<sup>3</sup> for a day for support or pairing sessions.<sup>2</sup></p>
       <%= link_to 'Donate', new_package_path(package: 'gold') %>
     </li>
-    <li class="platin">
-      <div class="price-tag">6000 EUR</div>
-      <h4>platinum</h4>
+    <li class="platinum">
+      <div class="price-tag">USD <%= Package.price(:platinum) %></div>
+      <h4>Platinum</h4>
       <p>Premium exposure on Travis CI pages and conference talks.</p>
       <p>Have Josh and/or Sven at your office<sup>3</sup> for a day or two for support or pairing sessions.<sup>2</sup></p>
-      <%= link_to 'Donate', new_package_path(package: 'platin') %>
+      <%= link_to 'Donate', new_package_path(package: 'platinum') %>
     </li>
   </ul>
   <ul class="footnotes">

@@ -2,7 +2,13 @@
 # or using the api. See https://stripe.com/docs/tutorials/subscriptions
 
 class Package
-  PACKAGES = { tiny: 1000, small: 3500, medium: 7000, big: 20000, huge: 50000, silver: 100000, gold: 300000, platin: 600000 }
+  PACKAGES = { tiny: 1000, small: 3500, medium: 7000, big: 20000, huge: 50000, silver: 100000, gold: 300000, platinum: 600000 }
+
+  class << self
+    def price(package)
+      PACKAGES[package.to_sym] / 100
+    end
+  end
 
   attr_reader :id
 
@@ -20,7 +26,7 @@ class Package
   end
 
   def price_in_dollars
-    price / 100
+    price.to_f / 100
   end
 
   def sort_order

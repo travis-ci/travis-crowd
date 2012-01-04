@@ -24,13 +24,9 @@ module ApplicationHelper
     %w(big huge).include?(package.to_s)
   end
 
-  def company?(package)
-    %(silver gold platin).include?(package.to_s)
-  end
-
   def display_for(package)
-    if company?(package)
-      "Display our logo and comany pitch. Please submit these separately to contact@travis-ci.org."
+    if company?
+      "Display our logo and company pitch. Please submit these separately to contact@travis-ci.org so we can take care of a good design."
     else
       displays = {
         tiny:   'my Name and homepage, Twitter or Github handle',

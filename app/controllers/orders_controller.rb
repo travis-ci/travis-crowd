@@ -3,9 +3,6 @@ class OrdersController < ApplicationController
   before_filter :normalize_params,   only: [:new, :create]
   before_filter :guard_duplicate_subscription, only: :new
 
-  def new
-  end
-
   def create
     if user.valid? && order.valid?
       user.save_with_customer!(order.subscription? ? order.package.id.to_s : nil)
@@ -20,7 +17,7 @@ class OrdersController < ApplicationController
 
   protected
 
-    helper_method :user, :order, :billing_address, :shipping_address, :subscription?
+    helper_method :user, :order, :billing_address, :shipping_address, :subscription?, :company?
     delegate :billing_address, :shipping_address, to: :order
 
     def user
@@ -39,12 +36,18 @@ class OrdersController < ApplicationController
       !!params[:subscription]
     end
 
+    def company?
+      %w(silver gold platinum).include?(params[:package])
+    end
+
     def subscribed?
       signed_in? && current_user.subscriptions.any?
     end
 
     def normalize_params
       params[:order] ||= { package: params[:package] || 'tiny', subscription: subscription? }
+      params[:user]  ||= {}
+      params[:user][:company] = company?
       [:billing, :shipping].each { |kind| normalize_address_params(kind) }
     end
 

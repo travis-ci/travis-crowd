@@ -76,7 +76,7 @@ $.extend(Donator.prototype,
   render: ->
     tag = $('<li></li>')
     if this.isBoxed()
-      tag.append($('<img src="' + this.data.gravatar_url + '">'))
+      tag.append($('<img src="' + (this.data.gravatar_url || '/images/anonymous.png') + '">'))
       tag.append(this.heading())
       tag.append($('<p>' + this.truncate(this.data.description) + '</p>')) if this.isDescription()
       tag.append(this.links().join(', '))
@@ -156,5 +156,3 @@ $.extend(Switch.prototype,
 
 $.fn.switch = (callback) ->
   new Switch(this, callback)
-
-

@@ -131,9 +131,9 @@ section {
       padding: 15px 0;
       border-bottom: 1px solid #ddd;
       text-align: center;
-      font-size: 22px;
+      font-size: 20px;
       color: #333;
-      text-shadow: 2px 2px 0px #eee;
+      // text-shadow: 2px 2px 0px #eee;
     }
 
     p {
@@ -148,7 +148,7 @@ section {
     border: 0;
     text-align: center;
     line-height: 37px;
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
     color: white;
     text-shadow: 2px 2px 0px #666;
@@ -357,7 +357,7 @@ section:hover .sidenote {
   float: right;
   margin-top: -30px;
   margin-right: -90px;
-  width: 210px;
+  width: 220px;
   padding: 33px 14px 10px 15px;
   background: url(/images/index-card.png) top center;
   font-size: 18px;
@@ -544,7 +544,7 @@ section:hover .sidenote {
     &.silver p {
       margin-top: 5px;
     }
-    &.platin {
+    &.platinum {
       width: 878px;
     }
     &.silver, &.gold {
@@ -604,6 +604,10 @@ section:hover .sidenote {
         top: 17px;
         right: -22px;
       }
+    }
+    .price-tag {
+      top: 18px;
+      right: -22px;
     }
   }
 

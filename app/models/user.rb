@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
     def by_package
       all.group_by { |user| user.biggest_order.package.id }
     end
+
+    def users_count
+      where(:company => false).count
+    end
+
+    def companies_count
+      where(:company => true).count
+    end
   end
 
   attr_accessor :stripe_card_token
@@ -30,12 +38,20 @@ class User < ActiveRecord::Base
     @biggest_order ||= orders.sort_by { |order| order.package.sort_order }.first
   end
 
+  def donated_amount
+    orders.all.sum(&:total_in_dollars)
+  end
+
   def gravatar_url(options = { size: 120 })
     Gravatar.new(email).image_url(options)
   end
 
+  ANONYMOUS  = { name: 'Anonymous', twitter_handle: '', github_handle: '', homepage: '', description: '' }
+  JSON_ATTRS = [:name, :twitter_handle, :github_handle, :homepage, :description]
+
   def as_json(options = {})
-    super(only: [:name, :twitter_handle, :github_handle, :homepage, :description]).merge(gravatar_url: gravatar_url)
+    attrs = display? ? super(only: JSON_ATTRS).merge(gravatar_url: gravatar_url) : ANONYMOUS
+    attrs.merge(amount: donated_amount)
   end
 
   protected

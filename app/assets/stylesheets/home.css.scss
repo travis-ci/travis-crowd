@@ -70,10 +70,10 @@ section {
     @include box-shadow(#ccc 0px 0px 1px);
   }
   &:nth-child(odd) h2+*:before {
-    @include transform(rotate(-2deg) skew(0,0) translate(0%,-5px));
+    @include transform(rotate(2deg) skew(0,0) translate(0%,-5px));
   }
   &:nth-child(even) h2+*:before {
-    @include transform(rotate(2deg) skew(0,0) translate(0%,-5px));
+    @include transform(rotate(-2deg) skew(0,0) translate(0%,-5px));
   }
   /* ribbon */
   /* & h2:before {
@@ -315,7 +315,7 @@ section:hover .sidenote {
   background-color: #e4e7ed;
 
   blockquote {
-    width: 730px;
+    width: 660px;
     margin: 0;
     padding: 10px;
     background-color: white;
@@ -353,6 +353,35 @@ section:hover .sidenote {
   }
 }
 
+#results {
+  float: right;
+  margin-top: -30px;
+  margin-right: -90px;
+  width: 210px;
+  padding: 33px 14px 10px 15px;
+  background: url(/images/index-card.png) top center;
+  font-size: 18px;
+  @include rotate(10deg);
+  @include box-shadow(#ddd 3px 3px 6px);
+
+  // &:before, &:after {
+  //   content: ' ';
+  //   position: absolute;
+  //   z-index: -3;
+  //   width: 40%;
+  //   height: 10px;
+  //   left: 5px;
+  //   bottom: 5px;
+  //   @include transform(skew(-5deg) rotate(-5deg));
+  //   @include box-shadow(rgba(0, 0, 0, 0.2) 0px 6px 12px);
+  // }
+  // &:after {
+  //   left: auto;
+  //   right: 5px;
+  //   @include transform(skew(5deg) rotate(5deg));
+  // }
+}
+
 #packages, #subscriptions {
   h3 {
     margin: 24px 0 0 0;
@@ -367,6 +396,9 @@ section:hover .sidenote {
   li {
     background-color: #fcfced;
   }
+}
+#please-donate .sidenote {
+  top: 350px;
 }
 
 .switch {
@@ -496,8 +528,8 @@ section:hover .sidenote {
     text-shadow: 1px 1px 1px #ddd;
   }
   .sidenote {
-    top: 160px;
-    left: -205px;
+    top: 90px;
+    right: -195px;
   }
 }
 

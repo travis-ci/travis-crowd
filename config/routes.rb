@@ -1,4 +1,4 @@
-Saas::Application.routes.draw do
+Travis::Application.routes.draw do
   root to: 'home#show'
 
   match 'packages/:package', as: :new_package, to: 'orders#new'

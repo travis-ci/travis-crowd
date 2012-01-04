@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Saas::Application.load_tasks
+Travis::Application.load_tasks

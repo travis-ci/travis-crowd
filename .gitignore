@@ -1,6 +1,6 @@
 .bundle
 config/database.yml
-config/settings.yml
+config/travis.yml
 db/*.sqlite3
 log/*.log
 tmp/

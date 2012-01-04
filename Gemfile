@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source :rubygems
 
 gem 'rails', '~> 3.1.3'
 gem 'rack', '~> 1.3.3'
@@ -6,6 +6,7 @@ gem 'sqlite3'
 
 gem 'jquery-rails'
 
+gem 'pg',              '~> 0.11.0'
 gem 'stripe'
 gem 'devise',          '~> 1.5.0'
 gem 'omniauth-github', '~> 1.0.0'

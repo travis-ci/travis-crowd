@@ -1,0 +1,113 @@
+#thanks-guys {
+  & > li {
+    float: left;
+  }
+
+  li {
+    ul {
+      width: 105%;
+      clear: both;
+    }
+    li {
+      float: left;
+      color: #666;
+    }
+    img {
+      float: left;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      @include border-radius(8px);
+      @include box-shadow(#ddd 0px 0px 5px);
+    }
+    h4 {
+      margin: 0;
+      color: #333;
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    &.huge li, &.big li, &.medium li, {
+      padding: 8px;
+      margin: 0 15px 15px 0;
+      border: 1px solid #ddd;
+      @include border-radius(8px);
+      @include box-shadow(#ddd 0px 0px 5px);
+    }
+    &.huge {
+      li {
+       width: 415px;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+        h4 {
+          font-size: 17px;
+        }
+      }
+    }
+
+    &.big {
+      li {
+        width: 266px;
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        h4 {
+          font-size: 15px;
+        }
+      }
+    }
+
+    &.medium {
+      li {
+        width: 191px;
+
+        img {
+          width: 45px;
+          height: 45px;
+        }
+        h4 {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &.small {
+      margin-top: 10px;
+
+      a {
+        font-size: 15px;
+        font-weight: bold;
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &.tiny {
+      margin-top: 6px;
+
+      a {
+        font-size: 13px;
+        color: #999;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .sidenote {
+    top: 80px;
+  }
+}
+

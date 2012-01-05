@@ -1,0 +1,61 @@
+%section#company-packages.collapsed
+  %h2 Company Packages
+  %a.toggle{href: '#'}
+  %p
+    With the help of
+    %a{href: 'http://twitter.com/#!/csshsh'} Florian Weber
+    %sup 1
+    we have set up silver, gold and platinum packages for you. If these don't fit what you are looking for then
+    %a{href: '#contact'} please get in contact!
+  %p All of them include heaps of Tweet love, linked banners on prominent Travis CI pages, mentions at conference talks, and a post on our blog, as part of a summary (silver) or dedicated to your company (gold/platinum).
+  %ul.packages.clearfix
+    %li.silver
+      .price-tag
+        USD #{Package.price(:silver)}
+      %h4 Silver
+      %p Exposure on Travis CI pages and conference talks.
+      %p
+        3 hour remote pairing or support with Josh, Sven or one of our volunteers.
+        %sup 2
+      = link_to 'Donate', new_package_path(package: 'silver')
+    %li.gold
+      .price-tag
+        USD #{Package.price(:gold)}
+      %h4 Gold
+      %p Prominent exposure on Travis CI pages and conference talks.
+      %p
+        Have Josh or Sven at your office
+        %sup 3
+        for a day for support or pairing sessions.
+        %sup 2
+      = link_to 'Donate', new_package_path(package: 'gold')
+    %li.platinum
+      .price-tag
+        USD #{Package.price(:platinum)}
+      %h4 Platinum
+      %p Premium exposure on Travis CI pages and conference talks.
+      %p
+        Have Josh and/or Sven at your office
+        %sup 3
+        for a day or two for support or pairing sessions.
+        %sup 2
+      = link_to 'Donate', new_package_path(package: 'platinum')
+  %ul.footnotes
+    %li
+      %sup 1
+      = succeed ',' do
+        %a{href: 'http://rubyonrails.org/core/alumni'} Rails core alumni
+      early
+      = succeed ',' do
+        %a{href: 'http://twitter.com'} Twitter lead dev
+      founder of
+      = succeed '.' do
+        %a{href: 'http://amenhq.com'} Amen
+    %li
+      %sup 2
+      These are just our ideas. We are open for ideas that fit your company better, so feel free to
+      %a{href: '#contact'} ask.
+    %li
+      %sup 3
+      You will need to help with travel and accommodation if you're not based close to us.
+      %a{href: '#contact'} Let's talk!

@@ -1,0 +1,68 @@
+#company-packages {
+  position: relative;
+  padding: 20px 40px;
+  padding-bottom: 40px;
+  background-color: #f3f3f3;
+  @include border-radius(8px);
+  @include box-shadow(#ddd 2px 2px 6px inset);
+
+  .toggle {
+    display: block;
+    position: absolute;
+    height: 28px;
+    top: 17px;
+    right: 40px;
+    padding: 0 35px 0 15px;
+    background: url(/images/icon-expand.png) no-repeat right -28px;
+    font-size: 14px;
+    color: #aaa;
+    text-shadow: 2px 2px white;
+    text-decoration: none;
+    line-height: 30px;
+
+    &:before {
+      content: "Hide"
+    }
+  }
+  .packages li {
+    width: 220px;
+    background-color: white;
+    a {
+      width: 209px;
+      .price-tag {
+        top: 17px;
+        right: -22px;
+      }
+    }
+    .price-tag {
+      top: 18px;
+      right: -22px;
+    }
+  }
+
+  &.collapsed {
+    padding: 20px 40px;
+
+    ul, p {
+      display: none;
+    }
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: normal;
+      color: #666;
+    }
+    .toggle {
+      right: 40px;
+      background-position: right top;
+
+      &:before {
+        content: "Show"
+      }
+    }
+    &:hover .toggle:before {
+      content: "See what we have prepared for you"
+    }
+  }
+}
+

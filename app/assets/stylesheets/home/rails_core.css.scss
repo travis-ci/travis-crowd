@@ -1,0 +1,105 @@
+#rails-core {
+  position: relative;
+  padding: 10px 0 0px 0;
+
+  ul {
+    position: relative;
+    height: 327px;
+    margin: 0 -40px;
+    padding-left: 35px;
+    background: url(/images/rails-core/background.png) top center;
+    @include border-radius(8px);
+    @include box-shadow(#333 3px 3px 20px 0px inset);
+
+    li {
+      position: relative;
+      float: left;
+      width: 217px;
+      height: 293px;
+      margin: 0;
+      padding: 15px 2px 0 2px;
+      background: url(/images/rails-core/badge_background.png) no-repeat 5px 15px;
+      text-align: center;
+      cursor: hand;
+
+      a {
+        position: relative;
+        display: block;
+        height: 217px;
+        width: 217px;
+      }
+
+      &#jon .head {
+        background: url(/images/rails-core/jon_head.png) no-repeat center;
+      }
+      &#jon a {
+        background: url(/images/rails-core/jon_mouth.png) no-repeat center;
+      }
+      &#jose .head {
+        background: url(/images/rails-core/jose_head.png) no-repeat center;
+      }
+      &#jose a {
+        background: url(/images/rails-core/jose_mouth.png) no-repeat center;
+      }
+      &#aaron .head {
+        background: url(/images/rails-core/aaron_head.png) no-repeat center;
+      }
+      &#aaron a {
+        background: url(/images/rails-core/aaron_mouth.png) no-repeat center;
+      }
+      &#yehuda .head {
+        background: url(/images/rails-core/yehuda_head.png) no-repeat center;
+      }
+      &#yehuda a {
+        background: url(/images/rails-core/yehuda_mouth.png) no-repeat center;
+      }
+
+      & > div {
+        -moz-animation: head_small_movement 5s infinite;
+        -webkit-animation: head_small_movement 5s infinite;
+        -ms-animation: head_small_movement 5s infinite;
+        -o-animation: head_small_movement 5s infinite;
+        animation: head_small_movement 5s infinite;
+      }
+      &:hover div {
+         background: -moz-radial-gradient(      rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+         background: -webkit-radial-gradient(   rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+         background: -ms-radial-gradient(       rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+         background: -o-radial-gradient(        rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+         background: radial-gradient(           rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 80%);
+      }
+      &.active > div {
+         -moz-animation:      head_big_movement 0.7s infinite;
+         -webkit-animation:   head_big_movement 0.7s infinite;
+         -ms-animation:       head_big_movement 0.7s infinite;
+         -o-animation:        head_big_movement 0.7s infinite;
+         animation:           head_big_movement 0.7s infinite;
+      }
+      &.active a {
+         -moz-animation:      mouth 0.7s infinite;
+         -webkit-animation:   mouth 0.7s infinite;
+         -ns-animation:       mouth 0.7s infinite;
+         -o-animation:        mouth 0.7s infinite;
+         animation:           mouth 0.7s infinite;
+      }
+    }
+    &:hover li {
+      opacity: 0.5;
+    }
+    li:hover {
+      opacity: 1;
+    }
+  }
+  cite {
+    display: block;
+    margin-top: 32px;
+    font-family: "Tangerine";
+    font-size: 32px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+  }
+  .sidenote {
+    top: 90px;
+    right: -195px;
+  }
+}

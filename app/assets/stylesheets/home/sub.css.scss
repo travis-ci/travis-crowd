@@ -1,0 +1,46 @@
+#sub {
+  position: relative;
+  padding: 5px 0;
+  border-width: 15px 0 15px 0;
+  @include border-image(url(/images/background-sub.png) 15 0 15 0 stretch);
+  background-color: #e4e7ed;
+
+  blockquote {
+    width: 660px;
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    @include border-radius(8px);
+    @include box-shadow(#ddd 1px 1px 4px 0px inset);
+    color: #666;
+
+    img {
+      float: left;
+      width: 75px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      @include border-radius(5px);
+    }
+  }
+  cite {
+    display: block;
+    font-size: 12px;
+    color: #999;
+  }
+  #sociallinks {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 190px;
+
+    h4 {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 190px;
+      font-size: 20px;
+    }
+  }
+}
+

@@ -1,0 +1,18 @@
+#future-plans li {
+  padding-right: 140px;
+  font-size: 14px;
+
+  &#pullrequests {
+    background: url(/images/features/pullrequests.png) no-repeat right;
+  }
+  &#languages {
+    background: url(/images/features/languages.png) no-repeat right;
+  }
+  &#artifacts {
+    background: url(/images/features/artifacts.png) no-repeat right;
+  }
+  &#private {
+    background: url(/images/features/private.png) no-repeat right;
+  }
+}
+

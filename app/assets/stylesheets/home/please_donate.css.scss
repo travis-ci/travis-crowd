@@ -1,0 +1,61 @@
+#please-donate {
+  #results {
+    float: right;
+    margin-top: -30px;
+    margin-right: -90px;
+    width: 225px;
+    padding: 33px 10px 10px 15px;
+    background: url(/images/index-card.png) top center;
+    font-size: 18px;
+    @include rotate(10deg);
+    @include box-shadow(#ddd 3px 3px 6px);
+
+    em {
+      background-color: #FFF780;
+      font-style: normal;
+    }
+  }
+  #packages, #subscriptions {
+    h3 {
+      margin: 24px 0 0 0;
+      color: #444;
+    }
+    .packages {
+      margin-top: 0;
+    }
+  }
+  #subscriptions {
+    display: none;
+    li {
+      background-color: #fcfced;
+    }
+  }
+  .sidenote {
+    top: 350px;
+  }
+}
+
+.switch {
+  position: absolute;
+  margin-top: 26px;
+  right: 44px;
+
+  label {
+    height: 16px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #aaa;
+    cursor: hand;
+    text-shadow: 2px 2px 0px #fff;
+
+    &:last-child {
+      margin-left: 5px;
+      padding-left: 52px;
+      background: url(/images/switch.png) left top no-repeat;
+    }
+    &.on {
+      background-position: left -16px;
+      color: #444;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+%section#please-donate.paper
+  #results.handwritten
+    To date #{results[:users]} people + #{results[:companies]} companies
+    have donated
+    %em= number_to_currency(results[:total], precision: 0)
+    in total.
+    This puts a huge :D on our face. We love you guys.
+  %h2.ribbon Please donate!
+  %p Donating to a fun project should be even more fun than just fun. So we made it fun :)
+  %p
+    We've got some
+    %a{href: '#stickers'} awesome stickers
+    hot off the press as well as a bunch of
+    %a{href: '#ringtones'} ringtones and sounds
+    from  Yehuda, Aaron, Jose and Jon. And how about a virtual cup of tea with Josh and Sven on Skype or even a one hour remote pairing session with one of our fantastic volunteers!
+    %sup 1
+  .switch
+    %label.on{for: 'type_package', value: 'packages'} One off
+    %label{for: 'type_subscription', value: 'subscriptions'} Subscription
+  #packages
+    %h3 Packages
+    %ul.packages.clearfix
+      %li.tiny
+        .price-tag
+          USD #{Package.price(:tiny)}
+        %h4 Tiny
+        %p A cool Travis CI sticker and access to the ringtones and sounds.
+        = link_to 'Donate', new_package_path(package: 'tiny')
+      %li.small
+        .price-tag
+          USD #{Package.price(:small)}
+        %h4 Small
+        %p 3 stickers, access to ringtones &amp; sounds.
+        %p Plus: a personal thank you from the Travis CI team
+        = link_to 'Donate', new_package_path(package: 'small')
+      %li.medium
+        .price-tag
+          USD #{Package.price(:medium)}
+        %h4 Medium
+        %p All the stuff from the previous plan with all the Travis CI stickers.
+        %p Plus: you get on the waiting list for Travis CI pro beta access.
+        = link_to 'Donate', new_package_path(package: 'medium')
+      %li.big
+        .price-tag
+          USD #{Package.price(:big)}
+        %h4 Big
+        %p All the stuff from the previous plan.
+        %p Plus: 50 EUR credit for your future Travis CI pro account.
+        %p And a skype cup of tea with Josh &amp; Sven.
+        = link_to 'Donate', new_package_path(package: 'big')
+      %li.huge
+        .price-tag
+          USD #{Package.price(:huge)}
+        %h4 Huge
+        %p All the stuff from the previous plan plus:
+        %p 200 EUR credit for your future Travis CI pro account.
+        %p
+          And 1 hour remote pairing or support with one of our volunteers
+          %sup> 1
+          \.
+        = link_to 'Donate', new_package_path(package: 'huge')
+  #subscriptions
+    %h3 Subscriptions
+    %ul.packages.clearfix
+      %li.tiny
+        .price-tag 10 EUR
+        %h4 Tiny
+        %p A cool Travis CI sticker and access to the ringtones and sounds.
+        = link_to 'Donate', new_subscription_path(package: 'tiny')
+      %li.small
+        .price-tag 15 EUR
+        %h4 Small
+        %p 3 stickers, access to ringtones &amp; sounds.
+        %p Plus: a personal thank you from the Travis CI team
+        = link_to 'Donate', new_subscription_path(package: 'small')
+      %li.medium
+        .price-tag 20 EUR
+        %h4 Medium
+        %p All the stuff from the previous plan with all the Travis CI stickers.
+        %p Plus: you get on the waiting list for Travis CI pro beta access.
+        = link_to 'Donate', new_subscription_path(package: 'medium')
+      %li.big
+        .price-tag 35 EUR
+        %h4 Big
+        %p All the stuff from the previous plan.
+        %p Plus: 50 EUR credit for your future Travis CI pro account.
+        %p And a skype cup of tea with Josh &amp; Sven.
+        = link_to 'Donate', new_subscription_path(package: 'big')
+      %li.huge
+        .price-tag 50 EUR
+        %h4 Huge
+        %p All the stuff from the previous plan plus:
+        %p 200 EUR credit for your future Travis CI pro account.
+        %p
+          And 1 hour remote pairing or support with one of our volunteers
+          %sup> 1
+          \.
+        = link_to 'Donate', new_subscription_path(package: 'huge')
+  %ul.footnotes
+    %li
+      %sup 1
+      = succeed ',' do
+        %a{href: 'https://github.com/joshk'} Josh Kalderimis
+      = succeed ',' do
+        %a{href: 'https://github.com/svenfuchs'} Sven Fuchs
+      = succeed ',' do
+        %a{href: 'https://github.com/sferik'} Erik Michaels-Ober
+      = succeed ',' do
+        %a{href: 'https://github.com/spastorino'} Santiago Pastorino
+      = succeed ',' do
+        %a{href: 'https://github.com/fxn'} Xavier Nora
+      = succeed ',' do
+        %a{href: 'https://github.com/jonleighton'} Jon Leighton
+      = succeed '.' do
+        %a{href: 'https://github.com/josevalim'} José Valim
+      = succeed ',' do
+        %a{href: 'https://github.com/tenderlove'} Aaron Patterson
+      = succeed '.' do
+        %a{href: 'https://github.com/wycats'} Yehuda Katz
+      Spots are limited. Wanna support us and get on this list? Drop us a
+      = succeed '.' do
+        %a{href: '#contact'} note
+  .sidenote.left.handwritten
+    Please consider these so we can make Travis CI better with your help.

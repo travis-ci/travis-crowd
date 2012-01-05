@@ -1,0 +1,36 @@
+#thanks-companies {
+  padding-bottom: 20px;
+  li {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    @include border-radius(8px);
+    @include box-shadow(#ddd 0px 0px 5px);
+
+    &.silver p {
+      margin-top: 5px;
+    }
+    &.platinum {
+      width: 878px;
+    }
+    &.silver, &.gold {
+      float: left;
+      width: 428px;
+      margin-right: 20px;
+      font-size: 13px;
+    }
+    &:nth-child(3),
+    &:nth-child(5) {
+      margin-right: 0;
+    }
+
+    img {
+      float: left;
+      margin-right: 10px;
+      @include border-left-radius(8px);
+    }
+    p {
+      margin: 10px 5px 0px 0;
+    }
+  }
+}
+

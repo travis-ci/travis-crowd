@@ -7,7 +7,7 @@ Travis::Application.routes.draw do
   resources :orders, except: :new
 
   match '/profile', to: 'profiles#show', as: :profile
-  match '/donators.json', to: 'profiles#index', as: :donators
+  match '/donations.json', to: 'orders#index', as: :donators
 
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }
 

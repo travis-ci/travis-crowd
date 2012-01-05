@@ -5,6 +5,7 @@
     %em= number_to_currency(results[:total], precision: 0)
     in total.
     This puts a huge :D on our face. We love you guys.
+
   %h2.ribbon Please donate!
   %p Donating to a fun project should be even more fun than just fun. So we made it fun :)
   %p
@@ -17,6 +18,7 @@
   .switch
     %label.on{for: 'type_package', value: 'packages'} One off
     %label{for: 'type_subscription', value: 'subscriptions'} Subscription
+
   #packages
     %h3 Packages
     %ul.packages.clearfix
@@ -59,6 +61,7 @@
           %sup> 1
           \.
         = link_to 'Donate', new_package_path(package: 'huge')
+
   #subscriptions
     %h3 Subscriptions
     %ul.packages.clearfix
@@ -96,6 +99,7 @@
           %sup> 1
           \.
         = link_to 'Donate', new_subscription_path(package: 'huge')
+
   %ul.footnotes
     %li
       %sup 1

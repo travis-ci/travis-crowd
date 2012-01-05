@@ -32,6 +32,12 @@ class Order < ActiveRecord::Base
     save!
   end
 
+  JSON_ATTRS = [:subscription, :created_at, :comment]
+
+  def as_json(options = {})
+    super(only: JSON_ATTRS).merge(total: total_in_dollars, user: user.as_json, package: read_attribute(:package))
+  end
+
   protected
 
     def create_stripe_charge

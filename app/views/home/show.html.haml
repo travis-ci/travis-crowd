@@ -1,30 +1,5 @@
-:javascript
-  $(document).ready(function() {
-    $('.slides').slides({ speed: 4000, fade: 800 });
-    $('#testimonials ul').testimonials();
-    $('#donators').donators();
-    $('.switch').switch(function(value) {
-      $('#packages, #subscriptions').hide();
-      $('#' + value).show();
-    });
-
-    var heads = $('#rails-core li');
-    heads.click(function() {
-      heads.removeClass('active');
-      $(this).addClass('active');
-      voices[$(this).attr('id')].play();
-      setTimeout(function() { heads.removeClass('active') }, 1200);
-      return false;
-    });
-
-    $('.toggle').click(function() {
-      var section = $(this).closest('section');
-      section.hasClass('collapsed') ? section.removeClass('collapsed') : section.addClass('collapsed');
-      return false;
-    });
-  })
-
-= render partial: 'header'
+= render partial: 'blob'
+= render partial: 'sub'
 = render partial: 'please_donate'
 = render partial: 'rails_core'
 = render partial: 'thanks_companies'
@@ -36,5 +11,4 @@
 = render partial: 'ringtones'
 = render partial: 'faq'
 = render partial: 'contact'
-
 

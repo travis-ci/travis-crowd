@@ -1,0 +1,31 @@
+%header#sub
+  %div
+    %blockquote
+      %img{src: 'images/brian.jpeg'}
+        What Github did for sharing code, Travis CI will do for testing code.
+        The value of this service cannot be overstated. Travis CI is a paradigm shift.
+        The world will be a better place when every open-source developer is  running their test suite on Travis CI.
+        %cite
+          = succeed ',' do
+            %a{href: 'https://twitter.com/#!/brixen'} @brixen
+          = succeed ',' do
+            %a{href: 'http://brightredglow.com'} Brian Ford
+          %a{href: 'http://rubini.us/'} Rubinius
+
+    #sociallinks
+      %h4.handwritten Please spread the word!
+      %a.twitter-share-button{'data-count' => 'vertical', href: 'https://twitter.com/share'} Tweet
+      %script{src: 'http://platform.twitter.com/widgets.js', type: 'text/javascript'}
+      %g:plusone{href: 'http://railslove.myshopify.com', size: 'tall'}
+      -# :javascript
+      -#   window.___gcfg = {lang: 'en-GB'};
+      -#   (function() {
+      -#     var po = document.createElement('script');
+      -#     po.type = 'text/javascript';
+      -#     po.async = true;
+      -#     po.src = 'https://apis.google.com/js/plusone.js';
+      -#     var s = document.getElementsByTagName('script')[0];
+      -#     s.parentNode.insertBefore(po, s);
+      -#   })();
+      -# .fb-like{'data-font' => 'arial', 'data-href' => 'http://support.travis-ci.org', 'data-layout' => 'box_count', 'data-send' => 'false', 'data-show-faces' => 'false', 'data-width' => '50'}
+

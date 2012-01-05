@@ -10,14 +10,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :github_handle, :twitter_handle, allow_blank: true
 
   class << self
-    def with_user_packages
-      includes(:orders).where(:orders => { :package => %w(tiny small medium big huge) })
-    end
-
-    def by_package
-      all.group_by { |user| user.biggest_order.package.id }
-    end
-
     def users_count
       where(:company => false).count
     end
@@ -34,24 +26,15 @@ class User < ActiveRecord::Base
     save!
   end
 
-  def biggest_order
-    @biggest_order ||= orders.sort_by { |order| order.package.sort_order }.first
-  end
-
-  def donated_amount
-    orders.all.sum(&:total_in_dollars)
-  end
-
   def gravatar_url(options = { size: 120 })
     Gravatar.new(email).image_url(options)
   end
 
   ANONYMOUS  = { name: 'Anonymous', twitter_handle: '', github_handle: '', homepage: '', description: '' }
-  JSON_ATTRS = [:name, :twitter_handle, :github_handle, :homepage, :description]
+  JSON_ATTRS = [:name, :twitter_handle, :github_handle, :homepage]
 
   def as_json(options = {})
-    attrs = display? ? super(only: JSON_ATTRS).merge(gravatar_url: gravatar_url) : ANONYMOUS
-    attrs.merge(amount: donated_amount)
+    display? ? super(only: JSON_ATTRS).merge(gravatar_url: gravatar_url) : ANONYMOUS
   end
 
   protected

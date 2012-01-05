@@ -3,6 +3,10 @@ class OrdersController < ApplicationController
   before_filter :normalize_params,   only: [:new, :create]
   before_filter :guard_duplicate_subscription, only: :new
 
+  def index
+    render json: Order.all.as_json
+  end
+
   def create
     if user.valid? && order.valid?
       user.save_with_customer!(order.subscription? ? order.package.id.to_s : nil)

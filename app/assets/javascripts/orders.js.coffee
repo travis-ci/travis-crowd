@@ -18,13 +18,11 @@ OrderForm = ->
 
   $('#new_order').submit ->
     $('input[type=submit]').attr('disabled', true)
-
-    if $('#order_card_number').length
+    if $('#order_card_name').length
       _this.processCard()
       false
     else
       true
-    false
 
 $.extend OrderForm.prototype,
   processCard: ->

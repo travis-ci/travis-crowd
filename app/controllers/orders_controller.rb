@@ -63,7 +63,7 @@ class OrdersController < ApplicationController
     def guard_duplicate_subscription
       if subscription? && subscribed?
         flash[:error] = "You already have a subscription with this account. To upgrade your subscription please send an email to contact@travis-ci.org"
-        redirect '/'
+        redirect_to '/'
       end
     end
 end

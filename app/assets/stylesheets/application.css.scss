@@ -46,12 +46,16 @@ header > div {
   background-color: #fff;
 
   h1 {
-    width: 200px;
-    height: 64px;
+    display: inline-block;
     margin: 0px;
-    background: url(/images/travis-ci.png) no-repeat;
-    overflow: hidden;
-    text-indent: -9999px;
+    a {
+      display: block;
+      width: 200px;
+      height: 64px;
+      background: url(/images/travis-ci.png) no-repeat;
+      overflow: hidden;
+      text-indent: -9999px;
+    }
   }
   h2 {
     position: absolute;

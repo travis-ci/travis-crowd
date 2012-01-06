@@ -4,7 +4,13 @@
 
   %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
 
-  %p Hey! You are going to donate to Travis CI? That is amazing! Because we will be able to make it even better with your help. Thank you so much. We love you :)
+  %p
+    You are about to donate
+    %span.amount= number_to_currency order.package.price_in_dollars, precision: 0
+    to Travis CI
+    = subscription_type(order) + '.'
+  %p
+    That is amazing! Thank you so much. We love you :)
 
   - unless signed_in?
     #user
@@ -19,7 +25,6 @@
           = u.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
           = u.input :homepage, required: false, input_html: { placeholder: 'http://' }
         %fieldset.wide
-          = u.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(order.package.id)
           = u.input :display, :as => 'boolean', :label => display_for(order.package.id), input_html: { checked: true }
 
   #billing_address.address
@@ -50,11 +55,12 @@
           %noscript JavaScript is not enabled and is required for this form. First enable it in your web browser settings.
 
   #comment
-    %h3 Leave us a note
+    %h3 Leave a comment
     %fieldset.wide
       = f.input :comment, :as => 'text', required: false
 
   .actions
     = f.submit 'Confirm'
-    = link_to 'Cancel', '/'
+    = link_to 'Cancel', '/', class: 'cancel'
+    .message
 

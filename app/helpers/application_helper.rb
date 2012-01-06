@@ -20,6 +20,14 @@ module ApplicationHelper
     end
   end
 
+  def subscription_type(order)
+    if order.subscription?
+      "#{content_tag(:span, 'per month', :class => :kind)} as a recurring payment".html_safe
+    else
+      "#{content_tag(:span, 'once', :class => :kind)}, as a one-off payment".html_safe
+    end
+  end
+
   def display_bio?(package)
     %w(big huge).include?(package.to_s)
   end
@@ -28,14 +36,7 @@ module ApplicationHelper
     if company?
       "Display our logo and company pitch. Please submit these separately to contact@travis-ci.org so we can take care of a good design."
     else
-      displays = {
-        tiny:   'my Name and homepage, Twitter or Github handle',
-        small:  'my Name and homepage, Twitter or Github handle',
-        medium: 'my Gravatar, my Name and homepage, Twitter or Github handle',
-        big:    'my Gravatar, my Name and homepage, Twitter and Github handle, and the first ~25 characters of my bio',
-        huge:   'my Gravatar, my Name and homepage, Twitter and Github handle, and the first ~125 characters of my bio',
-      }
-      "Display #{displays[package.to_sym]} (#{package} package)."
+      "List me on the Travis CI crowdfunding page."
     end
   end
 end

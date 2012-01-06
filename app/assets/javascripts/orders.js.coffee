@@ -13,31 +13,43 @@ OrderForm = ->
   _this = this
   $('#user_name').blur ->
     name = $(this).val()
-    $('#order_billing_address_attributes_name, #order_name').each ->
+    $('#order_billing_address_attributes_name, #order_card_name').each ->
       $(this).val(name) if name != ''
 
   $('#new_order').submit ->
-    $('input[type=submit]').attr('disabled', true)
     if $('#order_card_name').length
       _this.processCard()
       false
     else
+      _this.disable('Submitting ...')
       true
 
 $.extend OrderForm.prototype,
   processCard: ->
+    @disable('Validating your credit card ...')
     card =
       name: $('#order_card_name').val()
       number: $('#order_card_number').val()
       cvc: $('#order_card_cvc').val()
       expMonth: $('#card_month').val()
       expYear: $('#card_year').val()
-    Stripe.createToken(card, this.handleStripeResponse)
+    Stripe.createToken(card, @handleStripeResponse.bind(@))
 
   handleStripeResponse: (status, response) ->
     if status == 200
+      @disable('Submitting ...')
       $('#user_stripe_card_token').val(response.id)
       $('#new_order')[0].submit()
     else
+      @enable()
       $('#stripe_error').text(response.error.message)
-      $('input[type=submit]').attr('disabled', false)
+
+  disable: (message)->
+    $('input[type=submit]').attr('disabled', true)
+    $('.cancel').hide()
+    $('.message').html(message).show()
+
+  enable: ->
+    $('input[type=submit]').attr('disabled', false)
+    $('.cancel').show()
+    $('.message').hide()

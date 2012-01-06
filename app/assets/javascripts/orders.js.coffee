@@ -43,16 +43,3 @@ $.extend OrderForm.prototype,
     else
       $('#stripe_error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)
-
-$(document).ready ->
-  $('input[default]').each ->
-    $(this).focus ->
-      $(this).removeClass('default')
-    .blur ->
-      $(this).val($(this).attr('default')) if $(this).val() == ''
-      $(this).addClass('default') if $(this).val() == $(this).attr('default')
-    .blur()
-
-  $('form').submit ->
-    $('.default').each ->
-      $(this).val('') if $(this).val() == $(this).attr('default')

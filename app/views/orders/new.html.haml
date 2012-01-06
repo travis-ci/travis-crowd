@@ -19,8 +19,8 @@
           = f.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
           = f.input :homepage, required: false, input_html: { placeholder: 'http://' }
         %fieldset.wide
-          = f.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(params[:package])
-          = f.input :display, :as => 'boolean', :label => display_for(params[:package]), input_html: { checked: true }
+          = f.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(order.package.id)
+          = f.input :display, :as => 'boolean', :label => display_for(order.package.id), input_html: { checked: true }
 
   #billing_address.address
     %h3 Address

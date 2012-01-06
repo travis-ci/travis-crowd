@@ -56,12 +56,34 @@ header > div {
   h2 {
     position: absolute;
     margin: 0;
-    top: 27px;
+    top: 30px;
     right: 0;
     color: #999;
     font-weight: normal;
     font-size: 17px;
   }
+  ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+
+    li {
+      float: left;
+      margin: 0 0 0 10px;
+      font-size: 13px;
+
+      a {
+        color: #999;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
   #github {
     position: absolute;
     z-index: 100;
@@ -73,9 +95,9 @@ header > div {
 
     a {
       display: block;
-      width: 250px;
+      width: 180px;
       height: 19px;
-      margin: 40px 0 0 -45px;
+      margin: 35px 0 0 -9px;
       padding: 3px 0;
       border-top: 2px solid #EF9F4C;
       border-bottom: 2px solid #EF9F4C;
@@ -96,15 +118,18 @@ header > div {
 
 #flash {
   padding: 5px 8px;
-  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-width: 0 0 1px 0;
+  text-align: center;
 
   &.notice {
-    background-color: #CFC;
-    border: solid 1px #6C6;
+    background-color: #cfc;
   }
   &.error, &.alert {
-    background-color: #FCC;
-    border: solid 1px #C66;
+    background-color: #fcc;
+  }
+  p {
+    margin: 0;
   }
 }
 
@@ -151,6 +176,8 @@ footer {
 }
 
 #profile {
+  @include clearfix();
+
   h2 {
     display: block;
     line-height: 50px;
@@ -161,9 +188,6 @@ footer {
       @include border-radius(8px);
       @include box-shadow(0px 0px 2px #ddd);
     }
-  }
-  & > div {
-    @include clearfix();
   }
   #contact, #packages, #subscriptions {
     width: 50%;
@@ -181,7 +205,7 @@ footer {
     font-size: 15px;
 
     tr:nth-child(odd) {
-      background-color: #f6f6f6;
+      background-color: #f2f4f9;
     }
     td {
       padding: 8px 16px;

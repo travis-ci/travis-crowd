@@ -1,27 +1,26 @@
-%section.paper
-  %p.navigation= link_to 'Your profile &rarr;'.html_safe, profile_path
+%p.navigation= link_to 'Your profile &rarr;'.html_safe, profile_path
 
-  #order
-    %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
+#order
+  %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
 
-    %dl
-      %dt Price
-      %dd= number_to_currency order.total_in_dollars
-      %dt Ordered
-      %dd= l order.created_at, format: :short
+  %dl
+    %dt Price
+    %dd= number_to_currency order.total_in_dollars
+    %dt Ordered
+    %dd= l order.created_at, format: :short
 
-    %h3 Address
-    %dl
-      %dt Name
-      %dd= billing_address.name
-      %dt Street
-      %dd= billing_address.street
-      %dt Zip
-      %dd= billing_address.zip
-      %dt City
-      %dd= billing_address.city
-      - if billing_address.state.present?
-        %dt State
-        %dd= billing_address.state
-      %dt Country
-      %dd= billing_address.country
+  %h3 Address
+  %dl
+    %dt Name
+    %dd= billing_address.name
+    %dt Street
+    %dd= billing_address.street
+    %dt Zip
+    %dd= billing_address.zip
+    %dt City
+    %dd= billing_address.city
+    - if billing_address.state.present?
+      %dt State
+      %dd= billing_address.state
+    %dt Country
+    %dd= billing_address.country

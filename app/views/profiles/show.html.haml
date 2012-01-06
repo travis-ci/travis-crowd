@@ -1,35 +1,31 @@
-%section#profile.paper
-  %p.navigation
-    = link_to 'Sign out', destroy_session_path
-
+%div#profile
   %h2
     %img{ src: current_user.gravatar_url(:size => 50) }
     = current_user.name
 
-  %div
-    #contact
-      %h3 Contact
-      %dl
-        %dt Email
-        %dd= current_user.email
-        - if current_user.twitter_handle.present?
-          %dt Twitter
-          %dd= link_to_current_user_on(:twitter)
-        - if current_user.github_handle.present?
-          %dt Github
-          %dd= link_to_current_user_on(:github)
-        - if current_user.homepage.present?
-          %dt Homepage
-          %dd= link_to_current_user_homepage
+  #contact
+    %h3 Contact
+    %dl
+      %dt Email
+      %dd= current_user.email
+      - if current_user.twitter_handle.present?
+        %dt Twitter
+        %dd= link_to_current_user_on(:twitter)
+      - if current_user.github_handle.present?
+        %dt Github
+        %dd= link_to_current_user_on(:github)
+      - if current_user.homepage.present?
+        %dt Homepage
+        %dd= link_to_current_user_homepage
 
-    - unless current_user.subscriptions.empty?
-      #subscriptions
-        %h3 Subscriptions
-        %table
-          = render current_user.subscriptions
+  - unless current_user.subscriptions.empty?
+    #subscriptions
+      %h3 Subscriptions
+      %table
+        = render current_user.subscriptions
 
-    - unless current_user.packages.empty?
-      #packages
-        %h3 Packages
-        %table
-          = render current_user.packages
+  - unless current_user.packages.empty?
+    #packages
+      %h3 Packages
+      %table
+        = render current_user.packages

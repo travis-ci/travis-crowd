@@ -1,6 +1,3 @@
-%p.navigation
-  = link_to 'Sign out', destroy_session_path if signed_in?
-
 = simple_form_for order do |f|
   = f.hidden_field :package
   = f.hidden_field :subscription
@@ -18,9 +15,9 @@
           = f.input :email
           = f.input :password
         %fieldset
-          = f.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false
+          = f.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false, input_html: { default: '@' }
           = f.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
-          = f.input :homepage, required: false
+          = f.input :homepage, required: false, input_html: { default: 'http://' }
         %fieldset.wide
           = f.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(params[:package])
           = f.input :display, :as => 'boolean', :label => display_for(params[:package]), input_html: { checked: true }

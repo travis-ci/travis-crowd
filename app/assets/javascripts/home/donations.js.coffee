@@ -40,9 +40,9 @@ $.extend Donation.prototype,
     else
       this.user.name
   github: ->
-    "<a href=\"https://github.com/#{this.user.github_handle}\" class=\"github\">Github</a>" if this.user.github_handle
+    "<a href=\"https://github.com/#{this.user.github_handle}\" class=\"github\">#{this.user.github_handle}</a>" if this.user.github_handle
   twitter: ->
-    "<a href=\"https://twitter.com/#{this.user.twitter_handle}\" class=\"twitter\">Twitter</a>" if this.user.twitter_handle
+    "<a href=\"https://twitter.com/#{this.user.twitter_handle}\" class=\"twitter\">#{this.user.twitter_handle}</a>" if this.user.twitter_handle
   amount: ->
     '$' + this.data.total
   package: ->

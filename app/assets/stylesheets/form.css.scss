@@ -55,6 +55,9 @@ form {
     }
     input {
       width: 300px;
+      &.default {
+        color: #ccc;
+      }
     }
     textarea {
       height: 40px;

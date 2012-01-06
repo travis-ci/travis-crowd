@@ -3,9 +3,9 @@ module ApplicationHelper
     if handle = current_user.send(:"#{service}_handle")
       case service
       when :twitter
-        link_to("@#{handle}", "http://twitter.com/#{handle}")
+        link_to(handle, "http://twitter.com/#{handle}")
       when :github
-        link_to("http://github.com/#{handle}", "http://github.com/#{handle}")
+        link_to(handle, "http://github.com/#{handle}")
       end
     else
       '-'

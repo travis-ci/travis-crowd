@@ -11,8 +11,14 @@ $ ->
 
 OrderForm = ->
   _this = this
+  $('#user_name').blur ->
+    name = $(this).val()
+    $('#order_billing_address_attributes_name, #order_name').each ->
+      $(this).val(name) if name != ''
+
   $('#new_order').submit ->
     $('input[type=submit]').attr('disabled', true)
+
     if $('#order_card_number').length
       _this.processCard()
       false
@@ -23,6 +29,7 @@ OrderForm = ->
 $.extend OrderForm.prototype,
   processCard: ->
     card =
+      name: $('#order_card_name').val()
       number: $('#order_card_number').val()
       cvc: $('#order_card_cvc').val()
       expMonth: $('#card_month').val()

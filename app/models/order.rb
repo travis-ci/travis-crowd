@@ -20,7 +20,7 @@ class Order < ActiveRecord::Base
   attr_accessor :card_number
 
   def package
-    @package ||= Package.new(read_attribute(:package))
+    @package ||= Package.new(read_attribute(:package), subscription?)
   end
 
   def total_in_dollars

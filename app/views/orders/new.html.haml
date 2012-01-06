@@ -8,40 +8,41 @@
 
   - unless signed_in?
     #user
-      = simple_fields_for :user do |f|
-        = f.hidden_field :stripe_card_token
+      = simple_fields_for user do |u|
+        = u.hidden_field :stripe_card_token
         %fieldset
-          = f.input :name
-          = f.input :email
-          = f.input :password
+          = u.input :name
+          = u.input :email
+          = u.input :password
         %fieldset
-          = f.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false, input_html: { placeholder: '@' }
-          = f.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
-          = f.input :homepage, required: false, input_html: { placeholder: 'http://' }
+          = u.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false, input_html: { placeholder: '@' }
+          = u.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
+          = u.input :homepage, required: false, input_html: { placeholder: 'http://' }
         %fieldset.wide
-          = f.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(order.package.id)
-          = f.input :display, :as => 'boolean', :label => display_for(order.package.id), input_html: { checked: true }
+          = u.input :description, :as => 'text', required: false, label: 'Bio' if display_bio?(order.package.id)
+          = u.input :display, :as => 'boolean', :label => display_for(order.package.id), input_html: { checked: true }
 
   #billing_address.address
     %h3 Address
-    = f.simple_fields_for :billing_address do |f|
+    = f.simple_fields_for :billing_address do |a|
       %fieldset
-        = f.input :name
-        = f.input :street
-        = f.input :zip
+        = a.input :name
+        = a.input :street
+        = a.input :zip
       %fieldset
-        = f.input :city
-        = f.input :state
-        = f.input :country
+        = a.input :city
+        = a.input :state
+        = a.input :country
 
   - unless signed_in?
     #credit_card
       %h3 Credit Card
       %fieldset
         - if user.stripe_card_token.present?
+          %label Info
           %p Has been provided.
         - else
-          = f.input :name, as: :anonymous, required: true, label: 'Name'
+          = f.input :card_name, as: :anonymous, required: true, label: 'Name'
           = f.input :card_number, as: :anonymous, required: true, label: 'Number'
           = f.input :card_cvc, as: :anonymous, required: true, label: 'CVC', hint: 'Your credit card security code.'
           = f.input :card_expires_at, as: :expiry_selects, label: 'Expires'

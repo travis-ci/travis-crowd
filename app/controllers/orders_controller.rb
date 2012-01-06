@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
       sign_in user
       redirect_to order, notice: "Thank you for your support!"
     else
-      p user.errors, order.errors
+      # p user.errors, order.errors
       render :new
     end
   end

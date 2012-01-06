@@ -92,10 +92,10 @@ form {
       display: none;
     }
     p {
-      clear: both;
+      float: left;
       width: 740px;
-      margin-left: 85px;
-      padding-top: 8px;
+      margin: 0 0 2px 0;
+      line-height: 41px;
       font-size: 13px;
       color: #666;
     }
@@ -147,7 +147,10 @@ form {
     }
   }
   .error {
-    color: red;
+    display: block;
+    margin-left: 85px;
+    font-size: 13px;
+    color: #c00;
   }
   #stripe_error {
     color: #c00;

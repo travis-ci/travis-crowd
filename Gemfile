@@ -14,6 +14,7 @@ gem 'simple_form'
 gem 'haml'
 gem 'hashr'
 gem 'gravatar-ultimate'
+gem 'rest_in_place'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'

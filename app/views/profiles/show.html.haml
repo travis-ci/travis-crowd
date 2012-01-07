@@ -1,22 +1,20 @@
 %div#profile
-  %h2
+  %h2{:'data-object' => 'user'}
     %img{ src: current_user.gravatar_url(:size => 50) }
-    = current_user.name
+    = current_user_editable(:span, :name)
 
   #contact
     %h3 Contact
-    %dl
+
+    %dl{:'data-object' => 'user'}
       %dt Email
-      %dd= current_user.email
-      - if current_user.twitter_handle.present?
-        %dt Twitter
-        %dd= link_to_current_user_on(:twitter)
-      - if current_user.github_handle.present?
-        %dt Github
-        %dd= link_to_current_user_on(:github)
-      - if current_user.homepage.present?
-        %dt Homepage
-        %dd= link_to_current_user_homepage
+      = current_user_editable(:dd, :email)
+      %dt Twitter
+      = current_user_editable(:dd, :twitter_handle)
+      %dt Github
+      = current_user_editable(:dd, :github_handle)
+      %dt Homepage
+      = current_user_editable(:dd, :homepage)
 
   - unless current_user.subscriptions.empty?
     #subscriptions

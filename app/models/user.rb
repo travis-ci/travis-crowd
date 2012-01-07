@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
 
   attr_accessor :stripe_card_token
 
+  def charges
+    Stripe::Charge.all(customer: stripe_customer_id) # TODO hmmm ...
+  end
+
   def charge(package)
     stripe_create_charge(package)
   end

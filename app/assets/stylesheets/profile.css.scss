@@ -11,13 +11,35 @@
       @include border-radius(8px);
       @include box-shadow(0px 0px 2px #ddd);
     }
+    span {
+      padding-right: 24px;
+      &:hover {
+        background: url(/images/icons/edit.bigger.png) no-repeat right 20px;
+      }
+    }
   }
   #contact, #packages, #subscriptions {
-    width: 50%;
+    width: 440px;
   }
   #contact {
     float: left;
     line-height: 160%;
+
+    dt {
+      margin-right: 20px;
+    }
+    dd {
+      width: 260px;
+      margin-left: 10px;
+      padding-left: 18px;
+
+      &:hover {
+        background: url(/images/icons/edit.png) no-repeat left 6px;
+      }
+      input {
+        width: 280px;
+      }
+    }
   }
   #packages, #subscriptions {
     float: right;

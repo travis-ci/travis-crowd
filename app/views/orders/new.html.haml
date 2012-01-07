@@ -6,7 +6,7 @@
 
   %p
     You are about to donate
-    %span.amount= number_to_currency order.package.price_in_dollars, precision: 0
+    %span.amount= number_to_currency order.package.price_in_dollars
     to Travis CI
     = subscription_type(order) + '.'
   %p
@@ -63,4 +63,11 @@
     = f.submit 'Confirm'
     = link_to 'Cancel', '/', class: 'cancel'
     .message
+
+  %ul.footnotes
+    %li
+      %sup 1
+      Contributions and payments to travis-ci.org or Travis CI GmbH are not deductible as charitable
+      contributions for federal income tax purposes. However, they may be deductible under other
+      provisions of the Internal Revenue Code (for US) or your local tax authority's advice.
 

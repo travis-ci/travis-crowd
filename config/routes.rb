@@ -5,8 +5,8 @@ Travis::Application.routes.draw do
   match 'subscriptions/:package', as: :new_subscription, to: 'orders#new', subscription: true
 
   resources :orders, except: :new
+  resource :profile
 
-  match '/profile', to: 'profiles#show', as: :profile
   match '/donations.json', to: 'orders#index', as: :donators
 
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }

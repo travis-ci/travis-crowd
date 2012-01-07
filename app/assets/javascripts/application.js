@@ -7,7 +7,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require 'rest_in_place'
 //= require_tree .
+
+$('#profile').restInPlace();
 
 var audioHost = '/sounds/';
 var voices = {};

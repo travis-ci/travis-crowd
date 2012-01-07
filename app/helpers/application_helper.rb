@@ -1,22 +1,8 @@
 module ApplicationHelper
-  def link_to_current_user_on(service)
-    if handle = current_user.send(:"#{service}_handle")
-      case service
-      when :twitter
-        link_to(handle, "http://twitter.com/#{handle}")
-      when :github
-        link_to(handle, "http://github.com/#{handle}")
-      end
-    else
-      '-'
-    end
-  end
-
-  def link_to_current_user_homepage
-    if url = current_user.homepage
-      link_to(url, url)
-    else
-      '-'
+  def current_user_editable(tag, name)
+    content_tag(tag, :class => 'rest-in-place', :'data-attribute' => name) do
+      value = current_user.send(name)
+      value.present? ? value : '-'
     end
   end
 

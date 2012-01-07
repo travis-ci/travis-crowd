@@ -4,17 +4,29 @@ Capybara.default_selector = :css
 
 ActionController::Base.allow_rescue = false
 
-begin
-  DatabaseCleaner.strategy = :transaction
-rescue NameError
-  raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
+
+require 'database_cleaner'
+require 'database_cleaner/cucumber'
+
+DatabaseCleaner.strategy = :truncation
+Cucumber::Rails::Database.javascript_strategy = :truncation
+
+Before do
+  DatabaseCleaner.start
 end
 
-Cucumber::Rails::Database.javascript_strategy = :truncation
+After do |scenario|
+  DatabaseCleaner.clean
+end
+
+require 'cucumber/fake_parameter_middleware'
+Before do
+  Cucumber::FakeParameterMiddleware.params = nil
+end
 
 require 'mocha'
 
-World(Mocha::Standalone)
+World(Mocha::API)
 
 Before do
   mocha_setup

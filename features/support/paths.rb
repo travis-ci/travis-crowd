@@ -6,9 +6,9 @@ module Paths
     when 'my profile page'
       profile_path
     when 'the order page for the "Medium" package'
-      new_order_path(package: :medium)
+      new_package_path(package: :medium)
     when 'the order page for the "Medium" subscription'
-      new_order_path(package: :medium, subscription: true)
+      new_subscription_path(package: :medium)
     else
       raise "Could not find path to: #{name}"
     end

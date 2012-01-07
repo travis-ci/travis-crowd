@@ -4,11 +4,15 @@ When /^I click on "Donate" for the "([^"]*)" subscription$/ do |package|
   end
 end
 
-When /^the credit card service returns a credit card token/ do
-  # page.execute_script('$("#user_stripe_card_token").val("12345678");')
-  @set_strip_card_token ||= OrdersController.before_filter(only: :create) do
-    params[:user][:stripe_card_token] = '12345678' if params.key?(:user)
-  end
+When /^the credit card service returns the credit card token "(.*)"/ do |token|
+  # page.execute_script('$("#user_stripe_card_token").val(token);')
+  #
+  # Big hack around the fact that we can't set form fields from js in cucumber/rack
+  # The order creation form will first post to Stripe through js and fetch a token.
+  # It will then set this token to a new field stripe_card_token before it then
+  # actually submits the form. We fake adding this parameter here.
+  #
+  Cucumber::FakeParameterMiddleware.params = { 'user' => { 'stripe_card_token' => token } }
 end
 
 When /^the credit card service will create a customer for:$/ do |attrs|

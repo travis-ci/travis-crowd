@@ -13,7 +13,7 @@
   %ul.packages.clearfix
     %li.silver
       .price-tag
-        USD #{Package.price(:silver)}
+        = number_to_currency Package.price(:silver)
       %h4 Silver
       %p Exposure on Travis CI pages and conference talks.
       %p
@@ -22,7 +22,7 @@
       = link_to 'Donate', new_package_path(package: 'silver')
     %li.gold
       .price-tag
-        USD #{Package.price(:gold)}
+        = number_to_currency Package.price(:gold)
       %h4 Gold
       %p Prominent exposure on Travis CI pages and conference talks.
       %p
@@ -33,7 +33,7 @@
       = link_to 'Donate', new_package_path(package: 'gold')
     %li.platinum
       .price-tag
-        USD #{Package.price(:platinum)}
+        = number_to_currency Package.price(:platinum)
       %h4 Platinum
       %p Premium exposure on Travis CI pages and conference talks.
       %p

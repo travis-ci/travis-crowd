@@ -1,5 +1,6 @@
 @import "home";
 @import "form";
+@import "profile";
 @import "compass";
 @import "compass/utilities/general/clearfix";
 
@@ -199,43 +200,6 @@ footer {
   float: right;
 }
 
-#profile {
-  @include clearfix();
-
-  h2 {
-    display: block;
-    line-height: 50px;
-
-    img {
-      float: left;
-      margin-right: 18px;
-      @include border-radius(8px);
-      @include box-shadow(0px 0px 2px #ddd);
-    }
-  }
-  #contact, #packages, #subscriptions {
-    width: 50%;
-  }
-  #contact {
-    float: left;
-    line-height: 160%;
-  }
-  #packages, #subscriptions {
-    float: right;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 15px;
-
-    tr:nth-child(odd) {
-      background-color: #f2f4f9;
-    }
-    td {
-      padding: 8px 16px;
-    }
-  }
-}
 dl {
   @include clearfix();
   line-height: 24px;

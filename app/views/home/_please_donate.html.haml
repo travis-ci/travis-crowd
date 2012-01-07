@@ -2,7 +2,7 @@
   #results.handwritten
     To date #{results[:users]} people + #{results[:companies]} companies
     have donated
-    %em= number_to_currency(results[:total], precision: 0)
+    %em= number_to_currency(results[:total])
     in total.
     This puts a huge :D on our face. We love you guys.
 
@@ -24,27 +24,27 @@
     %ul.packages.clearfix
       %li.tiny
         .price-tag
-          USD #{Package.price(:tiny)}
+          = number_to_currency Package.price(:tiny)
         %h4 Tiny
         %p A cool Travis CI sticker and access to the ringtones and sounds.
         = link_to 'Donate', new_package_path(package: 'tiny')
       %li.small
         .price-tag
-          USD #{Package.price(:small)}
+          = number_to_currency Package.price(:small)
         %h4 Small
         %p 3 stickers, access to ringtones &amp; sounds.
         %p Plus: a personal thank you from the Travis CI team
         = link_to 'Donate', new_package_path(package: 'small')
       %li.medium
         .price-tag
-          USD #{Package.price(:medium)}
+          = number_to_currency Package.price(:medium)
         %h4 Medium
         %p All the stuff from the previous plan with all the Travis CI stickers.
         %p Plus: you get on the waiting list for Travis CI pro beta access.
         = link_to 'Donate', new_package_path(package: 'medium')
       %li.big
         .price-tag
-          USD #{Package.price(:big)}
+          = number_to_currency Package.price(:big)
         %h4 Big
         %p All the stuff from the previous plan.
         %p Plus: 50 EUR credit for your future Travis CI pro account.
@@ -52,7 +52,7 @@
         = link_to 'Donate', new_package_path(package: 'big')
       %li.huge
         .price-tag
-          USD #{Package.price(:huge)}
+          = number_to_currency Package.price(:huge)
         %h4 Huge
         %p All the stuff from the previous plan plus:
         %p 200 EUR credit for your future Travis CI pro account.
@@ -66,31 +66,36 @@
     %h3 Subscriptions
     %ul.packages.clearfix
       %li.tiny
-        .price-tag USD #{Package.price(:tiny, true)}
+        .price-tag
+          = number_to_currency Package.price(:tiny, true)
         %h4 Tiny
         %p A cool Travis CI sticker and access to the ringtones and sounds.
         = link_to 'Donate', new_subscription_path(package: 'tiny')
       %li.small
-        .price-tag USD #{Package.price(:small, true)}
+        .price-tag
+          = number_to_currency Package.price(:small, true)
         %h4 Small
         %p 3 stickers, access to ringtones &amp; sounds.
         %p Plus: a personal thank you from the Travis CI team
         = link_to 'Donate', new_subscription_path(package: 'small')
       %li.medium
-        .price-tag USD #{Package.price(:medium, true)}
+        .price-tag
+          = number_to_currency Package.price(:medium, true)
         %h4 Medium
         %p All the stuff from the previous plan with all the Travis CI stickers.
         %p Plus: you get on the waiting list for Travis CI pro beta access.
         = link_to 'Donate', new_subscription_path(package: 'medium')
       %li.big
-        .price-tag USD #{Package.price(:big, true)}
+        .price-tag
+          = number_to_currency Package.price(:big, true)
         %h4 Big
         %p All the stuff from the previous plan.
         %p Plus: 50 EUR credit for your future Travis CI pro account.
         %p And a skype cup of tea with Josh &amp; Sven.
         = link_to 'Donate', new_subscription_path(package: 'big')
       %li.huge
-        .price-tag USD #{Package.price(:huge, true)}
+        .price-tag
+          = number_to_currency Package.price(:huge, true)
         %h4 Huge
         %p All the stuff from the previous plan plus:
         %p 200 EUR credit for your future Travis CI pro account.

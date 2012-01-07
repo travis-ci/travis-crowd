@@ -15,6 +15,10 @@ class Order < ActiveRecord::Base
     def total
       sum(:total).to_f / 100
     end
+
+    def active
+      where(active: true)
+    end
   end
 
   attr_accessor :card_number
@@ -27,9 +31,18 @@ class Order < ActiveRecord::Base
     total.to_f / 100
   end
 
+  def cancelled?
+    !active?
+  end
+
+  def cancel!
+    update_attributes!(active: false, cancelled_at: Time.now)
+    user.cancel_subscription
+  end
+
   def save_with_payment!
-    create_stripe_charge unless subscription?
     save!
+    subscription? ? user.subscribe(package) : user.charge(package)
   end
 
   JSON_ATTRS = [:subscription, :created_at, :comment]
@@ -37,14 +50,4 @@ class Order < ActiveRecord::Base
   def as_json(options = {})
     super(only: JSON_ATTRS).merge(total: total_in_dollars, user: user.as_json, package: read_attribute(:package))
   end
-
-  protected
-
-    def create_stripe_charge
-      Stripe::Charge.create(description: "#{user.email} (#{package.id.to_s})", amount: package.price, currency: 'usd', customer: user.stripe_customer_id)
-    rescue Stripe::InvalidRequestError => e
-      logger.error "Stripe error while creating a stripe charge: #{e.message}"
-      errors.add :base, "There was a problem with your credit card: #{e.message}."
-      false
-    end
 end

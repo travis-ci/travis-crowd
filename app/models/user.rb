@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable
 
   has_many :orders
-  has_many :subscriptions, class_name: 'Order', conditions: { subscription: true }
-  has_many :packages,      class_name: 'Order', conditions: { subscription: false }
+  has_many :subscriptions, class_name: 'Order', conditions: { subscription: true  }, order: 'created_at DESC'
+  has_many :packages,      class_name: 'Order', conditions: { subscription: false }, order: 'created_at DESC'
   has_many :payments
 
   validates_presence_of :name, :email
@@ -21,8 +21,21 @@ class User < ActiveRecord::Base
 
   attr_accessor :stripe_card_token
 
-  def save_with_customer!(plan)
-    create_stripe_customer(plan) unless stripe_customer_id
+  def charge(package)
+    stripe_create_charge(package)
+  end
+
+  def subscribe(package)
+    stripe_set_subscription(package)
+    update_attributes!(stripe_plan: package) if valid?
+  end
+
+  def cancel_subscription
+    stripe_cancel_subscription
+  end
+
+  def save_with_customer!
+    stripe_create_customer unless stripe_customer_id
     save!
   end
 
@@ -39,13 +52,28 @@ class User < ActiveRecord::Base
 
   protected
 
-    def create_stripe_customer(plan)
-      customer = Stripe::Customer.create(email: email, card: stripe_card_token, plan: plan)
-      self.stripe_plan = plan
+    def stripe_create_customer
+      customer = Stripe::Customer.create(email: email, card: stripe_card_token)
       self.stripe_customer_id = customer.id
     rescue Stripe::InvalidRequestError => e
       logger.error "Stripe error while creating stripe customer: #{e.message}"
       errors.add :base, "There was a problem with your credit card: #{e.message}."
       false
+    end
+
+    def stripe_create_charge(package)
+      Stripe::Charge.create(description: "#{email} (#{package.id.to_s})", amount: package.price, currency: 'usd', customer: stripe_customer_id)
+    rescue Stripe::InvalidRequestError => e
+      logger.error "Stripe error while creating a stripe charge: #{e.message}"
+      errors.add :base, "There was a problem with your credit card: #{e.message}."
+      false
+    end
+
+    def stripe_set_subscription(package)
+      Stripe::Customer.retrieve(stripe_customer_id).update_subscription(plan: package.id)
+    end
+
+    def stripe_cancel_subscription
+      Stripe::Customer.retrieve(stripe_customer_id).cancel_subscription
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111228000327) do
+ActiveRecord::Schema.define(:version => 20120107130508) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20111228000327) do
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",       :default => true,  :null => false
+    t.datetime "cancelled_at"
   end
 
   create_table "users", :force => true do |t|

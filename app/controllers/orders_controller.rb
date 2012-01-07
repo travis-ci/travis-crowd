@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :authenticate_user!, only: :show
+  before_filter :authenticate_user!, only: [:show, :destroy]
   before_filter :normalize_params,   only: [:new, :create]
   before_filter :guard_duplicate_subscription, only: :new
 
@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
 
   def create
     if user.valid? && order.valid?
-      user.save_with_customer!(order.subscription? ? order.package.id.to_s : nil)
+      user.save_with_customer!
       order.save_with_payment!
       sign_in user
       redirect_to order, notice: "Thank you for your support!"
@@ -17,6 +17,11 @@ class OrdersController < ApplicationController
       # p user.errors, order.errors
       render :new
     end
+  end
+
+  def destroy
+    order.cancel!
+    redirect_to profile_url
   end
 
   protected
@@ -29,11 +34,7 @@ class OrdersController < ApplicationController
     end
 
     def order
-      @order ||= if params[:action].to_sym == :show
-        user.orders.find(params[:id])
-      else
-        user.orders.build(params[:order])
-      end
+      @order ||= params[:id] ? user.orders.find(params[:id]) : user.orders.build(params[:order])
     end
 
     def subscription?
@@ -45,7 +46,7 @@ class OrdersController < ApplicationController
     end
 
     def subscribed?
-      signed_in? && current_user.subscriptions.any?
+      signed_in? && current_user.subscriptions.active.any?
     end
 
     def normalize_params

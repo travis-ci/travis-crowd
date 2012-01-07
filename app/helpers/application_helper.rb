@@ -20,6 +20,10 @@ module ApplicationHelper
     end
   end
 
+  def cancel_subscription_button(order)
+    button_to('Cancel', order, :method => :delete, :'data-disable-with' => 'Cancel', :confirm => 'Are you sure you want to cancel this subscription?')
+  end
+
   def subscription_type(order)
     if order.subscription?
       "#{content_tag(:span, 'per month', :class => :kind)} as a recurring payment".html_safe

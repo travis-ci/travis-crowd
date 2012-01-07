@@ -9,7 +9,9 @@ en:
     currency:
       format:
         format: "%u %n"
-        unit: USD
+        unit: "$"
+        precision: 0
+        delimiter: ''
 
 devise:
   sessions:

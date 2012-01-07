@@ -59,5 +59,5 @@ $.fn.donations = ->
   new Donations(this)
 
 $(document).ready ->
-  $('#donations').donations()
+  $('#donations').donations() if $('#donations').length > 0
 

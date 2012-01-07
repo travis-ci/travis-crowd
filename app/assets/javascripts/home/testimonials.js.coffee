@@ -25,5 +25,5 @@ $.fn.testimonials = ->
   new Testimonials(this)
 
 $(document).ready ->
-  $('#testimonials ul').testimonials()
+  $('#testimonials ul').testimonials() if $('#testimonials').length > 0
 

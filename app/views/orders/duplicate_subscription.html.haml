@@ -1,0 +1,24 @@
+%h2 Subscription: #{order.package.name}
+
+%p.navigation
+  %a{href: '/'} Back home &rarr;
+%p
+  %img{src: '/images/roadblock.jpg'}
+.sidenote.left.handwritten
+  Road obstructed.<br>Hrmmm. Sorry about this!
+%h3
+  Oooops!
+%p
+  You already have a subscription with this account<sup>1</sup>.
+%p
+  To upgrade your subscription you can
+%ul
+  %li #{link_to 'cancel your existing subscription', profile_path} and re-subscribe or
+  %li #{link_to 'sign out', destroy_session_path} and order a subscription with a different name and email address or
+  %li just send an email to <a href="mailto:contact@travis-ci.org">contact@travis-ci.org</a>
+%p
+  %strong Thank you :)
+
+%p.footnotes
+  %sup 1
+  Stripe makes it so that there can only be one subscription ("plan") per account.

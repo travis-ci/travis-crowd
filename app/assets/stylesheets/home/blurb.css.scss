@@ -1,65 +1,66 @@
-#blurb {
-  position: relative;
-  height: 250px;
-  padding: 10px 0 30px 0;
-  background: url(/images/background-blurb.png) repeat-x;
-  color: white;
-
-  .slides {
-    position: absolute;
-    top: 10px;
-    margin: 0;
-    padding: 0;
-    li {
-      position: absolute;
-      display: none;
-      margin: 0;
-    }
-    .current {
-      display: block;
-    }
-  }
-  .slides-pagination {
+#home {
+  #blurb {
     position: relative;
-    top: 238px;
-    left: 118px;
-    li {
-      display: block;
-      float: left;
-      width: 8px;
-      height: 8px;
-      margin: 0;
-      margin-right: 8px;
-      background-color: #ccc;
-      @include border-radius(4px);
-      @include box-shadow(#666 1px 1px 2px 0px inset);
+    height: 250px;
+    padding: 10px 0 30px 0;
+    background: url(/images/background-blurb.png) repeat-x;
+    color: white;
 
-      &:last-child {
-        margin-right: 0;
+    .slides {
+      position: absolute;
+      top: 10px;
+      margin: 0;
+      padding: 0;
+      li {
+        position: absolute;
+        display: none;
+        margin: 0;
       }
-      &.current {
-        background-color: #20bf02;
+      .current {
+        display: block;
       }
     }
-  }
-  p {
-    font-size: 16px;
-    margin-left: 350px;
-    margin-top: 18px;
-  }
-  h3 {
-    margin: 0 0 0 350px;
-    font-size: 58px;
-    font-weight: bold;
-  }
-  em {
-    color: yellow;
-    font-style: normal;
-  }
-  .conclusion {
-    color: #20bf02;
-    margin-bottom: 0;
-    font-size: 22px;
+    .slides-pagination {
+      position: relative;
+      top: 238px;
+      left: 118px;
+      li {
+        display: block;
+        float: left;
+        width: 8px;
+        height: 8px;
+        margin: 0;
+        margin-right: 8px;
+        background-color: #ccc;
+        @include border-radius(4px);
+        @include box-shadow(#666 1px 1px 2px 0px inset);
+
+        &:last-child {
+          margin-right: 0;
+        }
+        &.current {
+          background-color: #20bf02;
+        }
+      }
+    }
+    p {
+      font-size: 16px;
+      margin-left: 350px;
+      margin-top: 18px;
+    }
+    h3 {
+      margin: 0 0 0 350px;
+      font-size: 58px;
+      font-weight: bold;
+    }
+    em {
+      color: yellow;
+      font-style: normal;
+    }
+    .conclusion {
+      color: #20bf02;
+      margin-bottom: 0;
+      font-size: 22px;
+    }
   }
 }
-

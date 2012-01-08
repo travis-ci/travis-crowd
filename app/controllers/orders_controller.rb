@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_user!, only: [:show, :destroy]
   before_filter :normalize_params,   only: [:new, :create]
-  before_filter :guard_duplicate_subscription, only: :new
+  before_filter :guard_duplicate_subscription, only: [:new, :create]
 
   def index
     render json: Order.all.as_json
@@ -62,9 +62,6 @@ class OrdersController < ApplicationController
     end
 
     def guard_duplicate_subscription
-      if subscription? && subscribed?
-        flash[:error] = "You already have a subscription with this account. To upgrade your subscription please send an email to contact@travis-ci.org"
-        redirect_to '/'
-      end
+      render 'duplicate_subscription' if subscription? && subscribed?
     end
 end

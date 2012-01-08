@@ -13,6 +13,7 @@
     border: 1px solid #ddd;
     @include border-radius(8px);
     @include box-shadow(#ddd 1px 1px 4px 0px inset);
+    font-style: italic;
     color: #666;
 
     img {

@@ -1,0 +1,26 @@
+%h2 Wow, thank you!
+
+%p.navigation
+  %a{href: profile_path} Your profile &rarr;
+
+%p
+  - if subscription?
+    You have just ordered the subscription <em>"#{order.package.name}"</em> which means you are donating <em>#{number_to_currency order.total_in_dollars}</em> per month to Travis CI (until you cancel the subscription).
+  - else
+    You have just got the package <em>"#{order.package.name}"</em> which mean you have donated <em>#{number_to_currency order.total_in_dollars}</em> to Travis CI.
+
+%p We can't express how much we appreciate your support.
+
+%h3 Thank you so much!
+
+%p You will receive an email with more information about the benefits included in this package, but here's a Nyan cat<sup>1</sup> for now:
+
+= render :partial => 'nyancat'
+
+%p.footnotes
+  %sup 1
+  Heavily based on the
+  %a{href: 'https://github.com/michalbe/css-nyan-cat'}css-nyan-cat
+  by
+  %a{href: 'http://twitter.com/michalbe'}@michalbe
+

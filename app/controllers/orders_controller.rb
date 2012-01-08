@@ -7,12 +7,17 @@ class OrdersController < ApplicationController
     render json: Order.all.as_json
   end
 
+  def show
+    render :confirm_creation
+  end
+
   def create
     if user.valid? && order.valid?
       user.save_with_customer!
       order.save_with_payment!
       sign_in user
-      redirect_to order, notice: "Thank you for your support!"
+      # redirect_to order, notice: "Thank you for your support!"
+      render :confirm_creation
     else
       # p user.errors, order.errors
       render :new
@@ -62,6 +67,6 @@ class OrdersController < ApplicationController
     end
 
     def guard_duplicate_subscription
-      render 'duplicate_subscription' if subscription? && subscribed?
+      render :duplicate_subscription if subscription? && subscribed?
     end
 end

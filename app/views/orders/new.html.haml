@@ -6,7 +6,7 @@
 
   %p
     You are about to donate
-    %span.amount= number_to_currency order.package.price_in_dollars
+    %em= number_to_currency order.package.price_in_dollars
     to Travis CI
     = subscription_type(order) + '.'
   %p

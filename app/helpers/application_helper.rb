@@ -12,9 +12,9 @@ module ApplicationHelper
 
   def subscription_type(order)
     if order.subscription?
-      "#{content_tag(:span, 'per month', :class => :kind)} as a recurring payment".html_safe
+      "#{content_tag(:em, 'per month')} as a recurring payment".html_safe
     else
-      "#{content_tag(:span, 'once', :class => :kind)}, as a one-off payment".html_safe
+      "#{content_tag(:em, 'once')}, as a one-off payment".html_safe
     end
   end
 

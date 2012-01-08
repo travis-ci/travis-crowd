@@ -1,4 +1,5 @@
 @import "tipsy";
+@import "orders/nyancat";
 
 #orders {
   section{
@@ -8,6 +9,11 @@
       li {
         margin: 0;
       }
+    }
+
+    em {
+      background-color: yellow;
+      font-style: normal;
     }
 
     form {
@@ -23,9 +29,6 @@
         line-height: 160%;
         font-size: 16px;
         color: #666;
-      }
-      .amount, .kind {
-        background-color: yellow;
       }
       .message {
         float: left;
@@ -179,6 +182,37 @@
       .tipsy {
         margin-left: 20px;
       }
+    }
+  }
+
+  .audio {
+    .sidenote {
+      display: none;
+      top: -40px;
+      right: -200px;
+
+      &:after {
+        top: 40px;
+        left: -10px;
+      }
+      .note-1 {
+        display: block;
+      }
+      .note-2 {
+        display: none;
+      }
+    }
+    &:hover .sidenote.note-1 {
+      display: block;
+    }
+    &:hover .sidenote.note-2 {
+      display: none;
+    }
+    &.on:hover .sidenote.note-1 {
+      display: none;
+    }
+    &.on:hover .sidenote.note-2 {
+      display: block;
     }
   }
 }

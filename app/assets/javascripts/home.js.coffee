@@ -8,5 +8,5 @@ $(document).ready ->
     false
 
   $('.toggle').click ->
-    $(this).closest('section').toggleClass('collapsed')
+    $('#company-packages').toggleClass('collapsed')
     false

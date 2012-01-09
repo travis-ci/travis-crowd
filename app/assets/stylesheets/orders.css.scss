@@ -59,10 +59,19 @@
           margin: 0;
         }
 
+        .input {
+          position: relative;
+
+          &.required:after {
+            content: '*';
+            position: absolute;
+            top: 17px;
+            right: -10px;
+            color: #c00;
+          }
+        }
         label {
-          display: block;
-          float: left;
-          clear: left;
+          display: inline-block;
           width: 70px;
           margin-bottom: 2px;
           padding-right: 15px;
@@ -73,7 +82,7 @@
           color: #666;
         }
         input, textarea {
-          float: left;
+          display: inline-block;
           padding: 8px;
           border: 1px solid #ddd;
           font-size: 16px;
@@ -82,17 +91,12 @@
         input {
           margin-top: 4px;
           width: 300px;
-          &.default {
-            color: #ccc;
-          }
         }
         textarea {
           margin-top: 8px;
           height: 40px;
           height: 20px;
           width: 300px;
-        }
-        #order_comment {
         }
         &.wide textarea {
           width: 740px;
@@ -135,11 +139,6 @@
         margin-top: 24px;
       }
 
-      .inputs {
-        position: relative;
-        height: 36px;
-        margin: 12px 0;
-      }
       .actions {
         margin: 12px 0 24px 80px;
         line-height: 60px;

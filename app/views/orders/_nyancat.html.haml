@@ -77,18 +77,13 @@
     %div
 
   %a.audio{href: '#'}
-    .sidenote.right.handwritten.note-1
-      Turn this on :)
-    .sidenote.right.handwritten.note-2
-      Hahaaa! Yay :)
-
   %audio{loop: 'loop', src: '/sounds/nyancat.ogg'}
 
   %script{type: 'text/javascript'}
     var playing;
     var audio = $('audio')[0];
     var toggleAudio = function() { if(playing) { playing = false; audio.pause(); } else { playing = true; audio.play(); } };
-    $('.audio').click(function() { $(this).toggleClass('on'); toggleAudio(); return false; })
+    $('.audio').click(function() { $(this).parent().parent().toggleClass('on'); toggleAudio(); return false; })
 
 
 

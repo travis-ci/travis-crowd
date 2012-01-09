@@ -7,7 +7,7 @@
   - if subscription?
     You have just ordered the subscription <em>"#{order.package.name}"</em> which means you are donating <em>#{number_to_currency order.total_in_dollars}</em> per month to Travis CI (until you cancel the subscription).
   - else
-    You have just got the package <em>"#{order.package.name}"</em> which mean you have donated <em>#{number_to_currency order.total_in_dollars}</em> to Travis CI.
+    You have just got the package <em>"#{order.package.name}"</em> which meansr you have donated <em>#{number_to_currency order.total_in_dollars}</em> to Travis CI.
 
 %p We can't express how much we appreciate your support.
 
@@ -15,7 +15,12 @@
 
 %p You will receive an email with more information about the benefits included in this package, but here's a Nyan cat<sup>1</sup> for now:
 
-= render :partial => 'nyancat'
+.nyancat-container
+  = render :partial => 'nyancat'
+  .sidenote.right.handwritten.note-1
+    Turn this on :)
+  .sidenote.right.handwritten.note-2
+    Hahaaa! Yay :)
 
 %p.footnotes
   %sup 1

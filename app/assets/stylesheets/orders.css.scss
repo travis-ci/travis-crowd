@@ -193,11 +193,15 @@
     }
   }
 
-  .audio {
+  .nyancat-container {
+    position: relative;
+
     .sidenote {
       display: none;
-      top: -40px;
-      right: -200px;
+      top: auto;
+      bottom: 70px;
+      right: -180px;
+      padding-top: 5px;
 
       &:after {
         top: 40px;

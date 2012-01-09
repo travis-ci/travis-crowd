@@ -1,6 +1,5 @@
 #nyancat {
   position: relative;
-  width: 500px;
   height: 300px;
   margin-top: 25px;
   border: solid #acb8ca 8px;
@@ -295,20 +294,20 @@
     }
   }
   .audio {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    top: 245px;
-    left: 445px;
+    bottom: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
     background: url(/images/icons/sound.png) no-repeat -10px -10px;
     border: 2px solid #b0c2db;
     text-decoration: none;
+  }
 
-    &.on {
-      background-position: -10px -70px;
-      border: 2px solid #fffb11;
-    }
+  &.on .audio {
+    background-position: -10px -70px;
+    border: 2px solid #fffb11;
   }
 }
 

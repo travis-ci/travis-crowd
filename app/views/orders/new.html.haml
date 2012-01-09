@@ -10,16 +10,16 @@
     to Travis CI
     = subscription_type(order) + '.'
   %p
-    That is amazing! Thank you so much. We love you :)
+    That is amazing! Thank you so much, we love you :)
 
   - unless signed_in?
     #user
       = simple_fields_for user do |u|
         = u.hidden_field :stripe_card_token
         %fieldset
-          = u.input :name
-          = u.input :email
-          = u.input :password
+          = u.input :name, required: true
+          = u.input :email, required: true
+          = u.input :password, required: true
         %fieldset
           = u.input :twitter_handle, label: 'Twitter', hint: 'Your twitter handle', required: false, input_html: { placeholder: '@' }
           = u.input :github_handle,  label: 'Github',  hint: 'Your Github handle',  required: false
@@ -31,13 +31,13 @@
     %h3 Address
     = f.simple_fields_for :billing_address do |a|
       %fieldset
-        = a.input :name
-        = a.input :street
-        = a.input :zip
+        = a.input :name, required: company?
+        = a.input :street, required: company?
+        = a.input :zip, required: company?
       %fieldset
-        = a.input :city
+        = a.input :city, required: company?
         = a.input :state
-        = a.input :country
+        = a.input :country, required: company?
 
   - unless signed_in?
     #credit_card
@@ -57,7 +57,8 @@
   #comment
     %h3 Leave a comment
     %fieldset.wide
-      = f.input :comment, :as => 'text', required: false
+      = f.input :comment, as: 'text', required: false, hint: 'Add a comment (will be published on the donators list).'
+      = f.input :message, as: 'text', required: false, hint: 'You can leave us a message (will not be published).'
 
   .actions
     = f.submit 'Confirm'

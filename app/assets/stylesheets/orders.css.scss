@@ -6,9 +6,13 @@
     ul {
       list-style-type: disc;
       margin-left: 20px;
+
       li {
         margin: 0;
       }
+    }
+    ul.footnotes {
+      list-style-type: none;
     }
 
     em {
@@ -70,21 +74,25 @@
         }
         input, textarea {
           float: left;
-          margin-top: 4px;
           padding: 8px;
           border: 1px solid #ddd;
           font-size: 16px;
           @include border-radius(8px);
         }
         input {
+          margin-top: 4px;
           width: 300px;
           &.default {
             color: #ccc;
           }
         }
         textarea {
+          margin-top: 8px;
           height: 40px;
+          height: 20px;
           width: 300px;
+        }
+        #order_comment {
         }
         &.wide textarea {
           width: 740px;

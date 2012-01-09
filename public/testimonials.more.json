@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Ryan Bates",
+    "twitter": "rbates",
+    "url": "http://www.railscasts.com",
+    "image": "/images/testimonials/ryan.jpeg",
+    "quote": "I must say, @travisci is amazing."
+  },
+  {
+    "name": "Georg Ledermann",
+    "twitter": "ledermann",
+    "url": "http://georg-ledermann.de/",
+    "image": "/images/testimonials/georg.jpeg",
+    "quote": "Running tests is fun with @travisci."
+  },
+  {
+    "name": "Jason Roelofs",
+    "twitter": "jameskilton",
+    "url": "http://www.jameskilton.com",
+    "image": "/images/testimonials/jameskilton.png",
+    "quote": "@travisci is just awesome. It really couldn't be easier to use."
+  },
+  {
+    "name": "Raoul Millais",
+    "twitter": "raoulmillais",
+    "url": "http://www.raoulmillais.com",
+    "image": "/images/testimonials/raoul.jpeg",
+    "quote": "Loving @travisci - the nodejs support is superb."
+  },
+  {
+    "name": "Flipping Bits",
+    "twitter": "flippingbits",
+    "url": "http://www.flippingbits.org",
+    "image": "/images/testimonials/flippingbits.png",
+    "quote": "Travis rocks!"
+  },
+  {
+    "name": "Nicolás Hock Isaza",
+    "twitter": "nhocki",
+    "url": "http://blog.nhocki.com",
+    "image": "/images/testimonials/nhocki.jpeg",
+    "quote": "@travisci is one of the best things I've seen."
+  },
+  {
+    "name": "Danny Burkes",
+    "twitter": "dburkes",
+    "url": "http://netable.com",
+    "image": "/images/testimonials/dburkes.png",
+    "quote": "The more stuff I put on @travisci, the more I like @travisci"
+  },
+  {
+    "name": "Marc G Gauthier",
+    "twitter": "marcgg",
+    "url": "http://marcgg.com",
+    "image": "/images/testimonials/marcgg.png",
+    "quote": "Setting up @TravisCI for my continuous integration was so incredibly simple I could cry."
+  },
+  {
+    "name": "Till Schulte-Coerne",
+    "twitter": "tillsc",
+    "url": "https://github.com/tillsc",
+    "image": "/images/testimonials/tillsc.jpeg",
+    "quote": "I just realized how awesome travis-ci really is. Wow, thanks a lot!"
+  },
+  {
+    "name": "Trevor Bramble",
+    "twitter": "TrevorBramble",
+    "url": "http://trevorbramble.com",
+    "image": "/images/testimonials/trevorbramble.png",
+    "quote": "Anyone else find themselves just staring at the @travisci dashboard?"
+  },
+  {
+    "name": "Paul Yoder",
+    "twitter": "paulyoder",
+    "url": "http://www.yodersolutions.com",
+    "image": "/images/testimonials/paulyoder.jpeg",
+    "quote": "Wow! I must say that setting up a CI build with @travisci was dead simple. In less than 3 minutes I read the docs & started the first build."
+  },
+  {
+    "name": "Silveira Neto",
+    "twitter": "silveira",
+    "url": "http://www.eupodiatamatando.com",
+    "image": "/images/testimonials/silveira.jpeg",
+    "quote": "What a amazing idea is @travisci. I'll give a try. Continuous integration for the masses."
+  },
+  {
+    "name": "Derek Collison",
+    "twitter": "derekcollison",
+    "url": "http://derekcollison.net",
+    "image": "/images/testimonials/derekcollison.jpeg",
+    "quote": "I really like Travis CI, that and Mocha from TJ are my two favorite tools for the day."
+  },
+  {
+    "name": "Derek Kastner",
+    "twitter": "dkastner",
+    "url": "http://dkastner.tumblr.com",
+    "image": "/images/testimonials/dkastner.jpeg",
+    "quote": ".@travisci is awesome"
+  }
+]

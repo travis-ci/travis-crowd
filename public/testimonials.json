@@ -96,6 +96,19 @@
     "url": "http://alexjsharp.com",
     "image": "/images/testimonials/ajsharp.jpeg",
     "quote": "travisci is just, mad awesome."
+  },
+  {
+    "name": "Ernie Miller",
+    "twitter": "erniemiller",
+    "url": "http://metautonomo.us",
+    "image": "/images/testimonials/erniemiller.jpeg",
+    "quote": "I can’t recommend TravisCI enough. If you aren’t using it, you should be."
+  },
+  {
+    "name": "Joseph Wilk",
+    "twitter": "josephwilk",
+    "url": "http://blog.josephwilk.net",
+    "image": "/images/testimonials/joseph.jpeg",
+    "quote": "Great to see the Ruby community again pushing the boundaries of what is the default for OSS. Travis now is."
   }
 ]
-

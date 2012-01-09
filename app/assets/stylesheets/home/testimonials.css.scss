@@ -1,91 +1,98 @@
 #testimonials {
+  a.more {
+    display: block;
+    width: 100%;
+    height: 30px;
+    background: gray;
+  }
+
   ul {
     margin-top: 20px;
-  }
-  li {
-    margin-bottom: 20px;
 
-    img {
-      width: 80px;
-      height: 80px;
-      border: 1px solid #ddd;
-      @include border-radius(8px);
-      @include box-shadow(#ddd 0px 0px 5px);
-    }
-    blockquote {
-      position: relative;
-      width: 300px;
-      padding: 10px;
-      margin: 0;
-      border: 1px solid #ddd;
-      @include border-radius(8px);
-      @include box-shadow(#fff 0px 0px 20px 3px inset);
+    li {
+      margin-bottom: 20px;
 
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        top: 50%;
-        margin-top: -5px;
-        @include rotate(45deg);
-        border: solid #ddd;
+      img {
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ddd;
+        @include border-radius(8px);
+        @include box-shadow(#ddd 0px 0px 5px);
       }
-    }
+      blockquote {
+        position: relative;
+        width: 300px;
+        padding: 10px;
+        margin: 0;
+        border: 1px solid #ddd;
+        @include border-radius(8px);
+        @include box-shadow(#fff 0px 0px 20px 3px inset);
 
-    &:nth-child(odd) {
-      float: left;
-      clear: left;
-      margin-right: 30px;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          top: 50%;
+          margin-top: -5px;
+          @include rotate(45deg);
+          border: solid #ddd;
+        }
+      }
 
-      img, div {
+      &:nth-child(odd) {
         float: left;
-      }
-      div {
-        margin-left: 20px;
-        text-align: left;
-      }
-      blockquote {
-        background-color: #f2f4f9;
+        clear: left;
+        margin-right: 30px;
 
-        &:after {
-          left: 0;
-          margin-left: -7px;
-          border-width: 0 0 1px 1px;
-          background-color: #f9fafc;
+        img, div {
+          float: left;
+        }
+        div {
+          margin-left: 20px;
+          text-align: left;
+        }
+        blockquote {
+          background-color: #f2f4f9;
+
+          &:after {
+            left: 0;
+            margin-left: -7px;
+            border-width: 0 0 1px 1px;
+            background-color: #f9fafc;
+          }
         }
       }
-    }
-    &:nth-child(even) {
-      float: right;
-      clear: right;
-
-      img, div {
+      &:nth-child(even) {
         float: right;
-      }
-      div {
-        margin-right: 20px;
-        text-align: right;
-      }
-      blockquote {
-        background-color: #edf5ee;
+        clear: right;
 
-        &:after {
-          right: 0;
-          margin-right: -7px;
-          border-width: 1px 1px 0 0;
-          background: #f5f9f5;
+        img, div {
+          float: right;
+        }
+        div {
+          margin-right: 20px;
+          text-align: right;
+        }
+        blockquote {
+          background-color: #edf5ee;
+
+          &:after {
+            right: 0;
+            margin-right: -7px;
+            border-width: 1px 1px 0 0;
+            background: #f5f9f5;
+          }
         }
       }
-    }
-    cite {
-      display: block;
-      margin: 0 5px 0 5px;
-      color: #999;
-      font-size: 13px;
-      font-style: normal;
+      cite {
+        display: block;
+        margin: 0 5px 0 5px;
+        color: #999;
+        font-size: 13px;
+        font-style: normal;
+      }
     }
   }
 }
-

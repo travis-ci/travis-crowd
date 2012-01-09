@@ -23,7 +23,9 @@ $.extend Testimonials.prototype,
 
 $.fn.testimonials = ->
   new Testimonials(this)
+  $(this)
 
 $(document).ready ->
   $('#testimonials ul').testimonials() if $('#testimonials').length > 0
+  # .lionbars()
 

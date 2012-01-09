@@ -5,7 +5,9 @@
     %h2 Continuous Integration for the Open Source Community
     %ul
       - if signed_in?
-        %li= link_to 'Profile', profile_path
+        %li= "Welcome, #{current_user.name}"
+        %li= '&rarr;'.html_safe
+        %li= link_to 'Your Profile', profile_path
         %li= link_to 'Sign out', destroy_session_path
       - else
         %li= link_to 'Sign in', new_user_session_path

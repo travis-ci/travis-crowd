@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_filter :guard_duplicate_subscription, only: [:new, :create]
 
   def index
-    render json: Order.all.as_json
+    render json: Order.includes(:user).as_json
   end
 
   def stats

@@ -26,7 +26,7 @@
         width: 60px;
       }
       &.col-package {
-        width: 100px;
+        width: 120px;
       }
       &.col-date {
         width: 120px;
@@ -54,6 +54,7 @@
       background-color: #3f9c33;
       font-size: 14px;
       color: white;
+      white-space: nowrap;
       @include border-radius(8px)
     }
     .subscription {

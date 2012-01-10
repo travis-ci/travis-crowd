@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       user.save_with_customer!
       order.save_with_payment!
       sign_in user
-      # redirect_to order, notice: "Thank you for your support!"
+      send_confirmation
       render :confirm_creation
     else
       # p user.errors, order.errors
@@ -37,6 +37,10 @@ class OrdersController < ApplicationController
 
     helper_method :user, :order, :billing_address, :shipping_address, :subscription?, :company?
     delegate :billing_address, :shipping_address, to: :order
+
+    def send_confirmation
+      OrdersMailer.confirmation(order).deliver
+    end
 
     def user
       @user ||= current_user || User.new(params[:user])

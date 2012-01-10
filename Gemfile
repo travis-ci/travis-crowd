@@ -24,11 +24,11 @@ group :assets do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-  gem 'spork'
-  gem 'launchy'
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'mocha'
+  gem 'database_cleaner'
 end

@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', :'http-equiv' => 'Content-Type'}
+    = stylesheet_link_tag 'email'
+
+  %body
+    .header
+      %h1
+        Travis CI
+      %ul.contact
+        %li
+          E-Mail:
+          %a{href: 'mailto:contact@travis-ci.org'} contact@travis-ci.org
+        %li
+          Twitter:
+          %a{href: 'http://twitter.com/travisci'} @travisci
+
+    .content
+      = yield
+
+    = render partial: 'layouts/footer'
+

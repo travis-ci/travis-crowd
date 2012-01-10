@@ -1,0 +1,29 @@
+%h2
+  Thank you so much for your support!
+%p
+  You have just ordered the "#{order.package.name}" #{order.subscription? ? 'subscription' : 'package'}
+  which means you have donated #{number_to_currency order.total_in_dollars} to Travis CI.
+%p
+  This amount has been charged on your credit card and you should have received a confirmation from Stripe.
+%p
+  Included in the "#{order.package.name}" #{order.subscription? ? 'subscription' : 'package'} are the following features:
+
+%dl
+  - if order.billing_address.name
+    %dt Name
+    %dd= order.billing_address.name
+  - if order.billing_address.street
+    %dt Street
+    %dd= order.billing_address.street
+  - if order.billing_address.city
+    %dt City
+    %dd= order.billing_address.city
+  - if order.billing_address.zip
+    %dt Zip
+    %dd= order.billing_address.zip
+  - if order.billing_address.state
+    %dt State
+    %dd= order.billing_address.state
+  - if order.billing_address.country
+    %dt Country
+    %dd= order.billing_address.country

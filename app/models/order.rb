@@ -19,12 +19,20 @@ class Order < ActiveRecord::Base
     def active
       where(active: true)
     end
+
+    def stats
+      Hash[*connection.select_rows('SELECT package, count(id) FROM orders GROUP BY package').flatten]
+    end
   end
 
   attr_accessor :card_number
 
   def package
     @package ||= Package.new(read_attribute(:package), subscription?)
+  end
+
+  def total
+    read_attribute(:total) || package.price
   end
 
   def total_in_dollars

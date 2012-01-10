@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     render json: Order.all.as_json
   end
 
+  def stats
+    render json: Order.stats
+  end
+
   def show
     render :confirm_creation
   end

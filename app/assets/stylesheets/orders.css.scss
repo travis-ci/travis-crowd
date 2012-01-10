@@ -38,7 +38,8 @@
       }
 
       & > div {
-        @include clearfix();
+        display: inline-block;
+        height: 1%;
       }
 
       fieldset {
@@ -66,18 +67,21 @@
           }
         }
         label {
-          display: inline-block;
+          float: left;
+          clear: both;
           width: 70px;
           margin-bottom: 2px;
           padding-right: 15px;
-          line-height: 40px;
+          line-height: 45px;
           text-align: right;
           font-size: 15px;
           text-shadow: 2px 2px 0px #fff;
           color: #666;
         }
+        input, textarea, select {
+          float: left;
+        }
         input, textarea {
-          display: inline-block;
           padding: 8px;
           border: 1px solid #ddd;
           font-size: 16px;
@@ -90,7 +94,6 @@
         textarea {
           margin-top: 8px;
           height: 40px;
-          height: 20px;
           width: 300px;
         }
         &.wide textarea {

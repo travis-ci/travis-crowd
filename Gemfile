@@ -1,6 +1,7 @@
 source :rubygems
 
-gem 'rails', '~> 3.2.0.rc2'
+# gem 'rails', '~> 3.2.0.rc2'
+gem 'rails', :git => 'git://github.com/rails/rails.git', :ref => '77785c78' # current 3-2-stable
 gem 'rack', '~> 1.4.0'
 
 gem 'jquery-rails'

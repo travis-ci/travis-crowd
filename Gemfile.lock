@@ -1,5 +1,7 @@
-GEM
-  remote: http://rubygems.org/
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 77785c78063c801d0f7d9869bd669b19fd10f6fa
+  ref: 77785c78
   specs:
     actionmailer (3.2.0.rc2)
       actionpack (= 3.2.0.rc2)
@@ -28,6 +30,18 @@ GEM
     activesupport (3.2.0.rc2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    rails (3.2.0.rc2)
+      actionmailer (= 3.2.0.rc2)
+      actionpack (= 3.2.0.rc2)
+      activerecord (= 3.2.0.rc2)
+      activeresource (= 3.2.0.rc2)
+      activesupport (= 3.2.0.rc2)
+      bundler (~> 1.0)
+      railties (= 3.2.0.rc2)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
     arel (3.0.0.rc1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -107,14 +121,6 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.2.0.rc2)
-      actionmailer (= 3.2.0.rc2)
-      actionpack (= 3.2.0.rc2)
-      activerecord (= 3.2.0.rc2)
-      activeresource (= 3.2.0.rc2)
-      activesupport (= 3.2.0.rc2)
-      bundler (~> 1.0)
-      railties (= 3.2.0.rc2)
     railties (3.2.0.rc2)
       actionpack (= 3.2.0.rc2)
       activesupport (= 3.2.0.rc2)
@@ -161,7 +167,7 @@ GEM
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
+      tilt (!= 1.3.0, ~> 1.1)
     stripe (1.5.25)
       rest-client (~> 1.4)
     term-ansicolor (1.0.7)
@@ -198,7 +204,7 @@ DEPENDENCIES
   mocha
   pg (~> 0.11.0)
   rack (~> 1.4.0)
-  rails (~> 3.2.0.rc2)
+  rails!
   rest_in_place
   rspec
   rspec-rails

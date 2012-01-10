@@ -16,6 +16,8 @@
     }
   }
   #packages, #subscriptions {
+    margin-bottom: 40px;
+
     h3 {
       margin: 24px 0 0 0;
       color: #444;
@@ -56,6 +58,7 @@
     &.on {
       background-position: left -16px;
       color: #444;
+      // background-color: yellow;
     }
   }
 }

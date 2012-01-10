@@ -18,6 +18,16 @@ module ApplicationHelper
     end
   end
 
+  def stats_for(package, type)
+    content_tag(:p, class: :stats) do
+      if number = stats[package]
+        "#{content_tag(:span, number)} #{type}#{number == 1 ? '' : 's'}".html_safe
+      else
+        "Be the first #{type}!"
+      end
+    end
+  end
+
   def display_bio?(package)
     %w(big huge).include?(package.to_s)
   end

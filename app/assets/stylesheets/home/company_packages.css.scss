@@ -1,7 +1,7 @@
 #company-packages {
   position: relative;
   padding: 20px 40px;
-  padding-bottom: 40px;
+  padding-bottom: 35px;
   background-color: #f3f3f3;
   @include border-radius(8px);
   @include box-shadow(#ddd 2px 2px 6px inset);
@@ -24,19 +24,26 @@
       content: "Hide"
     }
   }
-  .packages li {
-    width: 220px;
-    background-color: white;
-    a {
-      width: 209px;
+  .packages {
+    margin-bottom: 40px;
+
+    li {
+      width: 220px;
+      background-color: white;
+      a {
+        width: 209px;
+        .price-tag {
+          top: 17px;
+          right: -22px;
+        }
+      }
       .price-tag {
-        top: 17px;
+        top: 18px;
         right: -22px;
       }
-    }
-    .price-tag {
-      top: 18px;
-      right: -22px;
+      .stats {
+        width: 205px;
+      }
     }
   }
 

@@ -21,7 +21,8 @@ class Order < ActiveRecord::Base
     end
 
     def stats
-      Hash[*connection.select_rows('SELECT package, count(id) FROM orders GROUP BY package').flatten]
+      stats = Hash[*connection.select_rows('SELECT package, count(id) FROM orders GROUP BY package').flatten].symbolize_keys
+      stats.each { |key, value| stats[key] = value.to_i }
     end
   end
 

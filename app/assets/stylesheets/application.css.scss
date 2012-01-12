@@ -14,6 +14,12 @@ html, body {
   background-color: #fafafa;
   z-index: -2;
 }
+
+// required for IE
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 p, li, blockquote {
   line-height: 140%;
   margin: 15px 0 0 0;

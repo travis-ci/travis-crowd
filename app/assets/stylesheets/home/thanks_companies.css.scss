@@ -18,8 +18,7 @@
       margin-right: 20px;
       font-size: 13px;
     }
-    &:nth-child(3),
-    &:nth-child(5) {
+    &.last-child {
       margin-right: 0;
     }
 

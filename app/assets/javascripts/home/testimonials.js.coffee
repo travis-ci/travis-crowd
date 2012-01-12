@@ -20,6 +20,9 @@ $.extend Testimonials.prototype,
         '  </div>' +
         '</li>'
       )
+    $('#testimonials ul li:odd').addClass('even');
+    $('#testimonials ul li:even').addClass('odd');
+
 
 $.fn.testimonials = ->
   new Testimonials(this)
@@ -28,4 +31,3 @@ $.fn.testimonials = ->
 $(document).ready ->
   $('#testimonials ul').testimonials() if $('#testimonials').length > 0
   # .lionbars()
-

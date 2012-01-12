@@ -31,6 +31,10 @@ class Package
     subscription? ? SUBSCRIPTIONS[id] : PACKAGES[id]
   end
 
+  def features
+    FEATURES[id]
+  end
+
   def price_in_dollars
     price.to_f / 100
   end

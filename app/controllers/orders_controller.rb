@@ -21,11 +21,15 @@ class OrdersController < ApplicationController
       order.save_with_payment!
       sign_in user
       send_confirmation
-      render :confirm_creation
+      redirect_to confirm_order_url(order)
     else
       # p user.errors, order.errors
       render :new
     end
+  end
+
+  def confirm
+    render :confirm_creation
   end
 
   def destroy

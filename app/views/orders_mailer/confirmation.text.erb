@@ -5,6 +5,8 @@ which means you have donated <%= number_to_currency order.total_in_dollars %> to
 
 This amount has been charged on your credit card and you should have received a confirmation from Stripe.
 
-Included in the "<%= order.package.name %>" <%= order.subscription? ? 'subscription' : 'package' %> are the following features:
+Included in this <%= order.subscription? ? 'subscription' : 'package' %> are the following features:
+
+<%= render partial: "orders_mailer/features/#{order.package.id}" %>
 
 <%= %w(name street city zip state country).map { |name| order.billing_address.send(name) }.compact.join("\n") %>

@@ -175,14 +175,17 @@
         }
       }
       .error {
+        clear: both;
+        float: left;
         display: block;
         margin-left: 85px;
         font-size: 13px;
         color: #c00;
       }
       #stripe_error {
+        float: left;
         color: #c00;
-        margin: 15px 0 0 80px;
+        margin: 15px 0 0 0;
       }
       .tipsy {
         margin-left: 20px;

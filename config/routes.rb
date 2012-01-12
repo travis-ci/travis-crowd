@@ -4,8 +4,13 @@ Travis::Application.routes.draw do
   match 'packages/:package', as: :new_package, to: 'orders#new'
   match 'subscriptions/:package', as: :new_subscription, to: 'orders#new', subscription: true
 
-  resources :orders, except: :new
-  resource :profile
+  resources :orders, except: :new do
+    get 'confirm', on: :member
+  end
+
+  resource :profile do
+    get 'ringtones', on: :member
+  end
 
   match '/donations.json', to: 'orders#index', as: :donators
 

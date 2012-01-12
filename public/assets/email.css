@@ -1,0 +1,128 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 800px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+body {
+  padding: 20px;
+}
+h3 {
+  font-size: 16px;
+}
+em {
+  font-style: normal;
+  background-color: yellow;
+}
+
+dl {
+  display: inline-block;
+  margin: 0;
+  line-height: 24px;
+  font-size: 15px;
+  color: #999;
+}
+dt {
+  float: left;
+  clear: left;
+  width: 50px;
+}
+dd {
+  float: left;
+}
+p sup {
+	position: relative;
+	top: -0.5em;
+	vertical-align: baseline;
+	line-height: 0;
+	font-size: 75%;
+}
+
+.header {
+  height: 70px;
+}
+.header img {
+  float: left;
+  width: 200px;
+  height: 64px;
+}
+.header ul {
+  float: right;
+  margin: 14px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 160%;
+  color: #999;
+  list-style-type: none;
+}
+.header ul a {
+  color: #999;
+  text-decoration: none;
+}
+.header ul a:hover {
+  text-decoration: underline;
+}
+.header li {
+  margin: 0;
+  padding: 0;
+}
+
+.footnotes {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #999;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footnotes li {
+  position: relative;
+  margin: 0;
+  padding-left: 10px;
+  line-height: 160%;
+}
+.footnotes li sup {
+  position: absolute;
+  left: 0;
+  top: -0.33em;
+}
+.footnotes li a {
+  color: inherit;
+}
+
+footer {
+  margin: 40px -20px 0 -20px;
+  padding: 30px;
+  background-color: #f2f4f9;
+  font-size: 14px;
+}
+footer div {
+  width: 880px;
+  height: 95px;
+  margin: 0 auto;
+}
+footer h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+footer ul {
+  display: inline-block;
+  float: left;
+  margin: 0 35px 0 0;
+  padding: 0;
+  list-style-type: none;
+}
+footer li {
+  line-height: 160%;
+  font-size: 15px;
+  color: #999;
+  margin: 0;
+  padding: 0;
+}
+footer a {
+  color: #89a;
+}

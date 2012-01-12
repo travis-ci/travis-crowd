@@ -47,5 +47,7 @@ module Travis
 
     # Heroku has a read-only file system
     config.assets.initialize_on_precompile = false
+
+    config.action_mailer.default_url_options = { :host => 'support.travis-ci.org' }
   end
 end

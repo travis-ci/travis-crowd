@@ -29,4 +29,24 @@ Travis::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # mailtrap
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => 'travis-crowd',
+  #   :password => 'bda90f99c7d7964c',
+  #   :address => 'mailtrap.io',
+  #   :port => 2525,
+  #   :authentication => :plain,
+  # }
+
+  # mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'localhost',
+    :port => 1025
+  }
+
+  # letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
 end

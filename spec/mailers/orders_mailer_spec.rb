@@ -8,7 +8,15 @@ describe OrdersMailer do
     let(:email)   { OrdersMailer.confirmation(order) }
 
     def part(email, type)
-      email.body.parts.detect { |part| part.content_type =~ /#{type}/ }.body.raw_source
+      parts = email.respond_to?(:body) ? email.body.parts : email.parts
+      part = parts.detect do |part|
+        if part.content_type =~ /multipart/
+          self.part(part, type)
+        else
+          part.content_type =~ /#{type}/
+        end
+      end
+      part.body
     end
 
     %w(html text).each do |type|
@@ -27,6 +35,12 @@ describe OrdersMailer do
       it "includes the user's address" do
         part(email, type).should =~ /Berlin/
       end
+    end
+
+    it 'has inlined css for the html part' do
+      email.deliver
+      email = ActionMailer::Base.deliveries.last
+      part(email, :html).should =~ /<html[^>]*style/
     end
 
     it 'should deliver successfully' do

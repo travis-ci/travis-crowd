@@ -1,0 +1,24 @@
+%h2 Invoice
+
+%dl
+  %dt Date
+  %dd= l Time.now, :format => :short
+  %dt= order.subscription? ? 'Subscription' : 'Package'
+  %dd= order.package.name
+  %dt Price
+  %dd= number_to_currency order.total_in_dollars
+
+- if order.subscription?
+  %p The payment for this subscription will be due on a monthly base and billed on your credit card by our payment partner.
+
+%h3 Your address
+%dl
+  - %w(name street city zip state country).each do |attr|
+    - if order.billing_address.send(attr).present?
+      %dt= attr.camelize
+      %dd= order.billing_address.send(attr)
+
+%p.footnotes
+  We use Stripe Inc., 522 Ramona St, Palo Alto, CA 94391, U.S.A., as our payment partner. All payments made via Stripe are routed to us by our clearing agent JumpstartLab, Jeff Casimir, 3634 Georgia Ave NW, Washington, DC 20010, U.S.A.
+%p.footnotes
+  Contributions and payments to travis-ci.org or Travis CI GmbH are not deductible as charitable contributions for federal income tax purposes. However, they may be deductible under other provisions of the Internal Revenue Code (for US) or your local tax authority's advice.

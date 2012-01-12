@@ -11,11 +11,4 @@
   Included in this #{order.subscription? ? 'subscription' : 'package'} are the following features:
 
 = render partial: "orders_mailer/features/#{order.package.id}"
-
-%h3 Your address:
-
-%dl
-  - %w(name street city zip state country).each do |attr|
-    - if order.billing_address.send(attr).present?
-      %dt= attr.camelize
-      %dd= order.billing_address.send(attr)
+= render partial: 'orders_mailer/invoice'

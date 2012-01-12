@@ -23,12 +23,11 @@ dl {
   margin: 0;
   line-height: 24px;
   font-size: 15px;
-  color: #999;
 }
 dt {
   float: left;
   clear: left;
-  width: 50px;
+  width: 85px;
 }
 dd {
   float: left;
@@ -71,12 +70,11 @@ p sup {
 }
 
 .footnotes {
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   color: #999;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 .footnotes li {
   position: relative;
@@ -91,6 +89,9 @@ p sup {
 }
 .footnotes li a {
   color: inherit;
+}
+p.footnotes {
+  margin-top: 20px;
 }
 
 footer {

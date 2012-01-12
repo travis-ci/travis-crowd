@@ -3,7 +3,7 @@
 
 class Package
   PACKAGES      = { tiny: 1000, small: 3500, medium: 7000, big: 20000, huge: 50000, silver: 100000, gold: 300000, platinum: 600000 }
-  SUBSCRIPTIONS = { tiny: 1000, small: 1500, medium: 2000, big: 3500, huge: 5000 }
+  SUBSCRIPTIONS = { small: 1000, medium: 1500, big: 2500 }
 
   class << self
     def price(package, subscription = false)

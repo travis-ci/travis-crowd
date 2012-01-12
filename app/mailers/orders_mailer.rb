@@ -1,5 +1,5 @@
 class OrdersMailer < ActionMailer::Base
-  default from: 'contact@travis-ci.org'
+  default from: 'Travis CI <contact@travis-ci.org>'
   layout 'email'
 
   attr_reader :order

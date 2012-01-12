@@ -16,6 +16,7 @@ gem 'gravatar-ultimate'
 gem 'rest_in_place'
 gem 'country-select'
 gem 'roadie'
+gem 'rdiscount'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.0.rc2'

@@ -57,6 +57,7 @@
 
         .input {
           position: relative;
+          height: 50px;
 
           &.required:after {
             content: '*';

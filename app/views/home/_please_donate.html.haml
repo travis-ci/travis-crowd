@@ -55,7 +55,10 @@
           .price-tag
             = number_to_currency Package.price(:big)
         %p All the stuff from the previous plan.
-        %p Plus: 50 EUR credit for your future Travis CI pro account.
+        %p
+          Plus: $50 credit for your future Travis CI pro account
+          %sup> 2
+          \.
         %p And a skype cup of tea with Josh &amp; Sven.
         = link_to 'Donate', new_package_path(package: 'big')
         = stats_for(:big, :donor)
@@ -64,8 +67,11 @@
           Huge
           .price-tag
             = number_to_currency Package.price(:huge)
-        %p All the stuff from the previous plan plus:
-        %p 200 EUR credit for your future Travis CI pro account.
+        %p All the stuff from the previous plan.
+        %p
+          Plus: $200 credit for your future Travis CI pro account
+          %sup> 2
+          \.
         %p
           And 1 hour remote pairing or support with one of our volunteers
           %sup> 1
@@ -106,26 +112,23 @@
   %ul.footnotes
     %li
       %sup 1
-      = succeed ',' do
-        %a{href: 'https://github.com/joshk'} Josh Kalderimis
-      = succeed ',' do
-        %a{href: 'https://github.com/svenfuchs'} Sven Fuchs
-      = succeed ',' do
-        %a{href: 'https://github.com/sferik'} Erik Michaels-Ober
-      = succeed ',' do
-        %a{href: 'https://github.com/spastorino'} Santiago Pastorino
-      = succeed ',' do
-        %a{href: 'https://github.com/fxn'} Xavier Nora
-      = succeed ',' do
-        %a{href: 'https://github.com/jonleighton'} Jon Leighton
-      = succeed '.' do
-        %a{href: 'https://github.com/josevalim'} José Valim
-      = succeed ',' do
-        %a{href: 'https://github.com/tenderlove'} Aaron Patterson
-      = succeed '.' do
-        %a{href: 'https://github.com/wycats'} Yehuda Katz
-      Spots are limited. Wanna support us and get on this list? Drop us a
-      = succeed '.' do
-        %a{href: '#contact'} note
+      :markdown
+        [Josh Kalderimis](https://github.com/joshk),
+        [Sven Fuchs](https://github.com/svenfuchs),
+        [Erik Michael-Ober](https://github.com/sferik),
+        [Santiago Pastorino](https://github.com/spastorino),
+        [Xavier Nora](https://github.com/fxn),
+        [Jon Leighton](https://github.com/jonleighton),
+        [José Valim](https://github.com/josevalim),
+        [Aaron Patterson](https://github.com/tenderlove),
+        [Yehuda Katz](https://github.com/wycats).
+        Spots are limited. Wanna support us and get on this list?
+        Drop us a [note](#contact)
+    %li
+      %sup 2
+      "Travis CI pro" is the working title for the hosted service for private builds
+      that we are going to provide as soon as possible. We will book credits for your 
+      future account if you donate one of the bigger packages.
+
   .sidenote.left.handwritten
     Please consider these so we can make Travis CI better with your help.

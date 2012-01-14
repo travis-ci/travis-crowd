@@ -21,6 +21,8 @@ $.extend Donations.prototype,
     _this = this
     this.data = data if data
     this.clear()
+    this.pagination.update()
+
     $.each this.pagination.data(), (ix, record) ->
       row = $('<tr></tr>')
       $.each new Donation(record).values(), (ix, value)->

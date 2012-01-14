@@ -1,31 +1,43 @@
-Testimonials = (element) ->
+Testimonials = (element, pagination) ->
   this.element = element
-  $.get('/testimonials.json', this.render.bind(this))
+  this.pagination = new Pagination(this, pagination, Testimonials.COUNT)
+  this.load()
+  this
+
+$.extend Testimonials,
+  URL: '/testimonials.json',
+  COUNT: 10
 
 $.extend Testimonials.prototype,
-  render: (records) ->
-    _this = this # fuck you, jquery
-    $.each records, ->
+  load: ()->
+    $.get Testimonials.URL, this.render.bind(this)
+  clear: ->
+    $(this.element).empty()
+  render: (data) ->
+    _this = this
+    this.data = data if data
+    this.clear()
+    this.pagination.update()
+
+    $.each this.pagination.data(), (ix, record) ->
       _this.element.append $(
         '<li>' +
-        '  <img src="' + this.image + '">' +
+        '  <img src="' + record.image + '">' +
         '  <div>' +
         '    <blockquote>' +
-        '      ' + this.quote + '' +
+        '      ' + record.quote + '' +
         '    </blockquote>' +
         '    <cite>' +
-        '      <a href="' + this.url + '">' + this.name + '</a>,' +
-        '      <a href="http://twitter.com/#!/' + this.twitter + '">@' + this.twitter + '</a>' +
+        '      <a href="' + record.url + '">' + record.name + '</a>,' +
+        '      <a href="http://twitter.com/#!/' + record.twitter + '">@' + record.twitter + '</a>' +
         '    </cite>' +
         '  </div>' +
         '</li>'
       )
 
 $.fn.testimonials = ->
-  new Testimonials(this)
-  $(this)
+  new Testimonials(this, $('.pagination', this.parent()))
 
 $(document).ready ->
-  $('#testimonials ul').testimonials() if $('#testimonials').length > 0
-  # .lionbars()
+  window.testimonials = $('#testimonials ul').testimonials() if $('#testimonials').length > 0
 

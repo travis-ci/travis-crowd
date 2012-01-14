@@ -1,7 +1,8 @@
 %section#faq.paper
   %h2 FAQ
 
-  %h3 Who are you, actually?
+  %h3#faq-who-are-you
+    Who are you, actually?
   %p
     We've just recently founded a company Travis CI GmbH in Berlin, Germany. So we are able to receive
     payments, send invoices and pay people in a legal manner.
@@ -10,12 +11,14 @@
     [Konstantin Haase](http://twitter.com/konstantinhaase) and [Sven Fuchs](http://twitter.com/svenfuchs)
     and will be used to push Travis CI further.
 
-  %h3 What are you going to do with all the money?
+  %h3#faq-what-are-your-plans
+    What are you going to do with all the money?
   %p
     We are going to continue work on Travis CI in order to make it even better. Some of the features that
-    we want to work on next are listed above.
+    we want to work on next are <a href='#future-plans'>listed above</a>.
 
-  %h3 Why do you need to accept donations for this?
+  %h3#faq-why-donations
+    Why do you need to accept donations for this?
   %p
     We have been working on Travis CI off our personal money for the last half a year or so and now we
     have reached a limit with that.
@@ -23,7 +26,8 @@
     We are going to implement a paid service for private builds, too, but that will probably take a while.
     We also want to pay people for improving various parts of the system too.
 
-  %h3 Can't you just sell private build support and use that money for your plans?
+  %h3#faq-why-not-bootstrap-on-private-builds
+    Can't you just sell private build support and use that money for your plans?
   %p
     We certainly could. But this would then take much longer as we would need to pick up external work in
     order to pay our own bills. There also are other features (like pre-tested Github pull requests and the
@@ -32,7 +36,14 @@
     So, put simple, by accepting donations and sponsorships we allow the community to speed up further
     improvements to Travis CI.
 
-  %h3 I just want to send some money without all this jazz. Can I do that?
+  %h3#faq-no-credit-card
+    I do not have a credit card!
+  %p
+    So you're probably from Europe? In that case you can just transfer money to our bank account (see below).
+    We will take care of your donation manually :)
+
+  %h3#faq-bank-account
+    I just want to send some money without all this jazz. Can I do that?
   %p Absolutely. Here's our bank account:
   %dl
     %dt Name
@@ -52,13 +63,15 @@
     %a{href: 'mailto:contact@travis-ci.org'} send us an email
     or otherwise make sure we know who you are :)
 
-  %h3 How do you deal with my credit card data?
+  %h3#faq-credit-card-privacy
+    How do you deal with my credit card data?
   %p
     We just don't. Instead we send it to <a href="http://stripe.com">Stripe</a> through Javascript before
     the form gets submitted. We then get a token back which we send to our application. So we never see your
     full credit card data, only Stripe does, and they take care of the actual payments, too.
 
-  %h3 How about VAT and tax deduction for my donations?
+  %h3#faq-vat-and-tax
+    How about VAT and tax deduction for my donations?
   %p
     VAT is included in Europe.
   %p

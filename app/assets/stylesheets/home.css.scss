@@ -8,7 +8,7 @@
 @import "home/rails_core";
 @import "home/thanks_companies";
 @import "home/company_packages";
-@import "home/thanks_guys";
+@import "home/thanks_folks";
 @import "home/testimonials";
 @import "home/future_plans";
 @import "home/ringtones";
@@ -265,6 +265,9 @@ section:hover .sidenote {
     }
     a {
       color: inherit;
+    }
+    p {
+      margin: 5px 0 0 0;
     }
   }
 }

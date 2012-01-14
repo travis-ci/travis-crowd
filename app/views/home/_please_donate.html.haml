@@ -16,14 +16,13 @@
     hot off the press as well as a bunch of
     %a{href: '#ringtones'} ringtones and sounds
     from  Yehuda, Aaron, Jose and Jon. And how about a virtual cup of tea with Josh and Sven on Skype or
-    even a one hour remote pairing session with one of our fantastic volunteers!
-    %sup 1
+    even a one hour remote pairing session with one of our fantastic volunteers<sup>1</sup>!
   %p
     %strong What we'll use the money for?
     We are going to make Travis CI better (see <a href="#future-plans">some of the features</a> we have in the pipeline) and
     we are going to build Travis CI pro<sup>2</sup>.
   %p
-    You can get donation packages in two flavors: as one-off payments or subscriptions:
+    You can get donation packages in two flavors: as one-off payments or monthly subscriptions:
   .switch
     %label.on{for: 'type_package', value: 'packages'} One payment
     %label{for: 'type_subscription', value: 'subscriptions'} Subscription
@@ -54,7 +53,7 @@
           .price-tag
             = number_to_currency Package.price(:medium)
         %p All the stuff from the previous plan with all the Travis CI stickers.
-        %p Plus: you get on the waiting list for Travis CI pro beta access.
+        %p Plus: you get on the waiting list for Travis CI pro<sup>2</sup> beta access.
         = link_to 'Donate', new_package_path(package: 'medium')
         = stats_for(:medium, :donor)
       %li.big
@@ -113,7 +112,7 @@
           .price-tag
             = number_to_currency Package.price(:big, true)
         %p All the stuff from the previous plan with all the Travis CI stickers.
-        %p Plus: you get on the waiting list for Travis CI pro beta access.
+        %p Plus: you get on the waiting list for Travis CI pro<sup>2</sup> beta access.
         = link_to 'Donate', new_subscription_path(package: 'big')
         = stats_for(:big, :subscriber)
 

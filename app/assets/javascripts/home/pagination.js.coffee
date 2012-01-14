@@ -37,6 +37,10 @@ $.extend window.Pagination.prototype,
     this.count = this.paged_count
     this.update()
   update: ->
+    if(this.lastPage() == 1)
+      this.element.hide()
+    else
+      this.element.show()
     this.element.toggleClass('first_page', this.isFirst())
     this.element.toggleClass('last_page', this.isLast())
     this.element.toggleClass('paged', this.isPaged())

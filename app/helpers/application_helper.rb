@@ -23,7 +23,7 @@ module ApplicationHelper
       if number = stats[package]
         "#{content_tag(:span, number)} #{type}#{number == 1 ? '' : 's'}".html_safe
       else
-        "Be the first #{type}!"
+        "Be the first to #{type == :donor ? 'donate' : 'subscribe'}!"
       end
     end
   end

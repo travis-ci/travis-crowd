@@ -12,7 +12,7 @@ Travis::Application.routes.draw do
     get 'ringtones', on: :member
   end
 
-  match '/donations.json', to: 'orders#index', as: :donators
+  match '/donations.json', to: 'orders#index', as: :donors
 
   devise_for :users, controllers: { omniauth_callbacks: 'sessions' }
 

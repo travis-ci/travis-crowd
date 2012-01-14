@@ -14,6 +14,10 @@
     ul.footnotes {
       list-style-type: none;
     }
+    sup.required {
+      color: #c00;
+      font-size: 15px;
+    }
 
     form {
       width: 900px;
@@ -139,7 +143,7 @@
       }
 
       .actions {
-        margin: 12px 0 24px 80px;
+        margin: 12px 0 20px 85px;
         line-height: 60px;
 
         input {

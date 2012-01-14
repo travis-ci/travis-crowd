@@ -41,7 +41,9 @@
 
   - unless signed_in?
     #credit_card
-      %h3 Credit Card
+      %h3
+        Credit Card
+        %sup 1
       %fieldset
         - if user.stripe_card_token.present?
           %label Info
@@ -67,7 +69,15 @@
 
   %ul.footnotes
     %li
+      %sup.required *
+      Required field
+    %li
       %sup 1
+      We do not send your credit card data to our application, nor do we keep any of it. Instead
+      we send it to <a href="http://stripe.com">Stripe</a> through Javascript and only get a token
+      back which is then kept on our side.
+    %li
+      %sup 2
       Contributions and payments to travis-ci.org or Travis CI GmbH are not deductible as charitable
       contributions for federal income tax purposes. However, they may be deductible under other
       provisions of the Internal Revenue Code (for US) or your local tax authority's advice.

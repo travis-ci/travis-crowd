@@ -17,16 +17,16 @@
       %h4.handwritten Please spread the word!
       %a.twitter-share-button{'data-count' => 'vertical', href: 'https://twitter.com/share'} Tweet
       %script{src: 'http://platform.twitter.com/widgets.js', type: 'text/javascript'}
-      %g:plusone{href: 'http://railslove.myshopify.com', size: 'tall'}
-      -# :javascript
-      -#   window.___gcfg = {lang: 'en-GB'};
-      -#   (function() {
-      -#     var po = document.createElement('script');
-      -#     po.type = 'text/javascript';
-      -#     po.async = true;
-      -#     po.src = 'https://apis.google.com/js/plusone.js';
-      -#     var s = document.getElementsByTagName('script')[0];
-      -#     s.parentNode.insertBefore(po, s);
-      -#   })();
-      -# .fb-like{'data-font' => 'arial', 'data-href' => 'http://support.travis-ci.org', 'data-layout' => 'box_count', 'data-send' => 'false', 'data-show-faces' => 'false', 'data-width' => '50'}
+      %g:plusone{href: 'http://support.travis-ci.org', size: 'tall'}
+      :javascript
+        window.___gcfg = {lang: 'en-GB'};
+        (function() {
+          var po = document.createElement('script');
+          po.type = 'text/javascript';
+          po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(po, s);
+        })();
+      .fb-like{'data-font' => 'arial', 'data-href' => 'http://support.travis-ci.org', 'data-layout' => 'box_count', 'data-send' => 'false', 'data-show-faces' => 'false', 'data-width' => '50'}
 

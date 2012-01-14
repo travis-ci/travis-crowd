@@ -13,7 +13,7 @@ Donations = (table, pagination) ->
 
 $.extend Donations,
   URL: '/donations.json'
-  COUNT: 15
+  COUNT: 10
 
 $.extend Donations.prototype,
   load: ()->

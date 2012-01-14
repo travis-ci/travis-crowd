@@ -1,7 +1,8 @@
 window.Pagination = (list, element, count) ->
   this.element = element
   this.list = list
-  this.page_number = $('.page .number', element)
+  this.currentElement = $('.page .current-page', element)
+  this.lastElement = $('.page .last-page', element)
 
   this.page = 1
   this.count = this.paged_count = count
@@ -39,7 +40,8 @@ $.extend window.Pagination.prototype,
     this.element.toggleClass('first_page', this.isFirst())
     this.element.toggleClass('last_page', this.isLast())
     this.element.toggleClass('paged', this.isPaged())
-    this.page_number.html(this.page)
+    this.currentElement.html(this.page)
+    this.lastElement.html(this.lastPage())
   isFirst: ->
     this.page == 1
   isLast: ->

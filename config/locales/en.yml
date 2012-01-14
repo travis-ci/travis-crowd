@@ -11,7 +11,7 @@ en:
         format: "%u %n"
         unit: "$"
         precision: 0
-        delimiter: ''
+        delimiter: ','
 
 devise:
   sessions:

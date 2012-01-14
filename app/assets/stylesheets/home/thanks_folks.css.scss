@@ -69,6 +69,57 @@
       @include border-radius(3px);
       @include box-shadow(1px 1px 3px #ddd);
     }
+
+    .pagination {
+      position: absolute;
+      top: 45px;
+      right: 35px;
+      font-size: 15px;
+      color: #666;
+
+      span.first {
+        display: none;
+      }
+      &.first_page span.first {
+        display: inline-block;
+      }
+      &.first_page a.first {
+        display: none;
+      }
+      span.previous {
+        display: none;
+      }
+      &.first_page span.previous {
+        display: inline-block;
+      }
+      &.first_page a.previous {
+        display: none;
+      }
+      span.next {
+        display: none;
+      }
+      &.last_page span.next {
+        display: inline-block;
+      }
+      &.last_page a.next {
+        display: none;
+      }
+      span.last {
+        display: none;
+      }
+      &.last_page span.last {
+        display: inline-block;
+      }
+      &.last_page a.last {
+        display: none;
+      }
+      &.paged a.paged {
+        display: none;
+      }
+      &:not(.paged) *:not(.paged) {
+        display: none !important;
+      }
+    }
   }
   .sidenote {
     top: 80px;

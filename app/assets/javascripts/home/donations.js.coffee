@@ -6,18 +6,87 @@ Array.prototype.compact = ->
   $.each this, (ix, value) ->
     _this.splice(ix, 1) if !value
 
-Donations = (table) ->
-  this.table = table
-  $.get '/donations.json', this.render.bind(this)
+Donations = (table, pagination) ->
+  this.tbody = $('tbody', table)
+  this.pagination = new Pagination(this, pagination)
+  this.load()
+  this
 
 $.extend Donations.prototype,
+  load: (page)->
+    $.get '/donations.json', this.render.bind(this)
+  clear: ->
+    $(this.tbody).empty()
   render: (data) ->
     _this = this
-    $.each data, (ix, data) ->
+    this.data = data if data
+    this.clear()
+    $.each this.pagination.data(), (ix, record) ->
       row = $('<tr></tr>')
-      $.each new Donation(data).values(), (ix, value)->
+      $.each new Donation(record).values(), (ix, value)->
         row.append $('<td>' + value + '</td>')
-      _this.table.append(row)
+      _this.tbody.append(row)
+
+Pagination = (donations, element) ->
+  _this = this
+  this.element = element
+  this.donations = donations
+  this.page_number = $('.page .number', element)
+
+  this.page = 1
+  this.count = Pagination.COUNT
+
+  $.each ['first', 'previous', 'next', 'last', 'all', 'paged'], (ix, key)->
+    $('.' + key, _this.element).click ->
+      _this[key]()
+      donations.render()
+      false
+
+  this
+
+$.extend Pagination,
+  COUNT: 15
+
+$.extend Pagination.prototype,
+  first: ->
+    this.page = 1
+    this.update()
+  next: ->
+    this.page += 1
+    this.update()
+  previous: ->
+    this.page -= 1
+    this.update()
+  last: ->
+    this.page = this.lastPage()
+    this.update()
+  all: ->
+    this.page = 1
+    this.count = this.donations.data.length
+    this.update()
+  paged: ->
+    this.count = Pagination.COUNT
+    this.update()
+  isFirst: ->
+    this.page == 1
+  isLast: ->
+    this.page == this.lastPage()
+  isPaged: ->
+    this.count == Pagination.COUNT
+  lastPage: ->
+    parseInt(this.donations.data.length / this.count) + 1
+  data: ->
+    this.donations.data.slice(this.start(), this.end())
+  start: ->
+    (this.page - 1) * this.count
+  end: ->
+    this.start() + this.count
+  update: ->
+    this.element.toggleClass('first_page', this.isFirst())
+    this.element.toggleClass('last_page', this.isLast())
+    this.element.toggleClass('paged', this.isPaged())
+    this.page_number.html(this.page)
+
 
 Donation = (data) ->
   this.data = data
@@ -55,9 +124,9 @@ $.extend Donation.prototype,
     this.data.comment
 
 
-$.fn.donations = ->
-  new Donations(this)
+$.fn.donations = (pagination)->
+  donations = new Donations(this, pagination)
 
 $(document).ready ->
-  $('#donations').donations() if $('#donations').length > 0
+  $('#donations').donations($('.pagination')) if $('#donations').length > 0
 

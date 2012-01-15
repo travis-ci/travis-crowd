@@ -1,5 +1,12 @@
 [
   {
+    "name": "Elise Huard",
+    "twitter": "elise_huard",
+    "url": "http://jabberwocky.eu",
+    "image": "/images/testimonials/elise_huard.jpeg",
+    "quote": "I'm very, very impressed with Travis and how easy it is to set up. There's no longer any excuse to have a broken build."
+  },
+  {
     "name": "Evan Phoenix",
     "twitter": "evanphx",
     "url": "http://blog.fallingsnow.net",

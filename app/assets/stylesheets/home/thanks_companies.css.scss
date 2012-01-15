@@ -15,11 +15,10 @@
     &.silver, &.gold {
       float: left;
       width: 428px;
-      margin-right: 20px;
       font-size: 13px;
+      margin-right: 20px;
     }
-    &:nth-child(3),
-    &:nth-child(5) {
+    &:nth-child(odd) {
       margin-right: 0;
     }
 

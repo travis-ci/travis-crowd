@@ -28,6 +28,13 @@
     "quote": "@travisci I love what you're doing, keep up the great work!"
   },
   {
+    "name": "Lindsey Bieda",
+    "twitter": "lindseybieda",
+    "url": "http://rarlindseysmash.com",
+    "image": "/images/testimonials/lindseybieda.jpeg",
+    "quote": "Travis is mesmerizing. Yellow, yellow, yellow, GREEN! Victory!"
+  },
+  {
     "name": "Nick Quaranto",
     "twitter": "qrush",
     "url": "http://quaran.to",
@@ -40,6 +47,13 @@
     "url": "http://aslakhellesoy.com",
     "image": "/images/testimonials/aslak.jpeg",
     "quote": "I have used many CI systems, but Travis is the most awesome one so far!!"
+  },
+  {
+    "name": "Carol Nichols",
+    "twitter": "carols10cents",
+    "url": "http://carol-nichols.com",
+    "image": "/images/testimonials/carols10cents.jpeg",
+    "quote": "Watching Travis CI results is addicting. I love the peace of mind it gives me. Thank you @travisci for this valuable community resource!"
   },
   {
     "name": "Brian Ford",

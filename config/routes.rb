@@ -10,6 +10,7 @@ Travis::Application.routes.draw do
 
   resource :profile do
     get 'ringtones', on: :member
+    match 'ringtones/:permalink.mp3', on: :member, action: :ringtone, as: :ringtone
   end
 
   match '/donations.json', to: 'orders#index', as: :donors

@@ -1,5 +1,12 @@
 [
   {
+    "name": "Sarah Mei",
+    "twitter": "sarahmei",
+    "url": "http://sarahmei.com",
+    "image": "/images/testimonials/sarahmei.jpeg",
+    "quote": "Diaspora used to have its own CI. But today Travis CI runs Diaspora tests on 2 DBs and 4 Rubies without requiring any maintenance!"
+  },
+  {
     "name": "Elise Huard",
     "twitter": "elise_huard",
     "url": "http://jabberwocky.eu",

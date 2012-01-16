@@ -17,6 +17,7 @@ gem 'rest_in_place'
 gem 'country-select'
 gem 'roadie'
 gem 'rdiscount'
+gem 'postmark-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.0.rc2'

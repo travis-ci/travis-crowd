@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
       user.save_with_customer!
       order.save_with_payment!
       sign_in user
-      send_confirmation
+      # send_confirmation
       redirect_to confirm_order_url(order)
     else
       # p user.errors, order.errors

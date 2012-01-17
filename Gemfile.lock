@@ -229,6 +229,7 @@ DEPENDENCIES
   pg (~> 0.11.0)
   postmark-rails
   rack (~> 1.4.0)
+  rack-ssl
   rails!
   rdiscount
   rest_in_place

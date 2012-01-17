@@ -21,6 +21,7 @@ gem 'postmark-rails'
 
 group :deployment do
   gem 'unicorn'
+  gem 'rack-ssl'
 end
 
 group :assets do

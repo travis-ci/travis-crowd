@@ -1,12 +1,5 @@
 [
   {
-    "name": "Sarah Mei",
-    "twitter": "sarahmei",
-    "url": "http://sarahmei.com",
-    "image": "/images/testimonials/sarahmei.jpeg",
-    "quote": "Diaspora used to have its own CI. But today Travis CI runs Diaspora tests on 2 DBs and 4 Rubies without requiring any maintenance!"
-  },
-  {
     "name": "Elise Huard",
     "twitter": "elise_huard",
     "url": "http://jabberwocky.eu",
@@ -28,11 +21,11 @@
     "quote": "Travis is like Github for CIs. So easy to setup that everyone does it."
   },
   {
-    "name": "Ryan Bates",
-    "twitter": "rbates",
-    "url": "http://www.railscasts.com",
-    "image": "/images/testimonials/ryan.jpeg",
-    "quote": "@travisci I love what you're doing, keep up the great work!"
+    "name": "Joseph Wilk",
+    "twitter": "josephwilk",
+    "url": "http://blog.josephwilk.net",
+    "image": "/images/testimonials/joseph.jpeg",
+    "quote": "Great to see the Ruby community again pushing the boundaries of what is the default for OSS. Travis now is."
   },
   {
     "name": "Lindsey Bieda",
@@ -63,13 +56,6 @@
     "quote": "Watching Travis CI results is addicting. I love the peace of mind it gives me. Thank you @travisci for this valuable community resource!"
   },
   {
-    "name": "Brian Ford",
-    "twitter": "brixen",
-    "url": "http://brightredglow.com",
-    "image": "/images/testimonials/brian.png",
-    "quote": "Travis-CI is simply killin it! What a terrific resource this will be for Ruby and other communities."
-  },
-  {
     "name": "Sean Cribbs",
     "twitter": "seancribbs",
     "url": "http://seancribbs.com",
@@ -82,6 +68,20 @@
     "url": "http://robertodecurnex.github.com",
     "image": "/images/testimonials/robertodecurnex.jpeg",
     "quote": "After Github I think this is the second best free service I have ever seen!"
+  },
+  {
+    "name": "Ryan Bates",
+    "twitter": "rbates",
+    "url": "http://www.railscasts.com",
+    "image": "/images/testimonials/ryan.jpeg",
+    "quote": "@travisci I love what you're doing, keep up the great work!"
+  },
+  {
+    "name": "Sarah Mei",
+    "twitter": "sarahmei",
+    "url": "http://sarahmei.com",
+    "image": "/images/testimonials/sarahmei.jpeg",
+    "quote": "Travis CI runs Diaspora tests on 2 databases and 4 rubies - with no maintenance. It's incredibly simple and staggeringly useful."
   },
   {
     "name": "Jeff Casimir",
@@ -112,6 +112,13 @@
     "quote": "Big ♥ to @travisci for that awesome and free CI service."
   },
   {
+    "name": "Brian Ford",
+    "twitter": "brixen",
+    "url": "http://brightredglow.com",
+    "image": "/images/testimonials/brian.png",
+    "quote": "Travis-CI is simply killin it! What a terrific resource this will be for Ruby and other communities."
+  },
+  {
     "name": "Ben Hoskings",
     "twitter": "ben_h",
     "url": "http://benhoskin.gs",
@@ -131,13 +138,6 @@
     "url": "http://metautonomo.us",
     "image": "/images/testimonials/erniemiller.jpeg",
     "quote": "I can’t recommend TravisCI enough. If you aren’t using it, you should be."
-  },
-  {
-    "name": "Joseph Wilk",
-    "twitter": "josephwilk",
-    "url": "http://blog.josephwilk.net",
-    "image": "/images/testimonials/joseph.jpeg",
-    "quote": "Great to see the Ruby community again pushing the boundaries of what is the default for OSS. Travis now is."
   },
   {
     "name": "Ryan Bates",

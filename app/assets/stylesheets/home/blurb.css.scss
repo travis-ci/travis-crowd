@@ -47,11 +47,19 @@
       font-size: 16px;
       margin-left: 350px;
       margin-top: 18px;
+      color: #ccc;
     }
     h3 {
       margin: 0 0 0 350px;
       font-size: 58px;
       font-weight: bold;
+    }
+    a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     em {
       color: #fffa40;

@@ -1,3 +1,12 @@
 %h2 Ringtones &amp; sounds
 
 %p Work in progress, please bear with us.
+
+- Playlist.each do |playlist|
+  .playlist
+    %h3= playlist.title
+    %ul
+      - playlist.tracks.each do |track|
+        %li
+          = link_to track.title, ringtone_profile_path(permalink: track.permalink)
+      

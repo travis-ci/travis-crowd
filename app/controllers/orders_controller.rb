@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     delegate :billing_address, :shipping_address, to: :order
 
     def send_confirmation
-      OrdersMailer.confirmation(order).deliver
+      OrderMailer.confirmation(order).deliver
     end
 
     def user

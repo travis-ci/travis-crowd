@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe OrdersMailer do
+describe OrderMailer do
   describe 'receipt' do
     let(:user)    { User.new(name: 'Josh Kalderimis', email: 'josh@email.com') }
     let(:address) { Address.new(city: 'Berlin') }
     let(:order)   { Order.new(user: user, package: :medium, :billing_address => address) }
-    let(:email)   { OrdersMailer.confirmation(order) }
+    let(:email)   { OrderMailer.confirmation(order) }
 
     def part(email, type)
       parts = email.respond_to?(:body) ? email.body.parts : email.parts

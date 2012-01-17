@@ -43,8 +43,8 @@ class User < ActiveRecord::Base
     save!
   end
 
-  def gravatar_url(options = { size: 120 })
-    Gravatar.new(email).image_url(options)
+  def gravatar_url(options = {})
+    Gravatar.new(email).image_url options.reverse_merge(size: 120, ssl: true)
   end
 
   ANONYMOUS  = { name: 'Anonymous', twitter_handle: '', github_handle: '', homepage: '', description: '' }

@@ -6,7 +6,7 @@
 
   %body
     .header
-      = image_tag attachments['travis-ci.png'].url
+      %img{src: encoded_image('travis-ci.png')}
       %ul.contact
         %li
           E-Mail:
@@ -20,7 +20,7 @@
 
   %footer
     %div
-      = image_tag attachments['footer.png'].url
+      %img{src: encoded_image('footer.png')}
 
       %ul.address
         %li Travis CI GmbH

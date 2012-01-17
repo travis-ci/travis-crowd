@@ -4,11 +4,14 @@ if Rails.env.production?
   # ActionMailer::Base.delivery_method   = :postmark
   # ActionMailer::Base.postmark_settings = { :api_key => settings.postmark.api_key }
 
-  ActionMailer::Base.delivery_method   = :smtp
-  ActionMailer::Base.postmark_settings = {
+  mailer  = ActionMailer::Base
+  api_key = Rails.application.config.settings.postmark.api_key
+
+  mailer.delivery_method = :smtp
+  mailer.smtp_settings = {
     address:   'smtp.postmarkapp.com',
-    user_name: settings.postmark.api_key,
-    password:  settings.postmark.api_key,
+    user_name: api_key,
+    password:  api_key,
     domain:    'love.travis-ci.org'
   }
 end

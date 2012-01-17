@@ -1,4 +1,7 @@
 class OrdersMailer < ActionMailer::Base
+  include ApplicationHelper
+  helper_method :encoded_image
+
   default from: 'Travis CI <contact@travis-ci.org>'
   layout 'email'
 

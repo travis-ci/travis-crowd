@@ -1,3 +1,5 @@
+require 'base64'
+
 module ApplicationHelper
   def current_user_editable(tag, name)
     content_tag(tag, :class => 'rest-in-place', :'data-attribute' => name) do
@@ -38,5 +40,11 @@ module ApplicationHelper
     else
       "List me on the Travis CI crowdfunding page."
     end
+  end
+
+  def encoded_image(filename)
+    type = File.extname(filename)[1..-1]
+    data = Base64.encode64(File.read("public/images/#{filename}"))
+    "data:#{type};base64,#{data}"
   end
 end

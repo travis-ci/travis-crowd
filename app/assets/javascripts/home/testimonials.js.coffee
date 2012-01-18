@@ -34,6 +34,9 @@ $.extend Testimonials.prototype,
         '  </div>' +
         '</li>'
       )
+    $('#testimonials ul li:odd').addClass('even');
+    $('#testimonials ul li:even').addClass('odd');
+
 
 $.fn.testimonials = ->
   new Testimonials(this, $('.pagination', this.parent()))

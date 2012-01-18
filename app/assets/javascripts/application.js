@@ -60,8 +60,12 @@ function createSample(url, item_id) {
   return return_value;
 }
 
-soundManager.onready(function() {
-  $.each(['jon', 'jose', 'aaron', 'yehuda'], function(ix, voice) {
-    voices[voice] = createSample(audioHost, voice);
-  })
+$(function() {
+  if($("#rails-core").length > 0) {
+    soundManager.onready(function() {
+      $.each(['jon', 'jose', 'aaron', 'yehuda'], function(ix, voice) {
+        voices[voice] = createSample(audioHost, voice);
+      })
+    });
+  }
 });

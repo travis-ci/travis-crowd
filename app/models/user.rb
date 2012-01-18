@@ -21,6 +21,17 @@ class User < ActiveRecord::Base
 
   attr_accessor :stripe_card_token
 
+  def twitter_handle=(name)
+    name = "@#{name}" unless name.blank? or name.to_s.start_with? "@"
+    write_attribute(:twitter_handle, name)
+  end
+
+  def homepage=(url)
+    url = "http://#{url}" unless url.blank? or url =~ %r{^https?://}
+    write_attribute(:homepage, url)
+  end
+
+
   def charges
     Stripe::Charge.all(customer: stripe_customer_id) # TODO hmmm ...
   end

@@ -4,6 +4,7 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
+//= require modernizr-custom
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
@@ -60,8 +61,12 @@ function createSample(url, item_id) {
   return return_value;
 }
 
-soundManager.onready(function() {
-  $.each(['jon', 'jose', 'aaron', 'yehuda'], function(ix, voice) {
-    voices[voice] = createSample(audioHost, voice);
-  })
+$(function() {
+  if($("#rails-core").length > 0) {
+    soundManager.onready(function() {
+      $.each(['jon', 'jose', 'aaron', 'yehuda'], function(ix, voice) {
+        voices[voice] = createSample(audioHost, voice);
+      })
+    });
+  }
 });

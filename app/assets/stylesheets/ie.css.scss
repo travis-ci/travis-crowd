@@ -1,0 +1,38 @@
+dd {
+  clear: right;
+  float: none;
+}
+
+#testimonials {
+  ul {
+    li.odd, li.even {
+      clear: none !important;
+      height: 85px;
+    }
+  }
+}
+
+// for rotations cf. http://www.useragentman.com/IETransformsTranslator/index.html
+
+.price-tag {
+  /* IE8+ - must be on one line, unfortunately */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand')";
+
+  /* IE6 and 7 */
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+           M11=0.7071067811865475,
+           M12=-0.7071067811865477,
+           M21=0.7071067811865477,
+           M22=0.7071067811865475,
+           SizingMethod='auto expand');
+
+  /*
+   * To make the transform-origin be the middle of
+   * the object.    Note: These numbers
+   * are approximations.  For more accurate results,
+   * use Internet Explorer with this tool.
+   */
+  margin-left: 5px;
+  margin-top: -35px;
+}
+

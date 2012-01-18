@@ -45,7 +45,7 @@
         }
       }
 
-      &:nth-child(odd) {
+      &.odd {
         float: left;
         clear: left;
         margin-right: 30px;
@@ -68,7 +68,7 @@
           }
         }
       }
-      &:nth-child(even) {
+      &.even {
         float: right;
         clear: right;
 

@@ -18,7 +18,7 @@
       font-size: 13px;
       margin-right: 20px;
     }
-    &:nth-child(odd) {
+    &.last-child {
       margin-right: 0;
     }
 

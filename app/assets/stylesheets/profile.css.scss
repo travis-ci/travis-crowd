@@ -18,7 +18,7 @@
       }
     }
   }
-  #contact, #packages, #subscriptions {
+  #contact, #packages, #subscriptions, #ringtones {
     width: 440px;
   }
   #contact {
@@ -41,8 +41,9 @@
       }
     }
   }
-  #packages, #subscriptions {
+  #packages, #subscriptions, #ringtones {
     float: right;
+	margin-bottom: 25px;
   }
   table {
     width: 100%;

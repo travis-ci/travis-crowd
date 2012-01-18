@@ -24,8 +24,8 @@
   %p
     You can get donation packages in two flavors: as one-off payments or monthly subscriptions:
   .switch
-    %label.on{for: 'type_package', value: 'packages'} Single Payment
-    %label{for: 'type_subscription', value: 'subscriptions'} Subscription
+    %label.on{for: 'type_package', value: 'packages'} Single payment
+    %label.last{for: 'type_subscription', value: 'subscriptions'} Subscription
 
   #packages
     %h3 Packages
@@ -69,7 +69,7 @@
         %p And a skype cup of tea with Josh &amp; Sven.
         = link_to 'Donate', new_package_path(package: 'big')
         = stats_for(:big, :donor)
-      %li.huge
+      %li.huge.last
         %h4
           Huge
           .price-tag

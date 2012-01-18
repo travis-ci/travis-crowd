@@ -50,7 +50,7 @@
     cursor: pointer;
     text-shadow: 2px 2px 0px #fff;
 
-    &:last-child {
+    &.last {
       margin-left: 5px;
       padding-left: 52px;
       background: url(/images/switch.png) left top no-repeat;

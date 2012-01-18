@@ -59,8 +59,8 @@
   #comment
     %h3 Leave a comment
     %fieldset.wide
-      = f.input :comment, as: 'text', required: false, hint: 'Add a comment (will be published on the donors list).'
-      = f.input :message, as: 'text', required: false, hint: 'You can leave us a message (will not be published).'
+      = f.input :comment, as: 'text', required: false, hint: 'Add a comment (will be published on the donors list).', label: 'Public'
+      = f.input :message, as: 'text', required: false, hint: 'You can leave us a message (will not be published).', label: 'Private'
 
   .actions
     = f.submit 'Confirm'

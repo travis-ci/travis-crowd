@@ -1,0 +1,13 @@
+#sponsoring_plans {
+  background: #fff url(/images/draft.jpg) 660px 20px no-repeat;
+
+  ul:not(.footnotes), ol {
+    padding-left: 40px;
+    li {
+      margin: 0;
+    }
+  }
+  ul:not(.footnotes) {
+    list-style-type: disc;
+  }
+}

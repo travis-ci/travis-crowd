@@ -1,6 +1,7 @@
 @import "home";
 @import "orders";
 @import "profile";
+@import "sponsoring_plans";
 @import "compass";
 @import "compass/utilities/general/clearfix";
 
@@ -29,7 +30,7 @@ blockquote {
 a {
   color: #274798;
 }
-p sup {
+p sup, li sup {
 	position: relative;
 	top: -0.5em;
 	vertical-align: baseline;

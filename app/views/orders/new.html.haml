@@ -14,6 +14,12 @@
 
   - unless signed_in?
     #user
+      %h3 Account
+      %p.note
+        You need to set up an account in oder
+        - if subscription?
+          to cancel your subscription and
+        to access all the digital thank-you presents we have prepared for you.
       = simple_fields_for user do |u|
         = u.hidden_field :stripe_card_token
         %fieldset
@@ -29,6 +35,8 @@
 
   #billing_address.address
     %h3 Address
+    %p.note Without your address, we won't be able to send you those stickers.
+
     = f.simple_fields_for :billing_address do |a|
       %fieldset
         = a.input :name, required: company?
@@ -60,6 +68,8 @@
 
   #comment
     %h3 Leave a comment
+    %p.note
+      Tell us (and the world) what you think about Travis CI, this campain or anything else that's on your mind.
     %fieldset.wide
       = f.input :comment, as: 'text', required: false, hint: 'Add a comment (will be published on the donors list).', label: 'Public'
       = f.input :message, as: 'text', required: false, hint: 'You can leave us a message (will not be published).', label: 'Private'

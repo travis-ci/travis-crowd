@@ -15,18 +15,22 @@
     for details.
 
   %ul.packages.clearfix
-    %li.silver
+    %li.platinum
       %h4
-        Silver
+        Platinum
         .price-tag
-          = number_to_currency Package.price(:silver)
+          = number_to_currency Package.price(:platinum)
       %p
-        Exposure on Travis CI pages and conference talks.
+        Premium exposure on Travis CI pages and conference talks.
       %p
-        3 hour remote pairing with Josh, Konstantin, Sven or one of our volunteers.
+        Have Josh, Konstantin and/or Sven at your office
+        %sup 3
+        for a day or two for support or pairing sessions.
         %sup 2
-      = link_to 'Donate', new_package_path(package: 'silver')
-      = stats_for(:silver, :sponsor)
+      %p
+        4 spots available.
+      = link_to 'Donate', new_package_path(package: 'platinum')
+      = stats_for(:platinum, :sponsor)
 
     %li.gold
       %h4
@@ -45,22 +49,18 @@
       = link_to 'Donate', new_package_path(package: 'gold')
       = stats_for(:gold, :sponsor)
 
-    %li.platinum
+    %li.silver
       %h4
-        Platinum
+        Silver
         .price-tag
-          = number_to_currency Package.price(:platinum)
+          = number_to_currency Package.price(:silver)
       %p
-        Premium exposure on Travis CI pages and conference talks.
+        Exposure on Travis CI pages and conference talks.
       %p
-        Have Josh, Konstantin and/or Sven at your office
-        %sup 3
-        for a day or two for support or pairing sessions.
+        3 hour remote pairing with Josh, Konstantin, Sven or one of our volunteers.
         %sup 2
-      %p
-        4 spots available.
-      = link_to 'Donate', new_package_path(package: 'platinum')
-      = stats_for(:platinum, :sponsor)
+      = link_to 'Donate', new_package_path(package: 'silver')
+      = stats_for(:silver, :sponsor)
 
   %ul.footnotes
     %li

@@ -30,46 +30,7 @@
   #packages
     %h3 Packages
     %ul.packages.clearfix
-      %li.tiny
-        %h4
-          Tiny
-          .price-tag
-            = number_to_currency Package.price(:tiny)
-        %p A cool Travis CI sticker and access to the ringtones and sounds.
-        = link_to 'Donate', new_package_path(package: 'tiny')
-        = stats_for(:tiny, :donor)
-      %li.small
-        %h4
-          Small
-          .price-tag
-            = number_to_currency Package.price(:small)
-        %p 3 stickers, access to ringtones &amp; sounds.
-        %p Plus: a personal thank you from the Travis CI team
-        = link_to 'Donate', new_package_path(package: 'small')
-        = stats_for(:small, :donor)
-      %li.medium
-        %h4
-          Medium
-          .price-tag
-            = number_to_currency Package.price(:medium)
-        %p All the stuff from the previous plan with all the Travis CI stickers.
-        %p Plus: you get on the waiting list for Travis CI pro<sup>2</sup> beta access.
-        = link_to 'Donate', new_package_path(package: 'medium')
-        = stats_for(:medium, :donor)
-      %li.big
-        %h4
-          Big
-          .price-tag
-            = number_to_currency Package.price(:big)
-        %p All the stuff from the previous plan.
-        %p
-          Plus: $50 credit for your future Travis CI pro account
-          %sup> 2
-          \.
-        %p And a skype cup of tea with Josh &amp; Sven.
-        = link_to 'Donate', new_package_path(package: 'big')
-        = stats_for(:big, :donor)
-      %li.huge.last
+      %li.huge
         %h4
           Huge
           .price-tag
@@ -85,6 +46,45 @@
           \.
         = link_to 'Donate', new_package_path(package: 'huge')
         = stats_for(:huge, :donor)
+      %li.big
+        %h4
+          Big
+          .price-tag
+            = number_to_currency Package.price(:big)
+        %p All the stuff from the previous plan.
+        %p
+          Plus: $50 credit for your future Travis CI pro account
+          %sup> 2
+          \.
+        %p And a skype cup of tea with Josh &amp; Sven.
+        = link_to 'Donate', new_package_path(package: 'big')
+        = stats_for(:big, :donor)
+      %li.medium
+        %h4
+          Medium
+          .price-tag
+            = number_to_currency Package.price(:medium)
+        %p All the stuff from the previous plan with all the Travis CI stickers.
+        %p Plus: you get on the waiting list for Travis CI pro<sup>2</sup> beta access.
+        = link_to 'Donate', new_package_path(package: 'medium')
+        = stats_for(:medium, :donor)
+      %li.small
+        %h4
+          Small
+          .price-tag
+            = number_to_currency Package.price(:small)
+        %p 3 stickers, access to ringtones &amp; sounds.
+        %p Plus: a personal thank you from the Travis CI team
+        = link_to 'Donate', new_package_path(package: 'small')
+        = stats_for(:small, :donor)
+      %li.tiny.last
+        %h4
+          Tiny
+          .price-tag
+            = number_to_currency Package.price(:tiny)
+        %p A cool Travis CI sticker and access to the ringtones and sounds.
+        = link_to 'Donate', new_package_path(package: 'tiny')
+        = stats_for(:tiny, :donor)
 
   #subscriptions
     %h3 Subscriptions

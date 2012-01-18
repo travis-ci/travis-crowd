@@ -8,7 +8,11 @@
     %sup 1
     we have set up silver, gold and platinum packages for you. If these don't fit what you are looking for then
     %a{href: '#contact'} please get in contact!
-  %p All of them include heaps of Tweet love, linked banners on prominent Travis CI pages, mentions at conference talks, and a post on our blog, as part of a summary (silver) or dedicated to your company (gold/platinum).
+  %p
+    All of them include heaps of Tweet love, linked banners on prominent Travis CI pages,
+    mentions at conference talks, and a post on our blog. Please see
+    %a{href: '/company_packages'} company packages
+    for details.
 
   %ul.packages.clearfix
     %li.silver
@@ -16,7 +20,8 @@
         Silver
         .price-tag
           = number_to_currency Package.price(:silver)
-      %p Exposure on Travis CI pages and conference talks.
+      %p
+        Exposure on Travis CI pages and conference talks.
       %p
         3 hour remote pairing with Josh, Konstantin, Sven or one of our volunteers.
         %sup 2
@@ -28,12 +33,15 @@
         Gold
         .price-tag
           = number_to_currency Package.price(:gold)
-      %p Prominent exposure on Travis CI pages and conference talks.
+      %p
+        Prominent exposure on Travis CI pages and conference talks.
       %p
         Have Josh, Konstantin or Sven at your office
         %sup 3
         for a day for support or pairing sessions.
         %sup 2
+      %p
+        8 spots available.
       = link_to 'Donate', new_package_path(package: 'gold')
       = stats_for(:gold, :sponsor)
 
@@ -42,12 +50,15 @@
         Platinum
         .price-tag
           = number_to_currency Package.price(:platinum)
-      %p Premium exposure on Travis CI pages and conference talks.
+      %p
+        Premium exposure on Travis CI pages and conference talks.
       %p
         Have Josh, Konstantin and/or Sven at your office
         %sup 3
         for a day or two for support or pairing sessions.
         %sup 2
+      %p
+        4 spots available.
       = link_to 'Donate', new_package_path(package: 'platinum')
       = stats_for(:platinum, :sponsor)
 

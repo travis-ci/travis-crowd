@@ -1,3 +1,4 @@
+require 'rack'
 require 'base64'
 
 module ApplicationHelper
@@ -43,7 +44,7 @@ module ApplicationHelper
   end
 
   def encoded_image(filename)
-    type = File.extname(filename)[1..-1]
+    type = Rack::Mime.mime_type(File.extname(filename))
     data = Base64.encode64(File.read("public/images/#{filename}"))
     "data:#{type};base64,#{data}"
   end

@@ -7,6 +7,6 @@ This amount has been charged on your credit card and you should have received a 
 
 Included in this <%= order.subscription? ? 'subscription' : 'package' %> are the following features:
 
-<%= render partial: "orders_mailer/features/#{order.package.id}" %>
+<%= render partial: "order_mailer/features/#{order.package.id}" %>
 
 <%= %w(name street city zip state country).map { |name| order.billing_address.send(name) }.compact.join("\n") %>

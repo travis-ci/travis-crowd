@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
 
   def update
     current_user.update_attributes!(params[:user])
-    render :json => current_user
+    render :json => current_user.as_json.merge(email: current_user.email)
   end
 
   def ringtone

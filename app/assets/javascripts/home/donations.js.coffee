@@ -72,5 +72,13 @@ $.fn.donations = ()->
   new Donations(this, $('.pagination', this))
 
 $(document).ready ->
-  $('#donations').donations() if $('#donations').length > 0
+  if $('#donations').length > 0
+    $('#donations').donations()
 
+    if EventSource?
+      src = new EventSource('/orders.es')
+      src.onmessage = (e) ->
+        payload = JSON.parse e.data
+        order   = payload.order
+        user    = order.user
+        Notifier.notify "We've got another one!", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 2000

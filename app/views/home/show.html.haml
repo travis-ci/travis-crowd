@@ -15,6 +15,18 @@
 
 #fb-root
 
+:javascript
+  (function(d, s) {
+    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.src = url; js.id = id;
+      fjs.parentNode.insertBefore(js, fjs);
+    };
+    load('//connect.facebook.net/en_US/all.js#xfbml=1', 'fbjssdk');
+    load('https://apis.google.com/js/plusone.js', 'gplus1js');
+    load('//platform.twitter.com/widgets.js', 'tweetjs');
+  }(document, 'script'));
+
 -# :javascript
 -#   window.___gcfg = {lang: 'en-GB'};
 -#   (function() {
@@ -25,14 +37,13 @@
 -#     var s = document.getElementsByTagName('script')[0];
 -#     s.parentNode.insertBefore(po, s);
 -#   })();
-
-:javascript
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-
+-# 
+-# :javascript
+-#   (function(d, s, id) {
+-#     var js, fjs = d.getElementsByTagName(s)[0];
+-#     if (d.getElementById(id)) {return;}
+-#     js = d.createElement(s); js.id = id;
+-#     js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+-#     fjs.parentNode.insertBefore(js, fjs);
+-#   }(document, 'script', 'facebook-jssdk'));
 

@@ -20,7 +20,7 @@ gem 'rdiscount'
 gem 'postmark-rails'
 
 group :deployment do
-  gem 'unicorn'
+  gem 'thin'
   gem 'rack-ssl'
 end
 

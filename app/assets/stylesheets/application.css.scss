@@ -15,6 +15,9 @@ html, body {
   background-color: #fafafa;
   z-index: -2;
 }
+body {
+  -webkit-text-size-adjust: none; /* dont mess my prefs */
+}
 
 // required for IE
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {

@@ -49,5 +49,8 @@ module Travis
     config.assets.initialize_on_precompile = false
 
     config.action_mailer.default_url_options = { :host => 'support.travis-ci.org' }
+
+    config.active_record.observers = :order_observer
+    config.threadsafe!
   end
 end

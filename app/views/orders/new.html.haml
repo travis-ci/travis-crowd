@@ -51,6 +51,8 @@
     #credit_card
       %h3
         Credit Card
+      %p
+        We do not send your credit card data to our application, nor do we keep any of it.
         %sup 1
       - if user.stripe_card_token.present?
         %fieldset
@@ -85,10 +87,8 @@
       Required field
     %li
       %sup 1
-      We do not send your credit card data to our application, nor do we keep any of it. Instead
-      we send it to <a href="http://stripe.com">Stripe</a> through Javascript and only get a token
-      back which is then kept on our side.
-    %li
+      Instead we send it to <a href="http://stripe.com">Stripe</a> through Javascript
+      and only get a token back which is then kept on our side.
       %strong Don't have a credit card account?
       Please see the <a href="/#faq-no-credit-card">FAQ</a> :)
     %li

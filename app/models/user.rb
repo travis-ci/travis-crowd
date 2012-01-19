@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
   end
 
   ANONYMOUS  = { name: 'Anonymous', twitter_handle: '', github_handle: '', homepage: '', description: '' }
-  JSON_ATTRS = [:name, :email, :twitter_handle, :github_handle, :homepage]
+  JSON_ATTRS = [:name, :twitter_handle, :github_handle, :homepage]
 
   def as_json(options = {})
     display? ? super(only: JSON_ATTRS).merge(gravatar_url: gravatar_url) : ANONYMOUS

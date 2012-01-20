@@ -21,7 +21,8 @@
 
     .note {
       font-size: 12px;
-      color: #999;
+      color: #666;
+      width: 840px;
     }
 
     form {
@@ -55,7 +56,7 @@
         float: left;
         padding: 0;
         border: 0;
-        margin: 24px 36px 0 0;
+        margin: 12px 36px 0 0;
 
         &:nth-child(odd) {
           margin-right: 0;
@@ -144,7 +145,7 @@
         }
       }
       #comment fieldset {
-        margin-top: 24px;
+        margin-top: 12px;
       }
 
       .actions {

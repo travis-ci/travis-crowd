@@ -98,6 +98,13 @@
     "quote": "Every time I see a nice build matrix pass on @travisci I get a warm tingly feeling in my loins."
   },
   {
+    "name": "Rebecca Miller-Webster",
+    "twitter": "rmillerwebster",
+    "url": "http://www.rebeccamiller-webster.com",
+    "image": "/images/testimonials/rmillerwebster.png",
+    "quote": "I'm always reassured when I see that @travisci green light on some code I'll be using. It's even better when it's my own repo! Perfect CI solution for open-source."
+  },
+  {
     "name": "Assaf Arkin",
     "twitter": "assaf",
     "url": "http://labnotes.org",

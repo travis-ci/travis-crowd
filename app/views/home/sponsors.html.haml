@@ -6,121 +6,141 @@
   %p
     We can barely express how thankful and happy we are. Please share the love and check them out!
 
-  %h3
-    Platinum sponsors
+  #platinum
+    %h3
+      Platinum sponsors
 
-  %ul
-    %li ...
+    %ul
+      %li ...
 
-  %h3
-    Gold sponsors
+  #gold
+    %h3
+      Gold sponsors
 
-  %ul
-    %li ...
+    %ul
+      %li ...
 
-  %h3
-    Silver sponsors
+  #silver
+    %h3
+      Silver sponsors
 
-  %ul
-    %li ...
+    %ul
+      %li ...
 
-  %h3
-    Worker sponsors
+  #workers
+    %h3
+      Worker sponsors
 
-  %ul
-    %li
-      %a{href: 'http://enterprise-rails.com'}
-        %img{src: '/images/banners/enterprise-rails.png'}
-      %p
-        Julian Fischer from
-        %a{href: 'http://avarteq.com'} Avarteq
-        has supported Travis CI right from the start! They are sponsoring no
-        less than 3 worker boxes that we use to run Ruby and Rails builds as
-        well as our staging worker.
-    %li
-      %a{href: 'http://engineyard.com'}
-        %img{src: '/images/banners/engineyard.png'}
-      %p
-        Engine Yard contributes 2 worker boxes that we use to run Ruby and
-        Rails builds.
-    %li
-      %a{href: 'http://railslove.com'}
-        %img{src: '/images/banners/railslove.png'}
-      %p
-        Railslove contributes 1 worker boxes that we use to run Ruby builds.
-        They also helped great lengths to get an initial version of our 
-        %a{href: 'http://love.travis-ci.org'} crowd funding page
-        going. Working with Railslove is always a great pleasure!
-    %li
-      %a{href: 'http://shopify.com'}
-        %img{src: '/images/banners/shopify.png'}
-      %p
-        Shopify contributes 1 worker boxes that we use to run Node.js builds.
-    %li
-      %a{href: 'http://servergrove.com'}
-        %img{src: '/images/banners/servergrove.png'}
-      %p
-        Servergrove contributes 1 worker boxes that we use to run PHP builds.
+    %ul
+      %li.enterprise-rails
+        %a{href: 'http://enterprise-rails.com'}
+        %p
+          %a{href: 'http://enterprise-rails.com'} Enterprise Rails
+          has supported Travis CI right from the start! They are sponsoring no
+          less than 3 worker boxes that we use to run Ruby and Rails builds as
+          well as our staging worker.
+      %li.engineyard
+        %a{href: 'http://engineyard.com'}
+        %p
+          %a{href: 'http://engineyard.com'} Engine Yard
+          contributes 2 worker boxes that we use to run Ruby and
+          Rails builds.
+      %li.railslove
+        %a{href: 'http://railslove.com'}
+        %p
+          %a{href: 'http://railslove.com'} Railslove
+          contributes 1 worker box that we use to run Ruby builds.
+          They also helped a lot to get an initial version of our
+          %a{href: 'http://love.travis-ci.org'} crowd funding page
+          going. Working with Railslove is always a great pleasure!
+      %li.shopify
+        %a{href: 'http://shopify.com'}
+        %p
+          %a{href: 'http://shopify.com'} Shopify
+          contributes 1 worker box that we use to run Node.js builds.
+      %li.servergrove
+        %a{href: 'http://servergrove.com'}
+        %p
+          %a{href: 'http://servergrove.com'} Servergrove
+          contributes 1 worker box that we use to run PHP builds.
 
 
-  %h3
-    Services sponsors
-  %p
-    These guys provide awesome services that we are allowed to use for free in
-    order to run Travis CI.
-  %ul.services
-    %li
-      %a{href: 'http://heroku.com'}
-        %img{src: '/images/banners/heroku.png'}
-      %p
-        If there's anything we have to say about Heroku then that's:
-        %strong we love you!
-        Heroku essentially made it possible for us to make Travis CI the
-        service it is by running our web and messaging architecture for free.
+  #services
+    %h3
+      Service sponsors
+    %ul.services
+      %li.heroku
+        %a{href: 'http://heroku.com'}
+        %p
+          If there's anything we have to say about
+          %a{href: 'http://heroku.com'} Heroku
+          then that's:
+          %strong we love you!
+          Heroku essentially made it possible for us to make Travis CI the
+          service it is by running our web and messaging architecture for free.
 
-    %li
-      %a{href: 'http://pusher.com'}
-        %img{src: '/images/banners/pusher.png'}
-      %p
-        Ever found yourself hypnothized, starring at a build log while it is
-        updated live in your browser? Pusher makes it super easy to work with
-        websockets and they were kind enough to donate a "Big Boy" account.
+      %li.pusher
+        %a{href: 'http://pusher.com'}
+        %p
+          Ever found yourself hypnothized, starring at a build log while it is
+          updated live in your browser?
+          %a{href: 'http://pusher.com'} Pusher
+          makes it super easy to work with
+          websockets and they were kind enough to donate a "Big Boy" account.
 
-    %li
-      %a{href: 'http://stripe.com'}
-        %img{src: '/images/banners/stripe.png'}
-      %p
-        Stripe is the first service we have used that makes payments absolutely
-        trivial and we are soo happy to use them for our
-        %a{href: 'http://love.travis-ci.org'} crowd funding campaign.
-        Stripe has also donated a huge amount of credits in payment fees.
+      %li.iriscouch
+        %a{href: 'http://iriscouch.com'}
+        %p
+          We use
+          %a{href: 'http://iriscouch.com'} Iriscouch
+          for archiving build data to a couchdb in order
+          to keep our production database small. Iriscouch is a huge pleasure to
+          work with and they donated an account right away.
 
-    %li
-      %a{href: 'http://postmarkapp.com'}
-        %img{src: '/images/banners/postmark.png'}
-      %p
-        We use Postmark for sending out emails and we absolutely enjoy it.
-        Postmark provides exactly the neat and simple way to send emails that
-        we were looking for.
+      %li.stripe
+        %a{href: 'http://stripe.com'}
+        %p
+          %a{href: 'http://stripe.com'} Stripe
+          is the first service we have used that makes payments absolutely
+          trivial and we are soo happy to use them for our
+          %a{href: 'http://love.travis-ci.org'} crowd funding campaign.
+          Stripe has also donated a huge amount of credits in payment fees.
 
-    %li
-      %a{href: 'http://thoughtbot.com'}
-        %img{src: '/images/banners/thoughtbot.png'}
-      %p
-        Using
-        %a{href: 'http://airbrakeapp.com'} Airbrake
-        for exception tracking is a no-brainer.
-        %a{href: 'http://thoughtbot.com'} Thoughtbot
-        donates a large plan.
+      %li.postmark
+        %a{href: 'http://postmarkapp.com'}
+        %p
+          We use
+          %a{href: 'http://postmarkapp.com'} Postmark
+          for sending out emails and we absolutely enjoy it.
+          Postmark provides exactly the neat and simple way to send emails that
+          we were looking for.
 
-  %h3 Special thanks!
+      %li.thoughtbot
+        %a{href: 'http://thoughtbot.com'}
+        %p
+          Using
+          %a{href: 'http://airbrakeapp.com'} Airbrake
+          for exception tracking is a no-brainer.
+          %a{href: 'http://thoughtbot.com'} Thoughtbot
+          donates a large plan.
 
-  %p
-    We would also like to say a huge thank you to these guys:
+  #special-thanks
+    %h3 Special thanks!
 
-  %ul
-    %li
-      Jeff Casimir from Jumpstart made it possible for us to use Stripe for
-      payments by acting as a clearing agent. We can't express how much that is
-      worth to us. Thank you so much, Jeff!
+    %ul
+      %li.stickermule
+        %a{href: 'http://stickermule.com'}
+        %p
+          %a{href: 'http://stickermule.com'} Stickermule
+          has donated all the amazing Travis CI stickers that we are
+          happily sending out as part of our
+          %a{href: 'http:/love.travis-ci.org'} crowd funding campaign.
+          This is just amazing. Thanks a ton, Stickermule!
+      %li.jumpstartlab
+        %a{href: 'http://jumpstartlab.com'}
+        %p
+          %a{href: 'http://jumpstartlab.com'} JumpstartLab
+          has made it possible for us to use Stripe for
+          payments by acting as a clearing agent. We can't express how much that is
+          worth to us. Thank you so much, Jeff!
 

@@ -35,7 +35,7 @@
           Huge
           .price-tag
             = number_to_currency Package.price(:huge)
-        %p All the stuff from the next plan.
+        %p All the stuff from the Big plan.
         %p
           Plus: $200 credit for your future Travis CI pro account
           %sup> 2
@@ -51,7 +51,7 @@
           Big
           .price-tag
             = number_to_currency Package.price(:big)
-        %p All the stuff from the next plan.
+        %p All the stuff from the Medium plan.
         %p
           Plus: $50 credit for your future Travis CI pro account
           %sup> 2
@@ -64,7 +64,7 @@
           Medium
           .price-tag
             = number_to_currency Package.price(:medium)
-        %p All the stuff from the next plan with all the Travis CI stickers.
+        %p All the stuff from the Small plan with all the stickers.
         %p And you get on the waiting list for Travis CI pro<sup>2</sup> beta access.
         = link_to 'Donate', new_package_path(package: 'medium')
         = stats_for(:medium, :donor)

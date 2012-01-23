@@ -80,5 +80,5 @@ $(document).ready ->
       src.onmessage = (e) ->
         payload = JSON.parse e.data
         order   = payload.order
-        user    = order.user
-        Notifier.notify "We've got another one!", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 2000
+        user    = order.user.name
+        Notifier.notify "We've got another one!", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 20000

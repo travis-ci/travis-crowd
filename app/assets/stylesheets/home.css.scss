@@ -12,6 +12,7 @@
 @import "home/ringtones";
 @import "home/faq";
 @import "home/animations";
+@import "home/sponsors";
 
 section {
   width: 880px;
@@ -311,7 +312,7 @@ section:hover .sidenote {
     sup {
       position: absolute;
       left: 0;
-      top: -0.33em;
+      top: 4px;
     }
     a {
       color: inherit;

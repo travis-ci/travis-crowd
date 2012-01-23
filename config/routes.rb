@@ -1,6 +1,10 @@
 Travis::Application.routes.draw do
   root to: 'home#show'
   match 'company_packages', to: 'home#sponsoring_plans'
+  match 'imprint',          to: 'home#imprint'
+  match 'ringtones',        to: 'home#ringtones'
+  match 'sponsors',         to: 'home#sponsors'
+
   match 'packages/:package', as: :new_package, to: 'orders#new'
   match 'subscriptions/:package', as: :new_subscription, to: 'orders#new', subscription: true
 

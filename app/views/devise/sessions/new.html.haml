@@ -1,0 +1,17 @@
+%h2 Sign in
+
+= simple_form_for resource, url: session_path(resource_name) do |f|
+  %fieldset
+    = f.input :email
+    = f.input :password, required: true
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, as: :boolean
+  .actions
+    = f.submit 'Sign in'
+    = render partial: 'devise/shared/links'
+
+  %ul.footnotes
+    %li
+      %sup.required *
+      Required field
+

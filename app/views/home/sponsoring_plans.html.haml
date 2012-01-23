@@ -2,23 +2,30 @@
   %h2
     Travis CI crowd funding company packages
   %p
-    There are 3 regular types of packages: Platinum, Gold and Silver. The basic idea behind these is:
+    There are 3 regular packages available: Platinum, Gold and Silver.
 
   %ul
     %li
       %strong Platinum:
-      We do everything we can in order to drive attention to these sponsors. They get the biggest amounts of space, are displayed most often and get special attention from us personally.
+      We do everything we can in order to draw attention to you: You get the
+      largest amount of space, displayed most often and a personal visit from
+      one of the team. There are 4 spots available.
     %li
       %strong Gold:
-      Basically the same as Platinum but with about 50% amount of the space and they are usually displayed with a second Gold sponsor next to them.
+      Similar to Platinum but with about half the amount of the space, and you
+      are  displayed alongside a second Gold sponsor. There are 8 spots 
+      available.
     %li
       %strong Silver:
-      We also drive as much attention to them as possible but these spots are not limited and thus space is limited even more and banners appear in slightly bigger lists and fewer places.
+      We also drive as much attention to you as possible but these spots are
+      not limited. Therefor space is limited and banners/links appear in
+      slightly longer lists and fewer places.
+      <!-- These spots are not limited, but we only display 4 on each page. The
+      more companies which take up this package the less often your logo might
+      be shown. -->
 
   %p
-    Platinum spots are limited to 4, Gold spots to 8, while Silver spots are limited technically.
-  %p
-    All sponsoring packages will last as long as the Travis CI crowd funding campaign lasts, but at least X months (to be defined).
+    All of these packages will run as long as the Travis CI crowd funding campaign lasts, but at least 4 months. <!-- TBD -->
   %p
     Space for banners, texts and links is available in the following places:
 
@@ -34,7 +41,7 @@
     %li
       Build notification emails
     %li
-      "Sponsors" page
+      Sponsors page
       %sup
         %a{href: '#fn-3'} 3
     %li
@@ -53,28 +60,24 @@
       Sticker/swag mailing
 
   %p
-    We might also sell "Special" packages for the same amount as Platinum
-    packages. These packages are only be available for deals that do not use or
-    significantly conflict with the banner spaces used by any of the regular
-    packages. For example Stripe.com is interested in placing a small banner on
-    the order form and order confirmation emails as well as a testimonial from
-    us expressing how happy we are using Stripe for payments.
-  %p
-    Next to these crowd funding packages we will summarize existing sponsors
-    that pay for workers as "Worker sponsors". The sponsor of the worker box
-    that has run a build will be mentioned and linked to in every build log.
+    We might also sell special sponsorships in cases that do not use (or
+    significantly conflict with) any of the banner spaces used by any of the
+    regular packages above. For example, a company is interested in placing a
+    small banner on the order form and order confirmation emails as well as a
+    testimonial from us expressing how happy we are using their service for
+    payments.
 
   %ul.footnotes
     %li#fn-1
       %sup 1
       <a href="http://travis-crowd-staging.herokuapp.com">current staging app</a>
-      production will be <a href="http://support.travis-ci.org">here</a>
+      production will be <a href="http://love.travis-ci.org">here</a>
     %li#fn-2
       %sup 2
       <a href="http://travis-ci.org">Travis CI</a>
     %li#fn-3
       %sup 3
-      does not exist yet, will be <a href="http://sponsors.travis-ci.org">here</a>
+      does not exist yet, will be <a href="http://love.travis-ci.org/sponsors">here</a>
       and linked in the top menu on the main Travis CI app and below sponsor banner sections
     %li#fn-4
       %sup 4
@@ -92,38 +95,28 @@
   %p
     On the Travis CI crowd funding site there is a "Thank you, sponsors" section.
   %p
-    Similar to what is layed out on the current staging app we display 1
-    platinum, 2 gold and 4 silver sponsors at once, giving each package a
-    different amount of space (although we might want to opt for an even
-    smaller amount of space for silver sponsors and instead display more of
-    them here).
+    The company sponsor layout found at travis-crowd-staging.herokuapp.com
+    shows the how company logos are displayed. These logos are rotated so each
+    company has an equal opportunity to be shown (per package type).
   %p
-    The order of sponsors displayed on page load are randomized so that each
-    sponsor gets an equal chance of being displayed on page load.
-  %p
-    The whole sponsors list are paginated (as currently the "Thank you, folks"
-    and "What people say" lists are paginated), so curious users have an
-    opportunity to flip through the pages.
-  %p
-    After 5 seconds the next page are activated automatically (so there is a
-    classical "banner rotation", but in a visually appealing way).
+    The sponsors list is paginated, so curious users can flip through the pages
+    and see all the sponsors who are supporting Travis. And after 5 seconds the
+    next page is shown automatically.
 
 
   %h3
     Application sidebar
   %p
-    The sidebar will be re-designed so that we have two spots where sponsors
-    appear but use less space in total.
-
-  %ul
-    %li
-      There is a slot at the top of the sidebar (above the workers list)
-      that displays either 1 Platinum or 2 Gold sponsors at a time.
-    %li
-      There is another list of sponsors (below the queues lists) that
-      displays 8 Silver sponsors at a time as text links.
+    The sidebar is in the process of being re-designed so that we have two
+    spots where sponsors appear.
   %p
-    There is a link to the main Travis CI sponsors page
+    There will be a slot at the top of the sidebar (above the workers list) that
+    displays either 1 Platinum or 2 Gold sponsors at a time.
+  %p
+    There will be another list of sponsors (below the queues lists) that displays 6
+    Silver sponsors at a time as text links.
+  %p
+    And there will also be a link to the main Travis CI sponsors page
     %sup
       %a{href: '#fn-3'} 3
 
@@ -132,10 +125,11 @@
     Build notification emails
   %p
     We display 1 Platinum sponsor or 2 Gold sponsors below every build
-    notification email. These are randomized and Platinum sponsors have a 2:1
-    chance to appear over Gold sponsors.
+    notification email. These are randomized and Platinum sponsors have a
+    greater chance to appear over Gold sponsors.
   %p
-    There is a link to the main Travis CI sponsors page
+    And, of course, there will also be a link to the main Travis CI sponsors
+    page
     %sup
       %a{href: '#fn-3'} 3
 
@@ -143,62 +137,59 @@
   %h3
     Sponsors page
   %p
-    There is a static page that displays all of our sponsors at once so that
-    curious users can review and link to them.
+    All sponsors will be listed at http://love.travis-ci.org/sponsors in the
+    order of their package size (Platinum, Gold, Silver) and in the order of
+    their package booking date.
   %p
-    This page is published on http://sponsors.travis-ci.org and simply lists
-    sponsors in the order of their package size (Platinum, Gold, Silver) and in
-    the order of their package booking dates.
-  %p
-    Each listing also links to the respective blog post on the Travis CI blog
-    as well as other places the sponsor likes to link.
+    Each sponsor entry will contain your logo, your copy (containing links to
+    pages of your choice) and the blog post on the Travis CI blog featuring
+    your sponsorship (see below).
 
 
   %h3
     Blog
   %p
-    Platinum and Gold sponsors may provide blog posts presenting their company,
-    involvement in the open source community and reasons to sponsor Travis CI.
-    These blog posts are published without any editing as dedicated single
-    posts as soon as possible once they are available.
+    Platinum and gold sponsors may provide blog posts presenting their company,
+    involvement in the open source community and reasons to support Travis CI.
+    These blog posts are published without any editing - you write it and we
+    put it on our blog. We may stagger publishing of these blog posts as to not
+    flood the blog.
   %p
-    Silver sponsors may provide contents to summary posts consisiting of 3-5
-    parts.  These contents may be up to about X words long (to be specified)
-    and are used to compose summary blog posts as soon as possible once a
-    sufficient number of contents from sponsors is available.
+    Platinum sponsors will get their own blog post, while Gold sponsors will
+    share a blog post.
+  %p
+    Silver sponsors may provide a paragraph for a summary post where we thank
+    all our Silver sponsors.
 
 
   %h3
     Twitter
   %p
-    We tweet about the sponsorship from our Travis CI account as soon as all
-    required materials are published in all relevant places (especially the
-    listing on the sponsors page).
+    Although we could shout from the roof about how happy we are to have you
+    support us, tweeting reaches a larger audience.
+  %p
+    Once we have added your logo to the crowd funding page we will tweet it out
+    to the world!
   %p
     We also retweet these tweets from at least one of our personal Twitter
-    accounts @joshkalderimis, @konstantinhaase and @svenfuchs for Platinum and
-    Gold sponsors by default and Silver sponsors on special occasions.
+    accounts (@joshkalderimis, @konstantinhaase and @svenfuchs) for Platinum
+    and Gold sponsors, and Silver sponsors on special occasions.
 
 
   %h3
     Conference Talks
   %p
-    We show our sponsors' logos on slides and read out names at each
-    conference talk we do at conferences on topics related to Travis CI. We
-    need to fit this to the actual presentation but we do our best to
-    draw as much attention to our sponsors as possible.
+    We show our sponsors' logos on slides and read out names in each conference
+    talk about Travis CI. We need to fit this to the actual presentation but we
+    do our best to draw as much attention to our sponsors as possible.
 
 
   %h3
     Office visits and personal stuff
   %p
-    The Platinum and Gold packages include options to have Josh and/or Sven
-    visit the sponsor's office and meet their team for pair programming
-    sessions or other kinds of events. Sponsors can use these office visits to
-    direct attention to your company, homepage, service, blog etc.
-  %p
-    We retweet sponsor's tweets about these events and generally do our best in
-    order to drive positive attention to our sponsors.
+    The Platinum and Gold packages include the option to have Josh and/or Sven
+    and/or Konstantin visit your office and meet your team for pair programming
+    sessions or other kinds of events.
 
 
   %h3

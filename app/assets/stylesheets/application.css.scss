@@ -1,7 +1,9 @@
 @import "home";
+@import "form";
 @import "orders";
 @import "profile";
 @import "sponsoring_plans";
+@import "imprint";
 @import "compass";
 @import "compass/utilities/general/clearfix";
 
@@ -14,6 +16,9 @@ html, body {
   font-size: 16px;
   background-color: #fafafa;
   z-index: -2;
+}
+body {
+  -webkit-text-size-adjust: none; /* dont mess my prefs */
 }
 
 // required for IE

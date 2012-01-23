@@ -75,9 +75,9 @@ $(document).ready ->
   if $('#donations').length > 0
     $('#donations').donations()
 
-    pusher  = new Pusher('<%= Rails.application.config.settings[:pusher][:key] %>')
+    pusher  = new Pusher($('meta[name=pusher-key]').attr('content'))
     channel = pusher.subscribe 'orders_channel'
     channel.bind 'new_order', (data) ->
       order   = data.order
       user    = order.user
-      Notifier.notify "We've got another one!", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 20000
+      Notifier.notify "", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 20000

@@ -18,6 +18,7 @@ gem 'country-select'
 gem 'roadie'
 gem 'rdiscount'
 gem 'postmark-rails'
+gem 'pusher'
 
 group :deployment do
   gem 'thin'

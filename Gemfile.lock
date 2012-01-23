@@ -128,6 +128,10 @@ GEM
       actionmailer
       postmark (>= 0.9.0)
       rake
+    pusher (0.8.5)
+      multi_json (~> 1.0)
+      ruby-hmac (~> 0.4.0)
+      signature (~> 0.1.2)
     rack (1.4.0)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -167,6 +171,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    ruby-hmac (0.4.0)
     rubyzip (0.9.5)
     sass (3.1.12)
     sass-rails (3.2.3)
@@ -180,6 +185,8 @@ GEM
       ffi (~> 1.0.9)
       multi_json (~> 1.0.4)
       rubyzip
+    signature (0.1.2)
+      ruby-hmac
     simple_form (1.5.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -228,6 +235,7 @@ DEPENDENCIES
   mocha
   pg (~> 0.11.0)
   postmark-rails
+  pusher
   rack (~> 1.4.0)
   rack-ssl
   rails!

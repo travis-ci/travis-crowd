@@ -1,0 +1,26 @@
+#sponsoring_plans {
+  table {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-collapse: collapse;
+  }
+  th {
+    font-weight: normal;
+  }
+  td, th {
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 15px;
+  }
+  td {
+    border: 1px solid #aaa;
+  }
+  tbody th {
+    text-align: right;
+
+    // sup {
+    //   position: relative;
+    //   right: 0;
+    // }
+  }
+}

@@ -2,7 +2,7 @@
 # or using the api. See https://stripe.com/docs/tutorials/subscriptions
 
 class Package
-  PACKAGES      = { tiny: 1000, small: 3500, medium: 7000, big: 20000, huge: 50000, silver: 100000, gold: 300000, platinum: 600000 }
+  PACKAGES      = { nano: 100, tiny: 1000, small: 3500, medium: 7000, big: 20000, huge: 50000, silver: 100000, gold: 300000, platinum: 600000 }
   SUBSCRIPTIONS = { small: 1000, medium: 1500, big: 2500 }
 
   class << self

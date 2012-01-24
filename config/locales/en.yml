@@ -8,7 +8,7 @@ en:
   number:
     currency:
       format:
-        format: "%u %n"
+        format: "%u%n"
         unit: "$"
         precision: 0
         delimiter: ','

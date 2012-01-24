@@ -7,8 +7,10 @@
   We can't express how much we appreciate your support.
 %p
   The amount has been charged on your credit card and you should have received a confirmation from Stripe.
-%p
-  Included in this #{order.subscription? ? 'subscription' : 'package'} are the following features:
 
-= render partial: "order_mailer/features/#{order.package.id}"
+- unless order.package.id == :nano
+  %p
+    Included in this #{order.subscription? ? 'subscription' : 'package'} are the following features:
+  = render partial: "order_mailer/features/#{order.package.id}"
+
 = render partial: 'order_mailer/invoice'

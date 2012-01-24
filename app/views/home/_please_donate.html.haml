@@ -119,6 +119,11 @@
         = link_to 'Donate', new_subscription_path(package: 'small')
         = stats_for(:small, :subscriber)
 
+  %p
+    Just want to donate something small?
+    = link_to("Donate #{number_to_currency Package.price(:nano)}", new_package_path(package: 'nano')) + ','.html_safe
+    each and every donation is welcome!
+
   %ul.footnotes
     %li
       %sup 1

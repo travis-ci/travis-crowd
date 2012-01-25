@@ -89,5 +89,6 @@ Notifier.notify = function(message, title, iconUrl, timeOut) {
   });
 
   notificationElement.append(textElement);
+  NotifierjsConfig.container.css("top", ($(document).scrollTop() + 12) + "px");
   NotifierjsConfig.container.prepend(notificationElement);
 };

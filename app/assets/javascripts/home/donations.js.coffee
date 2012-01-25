@@ -75,9 +75,14 @@ $(document).ready ->
   if $('#donations').length > 0
     $('#donations').donations()
 
+    thanks  = ["Wow, thank you!", "Thank you so much!", "This puts a huge :D on our face.", "You rock!"]
     pusher  = new Pusher($('meta[name=pusher-key]').attr('content'))
     channel = pusher.subscribe 'orders_channel'
+
     channel.bind 'new_order', (data) ->
       order   = data.order
       user    = order.user
-      Notifier.notify "", "#{user.name} just donated $#{order.total}!", user.gravatar_url, 20000
+      message = thanks.shift()
+
+      thanks.push(message)
+      Notifier.notify "#{user.name} just donated $#{order.total}", message, user.gravatar_url, 10000

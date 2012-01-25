@@ -39,6 +39,26 @@
     %tbody
       %tr
         %th
+          Slots
+        %td
+          4
+        %td
+          8
+        %td
+          unlimited
+
+      %tr
+        %th
+          Price
+        %td
+          = number_to_currency Package.price(:platinum)
+        %td
+          = number_to_currency Package.price(:gold)
+        %td
+          = number_to_currency Package.price(:silver)
+
+      %tr.has_note
+        %th
           Crowd funding site
           %sup
             %a{href: '#fn-1'} 1
@@ -49,8 +69,17 @@
         %td
           205x60 px, 4 per view
 
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:4
+        %td
+          &ge; 1:4
+        %td
+          depends on number of sponsors
 
-      %tr
+      %tr.has_note
         %th
           Application sidebar
           %sup
@@ -62,7 +91,17 @@
         %td
           Text link, 6 per view
 
-      %tr
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:6
+        %td
+          &ge; 1:12
+        %td
+          depends on number of sponsors
+
+      %tr.has_note
         %th
           Build notifications
         %td
@@ -71,6 +110,16 @@
           (size tbd), 2 per view
         %td.no
           &mdash;
+
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:6
+        %td
+          &ge; 1:12
+        %td.no
+          none
 
       %tr
         %th

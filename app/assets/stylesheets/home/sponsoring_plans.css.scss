@@ -15,6 +15,20 @@
   td {
     border: 1px solid #aaa;
   }
+  tr.has_note {
+    td, th {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+  tr.note {
+    td, th {
+      font-size: 12px;
+      color: #666;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
   tbody th {
     text-align: right;
 

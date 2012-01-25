@@ -6,9 +6,6 @@
     @include border-radius(8px);
     @include box-shadow(#ddd 0px 0px 5px);
 
-    &.silver p {
-      margin-top: 5px;
-    }
     &.platinum {
       width: 878px;
     }
@@ -17,6 +14,12 @@
       width: 428px;
       font-size: 13px;
       margin-right: 20px;
+    }
+    &.silver {
+      width: 203px;
+      p {
+        margin-top: 5px;
+      }
     }
     &.even-child {
       margin-right: 0;

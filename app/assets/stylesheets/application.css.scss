@@ -104,36 +104,36 @@ header > div {
       }
     }
   }
+}
 
-  #github {
-    position: absolute;
-    z-index: 100;
-    top: 0px;
-    right: 0px;
-    width: 130px;
-    height: 140px;
-    overflow: hidden;
+#github {
+  position: absolute;
+  z-index: 100;
+  top: 0px;
+  right: 0px;
+  width: 130px;
+  height: 140px;
+  overflow: hidden;
 
-    a {
-      display: block;
-      width: 180px;
-      height: 19px;
-      margin: 37px 0 0 -10px;
-      padding: 3px 0;
-      border-top: 2px solid #EF9F4C;
-      border-bottom: 2px solid #EF9F4C;
-      background: #EF7600;
-      color: white;
-      text-align: center;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      line-height: 19px;
-      letter-spacing: -1px;
-      text-shadow: 0 0 10px #522600;
-      @include transform(rotate(45deg));
-      @include box-shadow(rgba(0, 0, 0, 0.5) 1px 1px 10px, rgba(0, 0, 0, 0.07) 0 0 3px 1px inset);
-    }
+  a {
+    display: block;
+    width: 180px;
+    height: 19px;
+    margin: 37px 0 0 -10px;
+    padding: 3px 0;
+    border-top: 2px solid #EF9F4C;
+    border-bottom: 2px solid #EF9F4C;
+    background: #EF7600;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: -1px;
+    text-shadow: 0 0 10px #522600;
+    @include transform(rotate(45deg));
+    @include box-shadow(rgba(0, 0, 0, 0.5) 1px 1px 10px, rgba(0, 0, 0, 0.07) 0 0 3px 1px inset);
   }
 }
 

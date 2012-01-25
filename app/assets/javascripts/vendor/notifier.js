@@ -24,7 +24,8 @@ var NotifierjsConfig = {
 };
 
 $(document).ready(function() {
-  NotifierjsConfig.container.css("position", "fixed");
+  NotifierjsConfig.container.css("position", "absolute");
+  NotifierjsConfig.container.css("width", "350px");
   NotifierjsConfig.container.css("z-index", 9999);
   NotifierjsConfig.container.css(NotifierjsConfig.position[0], "12px");
   NotifierjsConfig.container.css(NotifierjsConfig.position[1], "12px");

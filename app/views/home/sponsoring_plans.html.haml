@@ -39,6 +39,26 @@
     %tbody
       %tr
         %th
+          Slots
+        %td
+          4
+        %td
+          8
+        %td
+          unlimited
+
+      %tr
+        %th
+          Price
+        %td
+          = number_to_currency Package.price(:platinum)
+        %td
+          = number_to_currency Package.price(:gold)
+        %td
+          = number_to_currency Package.price(:silver)
+
+      %tr.has_note
+        %th
           Crowd funding site
           %sup
             %a{href: '#fn-1'} 1
@@ -49,8 +69,17 @@
         %td
           205x60 px, 4 per view
 
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:4
+        %td
+          &ge; 1:4
+        %td
+          depends on number of sponsors
 
-      %tr
+      %tr.has_note
         %th
           Application sidebar
           %sup
@@ -62,7 +91,17 @@
         %td
           Text link, 6 per view
 
-      %tr
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:6
+        %td
+          &ge; 1:12
+        %td
+          depends on number of sponsors
+
+      %tr.has_note
         %th
           Build notifications
         %td
@@ -71,6 +110,16 @@
           (size tbd), 2 per view
         %td.no
           &mdash;
+
+      %tr.note
+        %th
+          Chance per sponsor
+        %td
+          &ge; 1:6
+        %td
+          &ge; 1:12
+        %td.no
+          none
 
       %tr
         %th
@@ -127,10 +176,16 @@
       %tr
         %th
           Office visits
+          %sup
+            %a{href: '#fn-8'} 8
         %td
           1-2 for 1-2 days
+          %sup
+            %a{href: '#fn-9'} 9
         %td
           1 for 1 day
+          %sup
+            %a{href: '#fn-9'} 9
         %td
           3 hour remote
 
@@ -176,6 +231,15 @@
       %sup 7
       We'll show and mention as many sponsors as fits the talk, but give priority to
       bigger packages.
+    %li#fn-8
+      %sup 8
+      These are just our ideas. We are open for ideas that fit your company better, so feel free to
+      %a{href: '/#contact'} ask.
+    %li#fn-9
+      %sup 9
+      You will need to help with travel and accommodation if you're not based close to us.
+      %a{href: '/#contact'} Let's talk!
+
 
   %p
     We might also sell special sponsorships in cases that do not use (or
@@ -294,7 +358,13 @@
   %p
     The Platinum and Gold packages include the option to have Josh and/or Sven
     and/or Konstantin visit your office and meet your team for pair programming
-    sessions or other kinds of events.
+    sessions or other kinds of events. (You will need to help with travel and
+    accommodation if you're not based close to us.)
+  %p
+    Visiting you is just one idea. We are open for ideas that fit your company
+    better, so feel free to
+    %a{href: '/#contact'} ask.
+    
 
 
   %h3

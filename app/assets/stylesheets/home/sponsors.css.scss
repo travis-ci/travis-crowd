@@ -20,43 +20,44 @@
         @include border-radius(4px);
       }
       &.enterprise-rails > a {
-        background-image: url(/images/logos/enterprise-rails-140x40.png)
+        background-image: url(/images/logos/enterprise-rails-140x40.png);
       }
       &.engineyard > a {
-        background-image: url(/images/logos/engineyard-140x40.png)
+        background-image: url(/images/logos/engineyard-140x40.png);
+        border-width: 0;
       }
       &.railslove > a {
-        background-image: url(/images/logos/railslove-140x40.png)
+        background-image: url(/images/logos/railslove-140x40.png);
       }
       &.shopify > a {
-        background-image: url(/images/logos/shopify-140x40.png)
+        background-image: url(/images/logos/shopify-140x40.png);
       }
       &.servergrove > a {
-        background-image: url(/images/logos/servergrove-140x40.png)
+        background-image: url(/images/logos/servergrove-140x40.png);
       }
       &.heroku > a {
-        background-image: url(/images/logos/heroku-140x40.png)
+        background-image: url(/images/logos/heroku-140x40.png);
       }
       &.pusher > a {
-        background-image: url(/images/logos/pusher-140x40.png)
+        background-image: url(/images/logos/pusher-140x40.png);
       }
       &.iriscouch > a {
-        background-image: url(/images/logos/iriscouch-140x40.png)
+        background-image: url(/images/logos/iriscouch-140x40.png);
       }
       &.stripe > a {
-        background-image: url(/images/logos/stripe-140x40.png)
+        background-image: url(/images/logos/stripe-140x40.png);
       }
       &.postmark > a {
-        background-image: url(/images/logos/postmark-140x40.png)
+        background-image: url(/images/logos/postmark-140x40.png);
       }
       &.thoughtbot > a {
-        background-image: url(/images/logos/thoughtbot-140x40.png)
+        background-image: url(/images/logos/thoughtbot-140x40.png);
       }
       &.stickermule > a {
-        background-image: url(/images/logos/stickermule-140x40.png)
+        background-image: url(/images/logos/stickermule-140x40.png);
       }
       &.jumpstartlab > a {
-        background-image: url(/images/logos/jumpstartlab-140x40.png)
+        background-image: url(/images/logos/jumpstartlab-140x40.png);
       }
     }
   }

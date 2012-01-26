@@ -76,6 +76,14 @@
       = f.input :comment, as: 'text', required: false, hint: 'Add a comment (will be published on the donors list).', label: 'Public'
       = f.input :message, as: 'text', required: false, hint: 'You can leave us a message (will not be published).', label: 'Private'
 
+  - if needs_vat?
+    #vat
+      %h3 Tax Infos
+      %p.note
+        If this donation is made by a company situated within the European Union, please provide your VAT identification number, so we can avoid a 19% taxation.
+      %fieldset
+        = f.input :vatin, required: company?, label: 'VATIN'
+
   .actions
     = f.submit 'Confirm'
     = link_to 'Return to home', '/', class: 'cancel'

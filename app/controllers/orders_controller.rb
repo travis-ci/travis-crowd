@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
 
   protected
 
-    helper_method :user, :order, :billing_address, :shipping_address, :subscription?, :company?
+    helper_method :user, :order, :billing_address, :shipping_address, :subscription?, :company?, :needs_vat?
     delegate :billing_address, :shipping_address, to: :order
 
     def send_confirmation
@@ -60,6 +60,11 @@ class OrdersController < ApplicationController
 
     def company?
       %w(silver gold platinum).include?(params[:package])
+    end
+
+    def needs_vat?
+      company? or params[:package] == 'huge' or
+      params[:package] == 'big' && !subscription?
     end
 
     def subscribed?

@@ -12,12 +12,16 @@
     = tag :meta, name: 'pusher-key', content: Rails.application.config.settings.pusher[:key] if Rails.application.config.settings.pusher
 
   %body{id: params[:controller]}
+    #github
+      %a{ href: 'https://github.com/travis-ci/travis-crowd', title: 'Fork me on GitHub'} Fork me on GitHub
     = render partial: 'layouts/flashes'
-    = render partial: 'layouts/header'
-    - if params[:controller] == 'home'
-      = yield
-    - else
-      %section.paper
-        = yield
-    = render partial: 'layouts/footer'
-    = render partial: 'layouts/gauges'
+    #wrap
+      #page
+        = render partial: 'layouts/header'
+        - if params[:controller] == 'home'
+          = yield
+        - else
+          %section.paper
+            = yield
+        = render partial: 'layouts/footer'
+        = render partial: 'layouts/gauges'

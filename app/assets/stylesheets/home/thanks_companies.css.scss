@@ -8,17 +8,30 @@
 
     &.platinum {
       width: 878px;
+      font-size: 15px;
     }
     &.silver, &.gold {
       float: left;
-      width: 428px;
       font-size: 13px;
       margin-right: 20px;
     }
+    &.gold {
+      width: 428px;
+      height: 130px;
+      &.placeholder {
+        background: url(/images/placeholder-gold.png);
+      }
+    }
     &.silver {
       width: 203px;
-      p {
-        margin-top: 5px;
+      height: 60px;
+      &.placeholder {
+        background: url(/images/placeholder-silver.png);
+      }
+      img {
+        width: 203px;
+        height: 59px;
+        @include border-right-radius(8px);
       }
     }
     &.even-child {

@@ -13,6 +13,11 @@
   .nyancat-container {
     position: relative;
 
+    &.on .audio {
+      background-position: -10px -70px;
+      border-color: #fafb0f;
+    }
+
     .sidenote {
       display: none;
       top: auto;

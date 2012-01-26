@@ -6,6 +6,11 @@ OrderForm = (form) ->
     $('#order_billing_address_attributes_name, #order_card_name').each ->
       $(this).val(name) if name != ''
 
+  if $("#vat").length > 0
+    $('#order_billing_address_attributes_country').change ->
+      _this.setupVAT $(this).val()
+    _this.setupVAT()
+
   form.submit ->
     if $('#order_card_name').length
       _this.processCard()
@@ -14,7 +19,23 @@ OrderForm = (form) ->
       _this.disable('Submitting ...')
       true
 
+EU = [
+  "Austria", "Belgium", "Bulgaria", "Cyprus", "Czech Republic",
+  "Denmark", "Estonia", "France", "Monaco", "Germany", "Greece",
+  "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+  "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
+  "Slovenia", "Spain", "Sweden", "United Kingdom", "Isle of Man"
+]
+
 $.extend OrderForm.prototype,
+  setupVAT: (country) ->
+    if EU.indexOf(country) > -1
+      $("#vat").show()
+      $("#vat .required input").attr("required", "required")
+    else
+      $("#vat").hide()
+      $("#vat .required input").removeAttr("required")
+    
   processCard: ->
     @disable('Validating your credit card ...')
     card =

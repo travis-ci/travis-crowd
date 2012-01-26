@@ -14,13 +14,14 @@
   %body{id: params[:controller]}
     #github
       %a{ href: 'https://github.com/travis-ci/travis-crowd', title: 'Fork me on GitHub'} Fork me on GitHub
-    #page
-      = render partial: 'layouts/flashes'
-      = render partial: 'layouts/header'
-      - if params[:controller] == 'home'
-        = yield
-      - else
-        %section.paper
+    = render partial: 'layouts/flashes'
+    #wrap
+      #page
+        = render partial: 'layouts/header'
+        - if params[:controller] == 'home'
           = yield
-      = render partial: 'layouts/footer'
-      = render partial: 'layouts/gauges'
+        - else
+          %section.paper
+            = yield
+        = render partial: 'layouts/footer'
+        = render partial: 'layouts/gauges'

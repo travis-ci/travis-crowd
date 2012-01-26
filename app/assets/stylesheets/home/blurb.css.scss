@@ -3,12 +3,11 @@
     position: relative;
     height: 250px;
     padding: 10px 0 30px 0;
-    background: url(/images/background-blurb.png) repeat-x;
     color: white;
 
     .slides {
       position: absolute;
-      top: 10px;
+      top: 35px;
       margin: 0;
       padding: 0;
       li {
@@ -73,3 +72,56 @@
     }
   }
 }
+
+#sub {
+  position: relative;
+  margin: 15px 0 55px 0;
+  padding: 5px 0;
+  border-width: 15px 0 15px 0;
+
+  blockquote {
+    width: 720px;
+    margin: 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    @include border-radius(8px);
+    @include box-shadow(#ddd 1px 1px 4px 0px inset);
+    font-style: italic;
+    color: #666;
+
+    img {
+      float: left;
+      height: 75px;
+      width: 75px;
+      margin-right: 10px;
+      border: 1px solid #ddd;
+      @include border-radius(5px);
+    }
+  }
+  cite {
+    display: block;
+    font-size: 12px;
+    color: #999;
+  }
+  #sociallinks {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    width: 190px;
+
+    h4 {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 190px;
+      font-size: 20px;
+    }
+
+    .fb-like {
+      top: -3px;
+    }
+  }
+}
+
+

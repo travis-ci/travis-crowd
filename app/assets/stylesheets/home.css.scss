@@ -1,7 +1,6 @@
 @import "compass";
 @import "fonts";
 @import "home/blurb";
-@import "home/sub";
 @import "home/please_donate";
 @import "home/rails_core";
 @import "home/thanks_companies";
@@ -15,27 +14,8 @@
 @import "home/sponsors";
 @import "home/sponsoring_plans";
 
-section {
-  width: 880px;
-  margin: 20px auto 0 auto;
-
-  h2 {
-    position: relative;
-    display: inline-block;
-    margin: 0 0 10px 0;
-    font-size: 36px;
-    font-weight: normal;
-  }
-  cite a {
-    color: inherit;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  sup {
-    font-size: 10px;
-  }
+body#home {
+  background-image: url(/images/background-header-home.png);
 }
 
 .paper {

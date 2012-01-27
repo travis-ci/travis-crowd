@@ -31,9 +31,6 @@
       p {
         margin-top: 12px;
       }
-      &.placeholder {
-        background: url(/images/placeholder-gold.png);
-      }
     }
     &.silver {
       width: 188px;
@@ -46,9 +43,6 @@
       &.placeholder {
         background: url(/images/placeholder-silver.png);
       }
-    }
-    &.even-child {
-      margin-right: 0;
     }
   }
 }

@@ -31,7 +31,7 @@ $.extend window.Pagination.prototype,
     this.update()
   all: ->
     this.page = 1
-    this.count = this.list.data.length
+    this.count = this.length()
     this.update()
   paged: ->
     this.count = this.paged_count
@@ -53,11 +53,13 @@ $.extend window.Pagination.prototype,
   isPaged: ->
     this.count == this.paged_count
   lastPage: ->
-    page = parseInt(this.list.data.length / this.count)
-    rest = this.list.data.length % this.count
+    page = parseInt(this.length() / this.count)
+    rest = this.length() % this.count
     page + (rest > 0 ? 1 : 0)
-  data: ->
-    this.list.data.slice(this.start(), this.end())
+  length: ->
+    this.list.collection.length
+  collection: ->
+    this.list.collection.slice(this.start(), this.end())
   start: ->
     (this.page - 1) * this.count
   end: ->

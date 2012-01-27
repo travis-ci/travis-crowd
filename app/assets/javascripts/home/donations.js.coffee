@@ -20,13 +20,13 @@ $.extend Donations.prototype,
     $.get Donations.URL, this.render.bind(this)
   clear: ->
     $(this.tbody).empty()
-  render: (data) ->
+  render: (collection) ->
     _this = this
-    this.data = data if data
+    this.collection = collection if collection
     this.clear()
     this.pagination.update()
 
-    $.each this.pagination.data(), (ix, record) ->
+    $.each this.pagination.collection(), (ix, record) ->
       row = $('<tr></tr>')
       $.each new Donation(record).values(), (ix, value)->
         row.append $('<td>' + value + '</td>')

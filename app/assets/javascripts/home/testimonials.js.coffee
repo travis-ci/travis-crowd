@@ -13,13 +13,13 @@ $.extend Testimonials.prototype,
     $.get Testimonials.URL, this.render.bind(this)
   clear: ->
     $(this.element).empty()
-  render: (data) ->
+  render: (collection) ->
     _this = this
-    this.data = data if data
+    this.collection = collection if collection
     this.clear()
     this.pagination.update()
 
-    $.each this.pagination.data(), (ix, record) ->
+    $.each this.pagination.collection(), (ix, record) ->
       _this.element.append $(
         '<li>' +
         '  <img src="' + record.image + '">' +

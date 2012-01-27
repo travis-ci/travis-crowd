@@ -261,7 +261,7 @@
   {
     "name": "Philip Arndt",
     "twitter": "parndt",
-    "url": "http://philiparndt.name"
+    "url": "http://philiparndt.name",
     "image": "http://gravatar.com/avatar/1d676127a3e4c0531e2d37dabef0a12d.png?s=80",
     "quote": "Travis CI makes it easy to maintain support for as many Ruby versions and configurations as possible as lazily as possible. What a delight!"
   }

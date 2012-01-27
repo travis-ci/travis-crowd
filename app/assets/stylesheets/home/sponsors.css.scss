@@ -45,7 +45,7 @@
         }
       }
     }
-    
+
     h3 {
       font-size: 18px;
     }
@@ -72,6 +72,12 @@
       }
       &.cobotme > a {
         background-image: url(/images/logos/cobotme-205x60.png);
+      }
+      &.jumpstartlab > a {
+        background-image: url(/images/logos/jumpstartlab-205x60.png);
+      }
+      &.jumpstartlab-special > a {
+        background-image: url(/images/logos/jumpstartlab-140x40.png);
       }
       &.zendesk > a {
         background-image: url(/images/logos/zendesk-205x60.png);
@@ -112,9 +118,6 @@
       }
       &.stickermule > a {
         background-image: url(/images/logos/stickermule-140x40.png);
-      }
-      &.jumpstartlab > a {
-        background-image: url(/images/logos/jumpstartlab-140x40.png);
       }
     }
   }

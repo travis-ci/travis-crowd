@@ -2,12 +2,13 @@
   padding-bottom: 20px;
   li {
     margin-bottom: 20px;
+    padding-right: 10px;
     border: 1px solid #ddd;
     @include border-radius(8px);
     @include box-shadow(#ddd 0px 0px 5px);
 
     &.platinum {
-      width: 878px;
+      width: 868px;
       font-size: 15px;
     }
     &.silver, &.gold {
@@ -16,14 +17,14 @@
       margin-right: 20px;
     }
     &.gold {
-      width: 428px;
+      width: 418px;
       height: 130px;
       &.placeholder {
         background: url(/images/placeholder-gold.png);
       }
     }
     &.silver {
-      width: 203px;
+      width: 193px;
       height: 60px;
       &.placeholder {
         background: url(/images/placeholder-silver.png);

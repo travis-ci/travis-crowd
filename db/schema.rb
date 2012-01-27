@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20120126152217) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "orders", :force => true do |t|
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(:version => 20120126152217) do
     t.integer  "total"
     t.boolean  "subscription", :default => false, :null => false
     t.text     "comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.boolean  "active",       :default => true,  :null => false
     t.datetime "cancelled_at"
     t.text     "message"
@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20120126152217) do
     t.boolean  "company",                             :default => true
     t.string   "stripe_plan"
     t.string   "stripe_customer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                            :null => false
+    t.datetime "updated_at",                                            :null => false
   end
 
 end

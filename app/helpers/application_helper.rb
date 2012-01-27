@@ -2,6 +2,14 @@ require 'rack'
 require 'base64'
 
 module ApplicationHelper
+  def page_id
+    if params[:controller] == 'home'
+      params[:action] == 'show' ? 'home' : params[:action] # ugh ...
+    else
+      params[:controller]
+    end
+  end
+
   def current_user_editable(tag, name)
     content_tag(tag, :class => 'rest-in-place', :'data-attribute' => name) do
       value = current_user.send(name)

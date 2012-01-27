@@ -1,51 +1,54 @@
 #thanks-companies {
   padding-bottom: 20px;
+
   li {
-    margin-bottom: 20px;
-    padding-right: 10px;
-    border: 1px solid #ddd;
-    @include border-radius(8px);
-    @include box-shadow(#ddd 0px 0px 5px);
+    &.platinum, &.silver, &.gold {
+      margin-bottom: 20px;
+      padding-right: 15px;
+      border: 1px solid #ddd;
+      @include border-radius(8px);
+      @include box-shadow(#ddd 0px 0px 5px);
+
+      img {
+        float: left;
+        margin-right: 10px;
+        @include border-left-radius(8px);
+      }
+    }
 
     &.platinum {
-      width: 868px;
-      font-size: 15px;
+      width: 863px;
+      font-size: 14px;
     }
     &.silver, &.gold {
       float: left;
-      font-size: 13px;
       margin-right: 20px;
     }
     &.gold {
-      width: 418px;
+      width: 413px;
       height: 130px;
+      font-size: 13px;
+      p {
+        margin-top: 12px;
+      }
       &.placeholder {
         background: url(/images/placeholder-gold.png);
       }
     }
     &.silver {
-      width: 193px;
+      width: 188px;
       height: 60px;
-      &.placeholder {
-        background: url(/images/placeholder-silver.png);
-      }
       img {
         width: 203px;
         height: 59px;
         @include border-right-radius(8px);
       }
+      &.placeholder {
+        background: url(/images/placeholder-silver.png);
+      }
     }
     &.even-child {
       margin-right: 0;
-    }
-
-    img {
-      float: left;
-      margin-right: 10px;
-      @include border-left-radius(8px);
-    }
-    p {
-      margin: 10px 5px 0px 0;
     }
   }
 }

@@ -1,23 +1,80 @@
 #sponsors {
-  font-size: 15px;
+  section {
+    font-size: 14px;
 
-  #workers, #services, #special-thanks {
+    #platinum {
+      li {
+        height: 220px;
+        padding-left: 230px;
+        & > a {
+          width: 210px;
+          height: 210px;
+        }
+      }
+    }
+
+    #gold {
+      li {
+        height: 140px;
+        padding-left: 230px;
+        & > a {
+          width: 210px;
+          height: 130px;
+        }
+      }
+    }
+
+    #silver {
+      li {
+        height: 70px;
+        padding-left: 230px;
+        & > a {
+          width: 210px;
+          height: 60px;
+        }
+      }
+    }
+
+    #workers, #services, #special-thanks {
+      li {
+        height: 50px;
+        padding-left: 160px;
+        & > a {
+          width: 140px;
+          height: 40px;
+        }
+      }
+    }
+    
+    h3 {
+      font-size: 18px;
+    }
+
     li {
       position: relative;
-      height: 50px;
       margin-top: 15px;
-      padding-left: 160px;
 
       & > a {
         display: block;
         position: absolute;
         top: 0;
         left: 0px;
-        width: 140px;
-        height: 40px;
-        border: 1px solid #999;
+        border: 1px solid #ddd;
         overflow: hidden;
         @include border-radius(4px);
+      }
+
+      &.wooga > a {
+        background-image: url(/images/logos/wooga-210x210.png);
+      }
+      &.soundcloud > a {
+        background-image: url(/images/logos/soundcloud-205x130.png);
+      }
+      &.cobotme > a {
+        background-image: url(/images/logos/cobotme-205x60.png);
+      }
+      &.zendesk > a {
+        background-image: url(/images/logos/zendesk-205x60.png);
       }
       &.enterprise-rails > a {
         background-image: url(/images/logos/enterprise-rails-140x40.png);

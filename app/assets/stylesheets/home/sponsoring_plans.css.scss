@@ -1,43 +1,52 @@
 #sponsoring_plans {
-  table {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    border-collapse: collapse;
-  }
-  th {
-    font-weight: normal;
-  }
-  td, th {
-    padding: 5px 15px;
-    text-align: center;
-    font-size: 15px;
-  }
-  td {
-    border: 1px solid #aaa;
-  }
-  tr.has_note {
-    td, th {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-  }
-  tr.note {
-    td, th {
-      font-size: 12px;
-      color: #666;
-      padding-top: 3px;
-      border-top: none;
-    }
-  }
-  tbody th {
-    text-align: right;
+  section {
+    background: #fff url(/images/draft.jpg) 660px 20px no-repeat;
 
-    // sup {
-    //   position: relative;
-    //   right: 0;
-    // }
-  }
-  img {
-    border: 1px solid #ddd;
+    ul:not(.footnotes), ol {
+      padding-left: 40px;
+      li {
+        margin: 0;
+      }
+    }
+    ul:not(.footnotes) {
+      list-style-type: disc;
+    }
+
+    table {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      border-collapse: collapse;
+    }
+    th {
+      font-weight: normal;
+    }
+    td, th {
+      padding: 5px 15px;
+      text-align: center;
+      font-size: 15px;
+    }
+    td {
+      border: 1px solid #aaa;
+    }
+    tr.has_note {
+      td, th {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+    tr.note {
+      td, th {
+        font-size: 12px;
+        color: #666;
+        padding-top: 3px;
+        border-top: none;
+      }
+    }
+    tbody th {
+      text-align: right;
+    }
+    img {
+      border: 1px solid #ddd;
+    }
   }
 }

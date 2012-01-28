@@ -3,29 +3,25 @@
   %span.current-page 1
   %span> /
   %span.last-page
-%span.sep
-  &middot;
+%span.sep &middot;
 
 %span.first First
 %a.first{href: '#'} First
-%span.sep
-  &middot;
+%span.sep &middot;
 
 %span.previous Previous
 %a.previous{href: '#'} Previous
-%span.sep
-  &middot;
+%span.sep &middot;
 
 %span.next Next
 %a.next{href: '#'} Next
-%span.sep
-  &middot;
+%span.sep &middot;
 
 %span.last Last
 %a.last{href: '#'} Last
-%span.sep
-  &middot;
 
-%a.all{href: '#'} See all
-%a.paged{href: '#'} See less
+- unless FalseClass === local_assigns[:see_all]
+  %span.sep &middot;
+  %a.all{href: '#'} See all
+  %a.paged{href: '#'} See less
 

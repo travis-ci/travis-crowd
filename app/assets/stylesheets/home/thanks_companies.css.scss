@@ -2,8 +2,17 @@
   padding-bottom: 20px;
 
   li {
-    &.platinum, &.silver, &.gold {
-      margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  li:last-child {
+    margin-right: 0 !important;
+  }
+
+  .platinum, .silver, .gold {
+    margin-top: 0;
+
+    li {
       padding-right: 15px;
       border: 1px solid #ddd;
       @include border-radius(8px);
@@ -15,33 +24,47 @@
         @include border-left-radius(8px);
       }
     }
+  }
 
-    &.platinum {
+  .platinum {
+    li {
       width: 863px;
+      height: 210px;
       font-size: 14px;
+      img {
+        height: 210px;
+        @include border-right-radius(8px);
+      }
     }
-    &.silver, &.gold {
+  }
+
+  .gold {
+    li {
       float: left;
       margin-right: 20px;
-    }
-    &.gold {
       width: 413px;
       height: 130px;
       font-size: 13px;
+      img {
+        height: 130px;
+        @include border-right-radius(8px);
+      }
       p {
         margin-top: 12px;
       }
     }
-    &.silver {
+  }
+
+  .silver {
+    li {
+      float: left;
+      margin-right: 20px;
       width: 188px;
       height: 60px;
       img {
         width: 203px;
-        height: 59px;
+        height: 60px;
         @include border-right-radius(8px);
-      }
-      &.placeholder {
-        background: url(/images/placeholder-silver.png);
       }
     }
   }

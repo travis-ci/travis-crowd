@@ -1,8 +1,7 @@
-Testimonials = (element, pagination) ->
-  this.element = element
-  this.pagination = new Pagination(this, pagination, Testimonials.COUNT)
-  this.load()
-  this
+Testimonials = (element) ->
+  @element = element
+  @load()
+  @
 
 $.extend Testimonials,
   URL: '/testimonials.json',
@@ -10,36 +9,35 @@ $.extend Testimonials,
 
 $.extend Testimonials.prototype,
   load: ()->
-    $.get Testimonials.URL, this.render.bind(this)
+    $.get Testimonials.URL, (collection) =>
+      @pagination = new Pagination(this, $('.pagination', @element.parent()), collection, Testimonials.COUNT)
   clear: ->
-    $(this.element).empty()
-  render: (collection) ->
-    _this = this
-    this.collection = collection if collection
-    this.clear()
-    this.pagination.update()
-
-    $.each this.pagination.collection(), (ix, record) ->
-      _this.element.append $(
-        '<li>' +
-        '  <img src="' + record.image + '">' +
-        '  <div>' +
-        '    <blockquote>' +
-        '      ' + record.quote + '' +
-        '    </blockquote>' +
-        '    <cite>' +
-        '      <a href="' + record.url + '">' + record.name + '</a>,' +
-        '      <a href="http://twitter.com/#!/' + record.twitter + '">@' + record.twitter + '</a>' +
-        '    </cite>' +
-        '  </div>' +
-        '</li>'
-      )
+    $(@element).empty()
+  render: (page) ->
+    @clear()
+    @element.append(new Testimonial(record).render()) for record in page
     $('#testimonials ul li:odd').addClass('even');
     $('#testimonials ul li:even').addClass('odd');
 
+Testimonial = (data) ->
+  @data = data
+  @
+$.extend Testimonial.prototype,
+  render: ->
+    $('<li>' +
+      '  <img src="' + @data.image + '">' +
+      '  <div>' +
+      '    <blockquote>' + @data.quote + '</blockquote>' +
+      '    <cite>' +
+      '      <a href="' + @data.url + '">' + @data.name + '</a>,' +
+      '      <a href="http://twitter.com/#!/' + @data.twitter + '">@' + @data.twitter + '</a>' +
+      '    </cite>' +
+      '  </div>' +
+      '</li>')
+
 
 $.fn.testimonials = ->
-  new Testimonials(this, $('.pagination', this.parent()))
+  new Testimonials(this)
 
 $(document).ready ->
   window.testimonials = $('#testimonials ul').testimonials() if $('#testimonials').length > 0

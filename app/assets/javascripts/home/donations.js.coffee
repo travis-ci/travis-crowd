@@ -1,15 +1,13 @@
 String.prototype.camelize = ->
-  this.slice(0, 1).toUpperCase() + this.slice(1)
+  @slice(0, 1).toUpperCase() + @slice(1)
 
 Array.prototype.compact = ->
-  _this = this
-  $.each this, (ix, value) ->
-    _this.splice(ix, 1) if !value
+  $.each this, (ix, value) => @splice(ix, 1) if !value
 
 Donations = (table, pagination) ->
-  this.tbody = $('tbody', table)
-  this.pagination = new Pagination(this, pagination, Donations.COUNT)
-  this.load()
+  @tbody = $('tbody', table)
+  @_pagination = pagination
+  @load()
 
 $.extend Donations,
   URL: '/donations.json'
@@ -17,59 +15,53 @@ $.extend Donations,
 
 $.extend Donations.prototype,
   load: ()->
-    $.get Donations.URL, this.render.bind(this)
+    $.get Donations.URL, (collection) =>
+      @pagination = new Pagination(this, $('.pagination', @tbody.parent()), collection, Donations.COUNT)
   clear: ->
-    $(this.tbody).empty()
-  render: (collection) ->
-    _this = this
-    this.collection = collection if collection
-    this.clear()
-    this.pagination.update()
-
-    $.each this.pagination.collection(), (ix, record) ->
-      row = $('<tr></tr>')
-      $.each new Donation(record).values(), (ix, value)->
-        row.append $('<td>' + value + '</td>')
-      _this.tbody.append(row)
+    $(@tbody).empty()
+  render: (page)->
+    @clear()
+    @tbody.append(new Donation(record).render()) for record in page
 
 Donation = (data) ->
-  this.data = data
-  this.user = data.user
-  this
+  @data = data
+  @user = data.user
+  @
 
 $.extend Donation.prototype,
+  render: ->
+    row = $('<tr></tr>')
+    row.append $('<td>' + value + '</td>') for value in @values()
+    row
   values: ->
-    _this = this
-    names = ['gravatar', 'links', 'amount', 'package', 'date', 'comment']
-    $.map names, (name) ->
-      _this[name]()
+    @[name]() for name in ['gravatar', 'links', 'amount', 'package', 'date', 'comment']
   gravatar: ->
-    '<img src="' + this.user.gravatar_url + '">'
+    '<img src="' + @user.gravatar_url + '">'
   links: ->
-    [this.name(), this.github(), this.twitter()].compact().join('')
+    [@name(), @github(), @twitter()].compact().join('')
   name: ->
-    if this.user.homepage
-      "<a href=\"#{this.user.homepage}\">#{this.user.name}</a>"
+    if @user.homepage
+      "<a href=\"#{@user.homepage}\">#{@user.name}</a>"
     else
-      this.user.name
+      @user.name
   github: ->
-    "<a href=\"https://github.com/#{this.user.github_handle}\" class=\"github\">#{this.user.github_handle}</a>" if this.user.github_handle
+    "<a href=\"https://github.com/#{@user.github_handle}\" class=\"github\">#{@user.github_handle}</a>" if @user.github_handle
   twitter: ->
-    "<a href=\"https://twitter.com/#{this.user.twitter_handle}\" class=\"twitter\">#{this.user.twitter_handle}</a>" if this.user.twitter_handle
+    "<a href=\"https://twitter.com/#{@user.twitter_handle}\" class=\"twitter\">#{@user.twitter_handle}</a>" if @user.twitter_handle
   amount: ->
-    '$' + this.data.total
+    '$' + @data.total
   package: ->
-    "<span class=\"package #{this.data.package}\">#{this.data.package.camelize()}</span>" + this.subscription()
+    "<span class=\"package #{@data.package}\">#{@data.package.camelize()}</span>" + @subscription()
   subscription: ->
-    if this.data.subscription then '<span class="subscription" title="subscription">yes</span>' else ''
+    if @data.subscription then '<span class="subscription" title="subscription">yes</span>' else ''
   date: ->
-    new Date(this.data.created_at).format('mediumDate')
+    new Date(@data.created_at).format('mediumDate')
   comment: ->
-    this.data.comment
+    @data.comment
 
 
 $.fn.donations = ()->
-  new Donations(this, $('.pagination', this))
+  new Donations(this)
 
 $(document).ready ->
   if $('#donations').length > 0

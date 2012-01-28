@@ -10,11 +10,10 @@
 
 %p
   %object{height: 81, width: '100%', id: 'soundcloud', classid: 'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'}
-    %param{name: 'movie', value: "http://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud"}
+    %param{name: 'movie', value: "https://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud"}
     %param{name: 'allowscriptaccess', value: 'always'}
-    %embed{allowscriptaccess: 'always', height: 81, width: '100%', src: "http://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud", type: 'application/x-shockwave-flash', name: 'soundcloud'}
+    %embed{allowscriptaccess: 'always', height: 81, width: '100%', src: "https://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud", type: 'application/x-shockwave-flash', name: 'soundcloud'}
 
-- p 
 - Playlist.each do |playlist|
   %table.playlist
     %colgroup

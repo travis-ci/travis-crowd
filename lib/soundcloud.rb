@@ -7,7 +7,7 @@ module Soundcloud
     extend Enumerable
 
     def self.all
-      @all ||= Soundcloud.get(uri).map { |p| new(p) }
+      @all ||= Soundcloud.get(uri).map { |p| new(p) }.sort(&method(:order))
     end
 
     def self.each(&block)
@@ -17,6 +17,14 @@ module Soundcloud
     def self.find(id_or_hash)
       id_or_hash = {id: id_or_hash} if Integer === id_or_hash
       detect { |e| id_or_hash.all? { |k,v| e[k] == v } }
+    end
+
+    def self.order(lft, rgt)
+      names.index(lft.title) <=> names.index(rgt.title)
+    end
+
+    def self.names
+      ['Ringtones', 'Snippets', 'Original Recordings']
     end
 
     def inspect

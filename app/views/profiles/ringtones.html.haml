@@ -1,12 +1,40 @@
+- content_for :head do
+  <script type="text/javascript" src="/javascripts/soundcloud.player.api.js"></script>
+
 %h2 Ringtones &amp; sounds
 
-%p Work in progress, please bear with us.
+%p
+  If you wonder what the heck these ringtones are about, we've written up the
+  %a{ href: '/ringtones' } full story
+  for you.
 
+%p
+  %object{height: 81, width: '100%', id: 'soundcloud', classid: 'clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'}
+    %param{name: 'movie', value: "http://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud"}
+    %param{name: 'allowscriptaccess', value: 'always'}
+    %embed{allowscriptaccess: 'always', height: 81, width: '100%', src: "http://player.soundcloud.com/player.swf?url=#{Playlist.first.tracks.first.permalink_url}&enable_api=true&object_id=soundcloud", type: 'application/x-shockwave-flash', name: 'soundcloud'}
+
+- p 
 - Playlist.each do |playlist|
-  .playlist
-    %h3= playlist.title
-    %ul
+  %table.playlist
+    %colgroup
+      %col.col-track
+      %col.col-duration
+      %col.col-download
+    %thead
+      %tr
+        %th
+          %h3= "#{playlist.title} (#{playlist.tracks.size})"
+        %th{colspan: 2}
+          .pagination
+            = render partial: 'home/pagination'
+    %tbody
       - playlist.tracks.each do |track|
-        %li
-          = link_to track.title, ringtone_profile_path(permalink: track.permalink)
-      
+        %tr
+          %td.track
+            = link_to track.title, track.permalink_url, {}, :'data-src' => track.uri
+          %td
+            = "#{(track.duration / 100).round(1) / 10} sec" # hrmm
+          %td
+            = link_to 'Download', ringtone_profile_path(permalink: track.permalink)
+

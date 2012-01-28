@@ -3,11 +3,7 @@ require 'base64'
 
 module ApplicationHelper
   def page_id
-    if params[:controller] == 'home'
-      params[:action] == 'show' ? 'home' : params[:action] # ugh ...
-    else
-      params[:controller]
-    end
+    %w(show index).include?(params[:action]) ? params[:controller] : params[:action]
   end
 
   def current_user_editable(tag, name)

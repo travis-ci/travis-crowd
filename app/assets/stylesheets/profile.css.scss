@@ -43,7 +43,7 @@
   }
   #packages, #subscriptions, #ringtones {
     float: right;
-	margin-bottom: 25px;
+	  margin-bottom: 25px;
   }
   table {
     width: 100%;
@@ -66,6 +66,36 @@
     }
     form {
       width: auto;
+    }
+  }
+}
+
+#ringtones {
+  table {
+    thead {
+      th {
+        position: relative;
+        font-weight: normal;
+        text-align: left;
+
+        .pagination {
+          top: 25px;
+          right: 0;
+          width: 400px;
+          text-align: right;
+        }
+      }
+    }
+    col {
+      &.col-track {
+        width: 400px;
+      }
+      &.col-duration {
+        width: 75px;
+      }
+      &.col-download {
+        width: 60px;
+      }
     }
   }
 }

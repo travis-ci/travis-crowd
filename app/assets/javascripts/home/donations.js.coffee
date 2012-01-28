@@ -63,7 +63,7 @@ $.extend Donation.prototype,
 $.fn.donations = ()->
   new Donations(this)
 
-$(document).ready ->
+$ ->
   if $('#donations').length > 0
     $('#donations').donations()
 

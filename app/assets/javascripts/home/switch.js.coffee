@@ -13,7 +13,7 @@ $.extend Switch.prototype,
 $.fn.switch = (callback) ->
   new Switch(this, callback)
 
-$(document).ready ->
+$ ->
   $('.switch').switch (value) ->
     $('#packages, #subscriptions').hide()
     $('#' + value).show()

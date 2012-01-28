@@ -39,6 +39,6 @@ $.extend Testimonial.prototype,
 $.fn.testimonials = ->
   new Testimonials(this)
 
-$(document).ready ->
+$ ->
   window.testimonials = $('#testimonials ul').testimonials() if $('#testimonials').length > 0
 

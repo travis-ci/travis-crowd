@@ -79,6 +79,6 @@ $.extend Sponsor.prototype,
 $.fn.sponsors = (options) ->
   new Sponsors(@, options).run()
 
-$(document).ready ->
+$ ->
   $('#thanks-companies .sponsors').sponsors()
 

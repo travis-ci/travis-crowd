@@ -38,7 +38,7 @@ $.extend Pagination.prototype,
 $.fn.slides = (options) ->
   new Slides(this, options).run()
 
-$(document).ready ->
+$ ->
   $('.slides').slides
     speed: 4000
     fade: 800

@@ -73,7 +73,7 @@ Sponsor = (data) ->
 $.extend Sponsor.prototype,
   render: ->
     node = $('<li></li>')
-    node.append($('<a href="' + @data.href + '"><img src="' + @data.image + '"></a>' + @data.text))
+    node.append($('<a href="' + @data.url + '"><img src="' + @data.image + '"></a>' + @data.text))
     node
 
 $.fn.sponsors = (options) ->

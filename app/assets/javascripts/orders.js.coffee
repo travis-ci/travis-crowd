@@ -6,15 +6,17 @@ OrderForm = (form) ->
     $('#order_billing_address_attributes_name, #order_card_name').each ->
       $(this).val(name) if name != ''
 
-  if $("#vat").length > 0
-    country = $('#order_billing_address_attributes_country')
-    city    = $('#order_billing_address_attributes_city')
 
+  country = $('#order_billing_address_attributes_country')
+  city    = $('#order_billing_address_attributes_city')
+
+  if country.length > 0
     $.getJSON '/geo_ip.json', (data) ->
       city.val(data.city)            if city.val() == ""
       country.val(data.country_name) if country.val() == ""
       _this.setupVAT country.val()
 
+  if $("#vat").length > 0
     country.change             -> _this.setupVAT country.val()
     $('#order_add_vat').change -> $('#vat_note').toggle($(this).val() == "true")
     _this.setupVAT country.val()

@@ -44,6 +44,10 @@ class Package
     (price / 100) * 19
   end
 
+  def vat_in_dollars
+    vat.to_f / 100
+  end
+
   def price_with_vat_in_dollars
     (price + vat).to_f / 100
   end

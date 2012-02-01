@@ -1,12 +1,19 @@
 %h2 Invoice
 
 %dl
+  %dt Number
+  %dd= "%09d" % order.id
   %dt Date
   %dd= l Time.now, :format => :short
   %dt= order.subscription? ? 'Subscription' : 'Package'
   %dd= order.package.name
   %dt Price
-  %dd= number_to_currency order.total_in_dollars
+  - if order.add_vat?
+    %dd
+      #{number_to_currency order.package.price_with_vat_in_dollars}
+      (#{number_to_currency order.package.price_in_dollars} plus #{number_to_currency order.package.vat_in_dollars} VAT, which equals 19%)
+  - else
+    %dd= number_to_currency order.total_in_dollars
 
 - if order.subscription?
   %p The payment for this subscription will be due on a monthly base and billed on your credit card by our payment partner.
@@ -18,6 +25,8 @@
       %dt= attr.camelize
       %dd= order.billing_address.send(attr)
 
+%p.footnotes
+  Travis CI GmbH, Prinzessinenstr. 20, 10969 Berlin, Germany, VAT ID: (in Gr&uml;ndung)
 %p.footnotes
   We use Stripe Inc., 522 Ramona St, Palo Alto, CA 94391, U.S.A., as our payment partner. All payments made via Stripe are routed to us by our clearing agent JumpstartLab, Jeff Casimir, 3634 Georgia Ave NW, Washington, DC 20010, U.S.A.
 %p.footnotes

@@ -2,7 +2,7 @@
 
 %dl
   %dt Number
-  %dd= "%09d" % order.id
+  %dd= "CF%09d" % order.id
   %dt Date
   %dd= l Time.now, :format => :short
   %dt= order.subscription? ? 'Subscription' : 'Package'

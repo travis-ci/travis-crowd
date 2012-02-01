@@ -7,9 +7,9 @@ OrderForm = (form) ->
       $(this).val(name) if name != ''
 
   if $("#vat").length > 0
-    $('#order_billing_address_attributes_country').change ->
-      _this.setupVAT $(this).val()
-    _this.setupVAT()
+    $('#order_billing_address_attributes_country').change   -> _this.setupVAT $(this).val()
+    $('#order_add_vat').change                              -> $('#vat_note').toggle($(this).val() == "true")
+    _this.setupVAT $('#order_billing_address_attributes_country').val()
 
   form.submit ->
     if $('#order_card_name').length
@@ -21,20 +21,25 @@ OrderForm = (form) ->
 
 EU = [
   "Austria", "Belgium", "Bulgaria", "Cyprus", "Czech Republic",
-  "Denmark", "Estonia", "France", "Monaco", "Germany", "Greece",
+  "Denmark", "Estonia", "France", "Monaco", "Greece", # "Germany",
   "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
   "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",
   "Slovenia", "Spain", "Sweden", "United Kingdom", "Isle of Man"
 ]
 
 $.extend OrderForm.prototype,
-  setupVAT: (country) ->
-    if EU.indexOf(country) > -1
-      $("#vat").show()
-      $("#vat .required input").attr("required", "required")
+  toggleSection: (name, onoff) ->
+    $("#{name} #order_add_vat").val onoff.toString()
+    $("#{name} #vat_note").toggle(onoff)
+    $("#{name}").toggle(onoff)
+    if onoff
+      $("#{name} .required input").attr("required", "required")
     else
-      $("#vat").hide()
-      $("#vat .required input").removeAttr("required")
+      $("#{name} .required input").removeAttr("required")
+
+  setupVAT: (country) ->
+    @toggleSection "#vat-germany", country == "Germany"
+    @toggleSection "#vat", EU.indexOf(country) > -1
     
   processCard: ->
     @disable('Validating your credit card ...')

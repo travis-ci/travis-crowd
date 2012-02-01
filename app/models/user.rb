@@ -36,13 +36,13 @@ class User < ActiveRecord::Base
     Stripe::Charge.all(customer: stripe_customer_id) # TODO hmmm ...
   end
 
-  def charge(package)
-    stripe_create_charge(package)
+  def charge(order)
+    stripe_create_charge(order)
   end
 
-  def subscribe(package)
-    stripe_set_subscription(package)
-    update_attributes!(stripe_plan: package) if valid?
+  def subscribe(order)
+    stripe_set_subscription(order.package)
+    update_attributes!(stripe_plan: order.package) if valid?
   end
 
   def cancel_subscription
@@ -76,8 +76,10 @@ class User < ActiveRecord::Base
       false
     end
 
-    def stripe_create_charge(package)
-      Stripe::Charge.create(description: "#{email} (#{package.id.to_s})", amount: package.price, currency: 'usd', customer: stripe_customer_id)
+    def stripe_create_charge(order)
+      package = order.package
+      price   = order.add_vat? ? package.price_with_vat : package.price
+      Stripe::Charge.create(description: "#{email} (#{package.id.to_s})", amount: price, currency: 'usd', customer: stripe_customer_id)
     rescue Stripe::InvalidRequestError => e
       logger.error "Stripe error while creating a stripe charge: #{e.message}"
       errors.add :base, "There was a problem with your credit card: #{e.message}."

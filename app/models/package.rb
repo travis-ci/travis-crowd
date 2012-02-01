@@ -39,6 +39,19 @@ class Package
     price.to_f / 100
   end
 
+  def vat
+    raise "cannot calculate VAT without riscing rounding issues" unless price % 100 == 0
+    (price / 100) * 19
+  end
+
+  def price_with_vat_in_dollars
+    (price + vat).to_f / 100
+  end
+
+  def price_with_vat
+    price + vat
+  end
+
   def sort_order
     PACKAGES.keys.index(id)
   end

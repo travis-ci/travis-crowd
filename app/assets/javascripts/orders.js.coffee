@@ -7,9 +7,17 @@ OrderForm = (form) ->
       $(this).val(name) if name != ''
 
   if $("#vat").length > 0
-    $('#order_billing_address_attributes_country').change   -> _this.setupVAT $(this).val()
-    $('#order_add_vat').change                              -> $('#vat_note').toggle($(this).val() == "true")
-    _this.setupVAT $('#order_billing_address_attributes_country').val()
+    country = $('#order_billing_address_attributes_country')
+    city    = $('#order_billing_address_attributes_city')
+
+    $.getJSON '/geo_ip.json', (data) ->
+      city.val(data.city)            if city.val() == ""
+      country.val(data.country_name) if country.val() == ""
+      _this.setupVAT country.val()
+
+    country.change             -> _this.setupVAT country.val()
+    $('#order_add_vat').change -> $('#vat_note').toggle($(this).val() == "true")
+    _this.setupVAT country.val()
 
   form.submit ->
     if $('#order_card_name').length
@@ -83,4 +91,3 @@ $(document).ready ->
     delayIn: 100
     title: ->
       $(this).parent().find('.hint').html()
-

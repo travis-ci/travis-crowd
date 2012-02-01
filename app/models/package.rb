@@ -40,7 +40,7 @@ class Package
   end
 
   def vat
-    raise "cannot calculate VAT without riscing rounding issues" unless price % 100 == 0
+    raise "cannot calculate VAT without risking rounding issues" unless price % 100 == 0
     (price / 100) * 19
   end
 

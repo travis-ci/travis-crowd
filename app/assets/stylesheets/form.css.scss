@@ -47,6 +47,10 @@ form {
     height: 1%;
   }
 
+  fieldset + p {
+    clear: both;
+  }
+
   fieldset {
     float: left;
     padding: 0;

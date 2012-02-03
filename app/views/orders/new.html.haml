@@ -78,11 +78,24 @@
 
   - if needs_vat?
     #vat
-      %h3 Tax Infos
+      %h3 Tax Info
       %p.note
         If this donation is made by a company situated within the European Union, please provide your VAT identification number, so we can avoid a 19% taxation.
       %fieldset
         = f.input :vatin, required: company?, label: 'VAT ID'
+
+    #vat-germany
+      %h3 Tax Info
+      %p.note
+        Since your from Germany, we are required by law to pay a 19% VAT on your payment. For private donors we are willing to pay this tax.
+        However, #{company? ? "since" : "if"} you're able to deduct German VAT, we will simply add the 19% to the invoice.
+      - if company?
+        = f.hidden_field :add_vat, value: true
+      - else
+        %fieldset
+          = f.input :add_vat, required: true, as: :select, label: 'Add VAT?', default: true
+      %p#vat_note
+        We will have to charge you <em>#{number_to_currency(order.package.price_with_vat_in_dollars)}</em>.
 
   .actions
     = f.submit 'Confirm'

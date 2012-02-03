@@ -51,7 +51,7 @@ class Order < ActiveRecord::Base
 
   def save_with_payment!
     save!
-    subscription? ? user.subscribe(package) : user.charge(package)
+    subscription? ? user.subscribe(self) : user.charge(self)
   end
 
   JSON_ATTRS = [:subscription, :created_at, :comment]

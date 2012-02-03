@@ -1,4 +1,7 @@
+%div{class: "flash alert"}
+  %p This is just a demo page, donations will <u>not</u> reach us!
+
 - flash.each do |name, msg|
-  %div#flash{class: name}
+  %div{class: "flash #{name}"}
     %p= msg
 

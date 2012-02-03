@@ -1,3 +1,5 @@
+require 'geo_ip'
+
 Travis::Application.routes.draw do
   root to: 'home#show'
   match 'company_packages', to: 'home#sponsoring_plans'
@@ -7,6 +9,7 @@ Travis::Application.routes.draw do
 
   match 'packages/:package', as: :new_package, to: 'orders#new'
   match 'subscriptions/:package', as: :new_subscription, to: 'orders#new', subscription: true
+  match 'geo_ip.json', to: GeoIP.new
 
   resources :orders, except: :new do
     get 'confirm', on: :member

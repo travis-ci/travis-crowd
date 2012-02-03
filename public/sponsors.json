@@ -29,6 +29,10 @@
     {
       "url": "http://zendesk.com",
       "image": "/images/logos/zendesk-205x60.png"
+    },
+    {
+      "url": "http://nedap.com",
+      "image": "/images/logos/nedap-205x60.png"
     }
   ]
 }

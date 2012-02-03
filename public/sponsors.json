@@ -11,6 +11,11 @@
       "url": "http://soundcloud.com",
       "image": "/images/logos/soundcloud-205x130.png",
       "text": "<p><a href=\"http://soundcloud.com\">SoundCloud</a> is an audio platform that enables anyone to upload, record, promote and share their originally-created sounds across the internet, in a simple, accessible and feature-rich way.</p>"
+    },
+    {
+      "url": "http://nedap.com",
+      "image": "/images/logos/nedap-205x130.png",
+      "text": "<p>At <a href=\"http://nedap.com\">Nedap</a> we work on solutions for important, real problems like sufficient food for a growing population, clean drinking water and smart networks for sustainable energy.</p>"
     }
   ],
   "silver": [
@@ -29,10 +34,6 @@
     {
       "url": "http://zendesk.com",
       "image": "/images/logos/zendesk-205x60.png"
-    },
-    {
-      "url": "http://nedap.com",
-      "image": "/images/logos/nedap-205x60.png"
     }
   ]
 }

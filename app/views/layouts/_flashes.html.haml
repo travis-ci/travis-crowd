@@ -1,7 +1,7 @@
-%div{class: "flash alert"}
-  %p This is just a demo page, donations will <u>not</u> reach us!
+- if request.host != 'love.travis-ci.org'
+  %div{class: "flash alert"}
+    %p This is just a demo page, donations will <u>not</u> reach us!
 
 - flash.each do |name, msg|
   %div{class: "flash #{name}"}
     %p= msg
-

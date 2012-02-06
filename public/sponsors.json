@@ -38,6 +38,10 @@
     {
       "url": "http://stripe.com",
       "image": "/images/logos/stripe-205x60.png"
+    },
+    {
+      "url": "http://basho.com",
+      "image": "/images/logos/basho-205x60.png"
     }
   ]
 }

@@ -60,6 +60,7 @@
         top: 0;
         left: 0px;
         border: 1px solid #ddd;
+        background-repeat: no-repeat;
         overflow: hidden;
         @include border-radius(4px);
       }
@@ -88,6 +89,9 @@
       &.zendesk > a {
         background-image: url(/images/logos/zendesk-205x60.png);
       }
+      &.stripe > a {
+        background-image: url(/images/logos/stripe-205x60.png);
+      }
       &.enterprise-rails > a {
         background-image: url(/images/logos/enterprise-rails-140x40.png);
       }
@@ -112,9 +116,6 @@
       }
       &.iriscouch > a {
         background-image: url(/images/logos/iriscouch-140x40.png);
-      }
-      &.stripe > a {
-        background-image: url(/images/logos/stripe-140x40.png);
       }
       &.postmark > a {
         background-image: url(/images/logos/postmark-140x40.png);

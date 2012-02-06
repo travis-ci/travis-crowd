@@ -42,6 +42,10 @@
     {
       "url": "http://basho.com",
       "image": "/images/logos/basho-205x60.png"
+    },
+    {
+      "url": "http://thinkrelevance.com",
+      "image": "/images/logos/thinkrelevance-205x60.png"
     }
   ]
 }

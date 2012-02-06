@@ -1,34 +1,37 @@
-%h2 Invoice
+#invoice
+  %h2 Invoice
 
-%dl
-  %dt Number
-  %dd= "CF%09d" % order.id
-  %dt Date
-  %dd= l Time.now, :format => :short
-  %dt= order.subscription? ? 'Subscription' : 'Package'
-  %dd= order.package.name
-  %dt Price
-  - if order.add_vat?
-    %dd
-      #{number_to_currency order.package.price_with_vat_in_dollars}
-      (#{number_to_currency order.package.price_in_dollars} plus #{number_to_currency order.package.vat_in_dollars} VAT, which equals 19%)
-  - else
-    %dd= number_to_currency order.total_in_dollars
+  %img.stamp{src: encoded_image('logos/stripe-stamp-111x103.png')}
 
-- if order.subscription?
-  %p The payment for this subscription will be due on a monthly base and billed on your credit card by our payment partner.
+  %dl
+    %dt Number
+    %dd= "CF%09d" % order.id
+    %dt Date
+    %dd= l Time.now, :format => :short
+    %dt= order.subscription? ? 'Subscription' : 'Package'
+    %dd= order.package.name
+    %dt Price
+    - if order.add_vat?
+      %dd
+        #{number_to_currency order.package.price_with_vat_in_dollars}
+        (#{number_to_currency order.package.price_in_dollars} plus #{number_to_currency order.package.vat_in_dollars} VAT, which equals 19%)
+    - else
+      %dd= number_to_currency order.total_in_dollars
 
-%h3 Your address
-%dl
-  - %w(name street city zip state country).each do |attr|
-    - if order.billing_address.send(attr).present?
-      %dt= attr.camelize
-      %dd= order.billing_address.send(attr)
+  - if order.subscription?
+    %p The payment for this subscription will be due on a monthly base and billed on your credit card by our payment partner.
 
-%p.footnotes
-  Travis CI GmbH, Prinzessinenstr. 20, 10969 Berlin, Germany, VAT ID: (in Gr&uuml;ndung), CEOs: Sven Fuchs and Joshua Kalderimis,
-  Register Berlin (in Gr&uuml;ndung)
-%p.footnotes
-  We use Stripe Inc., 522 Ramona St, Palo Alto, CA 94391, U.S.A., as our payment partner. All payments made via Stripe are routed to us by our clearing agent JumpstartLab, Jeff Casimir, 3634 Georgia Ave NW, Washington, DC 20010, U.S.A.
-%p.footnotes
-  Contributions and payments to travis-ci.org or Travis CI GmbH are not deductible as charitable contributions for federal income tax purposes. However, they may be deductible under other provisions of the Internal Revenue Code (for US) or your local tax authority's advice.
+  %h3 Your address
+  %dl
+    - %w(name street city zip state country).each do |attr|
+      - if order.billing_address.send(attr).present?
+        %dt= attr.camelize
+        %dd= order.billing_address.send(attr)
+
+  %p.footnotes
+    Travis CI GmbH, Prinzessinenstr. 20, 10969 Berlin, Germany, VAT ID: (in Gr&uuml;ndung), CEOs: Joshua Kalderimis and Sven Fuchs,
+    Register Berlin (in Gr&uuml;ndung)
+  %p.footnotes
+    We use Stripe Inc., 522 Ramona St, Palo Alto, CA 94391, U.S.A., as our payment partner. All payments made via Stripe are routed to us by our clearing agent JumpstartLab, Jeff Casimir, 3634 Georgia Ave NW, Washington, DC 20010, U.S.A.
+  %p.footnotes
+    Contributions and payments to travis-ci.org or Travis CI GmbH are not deductible as charitable contributions for federal income tax purposes. However, they may be deductible under other provisions of the Internal Revenue Code (for US) or your local tax authority's advice.

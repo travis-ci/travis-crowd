@@ -3,7 +3,7 @@ require 'base64'
 
 module ApplicationHelper
   def page_id
-    %w(show index).include?(params[:action]) ? params[:controller] : params[:action]
+    %w(show index new).include?(params[:action]) ? params[:controller] : params[:action]
   end
 
   def current_user_editable(tag, name)

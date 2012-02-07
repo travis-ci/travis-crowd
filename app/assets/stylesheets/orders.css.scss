@@ -3,6 +3,10 @@
 
 #orders {
   section{
+    .stripe_logo {
+      float: right;
+      margin-right: 50px;
+    }
     #stripe_error {
       float: left;
       color: #c00;

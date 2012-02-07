@@ -19,6 +19,7 @@ gem 'roadie'
 gem 'rdiscount'
 gem 'postmark-rails'
 gem 'pusher'
+gem 'hubble'
 
 group :deployment do
   gem 'thin'

@@ -19,6 +19,10 @@ class Package
     @subscription = subscription
   end
 
+  def company?
+    [:silver, :gold, :platinum].include?(id)
+  end
+
   def subscription?
     !!subscription
   end

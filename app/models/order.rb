@@ -9,6 +9,8 @@ class Order < ActiveRecord::Base
 
   before_validation do
     self.total = package.price
+    self.user.company = package.company?
+    true
   end
 
   class << self

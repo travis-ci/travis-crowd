@@ -2,14 +2,15 @@ require 'net/http'
 require 'timeout'
 
 class GeoIP
+  TRUSTED_PROXY = /^127\.0\.0\.1$|^(10|172\.(1[6-9]|2[0-9]|30|31)|192\.168)\.|^::1$|^fd[0-9a-f]{2}:.+|^localhost$/i
   def initialize(geoip_host = 'freegeoip.net')
     @geoip_host = geoip_host
     @cache = {}
   end
 
   def call(env, cb = env['async.callback'])
-    fw = env.fetch("HTTP_X_FORWARDED_FOR", "").split(",").last.to_s.strip
-    ip = fw.presence || Rack::Request.new(env).ip
+    forwarded_ips = env['HTTP_X_FORWARDED_FOR'] ? env['HTTP_X_FORWARDED_FOR'].strip.split(/[,\s]+/) : []
+    ip = forwarded_ips.reject { |ip| ip =~ TRUSTED_PROXY }.last || env['REMOTE_ADDR']
 
     @cache.clear if @cache.size > 1024 # magic values ftw!
     return @cache[ip] if @cache.include? ip

@@ -14,6 +14,11 @@
 
     td {
       padding: 5px;
+      white-space: nowrap;
+      &:last-child {
+        white-space: normal;
+        font-size: 13px;
+      }
     }
     col {
       &.col-gravatar {

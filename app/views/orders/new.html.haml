@@ -2,6 +2,8 @@
   = f.hidden_field :package
   = f.hidden_field :subscription
 
+  %img.stripe_logo{src: "/images/logos/stripe-stamp-111x103.png", alt: "processed by stripe"}
+
   %h2= "#{subscription? ? 'Subscription' : 'Package'}: #{order.package.name}"
 
   %p

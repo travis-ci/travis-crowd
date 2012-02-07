@@ -61,4 +61,9 @@ Travis::Application.configure do
   # Force SSL usage
   require 'rack/ssl'
   config.middleware.use 'Rack::SSL'
+
+  require 'hubble'
+  require 'hubble/middleware'
+  Hubble.setup
+  config.middleware.use "Hubble::Rescuer"
 end

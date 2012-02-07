@@ -8,7 +8,8 @@ class GeoIP
   end
 
   def call(env, cb = env['async.callback'])
-    ip = Rack::Request.new(env).ip
+    fw = env.fetch("HTTP_X_FORWARDED_FOR", "").split(",").last.to_s.strip
+    ip = fw.presence || Rack::Request.new(env).ip
 
     @cache.clear if @cache.size > 1024 # magic values ftw!
     return @cache[ip] if @cache.include? ip

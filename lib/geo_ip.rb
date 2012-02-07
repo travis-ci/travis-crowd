@@ -9,8 +9,7 @@ class GeoIP
   end
 
   def call(env, cb = env['async.callback'])
-    [504, {"Content-Type" => "text/plain"},
-      [{ 'X-Forwarded-For' => env['HTTP_X_FORWARDED_FOR'].to_s, 'Remote-Addr' => env['REMOTE_ADDR'].to_s }.to_json]]
+    [504, {"Content-Type" => "text/plain"}, env.select { |k,v| String === v }.map { |k,v| "#{k}: #{v.inspect}\n" }]
     # forwarded_ips = env['HTTP_X_FORWARDED_FOR'] ? env['HTTP_X_FORWARDED_FOR'].strip.split(/[,\s]+/) : []
     #     ip = forwarded_ips.reject { |ip| ip =~ TRUSTED_PROXY }.last || env['REMOTE_ADDR']
     # 

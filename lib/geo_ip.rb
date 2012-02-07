@@ -9,21 +9,17 @@ class GeoIP
   end
 
   def call(env, cb = env['async.callback'])
-    [504, {"Content-Type" => "text/plain"}, env.select { |k,v| String === v }.map { |k,v| "#{k}: #{v.inspect}\n" }]
-    # forwarded_ips = env['HTTP_X_FORWARDED_FOR'] ? env['HTTP_X_FORWARDED_FOR'].strip.split(/[,\s]+/) : []
-    #     ip = forwarded_ips.reject { |ip| ip =~ TRUSTED_PROXY }.last || env['REMOTE_ADDR']
-    # 
-    #     @cache.clear if @cache.size > 1024 # magic values ftw!
-    #     return @cache[ip] if @cache.include? ip
-    # 
-    #     if cb
-    #       EM.defer { cb.call call(env, false) }
-    #       return [-1, {}, []]
-    #     end
-    # 
-    #     
-    #     body = Timeout.timeout(5) { Net::HTTP.get(@geoip_host, "/json/#{ip}") }
-    #     @cache[ip] = Rack::Response.new(body, 200, "Content-Type" => "application/json").finish
+    ip = Rack::Request.new(env).ip
+    @cache.clear if @cache.size > 1024 # magic values ftw!
+    return @cache[ip] if @cache.include? ip
+
+    if cb
+      EM.defer { cb.call call(env, false) }
+      return [-1, {}, []]
+    end
+
+    body = Timeout.timeout(5) { Net::HTTP.get(@geoip_host, "/json/#{ip}") }
+    @cache[ip] = Rack::Response.new(body, 200, "Content-Type" => "application/json").finish
   rescue Timeout::Error
     [504, {"Content-Type" => "text/plain"}, ["GeoIP server did not respond properly."]]
   end

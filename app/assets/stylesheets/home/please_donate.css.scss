@@ -1,17 +1,18 @@
 #please-donate {
   #results {
     float: right;
+    line-height: 21px;
     margin-top: -30px;
     margin-right: -90px;
-    width: 225px;
-    padding: 33px 10px 10px 15px;
+    width: 205px;
+    padding: 29px 10px 10px 65px;
     background: url(/images/index-card.png) top center;
     font-size: 18px;
     @include rotate(10deg);
     @include box-shadow(#ddd 3px 3px 6px);
 
     em {
-      background-color: #FFF780;
+      background-color: rgba(255, 247, 128, 0.7);
       font-style: normal;
     }
   }

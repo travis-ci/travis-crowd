@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   protected
 
     def protect_production
-      if request.host == 'love.travis-ci.org'
+      if request.host == 'travis-crowd-staging.herokuapp.com'
         authenticate_or_request_with_http_basic do |username, password|
           username == 'travis' && password == 'crowd'
         end

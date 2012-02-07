@@ -21,6 +21,11 @@
       "url": "http://nedap.com",
       "image": "/images/logos/nedap-205x130.png",
       "text": "<p>At <a href=\"http://nedap.com\">Nedap</a> we work on solutions for important, real problems like sufficient food for a growing population, clean drinking water and smart networks for sustainable energy.</p>"
+    },
+    {
+      "url": "http://mongohq.com",
+      "image": "/images/logos/mongohq-205x130.png",
+      "text": ""
     }
   ],
   "silver": [

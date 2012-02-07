@@ -25,7 +25,7 @@
     {
       "url": "http://mongohq.com",
       "image": "/images/logos/mongohq-205x130.png",
-      "text": ""
+      "text": "<p><a href=\"http://mongohq.com\">MongoHQ</a> is the hosted database solution for getting you up and running on MongoDB, fast. From free shared plans to custom dedicated solutions, we handle all the levels of your data layer.</p>"
     }
   ],
   "silver": [

@@ -28,8 +28,9 @@
       li {
         height: 70px;
         padding-left: 230px;
+        padding-right: 5px;
         & > a {
-          width: 210px;
+          width: 205px;
           height: 60px;
         }
       }
@@ -100,6 +101,9 @@
       }
       &.thinkrelevance > a {
         background-image: url(/images/logos/thinkrelevance-205x60.png);
+      }
+      &.mindmatters > a {
+        background-image: url(/images/logos/mindmatters-205x60.png);
       }
       &.enterprise-rails > a {
         background-image: url(/images/logos/enterprise-rails-140x40.png);

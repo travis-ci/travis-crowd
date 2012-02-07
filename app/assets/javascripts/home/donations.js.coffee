@@ -78,3 +78,4 @@ $ ->
 
       thanks.push(message)
       Notifier.notify "#{user.name} just donated $#{order.total}", message, user.gravatar_url, 10000
+	  $('#donations').donations()

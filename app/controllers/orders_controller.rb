@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def confirm
+    redirect_to root_url if current_user.nil?
     render :confirm_creation
   end
 

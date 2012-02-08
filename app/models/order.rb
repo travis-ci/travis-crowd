@@ -8,7 +8,7 @@ class Order < ActiveRecord::Base
   accepts_nested_attributes_for :user, :billing_address, :shipping_address
 
   before_validation do
-    self.total ||= package.price
+    self.total = package.price unless read_attribute(:total)
   end
 
   class << self

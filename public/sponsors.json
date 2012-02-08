@@ -41,6 +41,11 @@
       "url": "http://kanbanery.com",
       "image": "/images/logos/kanbanery-205x130.png",
       "text": "<p><a href=\"http://kanbanery.com\">Kanbanery</a> Kanbanery, a product of Lunar Logic Polska is a web-based task manager that helps you work more effectively, alone and together, by visualizing work in progress on your projects.</p>"
+    },
+    {
+      "url": "http://ticketevolution.com",
+      "image": "/images/logos/ticketevolution-205x130.png",
+      "text": "<p><a href=\"http://ticketevolution.com\">Ticket Evolution</a> is the engineering backbone of the open ticket market. We're an expanding team of Ruby engineers who love open source software. Join us.</p>"
     }
   ],
   "silver": [

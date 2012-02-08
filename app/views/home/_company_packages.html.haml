@@ -29,7 +29,10 @@
         %sup 2
       %p
         4 spots available.
-      = link_to 'Donate', new_package_path(package: 'platinum')
+      - if Order.find_all_by_package("platinum").size < 4
+        = link_to 'Donate', new_package_path(package: 'platinum')
+      - else
+        %a.sold_out Sold Out!
       = stats_for(:platinum, :sponsor)
 
     %li.gold
@@ -46,7 +49,10 @@
         %sup 2
       %p
         8 spots available.
-      = link_to 'Donate', new_package_path(package: 'gold')
+      - if Order.find_all_by_package("gold").size < 8
+        = link_to 'Donate', new_package_path(package: 'gold')
+      - else
+        %a.sold_out Sold Out!
       = stats_for(:gold, :sponsor)
 
     %li.silver

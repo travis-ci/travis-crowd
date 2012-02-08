@@ -7,7 +7,7 @@ class Order < ActiveRecord::Base
 
   accepts_nested_attributes_for :user, :billing_address, :shipping_address
 
-  before_validation on: :create do
+  before_validation do
     self.total ||= package.price
   end
 

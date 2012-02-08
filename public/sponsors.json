@@ -9,6 +9,11 @@
       "url": "http://bendyworks.com",
       "image": "/images/logos/bendyworks-210x210.png",
       "text": "<p><a href=\"http://bendyworks.com\">Bendyworks</a> is an agile Ruby on Rails &amp; iOS development consulting shop that hails from Madison, Wisconsin, USA. Bendyworks was founded in 2009 to turn great ideas into elegant applications, with plenty of room for creative revision and refinement along the way, while saving time &amp; money.</p><p>The way Bendyworks approaches projects can be summed up in a single word: flexibility. From the frequent and clear communication down to the methods used to code, the entire process revolves around staying nimble and adaptable to client needs.</p><p>Bendyworks also believes strongly in the power of community. From hosting local meetups to writing open source code, Bendyworks is committed to the programming community.</p>"
+    },
+    {
+      "url": "http://cloudcontrol.com",
+      "image": "/images/logos/cloudcontrol-210x210.png",
+      "text": "<p><a href=\"https://www.cloudcontrol.com\">cloudControl</a> is PaaS made in Berlin, Germany. Since 2009 we're dedicated to supercharge development by building the best platform possible to help developers build better apps faster.</p><p>The <a href=\"https://www.cloudcontrol.com\">cloudControl</a> platform features agile deployments, rock-solid autoscaling infrastructure and pay-as-you-go pricing out of Amazon's European datacenters.</p><p>With the <a href=\"https://www.cloudcontrol.com\">cloudControl</a> Add-on market we bring developers all the third party Cloud services they need easily integratable into their own apps and let them take projects from idea to product faster than ever before.</p>"
     }
   ],
   "gold": [
@@ -26,6 +31,16 @@
       "url": "http://mongohq.com",
       "image": "/images/logos/mongohq-205x130.png",
       "text": "<p><a href=\"http://mongohq.com\">MongoHQ</a> is the hosted database solution for getting you up and running on MongoDB, fast. From free shared plans to custom dedicated solutions, we handle all the levels of your data layer.</p>"
+    },
+    {
+      "url": "http://zweitag.de",
+      "image": "/images/logos/zweitag-205x130.png",
+      "text": "<p><a href=\"http://www.zweitag.de\">Zweitag</a> is a software engineering consultancy. We create beautiful web apps. Our agile solutions for complex technical problems are based on the right tools (e.g Ruby on Rails, node.js, nosql).</p>"
+    },
+    {
+      "url": "http://kanbanery.com",
+      "image": "/images/logos/kanbanery-205x130.png",
+      "text": "<p><a href=\"http://kanbanery.com\">Kanbanery</a> Kanbanery, a product of Lunar Logic Polska is a web-based task manager that helps you work more effectively, alone and together, by visualizing work in progress on your projects.</p>"
     }
   ],
   "silver": [
@@ -60,6 +75,10 @@
     {
       "url": "http://mindmatters.de",
       "image": "/images/logos/mindmatters-205x60.png"
+    },
+    {
+      "url": "http://amenhq.com",
+      "image": "/images/logos/amen-205x60.jpg"
     }
   ]
 }

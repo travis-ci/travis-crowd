@@ -14,6 +14,11 @@
       "url": "http://cloudcontrol.com",
       "image": "/images/logos/cloudcontrol-210x210.png",
       "text": "<p><a href=\"https://www.cloudcontrol.com\">cloudControl</a> is PaaS made in Berlin, Germany. Since 2009 we're dedicated to supercharge development by building the best platform possible to help developers build better apps faster.</p><p>The <a href=\"https://www.cloudcontrol.com\">cloudControl</a> platform features agile deployments, rock-solid autoscaling infrastructure and pay-as-you-go pricing out of Amazon's European datacenters.</p><p>With the <a href=\"https://www.cloudcontrol.com\">cloudControl</a> Add-on market we bring developers all the third party Cloud services they need easily integratable into their own apps and let them take projects from idea to product faster than ever before.</p>"
+    },
+    {
+      "url": "http://xing.de",
+      "image": "/images/logos/xing-210x210.png",
+      "text": "<p><a href=\"https://xing.de\">XING</a> is a social network with over 11 million members. We are the leading network for business professionals in Europe. Based in Hamburg, Germany.</p><p>XING is really into teamwork and using agile techniques. Independent, focused teams build our platform's products. We have been coding Rails since 2006.</p><p>XING <a href=\"https://github.com/xing\">contributes</a> to open source and hosts meetups, user groups, after-work events and workshops.</p><p>We are <a href=\"http://devblog.xing.com/we-are-hiring/\">looking for talented people</a> to build the social network of the future in Rails, iOS, Android &amp; Perl.</p>"
     }
   ],
   "gold": [

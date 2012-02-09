@@ -13,8 +13,8 @@
     = subscription_type(order) + '.'
   %p
     That is amazing! Thank you so much, we love you :)
-  - if order.errors.on(:base)
-    .errors= order.errors.on(:base)
+  - if order.errors[:base]
+    .errors= order.errors[:base]
   - unless signed_in?
     #user
       %h3 Account

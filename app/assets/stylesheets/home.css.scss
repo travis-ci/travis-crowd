@@ -179,6 +179,14 @@
     @include border-radius(6px);
     background-color: #19A509;
     @include background-image(linear-gradient(#3f9c33 0%, #348629 100%));
+	
+	
+	&.sold_out {
+	  @include background-image(linear-gradient(#999 0%, #888 100%));
+      &:hover {
+        @include background-image(linear-gradient(#999 0%, #888 100%));
+      }
+	}
 
     &:hover {
       @include background-image(linear-gradient(#1CBE0A 0%, #158F07 100%));

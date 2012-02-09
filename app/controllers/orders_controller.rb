@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_filter :authenticate_user!, only: [:show, :destroy]
   before_filter :normalize_params,   only: [:new, :create]
   before_filter :guard_duplicate_subscription, only: [:new, :create]
+  before_filter :validate_logged_in, only: [:confirm]
 
   def index
     render json: Order.includes(:user).order('created_at DESC').as_json
@@ -85,5 +86,9 @@ class OrdersController < ApplicationController
 
     def guard_duplicate_subscription
       render :duplicate_subscription if subscription? && subscribed?
+    end
+
+    def validate_logged_in
+      redirect_to root_url if current_user.nil?
     end
 end

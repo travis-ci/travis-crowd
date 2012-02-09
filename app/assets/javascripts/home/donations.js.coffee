@@ -36,7 +36,7 @@ $.extend Donation.prototype,
   values: ->
     @[name]() for name in ['gravatar', 'links', 'amount', 'package', 'date', 'comment']
   gravatar: ->
-    '<img src="' + @user.gravatar_url + '">'
+    '<img src="' + (@user.gravatar_url || "/images/anonymous.png") + '">'
   links: ->
     [@name(), @github(), @twitter()].compact().join('')
   name: ->

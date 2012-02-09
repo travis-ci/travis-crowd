@@ -84,6 +84,10 @@
     {
       "url": "http://amenhq.com",
       "image": "/images/logos/amen-205x60.jpg"
+    },
+    {
+      "url": "http://www.site5.com",
+      "image": "/images/logos/site5-205x60.png"
     }
   ]
 }

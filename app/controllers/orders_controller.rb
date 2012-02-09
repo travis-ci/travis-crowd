@@ -18,13 +18,19 @@ class OrdersController < ApplicationController
 
   def create
     if user.valid? && order.valid?
-      user.save_with_customer!
-      order.save_with_payment!
-      sign_in user
+      begin
+        user.save_with_customer!
+        sign_in user
+        order.save_with_payment!
+      rescue Stripe::CardError => e
+        Rails.logger.error("Error: #{e.message}")
+        order.errors.add(:base, "There was an error charging your credit card: #{e.message}")
+        report(e)
+        return render :new
+      end
       send_confirmation
       redirect_to confirm_order_url(order)
     else
-      # p user.errors, order.errors
       render :new
     end
   end
@@ -90,5 +96,17 @@ class OrdersController < ApplicationController
 
     def validate_logged_in
       redirect_to root_url if current_user.nil?
+    end
+
+    def report(boom)
+      Hubble.report(boom, {
+        :method       => request.request_method,
+        :user_agent   => env['HTTP_USER_AGENT'],
+        :params       => (request.params.inspect rescue nil),
+        :session      => (request.session.inspect rescue nil),
+        :referrer     => request.referrer,
+        :remote_ip    => request.ip,
+        :url          => request.url
+      })
     end
 end

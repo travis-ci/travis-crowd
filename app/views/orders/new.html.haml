@@ -13,7 +13,9 @@
     = subscription_type(order) + '.'
   %p
     That is amazing! Thank you so much, we love you :)
-
+  - if order.errors.on(:base)
+      .errors
+        = order.errors.on(:base)
   - unless signed_in?
     #user
       %h3 Account

@@ -97,7 +97,7 @@ class OrdersController < ApplicationController
     end
 
     def report(boom)
-      Hubble.report(boom, other.merge({
+      Hubble.report(boom, {
         :method       => request.request_method,
         :user_agent   => env['HTTP_USER_AGENT'],
         :params       => (request.params.inspect rescue nil),
@@ -105,6 +105,6 @@ class OrdersController < ApplicationController
         :referrer     => request.referrer,
         :remote_ip    => request.ip,
         :url          => request.url
-      }))
+      })
     end
 end

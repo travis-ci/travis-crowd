@@ -14,7 +14,7 @@
   %p
     That is amazing! Thank you so much, we love you :)
   - if order.errors[:base]
-    .errors=
+    .errors
       - order.errors[:base].each do |e|
         = e
         %br

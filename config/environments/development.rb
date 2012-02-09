@@ -49,4 +49,5 @@ Travis::Application.configure do
 
   # letter_opener
   # config.action_mailer.delivery_method = :letter_opener
+  Hubble.setup('raise_errors' => false)
 end

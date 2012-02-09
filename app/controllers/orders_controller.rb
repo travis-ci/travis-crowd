@@ -23,7 +23,8 @@ class OrdersController < ApplicationController
         sign_in user
         order.save_with_payment!
       rescue Stripe::CardError => e
-        user.errors.add(:base, "There was an error charging your credit card: #{e.message}")
+        Rails.logger.error("Error: #{e.message}")
+        order.errors.add(:base, "There was an error charging your credit card: #{e.message}")
         report(e)
         return render :new
       end

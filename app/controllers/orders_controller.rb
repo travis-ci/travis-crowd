@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
         user.save_with_customer!
         sign_in user
         order.save_with_payment!
-      rescue CardError => e
+      rescue Stripe::CardError => e
         report(e)
         return render :new
       end

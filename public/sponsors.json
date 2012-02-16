@@ -2,97 +2,97 @@
   "platinum": [
     {
       "url": "http://www.wooga.com",
-      "image": "/images/logos/wooga-210x210.png",
+      "image": "https://travis-ci.org/images/sponsors/wooga-210x210.png",
       "text": "<p>Founded in 2009 in Europe´s technology hub, Berlin, <a href=\"http://www.wooga.com\">Wooga</a> is the third largest social games developer in the world.</p><p><a href=\"http://www.wooga.com\">Wooga</a> creates high quality games for Facebook and iOS, with a specific focus on emotional character development, usability, and superb localization in seven languages.  <a href=\"http://www.wooga.com\">Wooga</a> is committed to creating innovative and original game titles for players of all ages, bringing millions of users around the world together through a world of gaming.</p><p><a href=\"http://www.wooga.com\">Wooga</a>´s free-to-play Facebook games are enjoyed by over 35 million active players per month - 70% of which are women.  For more information please visit: <a href=\"http://www.wooga.com\">www.wooga.com</a></p>"
     },
     {
       "url": "http://bendyworks.com",
-      "image": "/images/logos/bendyworks-210x210.png",
+      "image": "https://travis-ci.org/images/sponsors/bendyworks-210x210.png",
       "text": "<p><a href=\"http://bendyworks.com\">Bendyworks</a> is an agile Ruby on Rails &amp; iOS development consulting shop that hails from Madison, Wisconsin, USA. Bendyworks was founded in 2009 to turn great ideas into elegant applications, with plenty of room for creative revision and refinement along the way, while saving time &amp; money.</p><p>The way Bendyworks approaches projects can be summed up in a single word: flexibility. From the frequent and clear communication down to the methods used to code, the entire process revolves around staying nimble and adaptable to client needs.</p><p>Bendyworks also believes strongly in the power of community. From hosting local meetups to writing open source code, Bendyworks is committed to the programming community.</p>"
     },
     {
       "url": "http://cloudcontrol.com",
-      "image": "/images/logos/cloudcontrol-210x210.png",
+      "image": "https://travis-ci.org/images/sponsors/cloudcontrol-210x210.png",
       "text": "<p><a href=\"https://www.cloudcontrol.com\">cloudControl</a> is PaaS made in Berlin, Germany. Since 2009 we're dedicated to supercharge development by building the best platform possible to help developers build better apps faster.</p><p>The <a href=\"https://www.cloudcontrol.com\">cloudControl</a> platform features agile deployments, rock-solid autoscaling infrastructure and pay-as-you-go pricing out of Amazon's European datacenters.</p><p>With the <a href=\"https://www.cloudcontrol.com\">cloudControl</a> Add-on market we bring developers all the third party Cloud services they need easily integratable into their own apps and let them take projects from idea to product faster than ever before.</p>"
     },
     {
       "url": "http://xing.de",
-      "image": "/images/logos/xing-210x210.png",
+      "image": "https://travis-ci.org/images/sponsors/xing-210x210.png",
       "text": "<p><a href=\"https://xing.de\">XING</a> is a social network with over 11 million members. We are the leading network for business professionals in Europe. Based in Hamburg, Germany.</p><p>XING is really into teamwork and using agile techniques. Independent, focused teams build our platform's products. We have been coding Rails since 2006.</p><p>XING <a href=\"https://github.com/xing\">contributes</a> to open source and hosts meetups, user groups, after-work events and workshops.</p><p>We are <a href=\"http://devblog.xing.com/we-are-hiring/\">looking for talented people</a> to build the social network of the future in Rails, iOS, Android &amp; Perl.</p>"
     }
   ],
   "gold": [
     {
       "url": "http://soundcloud.com",
-      "image": "/images/logos/soundcloud-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/soundcloud-205x130.png",
       "text": "<p><a href=\"http://soundcloud.com\">SoundCloud</a> is an audio platform that enables anyone to upload, record, promote and share their originally-created sounds across the internet, in a simple, accessible and feature-rich way.</p>"
     },
     {
       "url": "http://nedap.com",
-      "image": "/images/logos/nedap-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/nedap-205x130.png",
       "text": "<p>At <a href=\"http://nedap.com\">Nedap</a> we work on solutions for important, real problems like sufficient food for a growing population, clean drinking water and smart networks for sustainable energy.</p>"
     },
     {
       "url": "http://mongohq.com",
-      "image": "/images/logos/mongohq-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/mongohq-205x130.png",
       "text": "<p><a href=\"http://mongohq.com\">MongoHQ</a> is the hosted database solution for getting you up and running on MongoDB, fast. From free shared plans to custom dedicated solutions, we handle all the levels of your data layer.</p>"
     },
     {
       "url": "http://zweitag.de",
-      "image": "/images/logos/zweitag-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/zweitag-205x130.png",
       "text": "<p><a href=\"http://www.zweitag.de\">Zweitag</a> is a software engineering consultancy. We create beautiful web apps. Our agile solutions for complex technical problems are based on the right tools (e.g Ruby on Rails, node.js, nosql).</p>"
     },
     {
       "url": "http://kanbanery.com",
-      "image": "/images/logos/kanbanery-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/kanbanery-205x130.png",
       "text": "<p><a href=\"http://kanbanery.com\">Kanbanery</a>, a product of <a href=\"http://www.lunarlogicpolska.com\">Lunar Logic Polska</a>, is a web-based task manager that helps you work more effectively, alone and together, by visualizing work in progress on your projects.</p>"
     },
     {
       "url": "http://ticketevolution.com",
-      "image": "/images/logos/ticketevolution-205x130.png",
+      "image": "https://travis-ci.org/images/sponsors/ticketevolution-205x130.png",
       "text": "<p><a href=\"http://ticketevolution.com\">Ticket Evolution</a> is the engineering backbone of the open ticket market. We're an expanding team of Ruby engineers who love open source software. Join us.</p>"
     }
   ],
   "silver": [
     {
       "url": "http://cobot.me",
-      "image": "/images/logos/cobotme-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/cobotme-205x60.png"
     },
     {
       "url": "http://jumpstartlab.com",
-      "image": "/images/logos/jumpstartlab-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/jumpstartlab-205x60.png"
     },
     {
       "url": "http://evilmartians.com",
-      "image": "/images/logos/evilmartians-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/evilmartians-205x60.png"
     },
     {
       "url": "http://zendesk.com",
-      "image": "/images/logos/zendesk-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/zendesk-205x60.png"
     },
     {
       "url": "http://stripe.com",
-      "image": "/images/logos/stripe-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/stripe-205x60.png"
     },
     {
       "url": "http://basho.com",
-      "image": "/images/logos/basho-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/basho-205x60.png"
     },
     {
       "url": "http://thinkrelevance.com",
-      "image": "/images/logos/thinkrelevance-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/thinkrelevance-205x60.png"
     },
     {
       "url": "http://mindmatters.de",
-      "image": "/images/logos/mindmatters-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/mindmatters-205x60.png"
     },
     {
       "url": "http://amenhq.com",
-      "image": "/images/logos/amen-205x60.jpg"
+      "image": "https://travis-ci.org/images/sponsors/amen-205x60.jpg"
     },
     {
       "url": "http://www.site5.com",
-      "image": "/images/logos/site5-205x60.png"
+      "image": "https://travis-ci.org/images/sponsors/site5-205x60.png"
     }
   ]
 }

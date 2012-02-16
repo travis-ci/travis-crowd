@@ -1,0 +1,24 @@
+#sponsoring_sizes {
+  table {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-collapse: collapse;
+  }
+  tbody tr:first-child th {
+    padding-top: 25px;
+  }
+  th {
+    font-weight: normal;
+  }
+  td, th {
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 15px;
+  }
+  td {
+    border: 1px solid #aaa;
+  }
+  tbody th:first-child {
+    text-align: right;
+  }
+}

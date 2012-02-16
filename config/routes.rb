@@ -3,6 +3,7 @@ require 'geo_ip'
 Travis::Application.routes.draw do
   root to: 'home#show'
   match 'company_packages', to: 'home#sponsoring_plans'
+  match 'ads',              to: 'home#sponsoring_sizes'
   match 'imprint',          to: 'home#imprint'
   match 'ringtones',        to: 'home#ringtones'
   match 'sponsors',         to: 'home#sponsors'

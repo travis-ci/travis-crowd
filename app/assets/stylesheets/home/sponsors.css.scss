@@ -18,7 +18,7 @@
         height: 140px;
         padding-left: 230px;
         & > a {
-          width: 210px;
+          width: 205px;
           height: 130px;
         }
       }
@@ -78,6 +78,9 @@
       &.xing > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/xing-210x210.png);
       }
+      &.heroku > a {
+        background-image: url(https://secure.travis-ci.org/images/sponsors/heroku-205x130.png);
+      }
       &.soundcloud > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/soundcloud-205x130.png);
       }
@@ -132,6 +135,12 @@
       &.eighthlight > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/8thlight-205x60.jpg);
       }
+      &.crowdinteractive > a {
+        background-image: url(https://secure.travis-ci.org/images/sponsors/crowdinteractive-205x60.png);
+      }
+      &.atomicobject > a {
+        background-image: url(https://secure.travis-ci.org/images/sponsors/atomicobject-205x60.png);
+      }
       &.enterprise-rails > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/enterprise-rails-140x40.png);
       }
@@ -148,7 +157,7 @@
       &.servergrove > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/servergrove-140x40.png);
       }
-      &.heroku > a {
+      &.heroku-services > a {
         background-image: url(https://secure.travis-ci.org/images/sponsors/heroku-140x40.png);
       }
       &.pusher > a {

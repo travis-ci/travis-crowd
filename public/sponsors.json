@@ -23,6 +23,11 @@
   ],
   "gold": [
     {
+      "url": "http://heroku.com",
+      "image": "https://secure.travis-ci.org/images/sponsors/heroku-205x130.png",
+      "text": "<p>Get up and running in minutes, and deploy instantly with git. Run and scale any type of app. Focus 100% on your code, and never think about servers, instances, or VMs again.</p>"
+    },
+    {
       "url": "http://soundcloud.com",
       "image": "https://secure.travis-ci.org/images/sponsors/soundcloud-205x130.png",
       "text": "<p><a href=\"http://soundcloud.com\">SoundCloud</a> is an audio platform that enables anyone to upload, record, promote and share their originally-created sounds across the internet, in a simple, accessible and feature-rich way.</p>"
@@ -97,6 +102,14 @@
     {
       "url": "http://www.8thlight.com",
       "image": "https://secure.travis-ci.org/images/sponsors/8thlight-205x60.jpg"
+    },
+    {
+      "url": "http://www.crowdint.com",
+      "image": "https://secure.travis-ci.org/images/sponsors/crowdinteractive-205x60.png"
+    },
+    {
+      "url": "http://atomicobject.com",
+      "image": "https://secure.travis-ci.org/images/sponsors/atomicobject-205x60.png"
     }
   ]
 }

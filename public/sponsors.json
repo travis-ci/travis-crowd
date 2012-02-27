@@ -110,6 +110,10 @@
     {
       "url": "http://atomicobject.com",
       "image": "https://secure.travis-ci.org/images/sponsors/atomicobject-205x60.png"
+    },
+    {
+      "url": "http://codeminer.com.br",
+      "image": "https://secure.travis-ci.org/images/sponsors/codeminer-205x60.png"
     }
   ]
 }

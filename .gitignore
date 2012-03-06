@@ -1,3 +1,4 @@
+.DS_Store
 .bundle
 config/database.yml
 config/travis.yml

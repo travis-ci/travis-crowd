@@ -127,6 +127,18 @@
     {
       "url": "http://gidsy.com",
       "image": "/images/sponsors/gidsy-205x60.png"
+    },
+    {
+      "url": "http://5apps.com",
+      "image": "/images/sponsors/5apps-205x60.png"
+    },
+    {
+      "url": "http://meltmedia.com",
+      "image": "/images/sponsors/meltmedia-205x60.png"
+    },
+    {
+      "url": "http://www.fngtps.com",
+      "image": "/images/sponsors/fingertips-205x60.png"
     }
   ]
 }

@@ -143,6 +143,14 @@
     {
       "url": "http://www.engineyard.com",
       "image": "/images/sponsors/engineyard-205x60.png"
+    },
+    {
+      "url": "http://www.malwarebytes.org",
+      "image": "/images/sponsors/malwarebytes-205x60.png"
+    },
+    {
+      "url": "http://readmill.org",
+      "image": "/images/sponsors/readmill-205x60.png"
     }
   ]
 }

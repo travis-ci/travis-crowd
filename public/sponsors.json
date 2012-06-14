@@ -151,6 +151,18 @@
     {
       "url": "http://readmill.org",
       "image": "/images/sponsors/readmill-205x60.png"
+    },
+    {
+      "url": "http://www.mdsol.com",
+      "image": "/images/sponsors/medidata-205x60.png"
+    },
+    {
+      "url": "http://coderwall.com/teams/4f27194e973bf000040005f0",
+      "image": "/images/sponsors/esm-205x60.png"
+    },
+    {
+      "url": "http://twitter.com",
+      "image": "/images/sponsors/twitter-205x60.png"
     }
   ]
 }

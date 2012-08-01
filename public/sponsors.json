@@ -129,6 +129,10 @@
       "image": "/images/sponsors/gidsy-205x60.png"
     },
     {
+      "url": "http://agileanimal.com",
+      "image": "/images/sponsors/agileanimal-205x60.png"
+    },
+    {
       "url": "http://5apps.com",
       "image": "/images/sponsors/5apps-205x60.png"
     },
@@ -163,6 +167,10 @@
     {
       "url": "http://twitter.com",
       "image": "/images/sponsors/twitter-205x60.png"
+    },
+    {
+      "url": "http://tupalo.com",
+      "image": "/images/sponsors/tupalo-205x60.png"
     }
   ]
 }

@@ -104,8 +104,8 @@ GEM
       yajl-ruby (~> 1.1)
     i18n (0.6.0)
     journey (1.0.1)
-    jquery-rails (2.0.0)
-      railties (>= 3.2.0.beta, < 5.0)
+    jquery-rails (1.0.19)
+      railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.5)
     launchy (2.0.5)
@@ -232,7 +232,7 @@ DEPENDENCIES
   haml
   hashr
   hubble
-  jquery-rails
+  jquery-rails (= 1.0.19)
   letter_opener
   mocha
   pg (~> 0.11.0)

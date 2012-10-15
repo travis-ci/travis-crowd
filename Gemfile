@@ -4,7 +4,7 @@ source :rubygems
 gem 'rails', :git => 'git://github.com/rails/rails.git', :ref => '77785c78' # current 3-2-stable
 gem 'rack', '~> 1.4.0'
 
-gem 'jquery-rails'
+gem 'jquery-rails', '1.0.19'
 
 gem 'pg',              '~> 0.11.0'
 gem 'stripe'

@@ -1,6 +1,6 @@
 require 'twitter'
 
-followers = %w(travisci joshkalderimis konstantinhaase svenfuchs).inject([]) do |ids, handle|
+followers = %w(travisci j2h konstantinhaase roidrage svenfuchs).inject([]) do |ids, handle|
   cursor = '-1'
   while cursor != 0 do
     followers = Twitter.follower_ids(handle, :cursor => cursor)

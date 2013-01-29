@@ -179,6 +179,10 @@
     {
       "url": "http://pivotallabs.com",
       "image": "/images/sponsors/pivotallabs-205x60.png"
+    },
+    {
+      "url": "http://saucelabs.com",
+      "image": "/images/sponsors/saucelabs-205x60.png"
     }
   ]
 }

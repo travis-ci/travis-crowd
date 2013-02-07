@@ -183,6 +183,10 @@
     {
       "url": "http://saucelabs.com",
       "image": "/images/sponsors/saucelabs-205x60.png"
+    },
+    {
+      "url": "http://mogotest.com",
+      "image": "/images/sponsors/mogo-205x60.png"
     }
   ]
 }

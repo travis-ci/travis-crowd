@@ -187,6 +187,10 @@
     {
       "url": "http://mogotest.com",
       "image": "/images/sponsors/mogo-205x60.png"
+    },
+    {
+      "url": "http://busyconf.com",
+      "image": "/images/sponsors/busyconf-205x60.png"
     }
   ]
 }

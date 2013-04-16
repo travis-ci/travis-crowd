@@ -1,9 +1,11 @@
 APP_PATH = File.expand_path('../../config/application',  __FILE__)
 require File.expand_path('../../config/environment',  __FILE__)
 
+require 'date'
 require 'csv'
 
-orders = Order.where('created_at >= ?', Date.new(2012, 8, 1))
+from = Date.parse(ARGV[0])
+orders = Order.where('created_at >= ?', from)
 orders = orders.includes(:user, :billing_address)
 
 data = orders.map do |order|

@@ -13,6 +13,12 @@
     = yield :head
 
   %body{id: page_id}
+    %header#closed
+      %h1 Thank you so much!
+      %p
+        The Travis Love Campaign has been closed. We'll follow up with a blog post
+        soon, but for now we'd like to say a <strong>HUGE THANK YOU</strong> to everyone who
+        participated and made this such a big success!
     #github
       %a{ href: 'https://github.com/travis-ci/travis-crowd', title: 'Fork me on GitHub'} Fork me on GitHub
     = render partial: 'layouts/flashes'

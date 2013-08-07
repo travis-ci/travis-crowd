@@ -17,7 +17,28 @@ html, body {
   z-index: -2;
 }
 body {
+  padding-top: 400px;
   -webkit-text-size-adjust: none; /* dont mess my prefs */
+}
+
+#closed {
+  padding: 12em 0 13em 0;
+  margin-top: -400px;
+  text-align: center;
+  background-color: lightskyblue;
+
+  h1 {
+    font-size: 3em;
+    color: white;
+  }
+  p {
+    margin: auto auto;
+    max-width: 50em;
+    color: #444;
+  }
+  strong {
+    text-decoration: underline;
+  }
 }
 
 // required for IE

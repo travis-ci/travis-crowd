@@ -30,7 +30,7 @@ OrderForm = (form) ->
       true
 
 EU = [
-  "Austria", "Belgium", "Bulgaria", "Cyprus", "Czech Republic",
+  "Austria", "Belgium", "Bulgaria", "Cyprus", "Croatia", "Czech Republic",
   "Denmark", "Estonia", "France", "Monaco", "Greece", # "Germany",
   "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
   "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia",

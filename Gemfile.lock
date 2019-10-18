@@ -184,7 +184,7 @@ GEM
     simple_form (1.5.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    sprockets (2.2.2)
+    sprockets (2.2.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)

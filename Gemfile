@@ -7,7 +7,7 @@ gem 'jquery-rails', '1.0.19'
 
 gem 'pg',              '~> 0.11.0'
 gem 'stripe'
-gem 'devise',          '~> 1.5.0'
+gem 'devise',          '~> 3.5.10'
 gem 'simple_form'
 gem 'haml'
 gem 'hashr'
